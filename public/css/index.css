@@ -1,0 +1,524 @@
+/* A (more) Modern CSS Reset - https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Open Props */
+
+:where(html) {
+  --font-system-ui: system-ui, sans-serif;
+  --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
+  --font-old-style: Iowan Old Style, Palatino Linotype, URW Palladio L, P052,
+    serif;
+  --font-humanist: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans,
+    source-sans-pro, sans-serif;
+  --font-geometric-humanist: Avenir, Montserrat, Corbel, URW Gothic,
+    source-sans-pro, sans-serif;
+  --font-classical-humanist: Optima, Candara, Noto Sans, source-sans-pro,
+    sans-serif;
+  --font-neo-grotesque: Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans,
+    Arial, sans-serif;
+  --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
+  --font-monospace-code: Dank Mono, Operator Mono, Inconsolata, Fira Mono,
+    ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro,
+    Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace;
+  --font-industrial: Bahnschrift, DIN Alternate, Franklin Gothic Medium,
+    Nimbus Sans Narrow, sans-serif-condensed, sans-serif;
+  --font-rounded-sans: ui-rounded, Hiragino Maru Gothic ProN, Quicksand,
+    Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri,
+    source-sans-pro, sans-serif;
+  --font-slab-serif: Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif,
+    Sitka Small, serif;
+  --font-antique: Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L,
+    Georgia Pro, Georgia, serif;
+  --font-didone: Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052,
+    Sylfaen, serif;
+  --font-handwritten: Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual,
+    cursive;
+  --font-sans: var(--font-system-ui);
+  --font-serif: ui-serif, serif;
+  --font-mono: var(--font-monospace-code);
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+  --font-lineheight-00: 0.95;
+  --font-lineheight-0: 1.1;
+  --font-lineheight-1: 1.25;
+  --font-lineheight-2: 1.375;
+  --font-lineheight-3: 1.5;
+  --font-lineheight-4: 1.75;
+  --font-lineheight-5: 2;
+  --font-letterspacing-0: -0.05em;
+  --font-letterspacing-1: 0.025em;
+  --font-letterspacing-2: 0.05em;
+  --font-letterspacing-3: 0.075em;
+  --font-letterspacing-4: 0.15em;
+  --font-letterspacing-5: 0.5em;
+  --font-letterspacing-6: 0.75em;
+  --font-letterspacing-7: 1em;
+  --font-size-00: 0.5rem;
+  --font-size-0: 0.75rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.1rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.5rem;
+  --font-size-7: 3rem;
+  --font-size-8: 3.5rem;
+  --font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
+  --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+  --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
+
+  --size-xxs: 240px;
+  --size-xs: 360px;
+  --size-sm: 480px;
+  --size-md: 768px;
+  --size-lg: 1024px;
+  --size-xl: 1440px;
+  --size-xxl: 1920px;
+
+  --size-content-1: 20ch;
+  --size-content-2: 45ch;
+  --size-content-3: 60ch;
+  --size-header-1: 20ch;
+  --size-header-2: 25ch;
+  --size-header-3: 35ch;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+  font-weight: var(--font-weight-9);
+  line-height: var(--font-lineheight-1);
+  margin-block-start: 0;
+}
+
+:where(h1) {
+  font-size: var(--font-size-8);
+  max-inline-size: var(--size-header-1);
+}
+:where(h2) {
+  font-size: var(--font-size-6);
+  max-inline-size: var(--size-header-2);
+}
+:where(h3) {
+  font-size: var(--font-size-5);
+}
+:where(h4) {
+  font-size: var(--font-size-4);
+}
+:where(h5) {
+  font-size: var(--font-size-3);
+}
+:where(h3, h4, h5, h6, dt) {
+  max-inline-size: var(--size-header-3);
+}
+:where(p, ul, ol, dl, h6) {
+  font-size: var(--font-size-2);
+}
+:where(a, u, ins, abbr) {
+  text-underline-offset: 1px;
+}
+@supports (-moz-appearance: none) {
+  :where(a, u, ins, abbr) {
+    text-underline-offset: 2px;
+  }
+}
+:where(
+    a[href],
+    area,
+    button,
+    input:not(
+        [type="text"],
+        [type="email"],
+        [type="number"],
+        [type="password"],
+        [type=""],
+        [type="tel"],
+        [type="url"]
+      ),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"], pre)
+  ) {
+  cursor: pointer;
+}
+:where(
+    a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])
+  ) {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+:where(a):where([href]) {
+  text-decoration-color: var(--indigo-2);
+}
+:where(a):where([href]):where(:visited) {
+  text-decoration-color: var(--purple-2);
+}
+:where(a):where(:not(:hover)) {
+  text-decoration: inherit;
+}
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: block;
+}
+:where(img, svg, video) {
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+:where(code, kbd, samp, pre) {
+  font-family: var(--font-monospace-code), monospace;
+}
+:where(:not(pre) > code, kbd) {
+  white-space: nowrap;
+}
+:where(pre) {
+  direction: ltr;
+  max-inline-size: max-content;
+  min-inline-size: 0;
+  white-space: pre;
+  writing-mode: lr;
+}
+:where(:not(pre) > code) {
+  background: var(--surface-2);
+  border-radius: var(--radius-2);
+  padding: var(--size-1) var(--size-2);
+  writing-mode: lr;
+}
+:where(kbd, var) {
+  border-color: var(--surface-4);
+  border-radius: var(--radius-2);
+  border-width: var(--border-size-1);
+  padding: var(--size-1) var(--size-2);
+}
+:where(mark) {
+  border-radius: var(--radius-2);
+  padding-inline: var(--size-1);
+}
+:where(ol, ul) {
+  padding-inline-start: var(--size-8);
+}
+:where(li) {
+  padding-inline-start: var(--size-2);
+}
+:where(li, dd, figcaption) {
+  max-inline-size: var(--size-content-2);
+}
+:where(p) {
+  text-wrap: pretty;
+  max-inline-size: var(--size-content-3);
+}
+:where(dt, summary) {
+  font-weight: var(--font-weight-7);
+}
+:where(dt:not(:first-of-type)) {
+  margin-block-start: var(--size-5);
+}
+:where(small) {
+  font-size: max(0.5em, var(--font-size-0));
+  max-inline-size: var(--size-content-1);
+}
+
+/* NOTE: General stuff */
+
+@font-face {
+  font-family: "Departure Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/static/fonts/DepartureMono-Regular.woff2") format("woff2"),
+    url("/static/fonts/DepartureMono-Regular.woff") format("woff");
+}
+
+.skip-link {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 1.125rem;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  background-image: none;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  width: auto;
+  height: auto;
+  display: inline-block;
+  z-index: 99;
+}
+
+main {
+  --gap: 1rem;
+  --line-offset: calc(var(--gap) / 2);
+  --line-thickness: 1px;
+  --line-color: lightgray;
+  max-width: var(--size-xl);
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  grid-template-rows: repeat(auto-fill, 50vh);
+  width: 100%;
+}
+
+.wrapper > * {
+  position: relative;
+  padding: 1.5rem;
+}
+
+.wrapper > *::before,
+.wrapper > *::after {
+  content: "";
+  position: absolute;
+  background-color: var(--line-color);
+  z-index: 1;
+}
+
+.wrapper#homepage {
+  grid-template-areas:
+    "intro intro current"
+    "other other current"
+    "other other current";
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.onecol {
+  grid-column: span 1;
+}
+
+.twocol {
+  grid-column: span 2;
+}
+
+.threecol {
+  grid-column: span 3;
+}
+
+:where(html) {
+  font-family: var(--font-mono);
+}
+
+.heading-underline {
+  position: relative;
+  text-align: center;
+  margin-block-end: 2.5rem;
+}
+
+* + .heading-underline {
+  margin-block-start: 2.5rem;
+}
+
+.heading-underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--line-color);
+  margin: 1rem 0;
+  inline-size: 40%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 30%;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: "Departure Mono", var(--font-monospace-code), monospace;
+}
+
+.heading {
+  font-weight: var(--font-weight-7);
+}
+
+/* NOTE: Section or page specific stuff below here */
+
+#intro img {
+  max-width: 15rem;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1;
+  margin: auto;
+}
+
+#intro {
+  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  grid-rows: 1;
+  grid-area: intro;
+}
+
+#intro::after {
+  inline-size: 80%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 10%;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: 100%;
+}
+
+#intro::before {
+  inline-size: var(--line-thickness);
+  block-size: 80%;
+  inset-block-start: 10%;
+  inset-inline-start: calc(var(--line-offset) * -1);
+  left: 100%;
+}
+
+#current {
+  grid-area: current;
+}
+
+#other {
+  grid-area: other;
+}
+
+.project {
+  margin-block: 1.5rem;
+}
+
+/* #intro h1 {
+  margin: 0;
+} */
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .onecol,
+  .twocol,
+  .threecol {
+    grid-column: span 1;
+  }
+
+  #intro {
+    grid-template-columns: 1fr;
+  }
+}

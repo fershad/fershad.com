@@ -1,0 +1,72 @@
+---
+layout: layouts/base.liquid
+title: Home
+description: "Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards
+a fossil free internet by 2030."
+---
+
+<div class="wrapper" id="homepage">
+  <section id="intro" class="twocol">
+    <img
+      src="../public/img/profile.jpg"
+      alt="A handsome, bald man with coffee coloured skin sitting at a table smiling."
+      loading="eager"
+      decoding="async"
+      eleventy:widths="240, 480, 320, 640"
+      sizes="100w" />
+    <div>
+      <h1>Hey, I'm Fershad.</h1>
+      <p class="subtag">
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                        
+          a fossil free internet by 2030.
+      </p>
+    </div>
+  </section>
+
+  <section id="current" class="onecol">
+    <div>
+      <h2 class="heading-underline">Currently</h2>
+      <p>
+        <span class="heading">Status:</span>
+        <br/>
+        {{ currently.status }}
+        {% if currently.key == "vacation" %}
+          Peace ✌️.
+        {% else %}
+          {{ currently.blurb }}
+        {% endif %}
+      </p>
+    </div>
+    <h3 class="heading-underline">Projects</h3>
+    {% for project in currently.projects %}
+      <div class="project">
+        <h4>
+          <a href="{{ project.url }}">{{ project.title }}</a>
+        </h4>
+        <p>{{ project.shortContent }}</p>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section id="other" class="threecol">
+    <h2 class="heading-underline">Currently</h2>
+    <div class="project">
+      <h3>Green Web Foundation</h3>
+      <p>
+        I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030.
+      </p>
+    </div>
+    <div class="project">
+      <h3>Green Web Foundation</h3>
+      <p>
+        I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030.
+      </p>
+    </div>
+    <div class="project">
+      <h3>Green Web Foundation</h3>
+      <p>
+        I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030.
+      </p>
+    </div>
+  </section>
+</div>
