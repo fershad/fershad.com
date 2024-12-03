@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "description": "The 7th iteration of my personal website.",
+  "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }
