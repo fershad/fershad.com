@@ -86,6 +86,15 @@
   gap: 1.5rem;
 }
 
+#projects::after,
+#words::after {
+  inline-size: 80%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 10%;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: calc(100% + var(--gap) / 2);
+}
+
 #words > * {
   padding: 1.5rem;
 }
