@@ -18,7 +18,7 @@ css: home.css
     <div>
       <h1>Hey, I'm Fershad.</h1>
       <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                   
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                      
           a fossil free internet by 2030.
       </p>
     </div>
@@ -58,6 +58,58 @@ css: home.css
     </a>
   </section>
 
+  <section id="words" class="threecol">
+    <div id="writing">
+      <div>
+        <h2>Writing</h2>
+        <p>I capture notes, ideas, and insights (depends who you ask tbh) in my blog.</p>
+      </div>
+      <ul>
+        {% for post in posts | slice(0, 3) %}
+          <li>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+          </li>
+        {% else %}
+          <li>
+            <p>There are no posts.</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div id="reading">
+      <div>
+        <h2>Reading</h2>
+        <p>Here's a list of articles I've recently read.</p>
+      </div>
+      <ul>
+        {% for article in readwise.reader %}
+          <li>
+            <a href="{{ article.source_url }}">{{ article.title }}</a>
+            <div>
+              <small>{{ article.site_name }}</small>
+            </div>
+          </li>
+        {% else %}
+          <li>
+            <p>There are no articles.</p>
+          </li>
+        {% endfor %}
+      </ul>
+      <div>
+        <small>
+          <span id="update-time">Last updated: {{ readwise.updated | date_to_rfc822 }}</span>
+          <a
+            href="#"
+            gaw:remove
+            class="button outline"
+            id="refresh-reader">Refresh</a>
+        </small>
+      </div>
+      <a href="/reading" class="banner">More reading</a>
+    </div>
+  </section>
+
   <section id="film" class="threecol">
     <div class="lead-box clear">
       <span>
@@ -75,25 +127,11 @@ css: home.css
         <p>{{ film.description }}</p>
         <a
           href="https://film.fershad.com/random"
+          target="_blank"
           id="rando"
-          class="banner outline">Fetch random image</a>
-        <a class="banner" href="https://film.fershad.com">See more @ film.fershad.com</a>
+          class="banner outline">Random image</a>
+        <a class="banner" href="https://film.fershad.com">More @ film.fershad.com</a>
       </div>
-    </div>
-  </section>
-
-  <section id="other" class="threecol">
-    <div>
-      <h2>Writing</h2>
-      <p>I capture notes, ideas, and insights (depends who you ask tbh) in my blog.</p>
-    </div>
-    <div>
-      <h2>Projects</h2>
-      <p>I build and maitain projects to help web folks build a greener internet.</p>
-    </div>
-    <div>
-      <h2>Film</h2>
-      <p>I do a bit of film photography while I'm out and about.</p>
     </div>
   </section>
 </div>
@@ -104,7 +142,6 @@ css: home.css
     fetch('/api/rando')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         document.querySelector('.img-holder img').src = data.imageUrl;
         document.querySelector('.img-desc h3').textContent = data.title;
         document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
@@ -112,4 +149,24 @@ css: home.css
         document.querySelector('.img-holder > picture > source').remove();
       });
   });
+
+  document.getElementById('refresh-reader').addEventListener('click', function(e){
+    e.preventDefault();
+    fetch('/api/readwise')
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('#reading ul').innerHTML = '';
+        data.reader.forEach(article => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${article.source_url}">${article.title}</a>
+            <div>
+              <small>${article.site_name}</small>
+            </div>
+          `;
+          document.querySelector('#reading ul').appendChild(li);
+        });
+        document.querySelector('#reading #update-time').textContent = 'Last updated: ' + data.updated;
+      });
+  })
 </script>

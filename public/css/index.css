@@ -509,13 +509,17 @@ h6,
   background: var(--blue-10);
 }
 
-.banner.outline {
+small .button {
+  padding: 0.25rem;
+}
+
+.banner.outline, .button.outline {
   background: none;
   border: 2px solid var(--blue-12);
   color: var(--blue-12);
 }
 
-.banner.outline:hover {
+.banner.outline:hover, .button.outline:hover {
   border-color: var(--blue-4);
   color: var(--blue-4);
 }
@@ -528,6 +532,31 @@ h4 + small {
   margin-block-start: 1.25rem;
   max-width: 100%;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li:not(:last-of-type) {
+  margin-block-end: 2rem;
+  position: relative;
+  padding: 0;
+}
+
+ul li:not(:last-of-type)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid var(--line-color);
+    inline-size: 40%;
+    block-size: var(--line-thickness);
+    inset-inline-start: 0;
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: calc(100% + 2rem / 2);
+  }
+}
+
 
 @media (max-width: 768px) {
   .wrapper {

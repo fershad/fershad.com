@@ -73,10 +73,21 @@
   gap: 1.5rem;
 }
 
-.img-holder .img-desc {
+.img-holder .img-desc,
+#words > * {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+#words {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+#words > * {
+  padding: 1.5rem;
 }
 
 @media (max-width: 768px) {
