@@ -61,6 +61,24 @@
   padding: 0 3rem 0 0;
 }
 
+#film {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 1.5rem;
+}
+
+#film .img-holder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.img-holder .img-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 @media (max-width: 768px) {
   #intro {
     grid-template-columns: 1fr;
