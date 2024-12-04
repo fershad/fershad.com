@@ -557,6 +557,49 @@ ul li:not(:last-of-type)::after {
   }
 }
 
+header, footer {
+  --line-color: var(--blue-2);
+  width: 100%;
+  max-width: var(--size-xl);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header {
+  border-bottom: 2px solid var(--line-color);
+  display: flex;
+  justify-content: space-between; 
+}
+
+footer {
+  background: var(--blue-12);
+  color: var(--stone-0);
+  border-top: 2px solid var(--line-color);
+}
+
+header nav {
+  justify-self: flex-end;
+}
+
+footer nav ul li {
+  margin-block-start: 2rem;
+}
+
+header nav ul, footer nav ul {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+footer nav ul {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
 
 @media (max-width: 768px) {
   .wrapper {

@@ -1,0 +1,13 @@
+.wrapper {
+  grid-template-rows: auto;
+}
+
+.contact-grid {
+  margin-block: 1.5rem;
+}
+
+#greenweb {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 1.5rem;
+}
