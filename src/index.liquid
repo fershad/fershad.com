@@ -18,7 +18,7 @@ css: home.css
     <div>
       <h1>Hey, I'm Fershad.</h1>
       <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                             
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                       
           a fossil free internet by 2030.
       </p>
     </div>
@@ -38,15 +38,25 @@ css: home.css
         {% endif %}
       </p>
     </div>
-    <h3 class="heading-underline">Projects</h3>
+  </section>
+
+  <section id="projects" class="threecol">
+    <div class="lead-box">
+      <h2>Projects</h2>
+      <small>A couple of the highlight projects that I'm working on at the moment.</small>
+    </div>
     {% for project in currently.projects %}
       <div class="project">
-        <h4>
+        <h3>
           <a href="{{ project.url }}">{{ project.title }}</a>
-        </h4>
+        </h3>
         <p>{{ project.shortContent }}</p>
       </div>
     {% endfor %}
+    <a href="/projects" class="banner">
+      More projects
+    </a>
+
   </section>
 
   <section id="other" class="threecol">

@@ -400,7 +400,7 @@ html {
 }
 
 main {
-  --gap: 1rem;
+  --gap: 4rem;
   --line-offset: calc(var(--gap) / 2);
   --line-thickness: 2px;
   --line-color: var(--blue-2);
@@ -428,16 +428,6 @@ main {
   position: absolute;
   background-color: var(--line-color);
   z-index: 1;
-}
-
-.wrapper#homepage {
-  grid-template-areas:
-    "intro intro current"
-    "other other current"
-    "other other current";
-
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .onecol {
@@ -491,6 +481,33 @@ h6,
 
 .heading {
   font-weight: var(--font-weight-7);
+}
+
+.lead-box {
+  background: var(--blue-12);
+  color: var(--stone-0);
+}
+
+.banner {
+  background: var(--blue-12);
+  color: var(--stone-0);
+  padding: 1.5rem;
+  text-align: center;
+  width: 100%;
+  grid-column: -1/1;
+}
+
+.banner:hover {
+  background: var(--blue-10);
+}
+
+h2 + small,
+h3 + small,
+h4 + small {
+  display: block;
+  width: 100%;
+  margin-block-start: 1.25rem;
+  max-width: 100%;
 }
 
 @media (max-width: 768px) {
