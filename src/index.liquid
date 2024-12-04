@@ -18,7 +18,7 @@ css: home.css
     <div>
       <h1>Hey, I'm Fershad.</h1>
       <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                               
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                   
           a fossil free internet by 2030.
       </p>
     </div>
@@ -73,7 +73,10 @@ css: home.css
           <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
         </span>
         <p>{{ film.description }}</p>
-        <a href="#" class="banner outline">Fetch random image</a>
+        <a
+          href="https://film.fershad.com/random"
+          id="rando"
+          class="banner outline">Fetch random image</a>
         <a class="banner" href="https://film.fershad.com">See more @ film.fershad.com</a>
       </div>
     </div>
@@ -94,3 +97,19 @@ css: home.css
     </div>
   </section>
 </div>
+
+<script gaw:remove>
+  document.getElementById('rando').addEventListener('click', function(e) {
+    e.preventDefault();
+    fetch('/api/rando')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        document.querySelector('.img-holder img').src = data.imageUrl;
+        document.querySelector('.img-desc h3').textContent = data.title;
+        document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
+        document.querySelector('.img-desc p').textContent = data.description;
+        document.querySelector('.img-holder > picture > source').remove();
+      });
+  });
+</script>

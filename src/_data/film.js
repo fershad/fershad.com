@@ -9,7 +9,7 @@ export default async function () {
 	});
 
     // Filter the images that don't have descriptions
-    json.images = json.images.filter(image => image.description);
+    json.images = json.images.filter(image => image.description && image.portrait);
     const random = json.images[Math.floor(Math.random() * json.images.length)];
 
 	return random;
