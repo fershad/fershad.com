@@ -6,7 +6,8 @@
   display: block;
 }
 
-.project:has(.title) {
+.project:has(.title),
+.talk:has(.title) {
   width: 100%;
   max-width: 100vw;
   display: grid;
@@ -18,6 +19,11 @@
   align-items: center;
   justify-content: center;
   padding: 1rem;
+}
+
+.talk:has(.title) {
+  min-height: 5rem;
+  grid-template-rows: auto;
 }
 
 .project .summary {
