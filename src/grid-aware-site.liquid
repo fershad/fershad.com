@@ -1,0 +1,86 @@
+---
+layout: layouts/post.liquid
+css: post.css
+---
+
+<section class="twocol">
+  <h1>This website is grid-aware</h1>
+  <p>
+    The concept of a grid-aware website is one where the content/user experience of a site changes depending on some fuel mix of the user's electricity grid. Implementing grid awareness on this website is inspired by the
+    <a href="https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/">Grid-aware Websites project</a>
+    that we are developing at Green Web Foundation.
+  </p>
+
+  <h2>Jargon buster</h2>
+  <div>
+    <p>There was a bit of jargon in that first sentence, and there might be more further down the page. So here's a summary of some key terms:</p>
+    <ul>
+      <li>
+        <b>Grid-aware:</b>
+        A grid-aware product/tool/service reacts to certain properties of an electricity grid. These could be the types of fuel used to generate power (fossil fuels, renewables, nuclear) or other measures such as how much load is on a grid at a point in time. Based on these data points, grid-aware products/tools/services will adjust their behaviour.</li>
+      <li>
+        <b>Fuel mix:</b>
+        A term used to the describe the balance of renewable, low-carbon, and fossil fuel energy used to generate the electricity of a particular region or electricity grid.</li>
+      <li>
+        <b>Cloudflare Workers:</b>
+        A code execution platform that is globally deployed and runs on CDN edge nodes.</li>
+    </ul>
+  </div>
+
+  <h2>What makes this site grid-aware?</h2>
+  <p>All of the magic that makes this website grid-aware is thanks to
+    <a href=https://developers.cloudflare.com/workers">Cloudflare Workers</a>,
+    <a href="https://www.electricitymaps.com/">Electricity Maps</a>, and the
+    <a href="https://github.com/thegreenwebfoundation/grid-aware-websites">Grid-aware Websites</a>
+    library.</p>
+  <div>
+    <p>When someone visits this website, the following process is kicked off:</p>
+    <ol>
+      <li>A Cloudflare Worker checks the request.</li>
+      <li>The
+        <a href="https://github.com/thegreenwebfoundation/grid-aware-websites/tree/main/plugins/edge/cloudflare">Grid-aware Websites Cloudflare Plugin</a>
+        is run to get the origin country of the request (that is, the country the website visitor is based in).</li>
+      <li>The Grid-aware Websites library is then used to:
+        <ul>
+          <li>Fetch data about the current power breakdown of that region from the Electricity Maps API.</li>
+          <li>Determine if the amount of "low-carbon" power (i.e. renewables plus nuclear) is lower than 50%.</li>
+          <li>If so, then it will return a status of
+            <code>gridAware: true</code>.</li>
+          <li>This tells the Cloudflare Worker that the page should be modified to make it "low impact" before it is returned to the user.</li>
+        </ul>
+      </li>
+    </ol>
+    <p>If at any point along in that process there is no data available, something goes wrong, or
+      <code>gridAware: false</code>
+      is returned then the original web page will be shown.</p>
+  </div>
+  <h3>What gets modified on the site?</h3>
+  <p>When the grid-aware flag is set on this website, the following changes are made inside the Cloudflare Worker before the page is returned to the user:</p>
+  <ul>
+    <li>Images are pixelated.
+      <ul>
+        <li>Visitors can click to download better quality versions of any image if they need to.</li>
+      </ul>
+    </li>
+    <li>Remove AVIF images, since
+      <a href="https://www.smashingmagazine.com/2021/09/modern-image-formats-avif-webp/#:~:text=Decoding%20AVIF%20images%20for%20display%20can%20also%20take%20up%20more%20CPU%20power%20than%20other%20codecs%2C%20though%20smaller%20file%20sizes%20may%20compensate%20for%20this." data-target="external">decoding them can be more CPU intensive</a>.</li>
+    <li>Non-critical JavaScript is removed from the site. This includes:
+      <ul>
+        <li>Analytics scripts are removed.</li>
+        <li>Progress bars when reading blog posts.</li>
+        <li>Share links (using the Navigator.share API).</li>
+        <li>Instant.page script</li>
+        <li>JavaScript that creates CodePen embeds. The embeds are replaced with a link to the pen.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Open source</h2>
+  <p>The
+    <a href="https://github.com/thegreenwebfoundation/grid-aware-websites">Grid-aware Websites</a>
+    library is open-source on GitHub. There is also
+    <a href="https://github.com/thegreenwebfoundation/grid-aware-websites-demo-cloudflare">a repository with a demo website</a>
+    that can be deployed to Cloudflare Pages, which also includes
+    <a href="https://github.com/thegreenwebfoundation/grid-aware-websites-demo-cloudflare?tab=readme-ov-file#example-worker">an example Cloudflare Worker</a>
+    that's setup to help people get started.</p>
+</section>
