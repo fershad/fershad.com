@@ -1,0 +1,7 @@
+.summary {
+  display: none;
+}
+
+.summary.active {
+  display: block;
+}

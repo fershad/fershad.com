@@ -30,6 +30,11 @@ export default function(eleventyConfig) {
 			decoding: "async",
 		},
 	});
+
+	eleventyConfig.addFilter("limitWords", function(value, limit = 50) {
+		// Return the first `limit` words, plus an ellipsis if needed
+		return value.split(" ").slice(0, limit).join(" ") + (value.split(" ").length > limit ? "..." : "");
+	});
     
     return {
         dir: {
