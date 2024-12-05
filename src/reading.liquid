@@ -1,0 +1,32 @@
+---
+layout: layouts/list.liquid
+title: Reading
+description: A list of articles, books, and other resources I've read recently.
+---
+<div class="wrapper">
+  <section class="twocol">
+    <h1>Reading</h1>
+    <p>In the recent past, I've tried to be more regular with the amount of reading I get through. Things change fast in tech & sustainability, and whatever knowledge I might posses stands on the blogs of giants way more well informed than me.</p>
+    <p>I use
+      <a href="https://readwise.io">Readwise Reader</a>
+      to save articles to read, make highlights, and take notes.</p>
+  </section>
+
+  <section class="twocol">
+    <h2>Articles</h2>
+    <ul>
+      {% for article in readwise.list %}
+        <li>
+          <a href="{{ article.source_url }}">{{ article.title }}</a>
+          <div>
+            <small>{{ article.site_name }}</small>
+          </div>
+        </li>
+      {% else %}
+        <li>
+          <p>There are no articles.</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
