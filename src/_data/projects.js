@@ -17,7 +17,7 @@ export default [
         url: 'https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/',
       },
       {
-        text: 'Repo',
+        text: 'Source code',
         url: 'https://github.com/thegreenwebfoundation/grid-aware-websites'
       },
     ]
@@ -34,16 +34,16 @@ export default [
       'I am a code contributor to, and maintainer of, CO2.js - A JavaScript library that allows developers to estimate the emissions associated with their apps, websites and software.',
     links: [
       {
-        text: 'Repo',
+        text: 'Introduction',
+        url: 'https://fershad.com/writing/co2-js-an-open-library-for-digital-carbon-reporting/',
+      },
+      {
+        text: 'Source code',
         url: 'https://github.com/thegreenwebfoundation/co2.js',
       },
       {
-        text: 'Docs',
+        text: 'Documentation',
         url: 'https://github.com/fershad/eleventy-plugin-green-links',
-      },
-      {
-        text: 'Introduction',
-        url: 'https://fershad.com/writing/co2-js-an-open-library-for-digital-carbon-reporting/',
       },
     ]
   },
@@ -62,6 +62,7 @@ export default [
   {
     title: 'Carbon-aware website',
     media: `./public/img/carbon-aware-site.jpg`,
+    archived: true,
     media_alt: '',
     content:
       'In 2023, I made my website carbon aware. That means it changes dynamically depending on the carbon intensity of the electricity grid that a visitor is on.',
@@ -92,12 +93,12 @@ export default [
         url: 'https://fershad.com/writing/eleventy-plugin-green-links/',
       },
       {
-        text: 'Github',
-        url: 'https://github.com/fershad/eleventy-plugin-green-links',
-      },
-      {
         text: 'NPM',
         url: 'https://www.npmjs.com/package/eleventy-plugin-green-links',
+      },
+      {
+        text: 'Source code',
+        url: 'https://github.com/fershad/eleventy-plugin-green-links',
       },
     ]
   },
@@ -109,12 +110,12 @@ export default [
       'ReqCheck is a tool I’ve built to help folks find out where all the different requests made by a web page are served from.',
     links: [
       {
-        text: 'Website',
-        url: 'https://reqcheck.fershad.com/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
-      },
-      {
         text: 'Introduction',
         url: 'https://fershad.com/writing/checking-where-website-requests-come-from-with-reqcheck',
+      },
+      {
+        text: 'Website',
+        url: 'https://reqcheck.fershad.com/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
       },
     ]
   },
@@ -126,20 +127,16 @@ export default [
       'I built aremythirdpartiesgreen.com to help give some visibility to the sustainability of third-party requests on the web. Use it to test your own site, and find out if the external resources being used are hosted on green infrastructure.',
     links: [
       {
-        text: 'Website',
-        url: 'https://aremythirdpartiesgreen.com/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
-      },
-      {
-        text: 'Extensions',
-        url: 'https://aremythirdpartiesgreen.com/extensions/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
-      },
-      {
         text: 'Introduction',
         url: 'https://fershad.com/writing/building-are-my-third-parties-green/',
       },
       {
         text: 'Building the Directory',
         url: 'https://fershad.com/writing/adding-a-directory-and-api-to-are-my-third-parties-green/',
+      },
+      {
+        text: 'Website',
+        url: 'https://aremythirdpartiesgreen.com/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
       },
     ]
   },
@@ -152,12 +149,12 @@ export default [
       "Webflow is a great service for designers who want to create amazing websites for clients. It does leave a few things on the table when it comes to web sustainability though. Flowty gives designers who build with Weblow the power to create fast, low-carbon, self-hosted sites in minutes.",
     links: [
       {
-        text: 'Website',
-        url: 'https://flowty.site/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
-      },
-      {
         text: 'Introduction',
         url: 'https://fershad.com/writing/introducing-flowty-build-low-carbon-webflow-sites/',
+      },
+      {
+        text: 'Website',
+        url: 'https://flowty.site/?utm_campaign=fershad-site&utm_source=projects&utm_medium=website',
       },
     ]
   },

@@ -514,9 +514,10 @@ small .button {
 }
 
 .banner.outline, .button.outline {
+  /* --banner-line-color: var(--blue-12); */
   background: none;
-  border: 2px solid var(--blue-12);
-  color: var(--blue-12);
+  border: 2px solid var(--banner-line-color, var(--blue-12));
+  color: var(--banner-text-color, var(--blue-12));
 }
 
 .banner.outline:hover, .button.outline:hover {

@@ -1,0 +1,38 @@
+---
+layout: layouts/list.liquid
+title: Projects
+description: A few of the projects I'm working on currently, or have released into the wild.
+---
+<div class="wrapper">
+  <section class="twocol">
+    <h1>Projects</h1>
+    <p>Below are a few of the projects that I have built, worked on, or released out into the world. You can visit the projects themselves, or check out the links to find out more about each project.</p>
+  </section>
+
+  <section class="twocol">
+    <ul>
+      {% for project in projects %}
+        <li
+          class="project {% if project.archived %}archived{% endif %}"
+          {% if project.slug %}
+          id="{{project.slug}}"
+          {% endif %}>
+          {% if project.archived %}
+            <div class="title">
+              <h2>{{ project.title }}</h2>
+              <small class="">Archived</small>
+            </div>
+          {% else %}
+            <h2 class="title">{{ project.title }}</h2>
+          {% endif %}
+          <p class="summary">{{ project.content }}</p>
+          <div class="links">
+            {% for link in project.links %}
+              <a href="{{ link.url }}" class="banner outline">{{ link.text }}</a>
+            {% endfor %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
