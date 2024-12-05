@@ -539,6 +539,11 @@ ul {
   padding: 0;
 }
 
+ol, ol li {
+  list-style: decimal;
+  padding: 0;
+}
+
 ul li:not(:last-of-type) {
   margin-block-end: 2rem;
   position: relative;

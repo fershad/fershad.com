@@ -1,0 +1,44 @@
+section > * + * {
+  margin-top: 1.75rem;
+}
+
+section p,
+section ul,
+section ul li,
+section ol,
+section ol li,
+section blockquote,
+section pre,
+section table {
+  /* font-size: 1.25rem; */
+  line-height: 1.75rem;
+}
+
+section[class] ul li:after {
+  display: none;
+}
+
+section[class] ul li:before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 3px;
+  height: 2.1ex;
+  width: 7px;
+  background-color: var(--marker-color, var(--blue-4));
+}
+
+section[class] ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+ol {
+  padding-left: 2.75rem;
+}
+
+ul li > ul {
+  margin-top: 1.5rem;
+  --marker-color: var(--blue-7);
+}
