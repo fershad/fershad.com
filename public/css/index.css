@@ -415,6 +415,7 @@ main {
   gap: var(--gap);
   grid-template-rows: auto;
   width: 100%;
+  min-height: 90vh;
 }
 
 .wrapper > * {

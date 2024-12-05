@@ -3,4 +3,19 @@ layout: layouts/base.liquid
 css: post.css
 ---
 
-{{ content }}
+<div class="wrapper">
+  {% if title %}
+    <section class="twocol">
+      <h1>{{ title }}</h1>
+      {% if date %}
+        <p>Published:
+          <time class="postlist-date" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>
+        </p>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  <section class="twocol">
+    {{ content }}
+  </section>
+</div>

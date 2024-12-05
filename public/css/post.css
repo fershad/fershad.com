@@ -2,6 +2,10 @@ section > * + * {
   margin-top: 1.75rem;
 }
 
+section > p:first-child {
+  margin-top: 0;
+}
+
 section p,
 section ul,
 section ul li,
@@ -41,4 +45,25 @@ ol {
 ul li > ul {
   margin-top: 1.5rem;
   --marker-color: var(--blue-7);
+}
+
+blockquote {
+  padding: 1.75rem 1.5rem;
+  margin: 1.5rem 0;
+  /* border-top: 1px solid var(--blue-7); */
+  border-bottom: 1px solid var(--blue-7);
+  /* border-right: 0.25rem solid var(--blue-7); */
+  border-left: 1.25rem solid var(--blue-4);
+  /* max-width: 80%; */
+}
+
+blockquote p {
+  margin: 0;
+}
+
+code {
+  background-color: var(--blue-12);
+  color: var(--stone-0);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
 }
