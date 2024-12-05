@@ -413,7 +413,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
-  grid-template-rows: repeat(auto-fill, 50vh);
+  grid-template-rows: auto;
   width: 100%;
 }
 
