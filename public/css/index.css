@@ -416,6 +416,7 @@ main {
   grid-template-rows: auto;
   width: 100%;
   min-height: 90vh;
+  align-items: start;
 }
 
 .wrapper > * {

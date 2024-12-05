@@ -1,9 +1,21 @@
+.wrapper {
+  grid-template-rows: repeat(2, max-content);
+}
+
 section > * + * {
   margin-top: 1.75rem;
 }
 
 section > p:first-child {
   margin-top: 0;
+}
+
+section:first-of-type::before {
+  inline-size: 80%;
+  block-size: var(--line-thickness);
+  /* inset-inline-start: 10%; */
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: calc(100% + var(--gap) / 2);
 }
 
 section p,
@@ -66,4 +78,22 @@ code {
   color: var(--stone-0);
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
+}
+
+.callout {
+  padding: 1.75rem 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--blue-8);
+  border-radius: 0.25rem;
+  background-color: var(--blue-0);
+}
+
+.callout .title {
+  margin: 0;
+  width: fit-content;
+  background-color: var(--blue-8);
+  color: var(--stone-0);
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  margin-left: -1.5rem;
+  font-size: 1.5rem;
 }
