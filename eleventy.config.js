@@ -4,6 +4,7 @@ import { parseHTML } from "linkedom";
 import { hosting } from "@tgwf/co2"
 import markdownit from 'markdown-it'
 
+const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
 
 	eleventyConfig.addWatchTarget("./public/css/");
@@ -39,7 +40,12 @@ export default function(eleventyConfig) {
 		return value.split(" ").slice(0, limit).join(" ") + (value.split(" ").length > limit ? "..." : "");
 	});
 
+
 	eleventyConfig.addShortcode("greenLinks", async function() {
+		if (dev) {
+			return "0 green links / 0 total links";
+		}
+		
 		const content = this.page.rawInput;
 		const filetype = this.page.inputPath.split('.').pop();
 

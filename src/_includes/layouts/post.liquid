@@ -12,7 +12,7 @@ css: post.css
           <time class="postlist-date" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>
         </p>
       {% endif %}
-      <p>{% greenLinks %}</p>
+      {% greenLinks %}
     </section>
   {% endif %}
 

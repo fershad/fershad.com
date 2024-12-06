@@ -50,3 +50,40 @@
   height: 100%;
   gap: 0.75rem;
 }
+
+ul.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.boxes li {
+  padding: 1.5rem;
+  border-left: 2px solid var(--blue-7);
+  border-bottom: 2px solid var(--blue-7);
+  border-right: 2px solid var(--blue-7);
+  border-top: 2px solid var(--blue-7);
+  margin: 0;
+  transition: all 0.25s ease;
+  /* border-radius: 0.25rem; */
+}
+
+ul.boxes li:hover {
+  /* transform: translate3d(0, -0.25rem, 0); */
+  border-left: 2rem solid var(--blue-7);
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+ul.boxes li:after {
+  display: none;
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+}
