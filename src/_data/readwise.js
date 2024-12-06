@@ -10,7 +10,7 @@ export default async function () {
 	let url = `https://readwise.io/api/v3/list/?location=archive&updatedAfter=${isoDate}`;
 
 	let json = await Fetch(url, {
-		duration: "1d", // 1 day caching
+		duration: "5d", // 1 day caching
 		type: "json", // we’ll parse JSON for you
         fetchOptions: {
             headers: {

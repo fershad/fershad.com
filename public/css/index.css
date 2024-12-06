@@ -515,14 +515,16 @@ small .button {
   padding: 0.25rem;
 }
 
-.banner.outline, .button.outline {
+.banner.outline,
+.button.outline {
   /* --banner-line-color: var(--blue-12); */
   background: none;
   border: 2px solid var(--banner-line-color, var(--blue-12));
   color: var(--banner-text-color, var(--blue-12));
 }
 
-.banner.outline:hover, .button.outline:hover {
+.banner.outline:hover,
+.button.outline:hover {
   border-color: var(--blue-4);
   color: var(--blue-4);
 }
@@ -541,7 +543,8 @@ ul {
   padding: 0;
 }
 
-ol, ol li {
+ol,
+ol li {
   list-style: decimal;
   padding: 0;
 }
@@ -552,20 +555,33 @@ ul li:not(:last-of-type) {
   padding: 0;
 }
 
-ul li:not(:last-of-type)::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid var(--line-color);
-    inline-size: 40%;
-    block-size: var(--line-thickness);
-    inset-inline-start: 0;
-    inset-block-start: calc(var(--line-offset) * -1);
-    top: calc(100% + 2rem / 2);
-  }
+ul li:not(:last-of-type)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--line-color);
+  inline-size: 40%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 0;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: calc(100% + 2rem / 2);
 }
 
-header, footer {
+ul li:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid var(--line-color);
+  inline-size: 40%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 0;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: calc(100% + 2rem / 2);
+  left: 60%;
+}
+
+header,
+footer {
   --line-color: var(--blue-2);
   width: 100%;
   max-width: var(--size-xl);
@@ -579,7 +595,7 @@ header, footer {
 header {
   border-bottom: 2px solid var(--line-color);
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 footer {
@@ -596,7 +612,8 @@ footer nav ul li {
   margin-block-start: 2rem;
 }
 
-header nav ul, footer nav ul {
+header nav ul,
+footer nav ul {
   display: flex;
   gap: 1rem;
   flex-direction: row;
@@ -607,7 +624,6 @@ footer nav ul {
   align-items: center;
   margin: 0;
 }
-
 
 @media (max-width: 768px) {
   .wrapper {

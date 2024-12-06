@@ -3,44 +3,44 @@ layout: layouts/list.liquid
 title: Reading
 description: A list of articles, books, and other resources I've read recently.
 ---
-<div class="wrapper">
-  <section class="twocol">
-    <h1>Reading</h1>
-    <p>In the recent past, I've tried to be more regular with the amount of reading I get through. Things change fast in tech & sustainability, and whatever knowledge I might posses stands on the blogs of giants way more well informed than me.</p>
-    <p>I use
-      <a href="https://readwise.io">Readwise Reader</a>
-      to save articles to read, make highlights, and take notes.</p>
-  </section>
+<section class="twocol">
+  <h1>Reading</h1>
+  <p>In the recent past, I've tried to be more regular with the amount of reading I get through. Things change fast in tech & sustainability, and whatever knowledge I might posses stands on the blogs of giants way more well informed than me.</p>
+  <p>I use
+    <a href="https://readwise.io">Readwise Reader</a>
+    to save articles to read, make highlights, and take notes.</p>
+</section>
 
-  <section class="twocol">
-    <h2>Articles</h2>
-    <p>Below is a list of the last 30 articles I've read.</p>
-    <label for="show-summaries">
-      <input
-        gaw:remove
-        type="checkbox"
-        id="show-summaries" />
-      Show summaries
-    </label>
-    <ul>
-      {% for article in readwise.list %}
-        <li>
-          <a class="title" href="{{ article.source_url }}">
-            <p>{{ article.title }}</p>
-          </a>
-          <div>
-            <small>{{ article.site_name }} | Read on: {{ article.last_opened_at | date_to_string }}</small>
-          </div>
-          <p gaw:remove class="summary">{{ article.summary | limitWords }}</p>
-        </li>
-      {% else %}
-        <li>
-          <p>There are no articles.</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
+<section class="twocol">
+  <h2>Articles</h2>
+  <p>Below is a list of the last 30 articles I've read.</p>
+  <label for="show-summaries">
+    <input
+      gaw:remove
+      type="checkbox"
+      id="show-summaries" />
+    Show summaries
+  </label>
+</section>
+<section class="threecol">
+  <ul class="boxes">
+    {% for article in readwise.list %}
+      <li>
+        <a href="{{ article.source_url }}">
+          <p class="title">{{ article.title }}</p>
+        </a>
+        <div>
+          <small>{{ article.site_name }} <br/> Read on: {{ article.last_opened_at | date_to_string }}</small>
+        </div>
+        <p gaw:remove class="summary">{{ article.summary | limitWords }}</p>
+      </li>
+    {% else %}
+      <li>
+        <p>There are no articles.</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
 
 <script gaw:remove>
   const showSummaries = document.getElementById('show-summaries');

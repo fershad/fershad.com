@@ -3,7 +3,6 @@ layout: layouts/list.liquid
 title: Conferences & podcasts
 description: A few of the projects I'm working on currently, or have released into the wild.
 ---
-<div class="wrapper">
   <section class="twocol">
     <h1>Conferences & podcasts</h1>
     <p>I enjoy sharing what I've learned about web performance and sustainability. Below are some of the events I'll be at in the near future, as well as previous events I've spoken at or podcasts I've been on.</p>
@@ -48,13 +47,13 @@ description: A few of the projects I'm working on currently, or have released in
             </div>
             <div class="links">
               {% if item.slides %}
-                <a href="{{ item.slides }}" class="banner outline">View slides</a>
+                <a href="{{ item.slides }}">View slides</a>
               {% endif %}
               {% if item.video %}
-                <a href="{{ item.video }}" class="banner outline">Watch online</a>
+                <a href="{{ item.video }}">Watch online</a>
               {% endif %}
               {% if item.episode %}
-                <a href="{{ item.episode }}" class="banner outline">Listen online</a>
+                <a href="{{ item.episode }}">Listen online</a>
               {% endif %}
             </div>
           </li>
@@ -63,5 +62,4 @@ description: A few of the projects I'm working on currently, or have released in
     {% else %}
       <p>No past events.</p>
     {% endif %}
-  </section>
 </div>

@@ -60,7 +60,8 @@ ul.boxes {
   list-style: none;
 }
 
-ul.boxes li {
+ul.boxes li,
+.links a {
   padding: 1.5rem;
   border-left: 2px solid var(--blue-7);
   border-bottom: 2px solid var(--blue-7);
@@ -71,11 +72,23 @@ ul.boxes li {
   /* border-radius: 0.25rem; */
 }
 
-ul.boxes li:hover {
+ul.boxes li:hover,
+.links a:hover {
   /* transform: translate3d(0, -0.25rem, 0); */
   border-left: 2rem solid var(--blue-7);
   padding-right: 0;
   padding-left: 0.5rem;
+}
+
+.links a {
+  width: 100%;
+  text-align: left;
+}
+
+ul.boxes li:has(.summary.active):hover {
+  border-left: 1rem solid var(--blue-7);
+  padding-right: 1.5rem;
+  padding-left: 0.75rem;
 }
 
 ul.boxes li:after {
