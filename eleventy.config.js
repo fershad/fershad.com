@@ -114,7 +114,8 @@ export default function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPairedShortcode("callout", function(content, title) {
-		return `<aside class="callout"><p class="title">${title}</p>${content}</aside>`;
+		const md = markdownit();
+		return `<aside class="callout">${ title ? `<p class="title">${title}</p>` : ""}${md.render(content)}</aside>`;
 	});
 
 	eleventyConfig.setLibrary("md", mdLib);
