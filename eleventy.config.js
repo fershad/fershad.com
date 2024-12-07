@@ -3,7 +3,13 @@ import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 import { parseHTML } from "linkedom";
 import { hosting } from "@tgwf/co2"
 import markdownit from 'markdown-it'
+import mdfigcaption from 'markdown-it-image-figures'
+import { codeToHtml } from 'shiki'
 
+const figoptions = {
+    figcaption: true
+};
+const mdLib = markdownit({}).use(mdfigcaption, figoptions);
 const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
 
@@ -93,6 +99,25 @@ export default function(eleventyConfig) {
 
 		
 	});
+
+	eleventyConfig.addPairedShortcode("codeToHtml", function(code, lang = "text", filename) {
+		const html = codeToHtml(code, {
+			lang,
+			theme: "plastic",
+		});
+
+		return `
+		<div class="code-block">
+		${filename ? `<p class="filename">${filename}</p>` : ""}
+		${html}
+		</div>`;
+	});
+
+	eleventyConfig.addPairedShortcode("callout", function(content, title) {
+		return `<aside class="callout"><p class="title">${title}</p>${content}</aside>`;
+	});
+
+	eleventyConfig.setLibrary("md", mdLib);
     
     return {
         dir: {

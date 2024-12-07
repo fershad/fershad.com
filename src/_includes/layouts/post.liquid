@@ -3,6 +3,7 @@ layout: layouts/base.liquid
 css: post.css
 ---
 
+{% assign date = published %}
 <div class="wrapper">
   {% if title %}
     <section class="twocol">
@@ -13,6 +14,8 @@ css: post.css
         </p>
       {% endif %}
       {% greenLinks %}
+    {% comment %} TODO: Add Table of Content {% endcomment %}
+    {% comment %} TODO: Add Share link & RSS link {% endcomment %}
     </section>
   {% endif %}
 
