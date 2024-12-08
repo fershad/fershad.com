@@ -18,7 +18,7 @@ css: home.css
     <div>
       <h1>Hey, I'm Fershad.</h1>
       <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                                         
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                                           
           a fossil free internet by 2030.
       </p>
     </div>
@@ -176,6 +176,7 @@ css: home.css
           document.querySelector('#reading ul').appendChild(li);
         });
         document.querySelector('#reading #update-time').textContent = 'Last updated: ' + data.updated;
+        document.querySelector('#refresh-reader').remove();
       });
   })
 </script>
