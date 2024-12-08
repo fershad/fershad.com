@@ -22,12 +22,12 @@ eleventyExcludeFromCollections: true
         </p>
         <small>
           <time class="postlist-date" datetime="{{ post.data.published | date_to_rfc822 }}">{{ post.data.published | date_to_long_string }}</time>
-          |
-          <b>
-            {% if post.data.archived %}
+          {% if post.data.archived %}
+            |
+            <b>
               Archived
-            {% endif %}
-          </b>
+            </b>
+          {% endif %}
         </small>
         {% unless post.data.archived %}
           <p>{{ post.data.summary }}</p>
