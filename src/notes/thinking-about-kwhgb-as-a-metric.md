@@ -5,8 +5,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-thinking-about-k-wh-gb-as-a-metric.png
 layout: layouts/post.liquid
-tags:
-  - note
+
 ---
 
 The use of kilowatt-hours per gigabyte of data transfer in digital carbon emissions models is something that's been the [source](https://fershad.com/writing/is-data-the-best-proxy-for-website-carbon-emissions/) [of much](https://www.debugbear.com/blog/website-carbon-emissions) [conversation](https://calendar.perfplanet.com/2023/why-web-perf-tools-should-be-reporting-website-carbon-emissions/).

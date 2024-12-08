@@ -4,8 +4,7 @@ date: 2024-01-14
 lang: en
 type: post
 thumbnail: /assets/img/opengraph-thinking-about-attributional-v-consequential-models.png
-tags:
-  - note
+
 ---
 
 [Tom Greenwood from Wholegrain Digital](https://www.wholegraindigital.com/team/tom-greenwood/) shared this analogy recently in an email thread. It's too good to lose, and so I'm putting it here for my future self to refer back to.

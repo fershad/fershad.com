@@ -6,8 +6,7 @@ type: post
 thumbnail: /assets/img/opengraph-all-models-are-flawed.png
 layout: layouts/post.liquid
 lastmod: 2024-04-24
-tags:
-  - note
+
   - quote
 ---
 

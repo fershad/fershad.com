@@ -8,8 +8,7 @@ layout: layouts/post.liquid
 seo:
   title: Greenwashing and the COP28 Website
 thumbnail: /assets/img/opengraph-greenwashing-and-the-cop-28-website.png
-tags:
-  - note
+
 ---
 
 Life's been coming at me thick and fast this year so I haven't got around to auditing the COP28 website just yet (see my audits of the [COP27](https://fershad.com/writing/cop27-egypt-a-webpage-sustainability-review/) and [COP26](https://fershad.com/writing/cop26-a-quick-sustainability-check/) websites).

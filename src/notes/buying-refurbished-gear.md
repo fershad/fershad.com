@@ -5,8 +5,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-buying-refurbished-gear.png
 layout: layouts/post.liquid
-tags:
-  - note
+
 ---
 
 Saving this link for my future self and anyone who comes across this post.

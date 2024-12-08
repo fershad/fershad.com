@@ -6,8 +6,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-are-my-third-parties-green-browser-extensions.png
 layout: layouts/post.liquid
-tags:
-  - note
+
 ---
 
 🎉 Are my third parties green? now has browser extensions for Firefox and Chrome!!

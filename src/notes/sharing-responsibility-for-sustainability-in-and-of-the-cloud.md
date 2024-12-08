@@ -8,8 +8,7 @@ slug: sharing-responsibility-cloud-sustainability
 seo:
   - slug: sharing-responsibility-cloud-sustainability
 thumbnail: /assets/img/opengraph-sharing-responsibility-for-cloud-sustainability.png
-tags:
-  - note
+
 ---
 
 ## Sustainability _of_ the cloud

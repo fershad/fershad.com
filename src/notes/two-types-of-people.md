@@ -5,8 +5,7 @@ draft: false
 lang: en
 type: post
 thumbnail: /assets/img/opengraph-two-types-of-people.png
-tags:
-  - note
+
   - quote
 ---
 

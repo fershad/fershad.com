@@ -5,8 +5,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-why-i-run-carbon-aware-checks-on-the-edge.png
 layout: layouts/post.liquid
-tags:
-  - note
+
 ---
 
 On my personal website, I play around with the idea of implementing a [carbon aware website idea](https://fershad.com/carbon-aware-site/). The tl;dr idea is that when pages on my site are served, the energy intensity of the website visitor's local grid is checked. If the energy intensity is dirtier than normal (more fossil fuels powering the grid) then certain parts of my site's design and functionality adjust to reduce compute on the device.

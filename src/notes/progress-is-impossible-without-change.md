@@ -5,8 +5,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-progress-is-impossible-without-change.png
 layout: layouts/post.liquid
-tags:
-  - note
+
   - quote
 ---
 

@@ -5,8 +5,7 @@ lang: en
 type: post
 thumbnail: /assets/img/opengraph-co-2-js-playground.png
 layout: layouts/post.liquid
-tags:
-  - note
+
 seo:
   description: As part of an upcoming workshop for the SDIA's Green Coding Summit, I've made an interactive CO2.js playground for people to get hands on with the capabilities of our little JavaScript library.
 ---

@@ -5,8 +5,7 @@ draft: false
 lang: en
 type: post
 layout: layouts/post.liquid
-tags:
-  - note
+
 ---
 
 Welcome to this new little corner I've created for myself on the internet. This site is a collection of notes and thoughts about different things that catch my interest. It's main purpose is to allow me to get things out of my brain and into the world.
