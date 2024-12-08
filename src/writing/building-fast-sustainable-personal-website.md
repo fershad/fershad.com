@@ -1,6 +1,11 @@
 ---
-title: Building a fast, sustainable personal website
+title: 'Building a fast, sustainable personal website'
 published: 2021/07/05
+permalink:  /writing/building-fast-sustainable-personal-website/
+summary: >-
+  This case study explores the design and development decisions I made when
+  redesigning my personal website. These decisions help to deliver perfect
+  Lighthouse scores and improved website sustainability.
 ---
 
 This website is my home on the internet. It's a place where people can get to know me as a person, and as a professional. This was front of mind when I decided to give the site a redesign in May 2021. Besides being a place to highlight the things I've worked on, I also wanted the site to embody something that I truly care about - sustainability.

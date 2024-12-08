@@ -1,6 +1,11 @@
 ---
 title: Stress testing site performance
 published: 2021/09/13
+permalink:  /writing/stress-testing-site-performance/
+summary: >-
+  As developers, we're normally building and testing websites on devices with
+  decent specs, so testing how your site performs over a slow network or on a
+  low-powered device is one way to help ensure real world performance.
 ---
 
 As developers, we're normally building and testing websites on devices with decent specs. That's fine for productivity, but it does leave a lot of room for performance issues to be missed.

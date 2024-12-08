@@ -1,6 +1,12 @@
 ---
 title: Two options for making responsive tables for your website
 published: 2020/03/27
+permalink:  /writing/options-for-making-responsive-tables/
+summary: >-
+  I recently found myself having to create a website that presented a lot of
+  data in tabular format. This post goes through two approached that I tried
+  out. Firstly, using table markup and horizontal scrolling, and then looking at
+  how it can happen with CSS Grid.
 ---
 
 I recently found myself having to create a website that presented a lot of data in tabular format. If we were only having to think about tablet and desktop displays then that's easy. However, things get a bit trickier when trying to present tabular data on mobile viewports. Of course, we don't want to overload visitors by cramming all the data into the viewport. At the same time we want to present it in a fashion that is clean, elegant, and makes data discoverable.

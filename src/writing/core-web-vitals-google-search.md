@@ -2,7 +2,14 @@
 title: Core Web Vitals and Google Search
 published: 2020/11/27
 archived: true
-archiveNote: "Core Web Vitals have evolved significantly since I wrote this post. You should try to reference more recent content."
+archiveNote: >-
+  Core Web Vitals have evolved significantly since I wrote this post. You should
+  try to reference more recent content.
+permalink:  /writing/core-web-vitals-google-search/
+summary: >-
+  Core Web Vitals are a set of page experience metrics that will be making up
+  part of Google's the search ranking mix from June, 2021. So, what exactly are
+  they?
 ---
 
 {% callout Archived %}

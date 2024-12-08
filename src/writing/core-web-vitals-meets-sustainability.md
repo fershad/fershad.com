@@ -1,6 +1,11 @@
 ---
 title: Core Web Vitals meets sustainability
 published: 2021/11/26
+permalink:  /writing/core-web-vitals-meets-sustainability/
+summary: >-
+  Everyone wants to make sure their website's Core Web Vitals are up to
+  standard. What if we told you that some of the very things you'll do to
+  improve your site's Core Web Vitals can also help make it more sustainable!
 ---
 
 This article was [originally published on the EcoPing blog](https://ecoping.earth/blog/core-web-vitals-and-sustainability).
@@ -48,8 +53,8 @@ What can you do:
 {% endcallout %}
 
 - If you do still use hero elements, consider the following:
-  - Optimise the image to within an inch of its life.
-  - Avoid auto-playing any hero video content. Be creative with how you design around hero video elements - could it start playing only after the user has interacted with the page? ([Justdiggit](https://justdiggit.org/) have a great example on their homepage).
+    - Optimise the image to within an inch of its life.
+    - Avoid auto-playing any hero video content. Be creative with how you design around hero video elements - could it start playing only after the user has interacted with the page? ([Justdiggit](https://justdiggit.org/) have a great example on their homepage).
 
 {% callout %}
 💙 These are the next best options for a sustainable website.
@@ -66,8 +71,8 @@ What can you do:
 
 - The most impactful thing you can do is to not use web fonts at all on your site, and instead rely on the fonts that come built into every OS (system fonts).
 - If you are using web fonts:
-  - Use modern font formats like WOFF2 or WOFF. They are a fraction of the size of other formats.
-  - If your font license allows, you can also try removing unused characters from your font files. This is known as subsetting.
+    - Use modern font formats like WOFF2 or WOFF. They are a fraction of the size of other formats.
+    - If your font license allows, you can also try removing unused characters from your font files. This is known as subsetting.
 
 {% callout %}
 💚 Either, ideally both, of these options will help greatly reduce the weight of font files on your site.
@@ -81,8 +86,8 @@ What can you do:
 
 - Regularly audit the JavaScript code on your site - especially third-party code (like analytics, tag managers etc.). Routinely remove scripts you find which are no longer needed.
 - Try to reduce the CSS you use on your page.
-  - If your site has a build step, can you create unique CSS files for each page which contains only the classes and selectors used for a given page?
-  - Break CSS up into separate files for different sections of a page. For example, you might separate the CSS for your header section, footer, blog posts, and image gallery into four separate files. This will allow you to load those files only when they are needed (if a page doesn't have an image gallery, it doesn't need that CSS). It will also allow you to benefit from caching for files that are used across multiple pages on your site.
+    - If your site has a build step, can you create unique CSS files for each page which contains only the classes and selectors used for a given page?
+    - Break CSS up into separate files for different sections of a page. For example, you might separate the CSS for your header section, footer, blog posts, and image gallery into four separate files. This will allow you to load those files only when they are needed (if a page doesn't have an image gallery, it doesn't need that CSS). It will also allow you to benefit from caching for files that are used across multiple pages on your site.
 
 {% callout %}
 💡 There are other techniques you can use as well, like [asynchronously loading CSS](https://www.filamentgroup.com/lab/async-css.html) and [using defer/async attributes appropriately](https://flaviocopes.com/javascript-async-defer/) for JavaScript files. However, the strategies above will reduce the amount of CSS/JS you end up shipping to the user. 💚 This is better for the planet.

@@ -1,6 +1,10 @@
 ---
-title: Which CMS, e-commerce platforms, and CDNs deliver the best core web vitals?
+title: 'Which CMS, e-commerce platforms, and CDNs deliver the best core web vitals?'
 published: 2020/10/12
+permalink:  /writing/which-cms-e-commerce-platforms-cdns-best-core-web-vitals/
+summary: >-
+  Here's a really detailed look at 18.5 million domains and how they stack up
+  against Google Core Web Vitals metrics.
 ---
 
 The SISTRIX team have compiled a really detailed look at 18.5 million domains and how they stack up against Google Core Web Vitals metrics. You can [read their full study here](https://www.sistrix.com/blog/core-web-vitals-wix-vs-wordpress-shopify-vs-shopware-whats-fastest).

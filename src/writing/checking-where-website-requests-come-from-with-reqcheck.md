@@ -1,6 +1,12 @@
 ---
 title: Checking where website requests come from with ReqCheck
 published: 2022/12/11
+permalink:  /writing/checking-where-website-requests-come-from-with-reqcheck/
+summary: >-
+  ReqCheck is a tool I’ve built to help folks find out where all the different
+  requests made by a web page are served from. I’m hoping it can be a tool for
+  both web sustainability and web performance folks to use when auditing
+  websites.
 ---
 
 [ReqCheck](https://reqcheck.fershad.com) is a tool I’ve built to help folks find out where all the different requests made by a web page are served from. The idea for it came while I was writing up a [website sustainability audit of the COP27 homepage](https://fershad.com/writing/cop27-egypt-a-webpage-sustainability-review/).

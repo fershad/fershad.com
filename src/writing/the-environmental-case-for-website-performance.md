@@ -1,6 +1,10 @@
 ---
 title: The environmental case for website performance
 published: 2021/04/01
+permalink:  /writing/the-environmental-case-for-website-performance/
+summary: >-
+  What's the link between a faster website and climate change? In this post I'll
+  explain how you can help the environment by focusing on website performance.
 ---
 
 What's the link between a faster website and climate change? You might be surprised.

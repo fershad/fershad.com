@@ -1,6 +1,10 @@
 ---
-title: "COP27 Egypt: A webpage sustainability review"
+title: 'COP27 Egypt: A webpage sustainability review'
 published: 2022/10/28
+permalink:  /writing/cop27-egypt-a-webpage-sustainability-review/
+summary: >-
+  As COP27 approaches, I thought it would be “fun” to take a look at this year’s
+  COP homepage. How does it do in terms of website sustainability?
 ---
 
 Around this time last year there was a lot of focus on the upcoming COP26 summit in Glasgow. Rightly so, as it marked the five-year anniversary of the Paris Agreement. Under that agreement, countries agreed to revisit and strengthen their commitments towards limiting global temperature rise to 1.5 degrees Celsius at the 26th COP.

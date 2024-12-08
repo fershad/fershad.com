@@ -1,6 +1,10 @@
 ---
 title: Self-hosting a website on a solar powered Raspberry Pi
 published: 2023/03/30
+permalink:  /writing/self-hosting-a-website-on-a-solar-powered-raspberry-pi/
+summary: >-
+  A conversation from the ClimateAction.Tech community about self-hosting a
+  website on a solar powered Raspberry Pi.
 ---
 
 This week has been all about getting back into the swing of a regular work routine after spending 10 days in Germany. It was nice to have a bit of break, and spend time mixed between city and rural life in Germany. I came away from my time there with a load of other ideas to tinker with throughout the year, so expect a few more “how I build this” kinda posts in the future.

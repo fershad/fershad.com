@@ -1,6 +1,11 @@
 ---
 title: Including user interaction in website carbon estimates
 published: 2024/07/09
+permalink:  /writing/including-user-interaction-in-website-carbon-estimates/
+summary: >-
+  This post explores one way developers can go beyond page load and start
+  estimating web page carbon emissions that include user interactions on the
+  page.
 ---
 
 All the website carbon calculators I know about work in roughly the same way:

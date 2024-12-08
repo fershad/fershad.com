@@ -1,6 +1,8 @@
 ---
-title: "Eleventy Plugin: Green Links"
+title: 'Eleventy Plugin: Green Links'
 published: 2023/03/18
+permalink:  /writing/eleventy-plugin-green-links/
+summary: A small Eleventy plugin I built at the end of February 2023.
 ---
 
 If you want the TL;DR version of this post, check out the readme for this project [on Github](https://github.com/fershad/eleventy-plugin-green-links).

@@ -1,6 +1,10 @@
 ---
 title: Dynamic page content with Cloudflare Workers
 published: 2021/05/24
+permalink:  /writing/dynamic-page-content-with-cloudflare-workers/
+summary: >-
+  A brief guide on how Cloudflare Workers can allow you to add random content to
+  your website without client-side JavaScript.
 ---
 
 {% callout "Disclaimer" %}

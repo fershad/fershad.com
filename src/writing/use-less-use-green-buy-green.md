@@ -1,6 +1,12 @@
 ---
 title: “Use less. Use green. Buy green.”
 published: 2022/01/06
+permalink:  /writing/use-less-use-green-buy-green/
+summary: >-
+  By using less power, using green power, and buying from green suppliers
+  businesses and individuals alike can reduce their carbon footprint. How would
+  we go about applying this same thinking to website performance and
+  sustainability?
 ---
 
 This post is inspired by a quote from a podcast I listened to just before Christmas. The podcast is My Climate Journey hosted by Jason Jacobs. In the episode [(Ep. 189) Jason speaks with Kentaro Kawamori](https://www.myclimatejourney.co/episodes/kentaro-kawamori), Co-founder and CEO of Persefoni. Persefoni is a Climate Management & Accounting Platform. You can listen to the podcast to learn more about what they do.

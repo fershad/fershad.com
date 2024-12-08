@@ -1,6 +1,11 @@
 ---
 title: YouTube facades with Cloudflare Workers
 published: 2022/06/24
+permalink:  /writing/youtube-facades-with-cloudflare-workers/
+summary: >-
+  YouTube embeds can added megabytes of data to a website, even if they are not
+  watched by the user. This post looks at a way to use Cloudflare Workers plus a
+  facade to reduce that initial data load.
 ---
 
 [Lazy load third-party resources with facades](https://web.dev/third-party-facades/). That’s one of the recommendations you might have come across when running your site through Google Lighthouse audits. Using facades can greatly reduce the amount of data downloaded, and (at times) computation required, when a page first loads.

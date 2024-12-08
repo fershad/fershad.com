@@ -1,6 +1,10 @@
 ---
 title: Rotating buttons in CSS
 published: 2020/04/09
+permalink:  /writing/rotating-buttons-in-css/
+summary: >-
+  Here's a really quick little code note that shows how to create rotating
+  buttons using just a tiny bit of JavaScript and some CSS.
 ---
 
 Here's a really quick little code note for a cool button style. I implemented this rotating button style in the filter section of my [Markdown Cheat Sheet app](https://markdown.fershad.com). You can check it out there, or at the CodePen below.WebPageTest waterfall chart showing render-blocking requests.

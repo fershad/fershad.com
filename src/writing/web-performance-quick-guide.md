@@ -1,6 +1,12 @@
 ---
 title: A quick guide to easy web performance wins
 published: 2020/07/27
+permalink:  /writing/web-performance-quick-guide/
+summary: >-
+  This post stems from a conversation I had with a good friend of mine last
+  week. We were talking about how to boost website traffic, and conversions. As
+  I explained to him, and as we'll get to in this post, there's more to the game
+  than just fresh, keyword laden content.
 ---
 
 This post stems from a conversation I had with a good friend of mine last week. We were talking about how to boost website traffic, and conversions. As I explained to him, and as we'll get to in this post, there's more to the game than just fresh, keyword laden content.

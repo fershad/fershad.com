@@ -1,6 +1,10 @@
 ---
-title: "The why of website optimisation: Better search ranking"
+title: 'The why of website optimisation: Better search ranking'
 published: 2020/10/05
+permalink:  /writing/website-optimisation-improve-search-ranking/
+summary: >-
+  This is the fourth post in a series where I'll outline how website
+  optimisation can help you with SEO performance.
 ---
 
 This is the fourth post in a series where I'll outline the benefits that can be derived through website optimisation. Not only will we touch on monetary aspects, but we'll also get into environmental impact, and customer experience.

@@ -1,6 +1,10 @@
 ---
 title: Why web perf tools should be reporting website carbon emissions
 published: 2023/12/20
+permalink:  /writing/why-web-perf-tools-should-be-reporting-website-carbon-emissions/
+summary: >-
+  This post was originally published as part of the 2023 Web Performance
+  Calendar.
 ---
 
 _This post was originally published as part of the [2023 Web Performance Calendar](https://calendar.perfplanet.com/2023/why-web-perf-tools-should-be-reporting-website-carbon-emissions/)._

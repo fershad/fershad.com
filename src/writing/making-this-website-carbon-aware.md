@@ -3,6 +3,11 @@ title: Making this website carbon aware
 published: 2023/02/03
 archived: true
 archiveNote: This website is now grid-aware
+permalink:  /writing/making-this-website-carbon-aware/
+summary: >-
+  Building carbon awareness into products is an important strategy to in the
+  challenge to develop a more sustainable future. In this post, I cover how I
+  used Cloudflare Workers and real-time data to make this website carbon aware.
 ---
 
 {% callout "This website is now grid-aware" %}

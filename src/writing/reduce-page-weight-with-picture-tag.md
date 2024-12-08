@@ -1,6 +1,12 @@
 ---
 title: Reduce the Weight of Your Web Pages with the Picture Tag
 published: 2020/09/16
+permalink:  /writing/reduce-page-weight-with-picture-tag/
+summary: >-
+  Images often combine to make up the largest group of resources on a web page
+  (in terms of file size). Therefore, optimising images is one of the easiest
+  steps any website owner can take when looking at improving the performance of
+  their website.
 ---
 
 Images often combine to make up the largest group of resources on a web page (in terms of file size). Therefore, optimising images is one of the easiest steps any website owner can take when looking at improving the performance of their website.

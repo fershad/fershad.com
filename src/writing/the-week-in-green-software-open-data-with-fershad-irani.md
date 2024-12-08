@@ -1,6 +1,10 @@
 ---
-title: "The Week in Green Software: Open Data with Fershad Irani"
+title: 'The Week in Green Software: Open Data with Fershad Irani'
 published: 2023/08/12
+permalink:  /writing/the-week-in-green-software-open-data-with-fershad-irani/
+summary: >-
+  A couple of weeks ago I had the pleasure of jumping on the  Environment
+  Variables: This  Week in Green Software podcast with Chris Adams.
 ---
 
 A couple of weeks ago I had the pleasure of jumping on the Environment Variables: This Week in Green Software podcast with Chris Adams. I work with Chris at the Green Web Foundation, but it was fun to nerd out about news across the sustainable tech space on the podcast.

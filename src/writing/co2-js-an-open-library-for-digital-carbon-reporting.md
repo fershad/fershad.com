@@ -1,6 +1,12 @@
 ---
-title: "CO2.js: An Open Library for Digital Carbon Reporting"
+title: 'CO2.js: An Open Library for Digital Carbon Reporting'
 published: 2022/09/06
+permalink:  /writing/co2-js-an-open-library-for-digital-carbon-reporting/
+summary: >-
+  Uploading and downloading the bits and bytes that make up the internet uses a
+  lot of electricity. Breaking the internet down to a systems level, data
+  transfer over networks accounts for an estimated 14% of the web’s total
+  electricity consumption.
 ---
 
 This article was originally published in [ClimateAction.tech's Branch Magazine](https://branch.climateaction.tech/issues/issue-4/co2js/).

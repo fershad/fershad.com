@@ -1,6 +1,15 @@
 ---
-title: Curious about driving the transition to a fossil-free internet? Here’s how CO2.js can help.
+title: >-
+  Curious about driving the transition to a fossil-free internet? Here’s how
+  CO2.js can help.
 published: 2023/03/09
+permalink:  >-
+  /writing/curious-about-driving-the-transition-to-a-fossil-free-internet-heres-how-co2-js-can-help/
+summary: >-
+  CO2.js is one of the tools we’ve created to help developers drive the
+  transition to a fossil-free internet. This article will explain the concepts
+  behind CO2.js, it’s uses, and when other tools might be better options to
+  consider.
 ---
 
 _This post was originally published on The Green Web Foundation's blog. You can [read the original post here](https://www.thegreenwebfoundation.org/news/curious-about-driving-the-transition-to-a-fossil-free-internet-heres-how-co2-js-can-help/)._

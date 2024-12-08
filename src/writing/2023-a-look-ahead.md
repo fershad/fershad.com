@@ -1,6 +1,8 @@
 ---
 title: "2023. A look ahead"
 published: 2023/01/06
+permalink:  /writing/2023-a-look-ahead/
+summary: "I’m excited for the year of 2023, both professionally & personally."
 ---
 
 After taking [a look back](https://fershad.com/writing/2022-in-review/) at some of the stuff I got through in 2022, I thought it would be a nice exercise to cast an eye ahead and write out some of things I’m excited about for 2023. There’s a mix of professional and personal listed below, in no particular order.

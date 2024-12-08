@@ -1,6 +1,8 @@
 ---
 title: 2023 in review
 published: 2023/12/29
+permalink:  /writing/2023-in-review/
+summary: A look back at a very full 2023.
 ---
 
 Well, 2023 pretty much done and dusted. A solid year work wise, and a pretty big one personally. I’m really not great with keep journals or notes of things that happen, so this review might be a bit scattered. Something to improve on in 2024 I suppose.

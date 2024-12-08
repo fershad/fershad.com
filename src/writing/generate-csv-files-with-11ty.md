@@ -1,6 +1,11 @@
 ---
 title: Generate CSV Files from Data with 11ty
 published: 2020/09/16
+permalink:  /writing/generate-csv-files-with-11ty/
+summary: >-
+  Eleventy is one heck of a powerful, incredibly flexible static site generator.
+  This short guide will show you how you can generate CSV data files using
+  Eleventy.
 ---
 11ty ([Eleventy](http://11ty.dev/)) is one heck of a powerful, incredibly flexible static site generator. One of the great things about using it is that after you run the initial NPM install step, Eleventy pretty much gets out of the way and lets you get about building your website using tools, languages, and processes that work for you. More, and more I find it being the first solution that springs to mind when a new website needs to be spun up.
 

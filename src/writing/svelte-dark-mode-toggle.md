@@ -1,6 +1,10 @@
 ---
 title: Dark Mode toggle for Svelte
 published: 2020/04/13
+permalink:  /writing/svelte-dark-mode-toggle/
+summary: >-
+  This quick code note will go through creating a simple component in Svelte
+  that allows us to switch the theme of our website between light and dark.
 ---
 
 ## Toggle Component

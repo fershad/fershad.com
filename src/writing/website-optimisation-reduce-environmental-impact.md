@@ -1,6 +1,10 @@
 ---
-title: "The why of website optimisation: Help the planet"
+title: 'The why of website optimisation: Help the planet'
 published: 2020/10/05
+permalink:  /writing/website-optimisation-reduce-environmental-impact/
+summary: >-
+  This is the third post in a series where I'll outline the environmental
+  benefits that can be derived through website optimisation.
 ---
 
 This is the third post in a series where I'll outline the benefits that can be derived through website optimisation. Not only will we touch on monetary aspects, but we'll also get into environmental impact, and customer experience.

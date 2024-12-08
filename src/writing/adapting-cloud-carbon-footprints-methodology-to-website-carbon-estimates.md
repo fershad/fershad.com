@@ -1,6 +1,12 @@
 ---
 title: Adapting Cloud Carbon Footprint's methodology to website carbon estimates
 published: 2024/01/05
+permalink:  >-
+  /writing/adapting-cloud-carbon-footprints-methodology-to-website-carbon-estimates/
+summary: >-
+  In this post I will look at an possible alternative approach to calculating
+  the emissions of the server (data center/hosting) segment for websites using
+  the methodology outlined by Cloud Carbon Footprint.
 ---
 
 There's been some conversation lately about the [shortcomings of different website carbon estimation models](https://www.debugbear.com/blog/website-carbon-emissions). It's something I've [touched on here](https://fershad.com/writing/is-data-the-best-proxy-for-website-carbon-emissions/) [and elsewhere](https://calendar.perfplanet.com/2023/why-web-perf-tools-should-be-reporting-website-carbon-emissions/) in the past too. I think there's a consensus in the community on the need for more accurate models that representative of how the modern web works. This entails a [shift away from data transfer](https://fershad.com/writing/website-carbon-beyond-data-transfer/) as the sole proxy for all the system segments in website emission calculations.

@@ -1,6 +1,11 @@
 ---
-title: Storing, using, and keeping environment variables secret in local environments
+title: 'Storing, using, and keeping environment variables secret in local environments'
 published: 2019/09/28
+permalink:  /writing/store-use-secret-environment-variables-locally/
+summary: >-
+  A quick note on how to create, and use environment variables locally. They can
+  be used to keep API keys, secrets, passwords and other sensitive material that
+  you'd rather not expose to the public on GitHub, GitLab or Bitbucket
 ---
 
 Environment variables are locally stored key=value pairs that can be accessed by your code. They're great for storing API keys, secrets, passwords and other sensitive material. They also help you not expose to those secrets to the public on GitHub, GitLab or Bitbucket. Here's how to create and use environment variables locally on your machine.

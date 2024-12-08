@@ -1,6 +1,12 @@
 ---
 title: Frontend tips to speed up your WordPress website
 published: 2021/06/28
+permalink:  /writing/frontend-tips-speed-up-you-wordpress-website/
+summary: >-
+  WordPress powers over 40% of the internet. It's a powerful platform that makes
+  content creation possible for more people. In this post we'll cover some
+  simple performance optimisation tips you can use to make your WordPress
+  website faster!
 ---
 
 _This post was [originally published](https://optimised.email/issues/issue-19-speed-up-your-wordpress-website) in my fortnightly newsletter, Optimised._

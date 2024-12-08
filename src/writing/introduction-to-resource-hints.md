@@ -1,6 +1,8 @@
 ---
 title: An introduction to HTML resource hints
 published: 2021/02/24
+permalink:  /writing/introduction-to-resource-hints/
+summary: "An easy-to-follow introduction to the different resource hints available to help improve web page performance."
 ---
 
 This blog post is a consolidation of information from [two newsletter issues](https://optimised.email/issues/issue-9-resource-hints-part-1) that I [sent out recently](https://optimised.email/issues/issue-10-resource-hints-part-2).

@@ -1,6 +1,11 @@
 ---
 title: Proxying AWS S3 content with Cloudflare Workers
 published: 2021/08/16
+permalink:  /writing/proxy-aws-s3-content-cloudflare-workers/
+summary: >-
+  Using resources hosted by a third-party can seriously hurt website performance
+  in a few ways. In this post, we'll cover how you can use a proxy to reduce the
+  performance impact when hosting content in AWS S3 bucket.
 ---
 
 A common use case for proxying requests would be when hosting content in Amazon Web Services S3 buckets. Not only is this handy for performance, but it can also reduce your AWS bill if you cache assets that are delivered by the proxy. Another benefit is that it allows you to use international S3 buckets to serve content to users that might be located in China - which has special conditions in place for storing & delivering AWS content.

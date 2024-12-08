@@ -1,6 +1,12 @@
 ---
 title: How I would build my 2019 Rugby World Cup fixtures site differently next time.
 published: 2019/10/31
+permalink:  /writing/how-would-i-rebuild-my-rugby-world-cup-website/
+summary: >-
+  Mid-September, over a typhoon holiday long weekend in Taipei, I put together a
+  very simple website for the 2019 Rugby World Cup. With the 2019 Rugby World
+  Cup now almost at an end, I've been thinking about how I might build a similar
+  website differently next time.
 ---
 
 Mid-September, over a typhoon holiday long weekend in Taipei, I put together a [very simple website](https://rwc2019.fershad.com) for the 2019 Rugby World Cup. My goal was to show all the fixtures of a tournament for a range of time zones. I also wanted to challenge my design skills and further refine my JAMStack development skillset. I didn't want it to be overly complicated. And I wanted to build it without using any libraries or frameworks as much as possible.

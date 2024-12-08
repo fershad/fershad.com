@@ -1,6 +1,10 @@
 ---
 title: This website is a FLoC-free zone
 published: 2021/04/17
+permalink:  /writing/this-website-is-a-floc-free-zone/
+summary: >-
+  I switched analytics away from Google late last year. Now, I've also added
+  response headers that will exclude this site from FLoC calculations too.
 ---
 
 In November 2020 I switched my website analytics away from Google. I now (very happily) [use Fathom Analytics](https://usefathom.com/ref/CEHKLY) - a privacy-focused analytics service from Canada. Unlike Google Analytics, Fathom is a paid service that provides a much simpler collection of data.

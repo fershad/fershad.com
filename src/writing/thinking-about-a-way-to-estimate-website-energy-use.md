@@ -1,6 +1,11 @@
 ---
 title: Thinking about a way to estimate website energy use
 published: 2024/02/06
+permalink:  /writing/thinking-about-a-way-to-estimate-website-energy-use/
+summary: >-
+  In this post, I want to continue building out an incremental model, but rather
+  than focusing on emissions calculations I want to create a model to estimate
+  energy use.
 ---
 
 In January, I had some fun [rejigging the Cloud Carbon Footprint (CCF) methodology](https://fershad.com/writing/adapting-cloud-carbon-footprints-methodology-to-website-carbon-estimates/) to see how it might be adapted to calculate server-side emissions in a website carbon estimation model. It was a great little thought experiment, and something that I learnt a lot from in the process.

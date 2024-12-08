@@ -1,6 +1,10 @@
 ---
-title: "The why of website optimisation: Increase site conversions"
+title: 'The why of website optimisation: Increase site conversions'
 published: 2020/10/05
+permalink:  /writing/website-optimisation-increase-conversions-engagement/
+summary: >-
+  This is the first in a series of five posts where I'll outline the benefits
+  that can be derived through website optimisation.
 ---
 
 This is the first in a series of five posts where I'll outline the benefits that can be derived through website optimisation. Not only will we touch on monetary aspects, but we'll also get into environmental impact, and customer experience.

@@ -1,6 +1,11 @@
 ---
 title: CSS can probably do that
 published: 2021/03/09
+permalink:  /writing/css-can-probably-do-that/
+summary: >-
+  Rather than immediately reaching for JavaScript to handle on-page
+  interactions, why not stop and think Could CSS do that? You'd be surprised, it
+  probably can.
 ---
 
 In the not too distant past, web developers would almost instinctively reach for jQuery when starting out a new project. The features and capabilities it opened up were immense and were simply not present in native JavaScript at that time.

@@ -1,6 +1,11 @@
 ---
 title: Chasing efficiency rather than green energy
 published: 2023/04/27
+permalink:  /writing/chasing-efficiency-rather-than-green-energy/
+summary: >-
+  A recent post by Adrian Cockcroft raised some sensible counter arguments for
+  why chasing green energy usage for cloud compute might not always be the most
+  climate friendly solution.
 ---
 
 Last week, I read [_Don’t follow the sun: Scheduling compute workloads to chase green energy can be counter-productive_](https://adrianco.medium.com/dont-follow-the-sun-scheduling-compute-workloads-to-chase-green-energy-can-be-counter-productive-b0cde6681763) by Adrian Cockcroft on Medium. In it, Adrian makes some pretty sensible sounding arguments for why shifting workloads to use the greenest energy might not be the climate friendly solution we imagine it to be.

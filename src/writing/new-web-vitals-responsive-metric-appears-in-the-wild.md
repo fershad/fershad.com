@@ -1,6 +1,11 @@
 ---
 title: New Web Vitals Responsive Metric Appears in the Wild
 published: 2022/03/18
+permalink:  /writing/new-web-vitals-responsive-metric-appears-in-the-wild/
+summary: >-
+  At Chrome Dev Summit 2021, Google introduced a couple of new potential Web
+  Vitals metrics it’s looking into. One of these, responsiveness, has now begun
+  appearing in the wild.
 ---
 
 In [a blog post last June](https://web.dev/better-responsiveness-metric/), Google tabled some of the ways it was looking to improve capturing and reporting on website responsiveness. [Last November](https://web.dev/responsiveness/) they put forward details of a new responsiveness metric that would go beyond what is currently measured by First Input Delay (FID).

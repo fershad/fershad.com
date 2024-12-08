@@ -1,6 +1,12 @@
 ---
-title: "'Hello, world.' A little bit about me."
+title: '''Hello, world.'' A little bit about me.'
 published: 2019/08/28
+permalink:  /writing/hello-world-a-little-bit-about-me/
+summary: >-
+  This will hopefully be the first of many blog posts in which I cover content
+  spanning web development, running a business, freelancing, and just general
+  musings. Here's a little bit more about me, my hobbies, my past lives
+  professionally and what I'm doing these days.
 ---
 
 Yep, a totally cheesy title for a first post but whatever.

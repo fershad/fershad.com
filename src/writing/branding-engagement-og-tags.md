@@ -1,6 +1,11 @@
 ---
 title: Boost branding and engagement with Open Graph meta tags
 published: 2020/08/19
+permalink:  /writing/branding-engagement-og-tags/
+summary: >-
+  When we share content on social media we want it to be read. This blog posts
+  introduces how Open Graph tags can be used to present eye-catching,
+  consistenly branded shared content across social media platforms.
 ---
 
 There may only be a handful of people out there who read every single post that's on their Facebook, Twitter or LinkedIn feed. Most of us just scroll through, giving the content a casual glance as we go by. But as content creators, we ideally want people to notice and click through to our content when it is shared on social media platforms, or even through chat apps. How can we help achieve that?

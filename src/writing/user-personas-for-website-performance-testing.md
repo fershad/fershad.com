@@ -1,6 +1,12 @@
 ---
 title: Creating user personas for website performance testing
 published: 2022/03/29
+permalink:  /writing/user-personas-for-website-performance-testing/
+summary: >-
+  The web makes it possible for businesses to reach audiences well outside of
+  their immediate geographic area. This presents its own set of challenges to
+  ensure online content and experiences remain fast for potential customers
+  around the world.
 ---
 
 In a past life, I worked in product marketing. One of the things our management would regularly ask us to do was to research and create user persona. These personas would form the basis around which would we write and craft the marketing materials for our products. In the same way, it helps to have some baseline personas on hand when looking at doing performance testing on a website.

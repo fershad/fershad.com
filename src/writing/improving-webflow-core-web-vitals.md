@@ -1,6 +1,12 @@
 ---
 title: Improving Webflow Core Web Vitals
 published: 2021/11/20
+permalink:  /writing/improving-webflow-core-web-vitals/
+summary: >-
+  Webflow makes it easy for content creators and marketing teams to build
+  stylish websites fast. But this can come with the risk to publishing a site
+  with poor Core Web Vitals. This post covers some of the things to look out for
+  when building with Webflow.
 ---
 
 I've recently spent some time diving into a few sites made with [Webflow](https://webflow.com). If you've never heard of Webflow it is an online service for building and hosting websites. At its heart is a visual editing interface that allows anyone to design, build, and launch a website. Webflow also has CMS and e-commerce features.

@@ -1,6 +1,10 @@
 ---
 title: Lazy-loading embedded iframes
 published: 2020/10/22
+permalink:  /writing/lazy-loading-embedded-iframes/
+summary: >-
+  Lazy-loading iframes can lead to data savings for your users, faster page
+  loads, and quick interactivity for your site.
 ---
 
 Lazy-loading has been a fairly common practice in web development for many years now. At it's core it aims to deliver faster page loads by deferring the loading of elements that are outside the initial viewport area. As the user scrolls down the page these elements (normally images) are loaded "just in time".

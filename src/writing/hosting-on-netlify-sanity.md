@@ -2,7 +2,16 @@
 title: Why I now run my website on Netlify and Sanity
 published: 2019/09/06
 archived: true
-archiveNote: This website is now hosted on Cloudflare Pages, and I've recently moved all my content into markdown files.
+archiveNote: >-
+  This website is now hosted on Cloudflare Pages, and I've recently moved all my
+  content into markdown files.
+permalink:  /writing/hosting-on-netlify-sanity/
+summary: >-
+  Recently I moved my entire website from Heroku to Netlify. The key driver was
+  to remove the $7 monthly cost of running on Heroku's 'Hobby' plan. It's also
+  allowed me able to make the website more performant without losing the ability
+  to add and manage content. Oh, and I was also able to build this blog into the
+  newly migrated website pretty quickly too!
 ---
 
 {% callout Archived%}

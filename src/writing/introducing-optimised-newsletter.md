@@ -2,7 +2,13 @@
 title: Introducing Optimised
 published: 2020/09/29
 archived: true
-archiveNote: After a couple of years, I decided to stop publishing the Optimised newsletter. Instead, I'm publishing everything to this blog.
+archiveNote: >-
+  After a couple of years, I decided to stop publishing the Optimised
+  newsletter. Instead, I'm publishing everything to this blog.
+permalink:  /writing/introducing-optimised-newsletter/
+summary: >-
+  Optimised is a fortnightly newsletter focused on the ways website performance
+  and optimisation can help your customers, your business, and the planet.
 ---
 
 {% callout "Archived" %}

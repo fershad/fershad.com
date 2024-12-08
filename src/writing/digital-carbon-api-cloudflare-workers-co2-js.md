@@ -1,6 +1,10 @@
 ---
 title: Building a digital carbon API with Cloudflare Workers and CO2.js
 published: 2022/08/19
+permalink:  /writing/digital-carbon-api-cloudflare-workers-co2-js/
+summary: >-
+  In this post we’ll build a simple API to calculate the carbon emissions for
+  digital data transfer using CO2.js and Cloudflare Workers.
 ---
 
 CO2.js is a library that allows developers to estimate the emissions related to use of their apps, websites, and software. At its core, CO2.js takes an input of data, in bytes, and returns an estimate of the carbon emissions produced to move that data over the internet.

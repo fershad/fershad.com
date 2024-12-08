@@ -2,7 +2,15 @@
 title: Building my first app with Svelte 3
 published: 2020/04/07
 archived: true
-archiveNote: "Svelte is now up to version 5, so you probably want to read up about that instead."
+archiveNote: >-
+  Svelte is now up to version 5, so you probably want to read up about that
+  instead.
+permalink:  /writing/building-my-first-svelte-app/
+summary: >-
+  After doing a few tutorials last month, I finally got around to creating my
+  first app in Svelte. In this blog post I go through some of my first
+  impressions on the framework as I start building with the training wheels
+  taken off!
 ---
 
 {% callout Archived %}

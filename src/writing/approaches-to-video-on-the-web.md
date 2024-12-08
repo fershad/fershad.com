@@ -1,6 +1,11 @@
 ---
 title: Approaches to video on the web
 published: 2021/12/23
+permalink:  /writing/approaches-to-video-on-the-web/
+summary: >-
+  Video is becoming an increasingly critical part of the online experience. So
+  how can you include video on a web page without hurting Core Web Vitals,
+  performance or digital sustainability?
 ---
 
 I’ve recently been working on a website build for a client that wanted to self-host videos in their Content Management System (CMS). To make things a bit more challenging from a performance perspective they also wanted to be able to use hero videos on parts of their site. This sent me down a bit of a rabbit hole looking at some of the best ways to handle video on the web, from both a performance and sustainability perspective.

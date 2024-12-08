@@ -1,6 +1,12 @@
 ---
-title: "Website carbon: Beyond data transfer"
+title: 'Website carbon: Beyond data transfer'
 published: 2022/10/14
+permalink:  /writing/website-carbon-beyond-data-transfer/
+summary: >-
+  Measuring the carbon emissions of websites and apps is no easy thing. Most
+  tools use the amount of data being transferred to calculate the overall
+  emissions. But to get more detailed, relevant results we need to go beyond
+  just data transfer.
 ---
 
 When I first started getting curious about digital sustainability, especially the carbon impact of my website, one of the first places I was pointed to was [Website Carbon Calculator](https://www.websitecarbon.com/). Being presented with a carbon impact for my small personal homepage was an eye opener.

@@ -1,6 +1,10 @@
 ---
 title: Could data networks operate like the electricity grid?
 published: 2024/04/23
+permalink:  /writing/could-data-networks-operate-like-the-electricity-grid/
+summary: >-
+  This post briefly explores how the electricity grid manages load, and wonders
+  aloud if it would be possible to do the same with data networks.
 ---
 
 Last year, Hannah Smith & Ismael Velasco explored the idea of grid aware computing - an alternate approach to carbon aware computing which aims to address some of the potential downsides of current time and location-shifting approaches.

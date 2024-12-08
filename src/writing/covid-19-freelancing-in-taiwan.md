@@ -1,6 +1,12 @@
 ---
 title: Freelancing in Taiwan during the COVID-19 pandemic
 published: 2020/04/10
+permalink:  /writing/covid-19-freelancing-in-taiwan/
+summary: >-
+  As a freelancer, and someone who was working remotely in the months before
+  COVID-19 you'd think not a lot has changed for me since. In this post I go
+  through what life is like in Taiwan, and how the coronavirus pandemic has also
+  led to a change in my daily working habits.
 ---
 
 Life's different now. You don't need me to tell you that, especially if you're one of the 3 billion-plus people currently living under some form of lockdown. But even if you're not, life in the first half of 2020 has taken on a distinctly different look and feel.

@@ -1,6 +1,11 @@
 ---
 title: A first look at Carbon Control by WebPageTest
 published: 2023/05/10
+permalink:  /writing/carbon-control-by-webpagetest-first-look/
+summary: >-
+  In early May, 2023, the WebPageTest (WPT) team shipped a new feature to the
+  tool. They called it Carbon Control, and boy oh boy was I excited to see it
+  finally land.
 ---
 
 Just yesterday (May 9th, 2023), the WebPageTest (WPT) team shipped a new feature to the tool. They called it **Carbon Control**, and boy oh boy was I excited to see it finally land.

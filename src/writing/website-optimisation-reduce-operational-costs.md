@@ -1,6 +1,10 @@
 ---
-title: "The why of website optimisation: Reduce operational costs"
+title: 'The why of website optimisation: Reduce operational costs'
 published: 2020/10/05
+permalink:  /writing/website-optimisation-reduce-operational-costs/
+summary: >-
+  In this second post of the why of website optimisation series we'll go into
+  how you can reduce your operational costs through better site performance.
 ---
 
 This is the second post in a series where I'll outline the benefits that can be derived through website optimisation. Not only will we touch on monetary aspects, but we'll also get into environmental impact, and customer experience.

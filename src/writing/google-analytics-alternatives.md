@@ -1,6 +1,11 @@
 ---
 title: Google Analytics Alternatives
 published: 2021/03/05
+permalink:  /writing/google-analytics-alternatives/
+summary: >-
+  There's an increasing number of privacy-focused alternatives to Google
+  Analytics. This article covers a few options you can use to keep your website
+  visitors information out of the hands of digital advertisers.
 ---
 
 If you've ever wanted to find out how many people are visiting your website then you've probably heard of Google Analytics. It's a free service from Google that allows you to collect a plethora of information when a user visits your site. However, it also gives the world's largest digital ad seller access to a trove of data too. That digital ad seller, in case you're wondering, is Google and DoubleClick (its advertising arm).

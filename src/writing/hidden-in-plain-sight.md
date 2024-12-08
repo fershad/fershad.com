@@ -1,6 +1,11 @@
 ---
 title: Hidden in plain sight
 published: 2022/05/26
+permalink:  /writing/hidden-in-plain-sight/
+summary: >-
+  I was recently shown a code snippet that that a designer friend implemented on
+  a website to combat flash of unstyled text (FOUT). It did so in a way that
+  could possibly have negative impacts on a visitor’s page loading experience.
 ---
 
 This post looks at a small code snippet that I was shown during a conversation about eliminating flash of unstyled text (FOUT) from a page. It does that, but actually exposes the site to some pretty nasty performance issues.

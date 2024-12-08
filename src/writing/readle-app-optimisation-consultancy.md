@@ -1,6 +1,11 @@
 ---
-title: "Readle - App Optimisation & Consultancy"
+title: Readle - App Optimisation & Consultancy
 published: 2021/05/18
+permalink:  /writing/readle-app-optimisation-consultancy/
+summary: >-
+  Having worked primarily on website performance, the chance to work on Readle's
+  native mobile apps was a new challenge. Here's how we improved app speed and
+  delivered greater user satisfaction.
 ---
 
 I've cut my teeth in website-related performance and optimisation. So I was a bit reluctant when [Christian Schraeder](https://www.linkedin.com/in/christian-w-a04742122/), the founder of [Readle](https://readle-app.com/), reached out for my help on their native mobile apps. I'd never worked on a mobile app before and wasn't too sure if I'd be able to help. To his credit though, Christian was very persistent. In the end, I agreed to take a look at the app.

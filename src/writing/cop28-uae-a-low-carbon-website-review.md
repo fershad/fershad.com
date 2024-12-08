@@ -1,6 +1,11 @@
 ---
-title: "COP28 UAE: A Low Carbon Website Review"
+title: 'COP28 UAE: A Low Carbon Website Review'
 published: 2023/10/31
+permalink:  /writing/cop28-uae-a-low-carbon-website-review/
+summary: >-
+  It's almost COP time, which means another website review! This year I'm
+  focusing on the controversial Low Carbon Version of the COP28 website, and
+  looking at how it has been implemented.
 ---
 
 COP28 is rolling around soon. It’s around about a month away at the time of writing. So … yep, that means it’s time to take a look at the COP28 website and see how it stacks up in terms of web sustainability. If you’re interested in what my past reviews of COP websites have uncovered, you can read my takes on the [COP26 (Glasgow)](https://fershad.com/writing/cop26-a-quick-sustainability-check/) and [COP27 (Sharm El-Sheik)](https://fershad.com/writing/cop27-egypt-a-webpage-sustainability-review/) websites.

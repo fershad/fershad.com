@@ -1,6 +1,8 @@
 ---
 title: 2022 in review
 published: 2022/12/23
+permalink:  /writing/2022-in-review/
+summary: 'A personal look back at the year that was, 2022.'
 ---
 
 All in all, 2022 has been a pretty cool year for me. The back half of the year was especially fun, with the opportunity to work on some really cool projects! Here’s a collection of a few notable things that went down over the course of the year.

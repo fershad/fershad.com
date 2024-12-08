@@ -1,6 +1,11 @@
 ---
-title: Power consumption of JPEG, WebP, and AVIF
+title: 'Power consumption of JPEG, WebP, and AVIF'
 published: 2023/08/26
+permalink:  /writing/power-consumption-jpeg-webp-and-avif/
+summary: >-
+  How much power does loading a JPEG, WebP, and AVIF image consumer on a user's
+  device? In this post, I've used the Firefox Profiler to run some unscientific
+  tests in the hopes of finding out.
 ---
 
 Earlier this year, I worked on getting [carbon emission estimates into the Firefox Profiler](https://fershad.com/writing/co2e-estimates-in-firefox-profiler/). Since then, I’ve had an itch to use the Profiler to test out the actual power usage of some _stuff in the browser_. In this post, I’ll be scratching the first of those itches - image formats.

@@ -1,6 +1,11 @@
 ---
 title: Speaking about Green IT in Asia – Green IO Conference Singapore and more
 published: 2024/04/26
+permalink:  /writing/speaking-about-green-it-in-asia-2024/
+summary: >-
+  In the past month, we’ve had the opportunity to speak at a couple of events in
+  Asia for the very first time. This post shares our experience, links to our
+  slides, and other notes from those events.
 ---
 
 _This post was [first published on the Green Web Foundation's blog](https://www.thegreenwebfoundation.org/news/speaking-about-green-it-in-asia-green-io-conference-singapore-and-more/) on April 25, 2024._

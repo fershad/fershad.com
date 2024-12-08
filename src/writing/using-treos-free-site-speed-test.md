@@ -1,6 +1,11 @@
 ---
 title: Using Treo's free Site Speed Test
 published: 2021/12/09
+permalink:  /writing/using-treos-free-site-speed-test/
+summary: >-
+  In this post we'll look at how you can use Treo's free Site Speed Report to
+  better understand real-user performance on your site, and make the case for
+  performance in your organisation.
 ---
 
 Treo's free Site Speed Test presents data from Google's Chrome User Experience Report (CrUX) in a very easy-to-digest visual interface. It's a great tool for businesses to start understanding how their website performs for users around the world.

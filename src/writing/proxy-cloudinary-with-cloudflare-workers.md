@@ -1,6 +1,11 @@
 ---
 title: Proxying Cloudinary image requests with Cloudflare Workers
 published: 2021/08/04
+permalink:  /writing/proxy-cloudinary-with-cloudflare-workers/
+summary: >-
+  Using resources hosted by a third-party can seriously hurt website performance
+  in a few ways. In this post, we'll cover how you can use a proxy to reduce the
+  performance impact when hosting images on Cloudinary.
 ---
 
 I've written about the perils of relying on third-party resources previously in my newsletter, Optimised (see [Issue 2 - Third-party resources - A cautionary tale](https://optimised.email/issues/issue-2-third-party-resources-a-cautionary-tale)). That said, most of the time you'll be unable to avoid using at least some third-party hosted assets on your website. Whether it's an analytics provider, image hosting, advertising, or even a cookie consent manager.

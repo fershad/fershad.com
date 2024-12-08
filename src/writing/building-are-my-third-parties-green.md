@@ -1,6 +1,13 @@
 ---
-title: Checking the sustainability of third-party requests with “Are my third parties green?”
+title: >-
+  Checking the sustainability of third-party requests with “Are my third parties
+  green?”
 published: 2022/03/01
+permalink:  /writing/building-are-my-third-parties-green/
+summary: >-
+  “Are my third parties green?” is an online tool that checks the sustainability
+  of third-party requests made by any web page. This post provides some insights
+  into how it was built, and what other features are planned.
 ---
 
 Over 94% of sites use at least one third-party resource, accounting for over 45% of website requests. This finding [from the 2021 Web Almanac](https://almanac.httparchive.org/en/2021/third-parties#prevalence) absolutely blew my mind. It also got me thinking. “How many of these third-party requests are served from green web hosts?”, I wondered. It wasn’t something I’d seen talked about much or surfaced in other website sustainability tools. So, I decided to build something that would allow me to answer the question - “[Are my third parties green?](https://aremythirdpartiesgreen.com/)”

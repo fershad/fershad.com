@@ -1,6 +1,11 @@
 ---
 title: Adding a Directory and API to ‘Are my third parties green?’
 published: 2022/04/14
+permalink:  /writing/adding-a-directory-and-api-to-are-my-third-parties-green/
+summary: >-
+  I’ve been taken aback by the reception ‘Are my third parties green?’ has
+  received from the community. Since its launch in January the tool has expanded
+  to now include a Directory and public API.
 ---
 
 Since it launched a few months ago, ‘[Are my third parties green?](http://aremythirdpartiesgreen.com/)’ has grown beyond the original idea of a small tool to scan a single web page.

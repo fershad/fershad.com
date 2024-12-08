@@ -1,6 +1,12 @@
 ---
 title: Take it easy with transitions
 published: 2022/05/13
+permalink:  /writing/take-it-easy-with-transitions/
+summary: >-
+  I’ve been doing a few audits of late, and one thing that keeps coming up is
+  the use of transition effects on page load (or above the fold content). This
+  post looks at some of the performance pitfalls that can arise from this
+  practice, as well as what you should keep in mind.
 ---
 
 Transitions and animations can make for wonderful website experiences. [Cassie Evans’s personal website](https://www.cassie.codes/) is a playful, whimsy corner of the internet that is delightfully crafted. But as with a lot of things, transitions and animations can be overused on websites. And, at times, that can come detriment of web performance.

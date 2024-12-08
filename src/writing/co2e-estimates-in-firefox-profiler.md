@@ -1,6 +1,10 @@
 ---
 title: Power measurements and CO2e estimates in Firefox Profiler
 published: 2023/02/16
+permalink:  /writing/co2e-estimates-in-firefox-profiler/
+summary: >-
+  A quick look at power usage profiling that's available in Firefox Dev Tools
+  Profiler, and the accompanying CO2e measurements.
 ---
 
 Earlier this year, an update to the Firefox Dev Tools Profiler was merged into production (Jan. 10, 2023 - [here's the PR](https://github.com/firefox-devtools/profiler/pull/4414)). It includes a merge of some code I helped author which surfaced carbon emissions estimates for power measurements made using the profiler. You may remember me using a pre-release version of this when I [audited the COP27 website](https://fershad.com/writing/cop27-egypt-a-webpage-sustainability-review/) last year.

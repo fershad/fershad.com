@@ -1,6 +1,11 @@
 ---
 title: Are my third parties green? Two and a bit years on
 published: 2024/05/01
+permalink:  /writing/are-my-third-parties-green-two-and-a-bit-years-on/
+summary: >-
+  The Are my third parties green? project has been running for over two years
+  now. In this post, I look back at the project, and do an analysis of the data
+  it's captured.
 ---
 
 I release [Are my third parties green?](https://aremythirdpartiesgreen.com/) (AMTPG) out into the internet in late January, 2022. It started as a small project to scratch an itch I'd developed after reading the [2021 edition of the Web Almanac](https://almanac.httparchive.org/en/2021/third-parties#prevalence).

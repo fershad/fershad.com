@@ -1,6 +1,12 @@
 ---
 title: Optimising embedded content
 published: 2021/01/21
+permalink:  /writing/optimising-embedded-content/
+summary: >-
+  Embedding content from Twitter or YouTube is pretty commonplace these days.
+  However, the code these services provide isn't always the most optimised. Here
+  we'll look at a few ways you can optimise pages on your websites that have
+  Twitter/YouTube content embedded within.
 ---
 
 I want to cover a few ways you can optimise pages that have Twitter/YouTube content embeds. The idea for this stems from a tweet by Matt Hobbs in which he points out just how much bloat an embedded tweet can add to a webpage.

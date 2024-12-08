@@ -1,6 +1,11 @@
 ---
 title: Testing a web page with PageSpeed Insights
 published: 2022/01/18
+permalink:  /writing/testing-a-web-page-with-pagespeed-insights/
+summary: >-
+  PageSpeed Insights is a free performance testing tool by Google. In this post
+  we’ll cover the basics of testing a web page with PageSpeed Insights, as well
+  as how to understand the different test results.
 ---
 
 [PageSpeed Insights (PSI)](https://pagespeed.web.dev/) is a free tool from Google that allows anyone to gain performance insights for a web page across both desktop and mobile devices. In recent years real-user data from Google’s Chrome User Experience Report (CrUX) has also been added to test results when available.

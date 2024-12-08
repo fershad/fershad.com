@@ -1,6 +1,10 @@
 ---
 title: Why are you estimating digital carbon emissions?
 published: 2024/02/20
+permalink:  /writing/why-are-you-estimating-digital-carbon-emissions/
+summary: >-
+  In this post, I want to look at the two different carbon accounting models
+  used for estimation, and in what scenario you might use one over the other.
 ---
 
 I've had a fair few conversations about calculating digital carbon emissions recently. It's great to see so much interest in this space, it can only be good for the development of the tools and methodologies we have access to. One thing, though, which I've noticed has been missing from a lot of those conversations is a discussion around _why_ folks might want to estimate digital carbon emissions.

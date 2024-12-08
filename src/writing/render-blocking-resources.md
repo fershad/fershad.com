@@ -1,6 +1,12 @@
 ---
 title: Render-blocking resources
 published: 2022/02/18
+permalink:  /writing/render-blocking-resources/
+summary: >-
+  When looking to optimise for paint metrics (First and Largest Contentful Paint
+  for example), we’re almost certainly going to encounter render-blocking
+  resources. In this post I’ll cover what they are, and some general tips on how
+  to mitigate their impact on page performance.
 ---
 
 When looking to optimise for paint metrics (First and Largest Contentful Paint for example), we’re almost certainly going to encounter render-blocking resources. In this post I’ll cover what they are, and some general tips on how to mitigate their impact on page performance.

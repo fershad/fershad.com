@@ -1,6 +1,11 @@
 ---
 title: Tracking real Core Web Vitals scores
 published: 2021/10/20
+permalink:  /writing/tracking-real-core-web-vitals-scores/
+summary: >-
+  There are a few options when it comes to keeping track of your website's real
+  world Core Web Vitals scores. In this post I'll cover some of the services or
+  tools you can use, and some things to be aware of.
 ---
 
 There's been a lot of talk about Core Web Vitals. Rightly so too. Early data is showing that [Core Web Vitals does seem to be playing a factor in Google Search rankings](https://www.sistrix.com/blog/core-web-vitals-is-a-measurable-ranking-factor/?utm_source=Perf.email&utm_campaign=1c5a924166-Perf+Email+%2384&utm_medium=email&utm_term=0_7cba5dc7bd-1c5a924166-1288835902). So, this week we're going to look at a few different ways you can keep track of your site's own real world Core Web Vitals.

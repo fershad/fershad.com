@@ -1,6 +1,11 @@
 ---
 title: A carbon aware internet
 published: 2022/08/04
+permalink:  /writing/a-carbon-aware-internet/
+summary: >-
+  Knowing the carbon intensity of the electricity grids in which code runs can
+  allow developers to make informed decisions about where/when to run their
+  code.
 ---
 
 Recently I’ve been doing a bit of writing for The Green Web Foundation. Most of that has involved building [better, more beginner-friendly documentation](https://www.notion.so/A-carbon-aware-Internet-d6c350d466804249aedf98571e76a67f) for some of the foundation’s open-source code libraries.

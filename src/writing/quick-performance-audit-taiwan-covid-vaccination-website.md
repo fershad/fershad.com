@@ -1,6 +1,10 @@
 ---
 title: Quick Performance Audit - Taiwan COVID Vaccination Website
 published: 2021/08/30
+permalink:  /writing/quick-performance-audit-taiwan-covid-vaccination-website/
+summary: >-
+  Taiwan's COVID-19 vaccination website is integral to the government's vaccine
+  rollout plans. This post is a quick website performance audit of the site.
 ---
 
 With COVID-19 still spreading around the globe, governments are striving to vaccinate as many of their citizens as possible. Here in Taiwan, vaccine registration and bookings are made through a government website ([https://1922.gov.tw](https://1922.gov.tw)). Members of the public can use that site to 1) register/change their vaccine preference, and 2) book their vaccination when they are eligible.

@@ -1,6 +1,10 @@
 ---
 title: An introduction to optimising web fonts
 published: 2021/05/14
+permalink:  /writing/introduction-to-optimising-web-fonts/
+summary: >-
+  A brief introduction to some of the key considerations and techniques to keep
+  in mind when optimising fonts for the web.
 ---
 
 During April & May, 2021, I ran a series about web font optimisation over on [Optimised](https://optimised.email/) - a bi-weekly email newsletter I publish that focuses on website performance. This post is a consolidation of some of the key points from those newsletters. For a more detailed guide, you can [read the series](https://optimised.email/issues/issue-13-optimising-web-fonts-part-1) over on the Optimised website.

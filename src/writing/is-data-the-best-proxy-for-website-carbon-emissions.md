@@ -1,6 +1,10 @@
 ---
 title: Is data transfer the best proxy for website carbon emissions?
 published: 2023/05/10
+permalink:  /writing/is-data-the-best-proxy-for-website-carbon-emissions/
+summary: >-
+  This post captures my thoughts on the use of data transfer in website carbon
+  emissions calculcations, and what the future holds.
 ---
 
 This topic has been on my mind recently, especially since Mike Gifford raised this very [issue in the CO2.js Github repo](https://github.com/thegreenwebfoundation/co2.js/issues/138). That thread is a very interesting read, and one worth following.

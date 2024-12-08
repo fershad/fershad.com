@@ -1,6 +1,12 @@
 ---
 title: Reducing website carbon emissions
 published: 2021/09/29
+permalink:  /writing/reducing-website-carbon-emissions/
+summary: >-
+  As our thirst for data, connectivity, and content grows, so does the portion
+  of global carbon emissions attributed to the internet. In this post, we'll
+  take a look at the steps frontend developers can take to make sites more
+  efficient and better for the planet.
 ---
 
 I've [written about the carbon impact of the internet before](https://fershad.com/writing/the-environmental-case-for-website-performance/). Here's a quick recap:

@@ -1,6 +1,12 @@
 ---
 title: Passing multiple arguments to an Eleventy custom filter
 published: 2019/09/16
+permalink:  /writing/pass-multiple-arguments-to-eleventy-filter/
+summary: >-
+  While working on a recent project, I came across a small problem. I needed to
+  convert an event time from UTC to a particular time zone. I was building my
+  website project using the Eleventy static site generator, so I felt that a
+  custom filter would be the best solution to this problem.
 ---
 
 While working on a [recent project](https://www.fershad.com/work/rwc-2019-fixtures-kanban/), I came across a small problem. I needed to convert an event time from UTC to a particular time zone. I was building my website project using the Eleventy static site generator, so I felt that a custom filter would be the best solution to this problem.

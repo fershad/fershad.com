@@ -1,6 +1,11 @@
 ---
 title: Microsoft propose sustainability section in Edge DevTools
 published: 2022/09/02
+permalink:  /writing/microsoft-propose-sustainability-section-in-edge-devtools/
+summary: >-
+  I share some thoughts on the new proposal put forward by the MS Edge DevTools
+  team for a new “Sustainability” tab to be included in the Edge browser’s
+  DevTools.
 ---
 
 Getting accurate measurements of a website or app’s carbon impact can be extremely difficult. Ismael Velasco talks through the nuance of digital carbon calculations [on his blog](https://ismaelvelasco.dev/emissions-in-1gb). Even if you just want to [measure how much energy your site or app consumes](https://greensoftware.foundation/articles/how-to-measure-the-energy-consumption-of-your-frontend-application?utm_source=pocket_mylist), you’d probably need to get yourself a watt-meter, and work out a way to run your app in isolation.

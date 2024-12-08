@@ -1,6 +1,11 @@
 ---
 title: Testing a page with Performance Insights
 published: 2022/07/21
+permalink:  /writing/testing-a-page-with-performance-insights/
+summary: >-
+  Performance Insights is a tool by Builder.io (http://builder.io/) which, in
+  their words, allows you to learn what improvements can have the greatest
+  impact on your site's performance.
 ---
 
 [Performance Insights](https://www.builder.io/c/performance-insights) is a relatively new entrant in the website performance tooling space. Created by the team at [Builder.io](http://Builder.io) it takes a slightly different approach to website performance auditing. Rather than presenting a whole swath of data on your site’s current performance, this tool focuses on what improvements you can make and the impact they could have.

@@ -2,7 +2,14 @@
 title: DisplayLink - Homepage refresh & navigation improvements
 published: 2020/07/29
 archived: true
-archiveNote: Displaying has since been acquired by Synaptics, and their website has changed considerably since this project
+archiveNote: >-
+  Displaying has since been acquired by Synaptics, and their website has changed
+  considerably since this project
+permalink:  /writing/displaylink-homepage-refresh-navigation-improvements/
+summary: >-
+  A project which saw me redesign and rebuild DisplayLink's homepage and website
+  navigation. A key driver was the desire to declutter the homepage and make
+  different parts of the website easier to reach.
 ---
 
 {% callout "Archived" %}

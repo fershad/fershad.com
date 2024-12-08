@@ -1,6 +1,12 @@
 ---
 title: Using Cloudflare Workers to inline external CSS
 published: 2021/10/08
+permalink:  /writing/cloudflare-workers-inline-external-css/
+summary: >-
+  Loading CSS from external files can slow down your site's initial paint,
+  potentially hitting your Core Web Vitals in the process. In this short post
+  we'll look at how using to use a Cloudflare Worker to inline the content of
+  external CSS files.
 ---
 
 CSS is render blocking. What I mean by that is that when the browser comes across a section of CSS on a page, it will stop what it's doing and start working on parsing the CSS. This happens with both CSS in external files, as well as CSS in `<style>` tags.

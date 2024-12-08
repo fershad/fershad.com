@@ -1,6 +1,11 @@
 ---
 title: Improving the accuracy of website carbon emissions estimates
 published: 2023/01/19
+permalink:  /writing/improving-the-accuracy-of-website-carbon-emissions-estimates/
+summary: >-
+  Existing models for website carbon emissions are good for reaching a ballpark
+  figure of website CO2 emissions. This post goes into some ways to generate
+  more specific, accurate emissions estimates.
 ---
 
 Existing models for website carbon emissions are good for reaching a ballpark figure of website CO2 emissions. I touched on that last year in [Website carbon: Beyond data transfer](https://fershad.com/writing/website-carbon-beyond-data-transfer/). Models like the Sustainable Web Design model are extremely useful for providing an estimation framework, especially for developers who don’t have domain knowledge in the digital emissions space.

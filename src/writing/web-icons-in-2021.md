@@ -1,6 +1,11 @@
 ---
 title: Web icons in 2021
 published: 2021/01/07
+permalink:  /writing/web-icons-in-2021/
+summary: >-
+  This post is taken from Optimised, the fortnightly web performance newsletter
+  I run. In it we look at the different options that you can consider, and why
+  you really should be using SVG in 2021.
 ---
 
 In modern web apps icons are heavily leaned on by designers to convey state, functions, or actions. Even if you've got a simple website you'll most likely want to include some links to social media platforms, or maybe contact information. Icons come in handy here too, making content & links stand out visually from the rest of the page. The strategies I cover in this issue are best suited to websites that need just a few icons sprinkled around the site rather than larger web apps (which tend to lean more heavily on icons).

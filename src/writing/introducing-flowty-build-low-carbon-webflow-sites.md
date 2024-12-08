@@ -1,8 +1,16 @@
 ---
-title: Introducing Flowty - Build low carbon, self-hosted Webflow sites
+title: 'Introducing Flowty - Build low carbon, self-hosted Webflow sites'
 published: 2022/04/29
 archived: true
-archiveNote: Due to a legal notice from Webflow, the Flowty project can no longer be publicly accessed.
+archiveNote: >-
+  Due to a legal notice from Webflow, the Flowty project can no longer be
+  publicly accessed.
+permalink:  /writing/introducing-flowty-build-low-carbon-webflow-sites/
+summary: >-
+  Webflow is a great service for designers who want to create amazing websites
+  for clients. It does leave a few things on the table when it comes to web
+  sustainability though. Flowty gives designers who build with Weblow the power
+  to create fast, low-carbon, self-hosted sites in minutes.
 ---
 
 {% callout "Update 24 March 2023" %}

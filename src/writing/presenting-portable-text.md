@@ -1,6 +1,10 @@
 ---
 title: Presenting Portable Text
 published: 2019/09/10
+permalink:  /writing/presenting-portable-text/
+summary: >-
+  In this code note I cover a couple of ways to build upon Portable Text for
+  presentation.
 ---
 
 Over the last few weeks, I've learnt a lot while spinning up this blog using [Sanity.io](http://sanity.io/). It's still a growing baby, so I'm sure there'll be a lot more things to learn in the future as well.

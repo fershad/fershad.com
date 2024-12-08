@@ -1,6 +1,10 @@
 ---
 title: A conversation with Gaël Duez on Green I/O
 published: 2022/03/07
+permalink:  /writing/a-conversation-with-gael-duez-on-green-io/
+summary: >-
+  I had the pleasure of talking web sustainability with Gaël Duez for the first
+  episode of the Green I/O podcast.
 ---
 
 A couple of weeks ago, on a rainy afternoon here in Taipei, I sat down for a virtual chat with Gaël Duez. We spoke about web sustainability, how companies can start approaching the topic, and a bit about some of the other projects I’m working on too.

@@ -1,6 +1,11 @@
 ---
-title: "The why of website optimisation: Better user experience"
+title: 'The why of website optimisation: Better user experience'
 published: 2020/10/05
+permalink:  /writing/website-optimisation-better-user-experience/
+summary: >-
+  In the final post of the why of website optimisation series we'll take a look
+  at how better performance online can equate to a better user (or customer)
+  experience.
 ---
 
 This is the fifth post in a series where I'll outline the benefits that can be derived through website optimisation. Not only will we touch on monetary aspects, but we'll also get into environmental impact, and customer experience.

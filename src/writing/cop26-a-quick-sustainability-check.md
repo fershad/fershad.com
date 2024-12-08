@@ -1,6 +1,11 @@
 ---
-title: "COP26.org: A quick sustainability check"
+title: 'COP26.org: A quick sustainability check'
 published: 2021/10/28
+permalink:  /writing/cop26-a-quick-sustainability-check/
+summary: >-
+  With COP26 about to take place in Glasgow, let's take a quick look at how the
+  COP26 homepage holds up in terms digital sustainability. What's its carbon
+  footprint, and can it be improved?
 ---
 
 COP26 is taking place in the first two weeks of November 2021. For two weeks, global leaders (or their representatives) will discuss their climate commitments and how countries can collaborate to ensure emissions reductions. COP26 is important, especially off the back of [the latest IPCC report](https://news.un.org/en/story/2021/08/1097362) which paints a stark outlook for the planet unless huge steps are taken to cut greenhouse gas emissions within the decade.

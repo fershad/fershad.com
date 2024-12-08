@@ -1,6 +1,11 @@
 ---
 title: Understanding the latest Sustainable Web Design Model update
 published: 2024/06/04
+permalink:  /writing/understanding-the-latest-sustainable-web-design-model-update/
+summary: >-
+  This post covers the changes made in version 4 of the Sustainable Web Design
+  Model, and how those affect the estimation results for those using this
+  methodology.
 ---
 
 This post was originally published on the [Green Web Foundation blog on July 4, 2024](https://www.thegreenwebfoundation.org/news/understanding-the-latest-sustainable-web-design-model-update/).

@@ -1,6 +1,11 @@
 ---
 title: What I've learnt in two months working remotely.
 published: 2019/10/02
+permalink:  /writing/remote-working-after-two-months/
+summary: >-
+  On the back of Buffer's 2019 State of Remote Work report, I take a look back
+  at my transition from being office-bound to location independent. What's met
+  my expectations, what's surprised me, and what challenges I've faced.
 ---
 
 Last month, Buffer published their annual "State of Remote Work" report for 2019. I stumbled across it recently during a spell of general internet wandering. I read it, wanting to see how my remote working life (albeit in its infancy) stacks up against my peers globally. In doing so, I also took the opportunity to take a look at just how things have panned out for me so far. Below are my musings, paired up with some excerpts from the [2019 State of Remote Work report](https://buffer.com/state-of-remote-work-2019).

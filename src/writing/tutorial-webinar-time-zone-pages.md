@@ -1,6 +1,12 @@
 ---
 title: Build landing pages to promote webinars across different time zones
 published: 2019/09/24
+permalink:  /writing/tutorial-webinar-time-zone-pages/
+summary: >-
+  With the global nature of broadcasting online, many events - from sports
+  tournaments to webinars - require promotion across multiple time zones. In
+  this tutorial, I'll cover how to create a simple set of multi-time zone
+  landing pages for a webinar series.
 ---
 
 In a past life, I worked in the marketing department of a multi-national software company. Next to me worked a team responsible for scheduling and creating webinar series for our users.

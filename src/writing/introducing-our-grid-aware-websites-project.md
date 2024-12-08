@@ -1,6 +1,8 @@
 ---
 title: Introducing our grid-aware websites project
 published: 2024/11/24
+permalink:  /writing/introducing-our-grid-aware-websites-project/
+summary: "At Green Web Foundation kicking off a cutting-edge project to explore our idea for making grid-aware websites a commonplace tool in website developer toolkits, thanks to funding from\_SIDN Fonds."
 ---
 
 At Green Web Foundation, we're kicking off a project which we're calling Grid-aware Websites. If you're a regular to this website, you know that in the past I've made some changes to [make this site "carbon-aware"](https://fershad.com/writing/making-this-website-carbon-aware/). This project will build on that concept.

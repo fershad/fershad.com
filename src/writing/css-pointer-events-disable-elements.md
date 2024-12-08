@@ -1,6 +1,11 @@
 ---
 title: Disabling elements with CSS pointer-events and media queries
 published: 2020/02/04
+permalink:  /writing/css-pointer-events-disable-elements/
+summary: >-
+  A recent project required a collapsible section of content to remain expanded
+  on desktop and collapsible on mobiles. Here's how I made it work with a
+  handful of CSS.
 ---
 
 A recent project I've been working on presented me with an interesting little challenge. I was working with a collapsible section of content that was triggered by a styled label and hidden checkbox. On mobiles, the content had to be collapsible, while on larger displays the content was to remain expanded and unable to collapse

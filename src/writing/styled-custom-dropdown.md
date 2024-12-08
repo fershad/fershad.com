@@ -1,6 +1,11 @@
 ---
-title: Make a styled, custom dropdown
+title: 'Make a styled, custom dropdown'
 published: 2020/02/17
+permalink:  /writing/styled-custom-dropdown/
+summary: >-
+  I was working on a recent project that required me to create a customized
+  select dropdown. It had to clearly, neatly show two sets of data (jobs and
+  locations), and look good in the process.
 ---
 
 I was working on a recent project that required me to create a customized select dropdown. It had to clearly, neatly show two sets of data (jobs and locations), and look good in the process. Each item in the dropdown would link to a corresponding job listing on another page.

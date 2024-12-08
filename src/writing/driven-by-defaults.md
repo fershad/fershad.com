@@ -1,6 +1,11 @@
 ---
 title: Driven by defaults
 published: 2022/11/25
+permalink:  /writing/driven-by-defaults/
+summary: >-
+  I’ve been thinking about how we can drive broader change to make the web more
+  sustainable and performant. As I’ll get into, I believe a large part of that
+  comes from the defaults set by the tools and services we use.
 ---
 
 When talking with folks about web sustainability, there are often two tracks of conversation that we regularly venture down. The first stems from people just being unaware of the physical impact of our digital lives. The other, is often a variation on “but my \[website/app/digital presence\] is so small, changing that won’t make a difference anyway”.
