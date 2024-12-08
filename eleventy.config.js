@@ -227,7 +227,7 @@ export default function(eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode("codepenIframe", function(penId, title, user = "fishintaiwan") {
-		return `<iframe height="300" style="width: 100%;" scrolling="no" title="${title}" src="https://codepen.io/fishintaiwan/embed/preview/${penId}?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+		return `<iframe height="300" style="width: 100%;" scrolling="no" title="${title}" src="https://codepen.io/fishintaiwan/embed/preview/${penId}?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/${user}/pen/${penId}" gaw:remove>
 </iframe>
 <p><a href="https://codepen.io/${user}/pen/${penId}">View ${title} by @${user} on CodePen</a></p>`;
