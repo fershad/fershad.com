@@ -1,6 +1,6 @@
 ---
 title: Why I run carbon aware checks on the edge
-date: 2023-11-30
+published: 2023-11-30
 lang: en
 type: post
 ---

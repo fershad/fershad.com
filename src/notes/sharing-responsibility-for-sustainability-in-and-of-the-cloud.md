@@ -1,6 +1,6 @@
 ---
 title: Sharing responsibility for cloud sustainability
-date: 2024-02-01
+published: 2024-02-01
 lang: en
 type: post
 permalinik: notes/sharing-responsibility-cloud-sustainability

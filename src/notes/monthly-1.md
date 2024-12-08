@@ -1,6 +1,6 @@
 ---
 title: "Monthly #1"
-date: 2024-02-05
+published: 2024-02-05
 draft: false
 lang: en
 type: post

@@ -1,6 +1,6 @@
 ---
 title: Are my third parties green? browser extensions
-date: 2023-12-29
+published: 2023-12-29
 draft: false
 lang: en
 type: post

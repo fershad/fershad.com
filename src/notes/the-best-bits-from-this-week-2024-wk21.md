@@ -1,6 +1,6 @@
 ---
 title: The best bits from this week (Week 21, 2024)
-date: 2024-05-28
+published: 2024-05-28
 lang: en
 type: post
 tags:

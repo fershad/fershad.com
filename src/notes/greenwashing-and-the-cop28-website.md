@@ -1,6 +1,6 @@
 ---
 title: Greenwashing and the COP28 Website
-date: 2023-10-11
+published: 2023-10-11
 draft: false
 lang: en
 type: post

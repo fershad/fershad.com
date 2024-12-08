@@ -1,6 +1,6 @@
 ---
 title: Learn by doing
-date: 2023-11-11
+published: 2023-11-11
 draft: false
 lang: en
 ---

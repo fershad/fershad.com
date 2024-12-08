@@ -35,7 +35,7 @@
 .archived {
   /* background-color: var(--blue-0); */
   color: var(--blue-4);
-  opacity: 0.75;
+  opacity: 0.6;
   --banner-line-color: var(--blue-4);
   --banner-text-color: var(--blue-4);
 }
@@ -53,6 +53,10 @@
 
 ul:not([class]) li {
   max-inline-size: 100%;
+}
+
+ul > * + * {
+  margin-top: 2.15rem;
 }
 
 ul.boxes {
@@ -103,4 +107,86 @@ ul.boxes li:after {
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
+}
+
+li.note {
+  /* width: fit-content; */
+  display: block;
+  margin-inline-end: 1.5rem;
+  padding: 1.5rem;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-top: 2px solid;
+  margin: 0;
+  transition: all 0.25s ease;
+  border-color: var(--blue-4);
+  /* max-width: 10ch; */
+  /* max-inline-size: 40ch !important; */
+}
+
+li.note:hover {
+  border-left: 1ch solid var(--blue-7);
+  border-color: var(--blue-7);
+  background-color: var(--blue-0);
+  padding-right: calc(1.5rem - 1ch);
+  padding-left: calc(1.5rem - 1ch);
+}
+
+li.note:before {
+  display: none;
+}
+
+ul:has(.note) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+ul:has(.note) li:not(.note) {
+  grid-column: -1/1;
+}
+
+ul:has(.note) li.note {
+  grid-column: span 1;
+}
+
+span.count-posts {
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+span.count-posts:before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  left: 0ch;
+  top: 0.75ex;
+  height: 1ex;
+  width: 1ex;
+  /* background-color: var(--marker-color, var(--blue-0)); */
+  border: 2px solid var(--marker-color, var(--blue-4));
+}
+
+span.count-notes {
+  position: relative;
+  display: inline-block;
+  /* padding-left: 1rem; */
+  padding-inline: 0.25rem;
+  /* margin-inline-start: 0.25rem; */
+}
+
+span.count-notes:before {
+  content: "";
+  position: absolute;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-top: 2px solid;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.25s ease;
+  border-color: var(--blue-4);
 }

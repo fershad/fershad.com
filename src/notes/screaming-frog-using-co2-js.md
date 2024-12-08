@@ -1,6 +1,6 @@
 ---
 title: Screaming Frog using CO2.js
-date: 2024-05-09
+published: 2024-05-09
 lang: en
 type: post
 ---

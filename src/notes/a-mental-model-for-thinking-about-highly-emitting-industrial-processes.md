@@ -1,6 +1,6 @@
 ---
 title: A mental model for thinking about highly emitting industrial processes
-date: 2024-01-05
+published: 2024-01-05
 draft: false
 lang: en
 type: post

@@ -1,6 +1,6 @@
 ---
 title: Two types of people
-date: 2024-06-25
+published: 2024-06-25
 draft: false
 lang: en
 type: post

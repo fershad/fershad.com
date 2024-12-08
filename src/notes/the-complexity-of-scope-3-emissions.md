@@ -1,6 +1,6 @@
 ---
 title: The complexity of Scope 3 emissions
-date: 2023-11-15
+published: 2023-11-15
 lang: en
 type: post
 thumbnail: /assets/img/opengraph-the-complexity-of-scope-3-emissions.png

@@ -1,6 +1,6 @@
 ---
 title: The power of subtraction
-date: 2024-10-08
+published: 2024-10-08
 draft: true
 lang: en
 fmContentType: post

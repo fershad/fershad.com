@@ -1,6 +1,6 @@
 ---
 title: Data center electricity usage in Ireland matches urban residential
-date: 2023-10-26
+published: 2023-10-26
 lang: en
 type: post
 permalink: notes/data-center-electricity-usage-ireland-matches-urban-residential/index.html

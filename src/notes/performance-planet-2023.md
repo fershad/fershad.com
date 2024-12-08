@@ -1,6 +1,6 @@
 ---
 title: Performance Planet 2023
-date: 2023-12-06
+published: 2023-12-06
 lang: en
 type: post
 tags:

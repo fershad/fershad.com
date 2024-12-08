@@ -1,6 +1,6 @@
 ---
 title: The best bits from this week (Week 26, 2024)
-date: 2024-06-25
+published: 2024-06-25
 lang: en
 type: post
 tags:

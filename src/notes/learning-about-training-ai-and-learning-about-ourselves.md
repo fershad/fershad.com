@@ -1,6 +1,6 @@
 ---
 title: Learning about training AI and learning about ourselves
-date: 2023-10-16
+published: 2023-10-16
 lang: en
 type: post
 keywords:

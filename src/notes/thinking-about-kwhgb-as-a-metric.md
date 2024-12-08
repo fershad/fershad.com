@@ -1,6 +1,6 @@
 ---
 title: Thinking about kWh/GB as a metric
-date: 2024-01-14
+published: 2024-01-14
 lang: en
 type: post
 ---

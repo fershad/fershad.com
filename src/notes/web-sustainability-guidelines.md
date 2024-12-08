@@ -1,6 +1,6 @@
 ---
 title: Web Sustainability Guidelines is now in v1.0!
-date: 2023-09-18
+published: 2023-09-18
 lang: en
 type: post
 tags:

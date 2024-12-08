@@ -558,12 +558,12 @@ ul li:not(:last-of-type) {
   margin-block-end: 2rem;
 }
 
-ul li {
+ul:not([class]) li {
   position: relative;
   padding-left: 2.25rem;
 }
 
-ul li::before {
+ul:not([class]) li::before {
   content: "";
   position: absolute;
   left: 1ch;
@@ -575,7 +575,7 @@ ul li::before {
   transition: all 0.2s;
 }
 
-ul li:hover::before {
+ul:not([class]) li:hover::before {
   background-color: var(--marker-color, var(--blue-7));
   border-color: var(--marker-color, var(--blue-7));
   /* border-radius: 50%; */

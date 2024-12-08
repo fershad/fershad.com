@@ -7,16 +7,38 @@ eleventyExcludeFromCollections: true
 <section class="twocol">
   <h1>Writing</h1>
   <p>My most recent writing on sustainable web development, performance tips for websites and apps, as well as a few other musings.</p>
+  <div>
+    <p>This page has
+      <span class="count-posts">{{ collections.post | filterOnlyTag: "post", "note" | size }} posts</span>
+      and
+      <span class="count-notes">{{ collections.post | filterOnlyTag: "note" | size }} notes</span>.</p>
+  </div>
 </section>
 
-<section class="twocol">
+
+<section class="threecol">
   {% assign postslist = collections.post | sortByPublishedDate %}
   <ul>
     {% for post in postslist %}
-      <li
-        {% if post.data.archived %}
-        class="archived"
-        {% endif %}>
+      {% assign tags = post.data.tags %}
+      {% assign isNote = tags | find: "note" %}
+      <li class="
+      {%- if post.data.archived -%}
+        archived
+      {%- endif -%}
+      {%- if isNote == "note" -%}
+        note
+      {%- endif -%}
+        ">
+        <div>
+          <small class="post-type">
+            {% if isNote == "note" %}
+              Note
+            {% else %}
+              Post
+            {% endif %}
+          </small>
+        </div>
         <p class="title">
           <a href="{{ post.url }}">{{ post.data.title }}</a>
         </p>
@@ -30,7 +52,9 @@ eleventyExcludeFromCollections: true
           {% endif %}
         </small>
         {% unless post.data.archived %}
-          <p>{{ post.data.summary }}</p>
+          {% if post.data.summary %}
+            <p>{{ post.data.summary }}</p>
+          {% endif %}
         {% else %}
           <p>{{ post.data.archiveNote }}</p>
         {% endunless %}

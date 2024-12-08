@@ -1,6 +1,6 @@
 ---
 title: Sustainability talks at FOSDEM 2024
-date: 2024-02-05
+published: 2024-02-05
 lang: en
 type: post
 ---

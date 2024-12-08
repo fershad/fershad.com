@@ -1,6 +1,6 @@
 ---
 title: All models are flawed
-date: 2024-04-24
+published: 2024-04-24
 lang: en
 type: post
 tags:

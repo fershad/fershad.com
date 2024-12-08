@@ -1,6 +1,6 @@
 ---
 title: CO2.js Playground
-date: 2023-11-11
+published: 2023-11-11
 lang: en
 type: post
 description: As part of an upcoming workshop for the SDIA's Green Coding Summit, I've made an interactive CO2.js playground for people to get hands on with the capabilities of our little JavaScript library.

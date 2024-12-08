@@ -1,6 +1,6 @@
 ---
 title: Change the value for CO2e calculations in Firefox Profiler
-date: 2023-09-15
+published: 2023-09-15
 draft: false
 lang: en
 type: post

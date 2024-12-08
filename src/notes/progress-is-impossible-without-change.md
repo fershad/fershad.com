@@ -1,6 +1,6 @@
 ---
 title: Progress is impossible without change
-date: 2023-11-28
+published: 2023-11-28
 lang: en
 type: post
 tags:

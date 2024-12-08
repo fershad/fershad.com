@@ -1,6 +1,6 @@
 ---
 title: "Monthly #5"
-date: 2024-06-02
+published: 2024-06-02
 lang: en
 type: post
 tags:

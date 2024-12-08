@@ -1,6 +1,6 @@
 ---
 title: Start, stop, continue 2024
-date: 2024-01-05
+published: 2024-01-05
 draft: false
 lang: en
 type: post

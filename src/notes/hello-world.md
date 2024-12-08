@@ -1,6 +1,6 @@
 ---
 title: Hello, world.
-date: 2023-09-13
+published: 2023-09-13
 draft: false
 lang: en
 type: post

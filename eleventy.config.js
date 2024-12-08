@@ -244,6 +244,28 @@ export default function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addFilter("filterOnlyTag", function(array, tag, exclude) {
+		return array.filter((item) => {
+			if (exclude) {
+				return item.data.tags.includes(tag) && !item.data.tags.includes(exclude);
+			} else {
+				return item.data.tags.includes(tag);
+			}
+		});
+	});
+
+	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
+	// 	return collectionsApi.getAllSorted().filter(function (item) {
+	// 		return "post" in item.data.tags;
+	// 	});
+	// });
+
+	// eleventyConfig.addCollection("onlyNotes", function (collectionsApi) {
+	// 	return collectionsApi.getAllSorted().filter(function (item) {
+	// 		return "note" in item.data.tags;
+	// 	});
+	// });
+
 	eleventyConfig.setLibrary("md", mdLib);
     
     return {

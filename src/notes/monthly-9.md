@@ -1,6 +1,6 @@
 ---
 title: "Monthly #9"
-date: 2024-10-05
+published: 2024-10-05
 lang: en
 type: post
 tags:

@@ -1,6 +1,6 @@
 ---
 title: The best things I heard this week (Week 19, 2024)
-date: 2024-05-12
+published: 2024-05-12
 lang: en
 type: post
 tags:

@@ -1,6 +1,6 @@
 ---
 title: All carbon emissions calculations
-date: 2023-11-18
+published: 2023-11-18
 lang: en
 type: post
 ---
