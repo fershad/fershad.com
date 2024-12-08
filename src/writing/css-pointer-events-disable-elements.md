@@ -9,14 +9,16 @@ My initial thought was to reach for javascript. I planned to traverse the DOM to
 
 By combining CSS `pointer-events: none` with media queries I was able to achieve what I needed in many, many fewer lines of code. You can [read more about pointer-events at MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events).
 
-{% codeToHtml css %}
+<!-- markdownlint-disable -->
+{% codeToHtml "css" %}
 @media only screen and (min-width: 768px;) {
-input[type="checkbox"],
-.input-label {
-pointer-events: none;
-}
+    input[type="checkbox"],
+        .input-label {
+        pointer-events: none;
+    }
 }
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Gotcha
 

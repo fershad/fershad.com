@@ -7,8 +7,8 @@ published: 2020/04/13
 
 Inside your Svelte project create a new component named `Toggle.svelte`. It's going to contain a script tag, and button element.
 
-{% codeToHtml "svelte", "Toggle.svelte" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "svelte", "Toggle.svelte" %}
     <script>
     	let darkMode = false;
     	function toggle() {
@@ -24,8 +24,8 @@ Inside your Svelte project create a new component named `Toggle.svelte`. It's go
     		Go dark
     	{/if}
     </button>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 What the code above does is:
 
@@ -47,8 +47,8 @@ Now, for the Toggle to appear within your app simply call it using a capitalized
 
 Of course, none of the above will work with having the right CSS in place to change the style. Below is a really simple example of how you might implement this. You can either add the CSS to your Svelte project's `global.css` file or add it to `App.svelte`.
 
-{% codeToHtml "html","App.svelte" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html","App.svelte" %}
     <style>
      :root{
       --bg-color: #FFFFFF;
@@ -65,8 +65,8 @@ Of course, none of the above will work with having the right CSS in place to cha
       --text-color: #FFFFFF;
      }
     </style>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## Code & Example
 

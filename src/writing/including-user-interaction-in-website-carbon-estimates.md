@@ -34,15 +34,15 @@ These all have different upsides and limitations. Anything that relies on timing
 
 Whichever approach you take, you can use the function below to query `PerformanceResourceTiming` and return the total bytes of data transferred.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     function getPageWeight() {
         const performance = window.performance.getEntriesByType('resource');
         const transferSize = performance.reduce((acc, resource) => acc + resource.transferSize, 0);
         return transferSize;
     }
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## Putting it together with CO2.js
 
@@ -50,8 +50,8 @@ Whichever approach you take, you can use the function below to query `Performanc
 
 The code below shows a simple implementation that imports CO2.js and uses the function above to estimate the carbon emissions of a web page every 10 seconds.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     import { co2 } from '@tgwf/co2';
 
     const model = new co2({ model: "swd", version: 4 });
@@ -61,8 +61,8 @@ The code below shows a simple implementation that imports CO2.js and uses the fu
      const emissions = model.perByte(pageWeight);
      return emissions;
     }, 10000);
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Read more about using CO2.js in the Green Web Foundation's [Developers Documentation website](https://developers.thegreenwebfoundation.org/co2js/overview/).
 

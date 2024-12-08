@@ -13,8 +13,8 @@ On this website, I use Cloudinary to host and serve my images. Normally, this wo
 
 You can set up something similar on most CDNs that provide edge-compute, or even on your web host.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     addEventListener('fetch', event => {
         event.respondWith(handleRequest(event));
     });
@@ -42,7 +42,7 @@ You can set up something similar on most CDNs that provide edge-compute, or even
         }
         return new Response('Method not allowed', { status: 405 });
     }
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 The script I use in production includes a couple of extra steps to cache the returned images, so that subsequent requests for the same file are served using the cache. You can read more about that in this [guide from Cloudflare](https://developers.cloudflare.com/workers/tutorials/configure-your-cdn). If you're using Netlify to host your site, Tim Kadlec has a tutorial showing how to [do the same thing with Netlify redirects](https://timkadlec.com/remembers/2020-11-17-netlify-proxy-requests/).

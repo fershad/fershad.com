@@ -19,28 +19,26 @@ The script below is a simplified example of how to do this. One thing to note fi
 
 - The script below finds any `<link rel="stylesheet">` tag and replaces them (in the same position within the HTML) with a `<style>` tag.
 
-{% codeToHtml js, "worker.js"%}
-// worker.js
+<!-- markdownlint-disable -->
+{% codeToHtml "js", "worker.js"%}
 
 addEventListener('fetch', (event) => {
-event.respondWith(handleRequest(event.request));
+  event.respondWith(handleRequest(event.request));
 });
 
 async function handleRequest(request) {
 const response = await fetch(url.toString(), request);
-
     return new HTMLRewriter().on('link[rel="stylesheet"]', new cssInline('href')).transform(response);
-
 }
 
 async function fetchCSS(url) {
-const response = await fetch(url);
-return response.text();
+  const response = await fetch(url);
+  return response.text();
 }
 
 class cssInline {
-constructor(attributeName) {
-this.attributeName = attributeName;
+  constructor(attributeName) {
+  this.attributeName = attributeName;
 }
 
     async element(element) {
@@ -55,3 +53,4 @@ this.attributeName = attributeName;
 
 }
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->

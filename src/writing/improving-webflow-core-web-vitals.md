@@ -35,11 +35,13 @@ We _could_ use `preconnect` to warm up the `fonts.googleapis` and `fonts.gstatic
 
 You'd do this by adding the code snippets below as a custom code block in the Head of your page. Here's [a Webflow tutorial](https://university.webflow.com/lesson/custom-code-in-the-head-and-body-tags#head-code) on how to do that.
 
-{% codeToHtml html %}
+<!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <!-- preconnect to google font apis -->
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### Option 2: Upload your own fonts
 

@@ -16,15 +16,15 @@ Out of the box, it works okay. If you'd like to make changes to the way elements
 **When to use:** When making modifications to _text_ elements (e.g., spans, links, strong text, etc.)  
 **Example:** To give all links a particular class, you can pass something like the below into the serialiser.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     marks: {
       link: props => (
         h('a', {className: "your-class", href: props.mark.href}, props.children)
       )
     }
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 What this does is find all marks that are of type "link", and return HTML accordingly.
 
@@ -33,15 +33,15 @@ What this does is find all marks that are of type "link", and return HTML accord
 **When to use:** When you want to modify block types.  
 **Example:** To show all images with a particular class, and without using the figure element.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     types: {
       image: props => (
         h('img', {className: "lazy img-responsive", src: urlFor(props.node.asset._ref).url()})
       )
     }
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 _Note: This also requires you to include [Sanity's Image URL builder](https://www.npmjs.com/package/@sanity/image-url) in your JavaScript file._
 

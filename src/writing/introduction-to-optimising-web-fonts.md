@@ -67,11 +67,11 @@ Preload is extremely handy in prompting the browser to download certain assets e
 
 The `preload` tag you'd place in the head of your HTML page should end up looking something like this:
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="preload" href="webfont.woff2" as="font" type="font/woff2" crossorigin>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## Use font-display effectively
 

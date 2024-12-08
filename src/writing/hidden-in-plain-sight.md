@@ -7,19 +7,22 @@ This post looks at a small code snippet that I was shown during a conversation a
 
 On a recent call I was shown the below code snippet by a designer.
 
-{% codeToHtml html %}
+<!-- markdownlint-disable -->
+{% codeToHtml "html" %}
 <script>
-var Webflow = Webflow || [];
-Webflow.push(function () {
-$('html').addClass('webflow-loaded')
-});
+    var Webflow = Webflow || [];
+    Webflow.push(function () {
+        $('html').addClass('webflow-loaded')
+    });
 </script>
+
 <style>
 .wf-loading \* {
-opacity: 0;
+    opacity: 0;
 }
 </style>
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Upon seeing it, I broke out into a cold sweat. The designer went on to explain how they were looking for a way to prevent text visually changing as the page was loading (FOUT), and had found this code snippet recommended on a forum. It did the trick. Happy days.
 
@@ -29,13 +32,15 @@ But this code also sets their site up for the possibility of not showing any con
 
 To understand what’s going on we’ll start from the bottom.
 
-{% codeToHtml html %}
+<!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <style>
         .wf-loading * {
             opacity: 0;
         }
     </style>
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 You might be able to take a guess at what this small style block is doing. It tells the browser that anything (`*`) that lives inside a parent element with a class of `.wf-loading` should be hidden (`opacity: 0`).
 
@@ -45,7 +50,8 @@ On the page we were looking at, the `.wf-loading` class was applied to the `<htm
 
 The script block above the style tag is where the magic happens.
 
-{% codeToHtml html %}
+<!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <script>
         var Webflow = Webflow || [];
         Webflow.push(function () {
@@ -53,6 +59,7 @@ The script block above the style tag is where the magic happens.
         });
     </script>
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 This block declares a Webflow variable, and then adds a function to it that adds the `webflow-loaded` class to the `<html>` tag on the page. That class will reveal the page by setting `opacity: 1` for the all children of the `<html>` tag.
 

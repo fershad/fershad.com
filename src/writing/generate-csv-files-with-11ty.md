@@ -22,35 +22,38 @@ Let's go through a short little tutorial that will show you how you can generate
 
 Create new folder for your project and install Eleventy locally within that folder using NPM.
 
-{% codeToHtml bash, "terminal"%}
+{% codeToHtml "bash", "terminal"%}
 npm init -y
 npm install --save-dev @11ty/eleventy
 {% endcodeToHtml %}
 
 Let's now create a place for our data. Within your project folder create a `_data` folder. In there, let's create our data file. In this project I'll use some [dummy books data](https://gist.github.com/nanotaboada/6396437), so I'll create a file called `books.json`.
 
-{% codeToHtml json, "_data/books.json"%}
+<!-- markdownlint-disable -->
+{% codeToHtml "json", "_data/books.json"%}
 {
-"books": [
-{
-"isbn": "9781593275846",
-"title": "Eloquent JavaScript, Second Edition",
-"subtitle": "A Modern Introduction to Programming",
-"author": "Marijn Haverbeke",
-"published": "2014-12-14T00:00:00.000Z",
-"publisher": "No Starch Press",
-"pages": 472,
-"description": "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
-"website": "http://eloquentjavascript.net/"
-},
-...
+    "books": [
+        {
+            "isbn": "9781593275846",
+            "title": "Eloquent JavaScript, Second Edition",
+            "subtitle": "A Modern Introduction to Programming",
+            "author": "Marijn Haverbeke",
+            "published": "2014-12-14T00:00:00.000Z",
+            "publisher": "No Starch Press",
+            "pages": 472,
+            "description": "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications.",
+            "website": "http://eloquentjavascript.net/"
+        },
+    ...
+    ]
 }
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 With our data in place we can now create our template. I'll be using Liquid for this template, but you can use Nunjucks, or even HTML if you feel comfortable. In the root director of our project we'll create `books.liquid` which will be our template. Let's start with the most important part of the template - the permalink. Let's add the below frontmatter to our template.
 
 <!-- markdownlint-disable MD003 MD022 -->
-{% codeToHtml yaml, "books.liquid"%}
+{% codeToHtml "yaml", "books.liquid"%}
 ---
 permalink: 'books.csv'
 ---
@@ -63,14 +66,16 @@ With our data in place we can now create our template. I'll be using Liquid for 
 
 Finally, let's get some data into the template. We'll output the ISBN, title, author, and website of the books in our CSV files. To achieve this, add the code below to your template (after the frontmatter).
 
-{% codeToHtml liquid, "books.liquid" %}
+<!-- markdownlint-disable -->
+{% codeToHtml "liquid", "books.liquid" %}
     ...
     ISBN,Title,Author,Website
     {%- for book in books -%}
-    {{ "" }}
-    {{ book.isbn }},"{{ book.title }}","{{ book.author }}",{{ book.website }}
+        {{ "" }}
+        {{ book.isbn }},"{{ book.title }}","{{ book.author }}",{{ book.website }}
     {%- endfor -%}
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 There are a few important things to note about the code above:
 

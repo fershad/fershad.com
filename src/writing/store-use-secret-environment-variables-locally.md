@@ -9,27 +9,27 @@ In the root folder of your app, create a file to store the keys. We'll call our'
 
 Store any sensitive data you'll use in your app within this file
 
-{% codeToHtml bash %}
 <!-- markdownlint-disable -->
+{% codeToHtml "bash" %}
     export MY_API_KEY="ANAOFWQ14124124js214g"
     export EMIAL_PASSWORD="apasswordhere"
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Enter the root folder of your project using your terminal, and use the source command to bring in the local environment variables
 
-{% codeToHtml bash %}
 <!-- markdownlint-disable -->
+{% codeToHtml "bash" %}
     source local-env
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Now you can call the local environment variables in your app. An example with Node.js would be
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     const Airtable_API_Key = process.env.MY_API_KEY
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 One last thing to remember is to add the local-env to your .gitignore file so that it's not published next time you push your project.

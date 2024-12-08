@@ -24,11 +24,11 @@ These definitions might not mean much now, but once you understand how each of t
 
 Using YouTube as an example, you'd include this line early on in the HEAD of your page
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="dns-prefetch" href="https://www.youtube.com">
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### **When to use it**
 
@@ -47,22 +47,22 @@ Using YouTube as an example, you'd include this line early on in the HEAD of you
 
 Sticking with the YouTube example above, you can including this line early in the HEAD of your page.
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="preconnect" href="https://www.youtube.com">
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### **When to use it**
 
 Same as `dns-prefetch` though [**browser support**](https://caniuse.com/link-rel-preconnect) is not as broad (IE & Firefox don't support `preconnect`). That said, you can use `preconnect` with `dns-prefetch` as a fallback by just putting them one after another in your code.
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="preconnect" href="https://www.youtube.com">
     <link rel="dns-prefetch" href="https://www.youtube.com">
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### **Gotchas**
 
@@ -79,11 +79,11 @@ Like all other resource hints, you can include `preload` tags in the HEAD of y
 
 You'll notice the `as="image"` attribute in the code below. This tells the browser what kind of resource is being fetched, and thus helps it determine priority. You can find a list of all possible values [**on MDN**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-as).
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="preload" href="main-image.webp" as="image" type="image/webp" />
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### **When to use it**
 
@@ -107,11 +107,11 @@ Think of an online store for example. Your analytics tell you that most visitors
 
 As with all other resource hints, you can include `prefetch` in the HEAD of your HTML.
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="prefetch" href="/css/product.css" />
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### **When to use it**
 

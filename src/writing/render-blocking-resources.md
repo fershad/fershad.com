@@ -29,8 +29,8 @@ Asynchronous JavaScript won’t be render blocking, however the browser will exe
 
 Because JavaScript can be used to manipulate CSS, the browser will first try to download and parse any synchronous CSS it has already encountered before coming across a JavaScript resource.
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <!-- CSS will download and parse first -->
     <link rel="stylesheet" href="/css/my-styles.css" />
     <script src="/js/important-file.js"></script>
@@ -42,8 +42,8 @@ Because JavaScript can be used to manipulate CSS, the browser will first try to 
     <!-- JS will start downloading in parallel with the CSS file -->
     <script async src="/js/important-file.js"></script>
     <link rel="stylesheet" href="/css/my-styles.css" />
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## How can you find render-blocking resources?
 

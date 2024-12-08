@@ -29,9 +29,11 @@ With this information at hand, they can look for ways to run code in locations w
 
 You can install the Grid Intensity CLI locally to try it out. If you’re familiar with using the terminal, then running the curl command below is all you need to get going.
 
-{% codeToHtml bash %}
+<!-- markdownlint-disable -->
+{% codeToHtml "bash" %}
 curl -fsSL <https://raw.githubusercontent.com/thegreenwebfoundation/grid-intensity-go/install-script/install.sh> | sudo sh
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### Getting data
 

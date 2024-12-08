@@ -24,8 +24,8 @@ To exclude a website from the FLoC calculation you can add the following HTTP re
 
 This website is hosted on Cloudflare (using Cloudflare Pages). I've used a Cloudflare Worker to add the custom response headers. The code for the worker is below. I've assigned this worker to the route `fershad.com/*` so that it applies to every page.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     async function handleRequest(request) {
       // Make the headers mutable by re-constructing the Request.
       request = new Request(request)
@@ -43,21 +43,21 @@ This website is hosted on Cloudflare (using Cloudflare Pages). I've used a Cloud
     addEventListener("fetch", event => {
       event.respondWith(handleRequest(event.request))
     })
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Previously on Netlify ...
 
 When this post was first published, this site is hosted on Netlify. [Their docs](https://docs.netlify.com/routing/headers/) show a couple of ways to add custom response headers. I've decided to make the change in my site's `netlify.toml` file.
 
-{% codeToHtml "toml" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "toml" %}
     [[headers]]
       for ="/*"
       [headers.values]
         Permissions-Policy = "interest-cohort=()"
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 More information about FLoC can be found here:
 

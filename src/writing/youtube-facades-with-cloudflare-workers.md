@@ -21,8 +21,8 @@ But what about when they’re not able to? I was wrestling with that last week, 
 
 You can find the code for [this Cloudflare Worker on GitHub](https://github.com/fershad/yt-lite-worker). It relies on Cloudflare Worker’s HTML Rewriter API and Cheerio.js to do most of the heavy lifting. It replaces standard YouTube iframes, with [justinribeiro/lite-youtube](https://github.com/justinribeiro/lite-youtube) implementation. Let’s take a quick walk through the code.
 
-{% codeToHtml js %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js" %}
     import * as cheerio from 'cheerio';
 
     const ytIdRegex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -90,8 +90,8 @@ You can find the code for [this Cloudflare Worker on GitHub](https://github.com/
     addEventListener('fetch', event => {
       event.respondWith(handleRequest(event.request))
     })
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Starting from the bottom, this Worker would sit on a route waiting for `fetch` requests to be made. When a request is made, the Worker sends it to the `handleRequest()` function to perfom some action on it.
 

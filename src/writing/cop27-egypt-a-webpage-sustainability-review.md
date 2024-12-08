@@ -99,18 +99,20 @@ Knowing this, we can find out where the site is hosted. We’ll another tool fro
 
 Running the IP address above through the API returns:
 
-{% codeToHtml json, %}
+<!-- markdownlint-disable -->
+{% codeToHtml "json" %}
 {
-"country_name": "Egypt",
-"country_code_iso_2": "EG",
-"country_code_iso_3": "EGY",
-"carbon_intensity_type": "avg",
-"carbon_intensity": 466.006,
-"generation_from_fossil": 88.87,
-"year": 2021,
-"checked_ip": "163.121.141.38"
+  "country_name": "Egypt",
+  "country_code_iso_2": "EG",
+  "country_code_iso_3": "EGY",
+  "carbon_intensity_type": "avg",
+  "carbon_intensity": 466.006,
+  "generation_from_fossil": 88.87,
+  "year": 2021,
+  "checked_ip": "163.121.141.38"
 }
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 So, the IP address is located in Egypt as I mentioned earlier. Last year (2021), Egypt’s grid had an average carbon intensity of 466 grams per kilowatt-hour, with close enough to 89% of electricity generation coming from fossil fuels.
 
@@ -144,9 +146,11 @@ A lot of the image bloat seems to have come about since the website redesign tha
 
 The homepage also features a self-hosted video file near the bottom of the page. Of the final 31.9 MB downloaded, this one video accounts for 12.9 MB. I’ve included a simplified snippet of the video tag from the site below:
 
-{% codeToHtml html, %}
-<video preload="auto" controls poster="path/to/post/image.jpg">
+<!-- markdownlint-disable -->
+{% codeToHtml "html" %}
+    <video preload="auto" controls poster="path/to/post/image.jpg">
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 The video tag has a `poster` attribute, so there’s going to be something nice shown in place until the user starts watching it. For that reason, the `preload` attribute could be set to `"none"` which would instruct the browser not to download any video content until the user requests it (by playing the video).
 
@@ -206,7 +210,7 @@ In the screenshot above, I’ve hovered over a point in time on the **Power: CPU
 
 - Power (in watts) - The power consumption by the CPU package at that point in time on the timeline.
 - Energy used in the visible range (in milliwatt-hour) - the energy used by the CPU package over the entire profile.
-  - Next to the milliwatt-hour figure there’s also a carbon estimate shown in milligrams of CO2e. This is the bit that I’ve been working on with The Green Web Foundation.
+    - Next to the milliwatt-hour figure there’s also a carbon estimate shown in milligrams of CO2e. This is the bit that I’ve been working on with The Green Web Foundation.
 
 Okay, so there’s a likelihood that you’re like me and don’t know your milliwatts from your milligrams. All we really need to know is that we’re dealing with some pretty small figures here.
 

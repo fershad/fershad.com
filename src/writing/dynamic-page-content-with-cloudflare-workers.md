@@ -32,46 +32,42 @@ In order to achieve what I wanted, I needed to find a way to modify the HTML tha
 
 Here's the Workers code to achieve this. You can see it in action on my [homepage](https://fershad.com/) and [services page](https://fershad.com/services/).
 
-{% codeToHtml js, "index.js"%}
+<!-- markdownlint-disable -->
+{% codeToHtml "js", "index.js"%}
 const quotes = [
-{
-quote:
-'Numbers tell more than words: As a result to his involvement and actions, the time to first byte when starting the app was cut by 75%. This had an immediate impact on user satisfaction and revenue.',
-client: `Christian Schraeder, Founder of <a href="https://readle-app.com/">Readle App</a>`,
-},
-{
-quote:
-'Fershad has transformed the journey and engagement of visitors on our website. The new homepage design delivers significant improvements in key web performance measurements as well as introducing a more attractive and intuitive interface that helps people navigate the site better.',
-client: `Ben Hall, Marketing Manager at <a href="https://www.displaylink.com/">DisplayLink</a>`,
-},
-{
-quote:
-"Fershad is passionate about sustainability, and his enthusiasm for the topic and deep knowledge of the web development space make him a really valuable partner. His insights are really practical and particularly important for today's businesses to grow responsibly.",
-client: `Annalee Bloomfield, CEO of <a href="https://www.sustain.life/">Sustain.Life</a>`,
-},
+    {
+    quote: 'Numbers tell more than words: As a result to his involvement and actions, the time to first byte when starting the app was cut by 75%. This had an immediate impact on user satisfaction and revenue.',
+    client: `Christian Schraeder, Founder of <a href="https://readle-app.com/">Readle App</a>`,
+    },
+    {
+    quote: 'Fershad has transformed the journey and engagement of visitors on our website. The new homepage design delivers significant improvements in key web performance measurements as well as introducing a more attractive and intuitive interface that helps people navigate the site better.',
+    client: `Ben Hall, Marketing Manager at <a href="https://www.displaylink.com/">DisplayLink</a>`,
+    },
+    {
+    quote: "Fershad is passionate about sustainability, and his enthusiasm for the topic and deep knowledge of the web development space make him a really valuable partner. His insights are really practical and particularly important for today's businesses to grow responsibly.",
+    client: `Annalee Bloomfield, CEO of <a href="https://www.sustain.life/">Sustain.Life</a>`,
+    },
 ]
 
 class quoteHandler {
-async element(element) {
-const item = quotes[Math.floor(Math.random() * quotes.length)]
-element.setInnerContent(`<blockquote>${item.quote}</blockquote><figcaption>${item.client}</figcaption>`, {
-html: true,
-})
-}
+    async element(element) {
+        const item = quotes[Math.floor(Math.random() * quotes.length)]
+        element.setInnerContent(`<blockquote>${item.quote}</blockquote><figcaption>${item.client}</figcaption>`, {
+            html: true,
+        })
+    }
 }
 
 async function handleRequest(req) {
-const res = await fetch(req)
-
+    const res = await fetch(req)
     const rewritter = new HTMLRewriter().on('#client-quote', new quoteHandler())
-
     return rewritter.transform(res)
-
 }
 
 addEventListener('fetch', event => {
-event.respondWith(handleRequest(event.request))
+    event.respondWith(handleRequest(event.request))
 })
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 These are some basic use cases for Cloudflare Workers HTMLRewriter. It feel powerful, as a frontend developer, to be able to control and manipulate data at the edge. Reducing the burden on end-users and their devices, while allow us to deliver faster more sustainable websites.

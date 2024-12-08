@@ -52,37 +52,37 @@ Images are typically the heaviest resource on any web page. JPEG and PNG images 
 
 WebP is a modern image format for the web that is being [championed by Google](https://developers.google.com/speed/webp). WebP offers [significantly lower file size](https://havecamerawilltravel.com/photographer/webp-website/) compared to traditional image formats, though there are instances where it [might not be optimal](https://siipo.la/blog/is-webp-really-better-than-jpeg). Chrome, Edge & Firefox [all support WebP](https://caniuse.com/#search=webp), and as of July 2020 Safari is almost there too. The good thing is that using the `<picture>` element you can easily use WebP images on your web page, while providing a fallback to traditional image formats on unsupported browsers. Here's some sample code:
 
-{% codeToHtml "html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <picture>
       <source srcset="yourWebPImage.webp" type="image/webp">
       <source srcset="yourJPEGImage.jpg" type="image/jpeg">
       <img src="yourJPEGImage.jpg" alt="Don't forget ALT text for your images">
     </picture>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Alternately you can use a service like Cloudinary to host/serve your images. This makes serving images in the right format for any given browser ridiculously easy. There's a lot more detail in this [blog post from the Cloudinary team](https://cloudinary.com/blog/adaptive_browser_based_image_format_delivery), but in summary you can use Cloudinary's `f_auto` flag to do the dirty work for you. That allows the code above to be truncated to:
 
-{% codeToHtml "html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <img src="https://res.cloudinary.com/demo/image/upload/f_auto/yourJPEGImage.jpg" alt="Don't forget ALT text for your images"/>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 #### Video
 
 The same applies to video. If you're embedding video on your web page, you'll likely have an MP4 version of that video. Just like we have WebP for images, WebM is an alternative, open source, video format that delivers smaller file sizes compared to MP4. To serve up WebM video with a [fallback to MP4 for unsupported browsers](https://caniuse.com/#search=webm) you can use code similar to the below:
 
-{% codeToHtml "html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <video controls>
       <source src="yourMP4Video.mp4" type="video/mp4">
       <source src="yourWebMVideo.webm" type="video/webm">
       <p>Your browser doesn't support HTML5 video.</p>
     </video>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### 5\. **Lazy-load content that is below the fold**
 
@@ -98,14 +98,14 @@ To avoid "page jank" caused by lazy-loaded images suddenly appearing as the user
 
 Just like images, videos can also be lazy-loaded though the technique to do so differs. For most cases in which video playback is initiated by the user you can use the below code:
 
-{% codeToHtml "html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <video controls preload="none" poster="videoCoverImage.jpg">
       <source src="yourWebMVideo.webm" type="video/webm">
       <source src="yourMP4Video.mp4" type="video/mp4">
     </video>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 By setting `preload="none"` you are telling the browser not to download any video data until the user plays the video. With this in place we use the poster attribute to give the browser a placeholder image to display in place of the video until content is downloaded/playback starts. Jeremy Wagner & Rachel Andrew dive into this a bit deeper [in this article](https://web.dev/lazy-loading-video/).
 
@@ -130,13 +130,13 @@ One more trick you can use is to a combination of link `preconnect` and `preload
 
 Putting these together we get a code sample similar to the below:
 
-{% codeToHtml "html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" media="print" onload="this.media='all'" />
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### 7\. **Check third-party resources you load on the page**
 

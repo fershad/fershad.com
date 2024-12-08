@@ -13,15 +13,15 @@ With images though, we're able to use the newest formats while also supporting u
 
 To do this you simply need to present your images in a block like the below:
 
-{% codeToHtml html %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html" %}
      <picture>
     	<source srcset="img/example.avif" type="image/avif">
     	<source srcset="img/example.webp" type="image/webp">
     	<img src="img/example.jpg" alt="Don't forget ALT text">
     </picture>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 The way this works is:
 

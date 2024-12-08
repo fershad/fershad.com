@@ -9,24 +9,24 @@ The filter I made would take the UTC event time and the time zone for conversion
 
 In the end, you pass the first variable to the filter as you normally would, and all subsequent variables after the filter is declared. It looks like this:
 
-{% codeToHtml js, ".eleventy.js" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js", ".eleventy.js" %}
 eleventyConfig.addFilter("changeTime", require("./filters/time.js") );
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
-{% codeToHtml js, "time.js" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "js", "time.js" %}
 module.exports = function (match, zone) {
   // ... stuff happens here
 };
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
-{% codeToHtml html, "zones.html" %}
 <!-- markdownlint-disable -->
+{% codeToHtml "html", "zones.html" %}
     <p>{{ match.datetime | changeTime: zone | date: "%H:%M" }}</p>
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 One interesting aside is that you can join filters to each other. In the example above the changeTime filter is run first, and then the result of that is formatted using Liquid's date filter. Pretty neat!

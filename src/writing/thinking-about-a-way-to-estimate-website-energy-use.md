@@ -31,16 +31,16 @@ I strongly recommend that you read the previous post - [Adapting Cloud Carbon Fo
 
 In that post, I arrived at a formula for data center emissions that was:
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Data center CO2e (grams) = (Compute Kilowatt-Hours + Memory Kilowatt-Hours) * PUE * Local grid intensity + (Storage Kilowatt-Hours + Network Kilowatt-Hours) * PUE * Global grid intensity
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 So the data center segment has got several sub-segments - Compute (CPU), Memory, Storage (HDD/SSD), and Networking. Since we only want to calculate energy use, we will remove the grid intensity parts of the calculation. We'll also spilt the calculation up so that it's easier to read for each sub-segment.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
 
     Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
@@ -50,8 +50,8 @@ So the data center segment has got several sub-segments - Compute (CPU), Memory,
     Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
 
     Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## Segment: Networks
 
@@ -61,25 +61,25 @@ The best work I've seen reflecting this comes from a [Carbon Trust report](https
 
 The carbon trust report allocates a fixed baseline power load to fixed and mobile networks. It then also provides a means to account for the marginal increase in energy use caused by long-duration, data intensive activities like streaming. The folks over at Scope3 have broken down these figures, and I've used their summary below. [Read their docs](https://methodology.scope3.com/data_transfer#power-usage-by-time-and-bandwidth-power-model) to understand how they reached these figures and the changes they've made to Carbon Trust's assumptions.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Fixed Network Energy = 9.55W + 0.03W/Mbps
 
     Mobile Network Energy = 1.2W + 1.53W/Mbps
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Now there is a baseline and dynamic portion to the energy calculations for both fixed and mobile network energy. The question now becomes, what input should we use for the dynamic portion. The calculation asks use for the bitrate (Mbps), but we don't really measure websites in that way.
 
 For this part, we can use values from the Malmodin research mentioned above. In it, the value of 0.4 Mbps for "web surf". So let's plug that in.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 = 0.00956kWh
 
     Mobile Network Energy (kWh) = 1.2W + 1.53W x 0.4Mbps = 1.81W / 1000 = 0.00181kWh
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### What about non-web surfing data transfer?
 
@@ -91,13 +91,13 @@ There's one more change I'm going to make to the Scope3 figures above. The value
 
 And, as a final step, we'll covert this value to kilowatt-hours per second. This allows us to multiply the factor by the `transfer time` for the web page or content being measured.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 / 3600 = 0.0000026556kWh/s x transfer time (s)
 
     Mobile Network Energy (kWh) = 2.5W + 1.53W x 0.4Mbps = 3.11W / 1000 / 3600 = 0.0000008639kWh/s x transfer time (s)
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 So now we've got figures to use for the network segment of our calculation. You would only use one of these figures in a calculation, based on the kind of network environment that is being tested for.
 
@@ -121,11 +121,11 @@ For each type of device (tablet, computer, laptop, mobile), we'll take the follo
 
 Now using DIMPACT's calculations:
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Device Energy (kWh) = Device active power draw (W) / 1000 / 3600 x Duration of pageview (s)
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 Now we're normally not viewing web pages for hours. Maybe minutes, but probably seconds. So we've made a slight change to DIMPACT's calculation to reflect this.
 
@@ -153,16 +153,16 @@ A model like this is also not suitable for forecasting, or making any prediction
 
 Bringing all the work above together, we arrive at the below calculation combining all three system segments.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Website Energy Use (kWh) = Data Center Energy (kWh) + Network Energy (kWh) + User Device Energy (kWh)
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### Data Center Energy
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Data center Energy (kWh) = (Compute Kilowatt-Hours * PUE) + (Memory Kilowatt-Hours * PUE) + (Storage Kilowatt-Hours * PUE) + (Network Kilowatt-Hours * PUE)
 
     Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
@@ -172,34 +172,34 @@ Bringing all the work above together, we arrive at the below calculation combini
     Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
 
     Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### Network Energy
 
 Choose the calculation appropriate to the network being tested.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Fixed Network Energy (kWh) = 0.0000026556kWh/s x transfer time (s)
 
     Mobile Network Energy (kWh) = 0.0000008639kWh/s x transfer time (s)
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ### Device Energy
 
 Choose the calculation appropriate for the device being tested.
 
-{% codeToHtml "bash" %}
 <!-- markdownlint-disable -->
+{% codeToHtml %}
     Computer Device Energy (kWh) = 0.0532 x Duration of pageview (s)
 
     Tablet Device Energy (kWh) = 0.003 x Duration of pageview (s)
 
     Smartphone Device Energy (kWh) = 0.00077 x Duration of pageview (s)
-<!-- markdownlint-enable -->
 {% endcodeToHtml %}
+<!-- markdownlint-enable -->
 
 ## Have a play around with it
 
