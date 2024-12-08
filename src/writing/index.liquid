@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
   <p>My most recent writing on sustainable web development, performance tips for websites and apps, as well as a few other musings.</p>
 </section>
 
-<section class="threecol">
+<section class="twocol">
   {% assign postslist = collections.post | sortByPublishedDate %}
   <ul>
     {% for post in postslist %}
@@ -20,6 +20,7 @@ eleventyExcludeFromCollections: true
         <small>
           <time class="postlist-date" datetime="{{ post.data.published | date_to_rfc822 }}">{{ post.data.published | date_to_long_string }}</time>
         </small>
+        <p>{{ post.data.summary }}</p>
       </li>
     {% endfor %}
   </ul>
