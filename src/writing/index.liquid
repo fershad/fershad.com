@@ -29,7 +29,7 @@ eleventyExcludeFromCollections: true
             {% endif %}
           </b>
         </small>
-        {% unless archived %}
+        {% unless post.data.archived %}
           <p>{{ post.data.summary }}</p>
         {% else %}
           <p>{{ post.data.archiveNote }}</p>
