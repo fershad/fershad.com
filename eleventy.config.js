@@ -129,9 +129,9 @@ export default function(eleventyConfig) {
 		},
 	});
 
-	// eleventyConfig.addPlugin(greenLinks, {
-	// 	// ignore: ["fershad.com", "thegreenwebfoundation.org"],
-	//   });
+	eleventyConfig.addPlugin(greenLinks, {
+		// ignore: ["fershad.com", "thegreenwebfoundation.org"],
+	  });
 
 	eleventyConfig.addFilter("limitWords", function(value, limit = 50) {
 		// Return the first `limit` words, plus an ellipsis if needed
