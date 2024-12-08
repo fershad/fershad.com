@@ -110,7 +110,8 @@ We'll be using Shopify's Liquid as our templating engine. It's supported out of 
 Our simple template is going to take the data from the timezones.json file, and create a page for each using the location to form the file path. Save this file in the src folder.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "liquid", "{{ zone.location | raw }}/index.html" %}
+{% raw %}
+{% codeToHtml "liquid", "{{ zone.location }}/index.html" %}
     ---
     layout: base.liquid
     pagination:
@@ -123,11 +124,13 @@ Our simple template is going to take the data from the timezones.json file, and 
     <h1>{{ zone.name}}</h1>
     <p>{{ zone.location }} | {{ zone.locale }}</p>
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Let's also create a layout file for this template to use. You can see in the frontmatter of the zones.html file we've told Eleventy to look for a file called base.liquid to use for the layout. We'll create and store this file in the \_includes folder.
 
 <!-- markdownlint-disable -->
+{% raw %}
 {% codeToHtml "html", "_layouts/base.html" %}
     <!DOCTYPE html>
     <html lang="en">
@@ -142,6 +145,7 @@ Let's also create a layout file for this template to use. You can see in the fro
     </body>
     </html>
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Now if you run the eleventy command, you should see a new \_site folder created. Within that should be individual folders for each of the time zones in our JSON file.
@@ -155,6 +159,7 @@ First up, getting the data for each webinar into the template file for our time 
 For now, let's loop of the webinar data and output it. We'll worry about layout and formatting later. Add the following to the zones.html file we created earlier.
 
 <!-- markdownlint-disable -->
+{% raw %}
 {% codeToHtml "liquid", "zones.html" %}
     {% for webinar in webinars %}
      <div>
@@ -165,6 +170,7 @@ For now, let's loop of the webinar data and output it. We'll worry about layout 
      </div>
     {% endfor %}
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Rerunning the eleventy command, and inspecting one of the pages generated should allow you to see the information from our webinars JSON file presented in HTML.
@@ -202,6 +208,7 @@ Next, let's create the javascript file itself with the filters folder we set up 
 We can now call this filter in our zones.html template. Note that we'll have to pass two arguments to this filter. If you need help with this take a look at [this post](https://www.fershad.com/blog/posts/pass-multiple-arguments-to-eleventy-filter/). We've also used Liquid's date filter to format the date to give a little consistency to the output.
 
 <!-- markdownlint-disable -->
+{% raw %}
 {% codeToHtml "liquid", "zones.html" %}
     {% for webinar in webinars %}
      <div>
@@ -212,6 +219,7 @@ We can now call this filter in our zones.html template. Note that we'll have to 
      </div>
     {% endfor %}
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Now, if you run the eleventy command and inspect the output files, you should see a different webinar liveTime for each region.
@@ -225,6 +233,7 @@ Let's create a simple three-column layout for displaying the webinars. We'll mak
 Start by making changes to our layout and template file.
 
 <!-- markdownlint-disable -->
+{% raw %}
 {% codeToHtml "liquid", "zones.html" %}
     <head>
     ...
@@ -249,6 +258,7 @@ Start by making changes to our layout and template file.
     {% endfor %}
     </div>
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Then we can style it with CSS. We'll create a file called 'styles.css' in the \_includes/css folder of our project.
@@ -337,6 +347,9 @@ Then we can style it with CSS. We'll create a file called 'styles.css' in the \_
 
 The final thing we'll have to do is to tell Eleventy to copy this CSS file directly to our output folder. Our final config file should look like this:
 
+<!-- markdownlint-disable -->
+{% raw %}
+{% codeToHtml , %}
     module.exports = function(eleventyConfig) {
 
         eleventyConfig.addFilter("addZone", require("./filters/zone.js") );
@@ -350,12 +363,16 @@ The final thing we'll have to do is to tell Eleventy to copy this CSS file direc
             addPassthroughCopy: true
         };
       };
+{% endcodeToHtml %}
+{% endraw %}
+<!-- markdownlint-enable -->
 
 ### **Extra**
 
 As an extra, let's quickly create a simple index page with links to all the pages we created earlier. We'll loop through the array of time zones we created earlier, and link to each page. We can do this because we set the permalink for each webinar page to be the time zone location.
 
 <!-- markdownlint-disable -->
+{% raw %}
 {% codeToHtml "liquid", "zones.html" %}
     ---
     layout: base.liquid
@@ -369,6 +386,7 @@ As an extra, let's quickly create a simple index page with links to all the page
       </ul>
     </div>
 {% endcodeToHtml %}
+{% endraw %}
 <!-- markdownlint-enable -->
 
 Take a look at what the [final pages look like](https://boring-morse-2957ec.netlify.com/), and [view the source code on Github](https://github.com/fishintaiwan/tutorial-timezone-webinars-landing-pages). Of course, this is just a starting point. We haven't even begun to tackle topics such as localised text and location-based routing. Maybe I'll get to those in later posts.

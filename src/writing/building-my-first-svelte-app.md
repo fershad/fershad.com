@@ -2,7 +2,7 @@
 title: Building my first app with Svelte 3
 published: 2020/04/07
 archived: true
-archiveNote: "Svelte is now up to version 5, so you probably want to read up about that instead.
+archiveNote: "Svelte is now up to version 5, so you probably want to read up about that instead."
 ---
 
 {% callout Archived %}

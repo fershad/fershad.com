@@ -1,4 +1,7 @@
 {
     "layout": "layouts/post.liquid",
-    "hasTOC": true
+    "hasTOC": true,
+    "tags": [
+        "post"
+    ]
 }

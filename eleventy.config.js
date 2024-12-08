@@ -125,6 +125,15 @@ export default function(eleventyConfig) {
 <p><a href="https://codepen.io/${user}/pen/${penId}">View ${title} by @${user} on CodePen</a></p>`;
 	});
 
+	eleventyConfig.addFilter("sortByPublishedDate", function(array) {
+		// The data.published value is a string in the format "YYYY/MM/DD"
+		return array.sort((a, b) => {
+			const dateA = new Date(a.data.published);
+			const dateB = new Date(b.data.published);
+			return dateB - dateA;
+		});
+	});
+
 	eleventyConfig.setLibrary("md", mdLib);
     
     return {

@@ -19,6 +19,6 @@ I'm helping Chris put together the workshop content. It covers carbon estimation
 
 On cool thing I've been able to spend time making as part of the process has been an Observable notebook showcasing all the different ways CO2.js can be used. It's an interactive way to introduce developers and non-techies to the library and its capabilities. We'll definitely be updating it as a add more APIs, data, and estimation models to the library, but for now you can check it out at [**CO2.js Playground on Observable**](https://observablehq.com/@greenweb/co2-js-playground).
 
----
+***
 
 Oh, and if you're in Berlin on November 23 and 24, then grab a ticket for the [SDIA Green Coding Summit](https://sdialliance.org/green-coding-summit/2023/). Our Green Web Foundation workshop will be free for attendees, and there'll also be workshops from our friends at [Boavizta](https://boavizta.org/) and [Green Coding Berlin](https://www.green-coding.org/).
