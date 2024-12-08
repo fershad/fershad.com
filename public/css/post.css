@@ -82,37 +82,10 @@ section h4[id] {
   display: block;
 }
 
-section[class] ul li:before {
-  content: "";
-  position: absolute;
-  left: 1ch;
-  top: 1ex;
-  height: 1ex;
-  width: 1ex;
-  /* background-color: var(--marker-color, var(--blue-0)); */
-  border: 2px solid var(--marker-color, var(--blue-4));
-  transition: all 0.2s;
-}
-
 @media (prefers-reduced-motion: reduce) {
   section[class] ul li:before {
     transition: none;
   }
-}
-
-section[class] ul li:hover:before,
-section[class] ul li:focus-within:before {
-  background-color: var(--marker-color, var(--blue-7));
-  border-color: var(--marker-color, var(--blue-7));
-  /* border-radius: 50%; */
-  height: 100%;
-  top: 0;
-}
-
-section[class] ul li {
-  list-style-type: none;
-  position: relative;
-  padding-left: 2.25rem;
 }
 
 ol {
