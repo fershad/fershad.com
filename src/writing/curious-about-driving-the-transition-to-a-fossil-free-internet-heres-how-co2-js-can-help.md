@@ -107,7 +107,7 @@ Ensuring you’re using the right tool for what you’re trying to measure can b
 
 ### Measuring cloud or serverless carbon emission
 
-With more and more compute shifting to **\*\*\*\***_the cloud_**\*\*\*\***, it is becoming increasingly important for operations teams to be aware of the carbon emissions for their cloud-based workloads. [Cloud Carbon Footprint](https://www.cloudcarbonfootprint.org/) is an open-source tool that provides visibility and tooling to measure, monitor and reduce your cloud carbon emissions. It works with major cloud providers (AWS, Google Cloud, and Microsoft Azure), and provides energy and carbon estimates that include embodied emissions from device manufacturing.
+With more and more compute shifting to **_the cloud_**, it is becoming increasingly important for operations teams to be aware of the carbon emissions for their cloud-based workloads. [Cloud Carbon Footprint](https://www.cloudcarbonfootprint.org/) is an open-source tool that provides visibility and tooling to measure, monitor and reduce your cloud carbon emissions. It works with major cloud providers (AWS, Google Cloud, and Microsoft Azure), and provides energy and carbon estimates that include embodied emissions from device manufacturing.
 
 When comparing it to CO2.js, Cloud Carbon Footprint is a better tool for measuring the emissions of cloud-base workloads as it uses actual CPU utilisation for calculations whenever that data is available to it. This is far more accurate than the generalised figures used for data center emissions found in both the Sustainable Web Design and OneByte models.
 
