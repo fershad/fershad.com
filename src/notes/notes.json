@@ -1,6 +1,3 @@
 {
-    "layout": "layouts/post.liquid",
-    "tags": [
-        "note"
-    ]
+    "layout": "layouts/post.liquid"
 }
