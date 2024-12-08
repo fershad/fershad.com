@@ -249,3 +249,7 @@ figcaption {
   background-color: var(--blue-7);
   color: var(--stone-0);
 }
+
+figcaption a {
+  color: var(--stone-0);
+}
