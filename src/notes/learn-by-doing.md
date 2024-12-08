@@ -3,8 +3,6 @@ title: Learn by doing
 date: 2023-11-11
 draft: false
 lang: en
-thumbnail: /assets/img/opengraph-learn-by-doing.png
-
 ---
 
 I recently started coaching Touch Football to some Grade 7 and 8 students at a school here in Taipei. It's a wild experience, the first time I've properly coached kids, and boy do I have a heap of added respect for how teachers manage to do work with them five days a week!

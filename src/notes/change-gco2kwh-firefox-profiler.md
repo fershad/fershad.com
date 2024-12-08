@@ -4,17 +4,11 @@ date: 2023-09-15
 draft: false
 lang: en
 type: post
-keywords:
-  - firefox profiler
-layout: layouts/post.liquid
 tags:
   - firefox profiler
   - website carbon
   - note
-seo:
-  title: Change the value for CO2e calculations in Firefox Profiler
-  description: This is cool. You can now change the value Firefox Profiler uses when it calculates the CO2e emissions in a Power Profile.
-thumbnail: /assets/img/opengraph-change-the-value-for-co-2e-calculations-in-firefox-profiler.png
+description: This is cool. You can now change the value Firefox Profiler uses when it calculates the CO2e emissions in a Power Profile.
 ---
 
 This is cool. So earlier this year, through my role with the Green Web Foundation, we did some work to add carbon emissions estimates to the Firefox Profiler. You can read more about that [over on my blog](https://fershad.com/writing/co2e-estimates-in-firefox-profiler/).

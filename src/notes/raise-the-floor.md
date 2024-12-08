@@ -6,7 +6,6 @@ lang: en
 fmContentType: post
 tags:
   - quote
-thumbnail: /assets/img/opengraph-raise-the-floor.png
 ---
 
 I'm about to get back into coaching Touch at a local school here in Taipei, and I really liked this quote from Sports Psychologist Dr Scott Goldman from a recent episode of The Bye Round podcast:

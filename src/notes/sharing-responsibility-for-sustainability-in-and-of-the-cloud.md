@@ -3,12 +3,7 @@ title: Sharing responsibility for cloud sustainability
 date: 2024-02-01
 lang: en
 type: post
-layout: layouts/post.liquid
-slug: sharing-responsibility-cloud-sustainability
-seo:
-  - slug: sharing-responsibility-cloud-sustainability
-thumbnail: /assets/img/opengraph-sharing-responsibility-for-cloud-sustainability.png
-
+permalinik: notes/sharing-responsibility-cloud-sustainability
 ---
 
 ## Sustainability _of_ the cloud

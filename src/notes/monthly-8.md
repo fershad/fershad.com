@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-8.png
 ---
 
 Another late monthly update post. Been a busy couple of weeks, mostly because I was sick as at the beginning of September which pushed a bunch of things back.

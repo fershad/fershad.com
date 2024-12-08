@@ -3,7 +3,6 @@ title: "Monthly #3"
 date: 2024-04-02
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-monthly-3.png
 tags:
   - monthly
 categories:

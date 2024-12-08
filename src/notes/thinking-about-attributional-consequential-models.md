@@ -3,7 +3,6 @@ title: Thinking about attributional v. consequential models
 date: 2024-01-14
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-thinking-about-attributional-v-consequential-models.png
 
 ---
 

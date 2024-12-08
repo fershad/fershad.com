@@ -8,7 +8,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-1.png
 ---
 
 One thing I wanted to start doing in 2024 was to capture monthly notes of some of the goings on in my life. I've never been good at note taking or journaling, so this is me trying to start it becoming a habit.

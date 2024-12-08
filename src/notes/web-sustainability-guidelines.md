@@ -3,16 +3,12 @@ title: Web Sustainability Guidelines is now in v1.0!
 date: 2023-09-18
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-web-sustainability-guidelines-is-now-in-v1-0.png
-layout: layouts/post.liquid
 tags:
   - sustainability
   - wsg
   - web sustainability
   - note
-seo:
-  title: " Web Sustainability Guidelines is now in v1.0!"
-  description: v1.0 of the Web Sustainability Guidelines just came out. It's a huge step in standardising how we speak about sustainability with regards to building websites.
+description: v1.0 of the Web Sustainability Guidelines just came out. It's a huge step in standardising how we speak about sustainability with regards to building websites.
 ---
 
 As a bit of light weekend reading, I took a look at the recently published [Web Sustainability Guidelines (WSG) 1.0](https://w3c.github.io/sustyweb/).

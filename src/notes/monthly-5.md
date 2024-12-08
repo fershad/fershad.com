@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-5.png
 ---
 
 It's a rainy Sunday in Taipei, and the start of a busy June. But that's next month's post. Let's take a look back at May, 2024.

@@ -4,8 +4,7 @@ date: 2024-06-25
 draft: false
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-two-types-of-people.png
-
+tags:
   - quote
 ---
 

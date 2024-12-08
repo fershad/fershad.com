@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-10.png
 ---
 
 October was a month of getting back into the regular swing of things after a very disrupted by rewarding Summer.

@@ -3,7 +3,6 @@ title: The best bits from this week (Week 20, 2024)
 date: 2024-05-20
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-the-best-bits-from-this-week-week-20-2024.png
 tags:
   - bestbits
 ---

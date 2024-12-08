@@ -3,9 +3,7 @@ title: Progress is impossible without change
 date: 2023-11-28
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-progress-is-impossible-without-change.png
-layout: layouts/post.liquid
-
+tags:
   - quote
 ---
 

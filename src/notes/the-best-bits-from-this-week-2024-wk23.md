@@ -5,7 +5,6 @@ lang: en
 type: post
 tags:
   - bestbits
-thumbnail: /assets/img/opengraph-the-best-bits-from-this-week-week-23-2024.png
 ---
 
 ## 🗒️ [Growing](https://www.trysmudford.com/blog/growing/)

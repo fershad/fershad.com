@@ -6,7 +6,6 @@ lang: en
 fmContentType: post
 tags:
   - quote
-thumbnail: /assets/img/opengraph-the-power-of-subtraction.png
 ---
 
 This is a really interesting idea conveyed by Sendhil Mullainathan. He talks about some work by Lydie Klotz's book Subtract.

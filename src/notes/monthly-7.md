@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-7.png
 ---
 
 A veeeeeery late look back at July, 2024. A month of highs, lows, lots of footy, and lots of travel.

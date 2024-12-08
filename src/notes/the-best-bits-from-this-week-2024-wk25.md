@@ -5,7 +5,6 @@ lang: en
 type: post
 tags:
   - bestbits
-thumbnail: /assets/img/opengraph-the-best-bits-from-this-week-week-26-2024.png
 ---
 
 I was in Australia for the last week and a bit with family, so didn't get around to reading or listening to too many things. This week's update is very much me catching up on some really great material!

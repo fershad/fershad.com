@@ -8,7 +8,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-2.png
 ---
 
 Two from two on the monthly review post!

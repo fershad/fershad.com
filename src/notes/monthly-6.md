@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-6.png
 ---
 
 A look back at a very busy June 2024.

@@ -7,7 +7,6 @@ tags:
   - monthly
 categories:
   - monthly
-thumbnail: /assets/img/opengraph-monthly-9.png
 ---
 
 A busy month front loading work at the start of September, before spending the rest of the month away in northern India with Kay.

@@ -3,11 +3,7 @@ title: CO2.js Playground
 date: 2023-11-11
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-co-2-js-playground.png
-layout: layouts/post.liquid
-
-seo:
-  description: As part of an upcoming workshop for the SDIA's Green Coding Summit, I've made an interactive CO2.js playground for people to get hands on with the capabilities of our little JavaScript library.
+description: As part of an upcoming workshop for the SDIA's Green Coding Summit, I've made an interactive CO2.js playground for people to get hands on with the capabilities of our little JavaScript library.
 ---
 
 TL;DR - Play around with the different features of CO2.js in [this interactive Observable notebook](https://observablehq.com/@greenweb/co2-js-playground).

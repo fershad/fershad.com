@@ -3,10 +3,7 @@ title: Data center electricity usage in Ireland matches urban residential
 date: 2023-10-26
 lang: en
 type: post
-slug: data-center-electricity-usage-ireland-matches-urban-residential
-layout: layouts/post.liquid
-thumbnail: /assets/img/opengraph-data-center-electricity-usage-in-ireland-matches-urban-residential.png
-
+permalink: notes/data-center-electricity-usage-ireland-matches-urban-residential/index.html
 ---
 
 This is wild. Data from Ireland shows that the electricity consumption of data centers in 2022 was the same as all the energy used by urban dwellings in the country.

@@ -3,8 +3,6 @@ title: Performance Planet 2023
 date: 2023-12-06
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-performance-planet-2023.png
-layout: layouts/post.liquid
 tags:
   - emissions
   - estimates

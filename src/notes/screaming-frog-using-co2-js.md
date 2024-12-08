@@ -3,9 +3,6 @@ title: Screaming Frog using CO2.js
 date: 2024-05-09
 lang: en
 type: post
-lastmod: 2024-05-09
-thumbnail: /assets/img/opengraph-screaming-frog-using-co-2-js.png
-
 ---
 
 Earlier this week, I found out that [the latest version of Screaming Frog](https://www.screamingfrog.co.uk/seo-spider-20/) (the SEO crawling software) is using CO2.js!! The tool scans entire websites and presents really detailed reports and data that can be used for SEO and other optimisation tasks. They've now also included a column for carbon estimates and ratings, based on the Sustainable Web Design Model.

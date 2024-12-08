@@ -7,8 +7,7 @@ keywords:
   - ai
   - pokemon
   - training ai
-thumbnail: /assets/img/opengraph-learning-about-training-ai-and-learning-about-ourselves.png
-slug: learning-training-ai-pokemon
+permalink: notes/learning-training-ai-pokemon/index.html
 
 ---
 

@@ -10,8 +10,7 @@ tags:
   - emissions
   - ghg protocol
   - note
-seo:
-  description: Some observations on what Google reports in its Scope 3 emissions, and how that compares to Mozilla.
+description: Some observations on what Google reports in its Scope 3 emissions, and how that compares to Mozilla.
 ---
 
 Marketa from Wholegrain Digital wrote article a while back which touches on [the complexity that surrounds Scope 3 emissions](https://www.wholegraindigital.com/blog/scope_3_emissions/) as they are currently measured under the Greenhouse Gas Protocol (GHG Protocol). The Wholegrain team do a great job at writing openly about this kind of stuff (see: [The challenge of calculating our company carbon emissions](https://www.wholegraindigital.com/blog/calculating-emissions-2023/)). One section from Marketa's post that struck me most was:

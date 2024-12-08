@@ -8,7 +8,6 @@ tags:
 categories:
   - monthly
 lastmod: 2024-05-01
-thumbnail: /assets/img/opengraph-monthly-4.png
 ---
 
 Hey, since May 1st is a public holiday in Taiwan I'm able to write out my monthly on time for change!

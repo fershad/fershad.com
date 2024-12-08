@@ -4,11 +4,8 @@ date: 2024-01-05
 draft: false
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-start-stop-continue-2024.png
-layout: layouts/post.liquid
 tags:
   - goals
-  - note
 ---
 
 I really like [Mike Crittenden's yearly review format](https://critter.blog/2024/01/04/2023-in-review/), and especially the idea of setting out habits/things that you want to start, stop, and continue. This feels like something that would be pretty good for any periodic review be it a performance review at work, a strategy review, or even a personal review like Mike uses it for.

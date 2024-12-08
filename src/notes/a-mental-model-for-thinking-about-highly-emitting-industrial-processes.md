@@ -4,10 +4,8 @@ date: 2024-01-05
 draft: false
 lang: en
 type: post
-thumbnail: /assets/img/opengraph-a-mental-model-for-thinking-about-highly-emitting-industrial-processes.png
 tags:
   - mental model
-  - note
 seo:
   canonical: https://rtl.chrisadams.me.uk/2024/01/listening-notes-zero-carbon-cement-on-the-volts-podcast/
 ---
