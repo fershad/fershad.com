@@ -625,6 +625,24 @@ footer nav ul {
   margin: 0;
 }
 
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a[data-green-link="true"] {
+  color: var(--blue-7);
+  display: inline-block;
+  position: relative;
+}
+
+a:not([data-green-link="true"]) {
+  color: var(--stone-10);
+}
+
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;

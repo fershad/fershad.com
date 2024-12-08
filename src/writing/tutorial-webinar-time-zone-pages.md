@@ -63,11 +63,11 @@ We're going to prepare some data that we'll use to populate our templates. We'll
 First, the webinars data file. We'll be storing a title, presenter, description, and broadcast time.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "_data/webinars.js" %}
+{% codeToHtml "javascript", "_data/webinars.js" %}
     [
-    	{ "title": "Setting up your business", "presenter": "Fershad", "description": "Tips, tricks, and a few shortcuts to help you start your own business.", "liveTime": "2019-09-20T10:45:00Z" },
-    	{ "title": "Get your first client", "presenter": "Michael", "description": "Secure your first client, and start off on the road to success.", "liveTime": "2019-09-27T12:30:00Z" },
-    	{ "title": "Handling your taxes", "presenter": "Andrew", "description": "Stay on top of your finances and tax reporting to avoid unexpected suprises.", "liveTime": "2019-10-04T15:00:00Z" }
+     { "title": "Setting up your business", "presenter": "Fershad", "description": "Tips, tricks, and a few shortcuts to help you start your own business.", "liveTime": "2019-09-20T10:45:00Z" },
+     { "title": "Get your first client", "presenter": "Michael", "description": "Secure your first client, and start off on the road to success.", "liveTime": "2019-09-27T12:30:00Z" },
+     { "title": "Handling your taxes", "presenter": "Andrew", "description": "Stay on top of your finances and tax reporting to avoid unexpected suprises.", "liveTime": "2019-10-04T15:00:00Z" }
     ]
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
@@ -77,13 +77,13 @@ An important point to note regarding the liveTime field above. We are using [ISO
 Now for the time zone data file.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "_data/zones.js" %}
+{% codeToHtml "javascript", "_data/zones.js" %}
     [
-    	{ "location": "Pacific/Auckland", "locale": "en-NZ", "name": "Auckland (UTC+13:00)"},
-    	{ "location": "Australia/Sydney", "locale": "en-AU", "name": "Sydney (UTC+10:00)"},
-    	{ "location": "Europe/London", "locale": "en-GB", "name": "London (UTC+00:00)"},
-    	{ "location": "America/New_York", "locale": "en-US", "name": "New York (UTC-05:00)"},
-    	{ "location": "America/Los_Angeles", "locale": "en-US", "name": "Los Angeles (UTC-10:00)"}
+     { "location": "Pacific/Auckland", "locale": "en-NZ", "name": "Auckland (UTC+13:00)"},
+     { "location": "Australia/Sydney", "locale": "en-AU", "name": "Sydney (UTC+10:00)"},
+     { "location": "Europe/London", "locale": "en-GB", "name": "London (UTC+00:00)"},
+     { "location": "America/New_York", "locale": "en-US", "name": "New York (UTC-05:00)"},
+     { "location": "America/Los_Angeles", "locale": "en-US", "name": "Los Angeles (UTC-10:00)"}
     ]
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
@@ -93,7 +93,7 @@ You can get a full list of [time zones](https://timezonedb.com/time-zones), and 
 For completeness, let's create a .eleventy.js config file, and point it to our 'src' folder. Be sure to create/save this file in the root directory for your project. We'll also tell it to output our static files to a folder called 'dist'.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", ".eleventy.config.js" %}
+{% codeToHtml "javascript", ".eleventy.config.js" %}
     module.exports = function(eleventyConfig) {
         return {
             dir: {
@@ -186,7 +186,7 @@ For converting the time zones, we'll use a custom filter. The filter takes the w
 Eleventy allows you to configure and add custom filters, which can then be called in our templates. We're going to create one now in the .eleventy.js config file we created earlier.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", ".eleventy.config.js" %}
+{% codeToHtml "javascript", ".eleventy.config.js" %}
     module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("addZone", require("./filters/zone.js") );
@@ -201,7 +201,7 @@ Eleventy allows you to configure and add custom filters, which can then be calle
 Next, let's create the javascript file itself with the filters folder we set up earlier.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "filters/zone.js" %}
+{% codeToHtml "javascript", "filters/zone.js" %}
     module.exports = function(time, zone) {
         let locale = zone.locale || "en-US";
         let liveTime= new Date(time);

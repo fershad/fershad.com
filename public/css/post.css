@@ -73,11 +73,41 @@ blockquote p {
   margin: 0;
 }
 
+pre:has(code) code {
+  background: none;
+}
+
+pre:has(code) {
+  max-inline-size: 100%;
+}
+
+pre {
+  padding: 1.75rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  position: relative;
+}
+
 code {
   background-color: var(--blue-12);
   color: var(--stone-0);
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
+}
+
+.codeblock {
+  position: relative;
+}
+
+.codeblock > .lang {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--blue-0);
+  color: var(--stone-12);
+  z-index: 1;
 }
 
 .callout {

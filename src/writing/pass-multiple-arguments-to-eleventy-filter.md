@@ -16,13 +16,13 @@ The filter I made would take the UTC event time and the time zone for conversion
 In the end, you pass the first variable to the filter as you normally would, and all subsequent variables after the filter is declared. It looks like this:
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", ".eleventy.js" %}
+{% codeToHtml "javascript", ".eleventy.js" %}
     eleventyConfig.addFilter("changeTime", require("./filters/time.js") );
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "time.js" %}
+{% codeToHtml "javascript", "time.js" %}
     module.exports = function (match, zone) {
       // ... stuff happens here
     };

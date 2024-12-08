@@ -32,7 +32,7 @@ Enter the root folder of your project using your terminal, and use the source co
 Now you can call the local environment variables in your app. An example with Node.js would be
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     const Airtable_API_Key = process.env.MY_API_KEY
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->

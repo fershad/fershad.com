@@ -1,7 +1,7 @@
 ---
 title: Including user interaction in website carbon estimates
 published: 2024/07/09
-permalink:  /writing/including-user-interaction-in-website-carbon-estimates/
+url: /writing/including-user-interaction-in-website-carbon-estimates/
 summary: >-
   This post explores one way developers can go beyond page load and start
   estimating web page carbon emissions that include user interactions on the
@@ -40,12 +40,12 @@ These all have different upsides and limitations. Anything that relies on timing
 Whichever approach you take, you can use the function below to query `PerformanceResourceTiming` and return the total bytes of data transferred.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
-    function getPageWeight() {
-        const performance = window.performance.getEntriesByType('resource');
-        const transferSize = performance.reduce((acc, resource) => acc + resource.transferSize, 0);
-        return transferSize;
-    }
+{% codeToHtml "javascript" %}
+function getPageWeight() {
+    const performance = window.performance.getEntriesByType('resource');
+    const transferSize = performance.reduce((acc, resource) => acc + resource.transferSize, 0);
+    return transferSize;
+}
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -56,7 +56,7 @@ Whichever approach you take, you can use the function below to query `Performanc
 The code below shows a simple implementation that imports CO2.js and uses the function above to estimate the carbon emissions of a web page every 10 seconds.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     import { co2 } from '@tgwf/co2';
 
     const model = new co2({ model: "swd", version: 4 });

@@ -15,7 +15,7 @@ From a performance perspective, proxying requests through your own domain can re
 In the example below I use a Cloudflare worker to proxy requests from a website to AWS S3. The workers is set up so that any traffic to the `[website-domain]/file` route gets intercepted & redirected to the S3 bucket being used to fetch data. You can set up something similar on most CDNs that provide edge-compute, or even on your web host.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     addEventListener('fetch', event => {
       event.respondWith(handleRequest(event))
     })

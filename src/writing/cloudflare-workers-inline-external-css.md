@@ -26,7 +26,7 @@ The script below is a simplified example of how to do this. One thing to note fi
 - The script below finds any `<link rel="stylesheet">` tag and replaces them (in the same position within the HTML) with a `<style>` tag.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "worker.js"%}
+{% codeToHtml "javascript", "worker.js"%}
 
 addEventListener('fetch', (event) => {
   event.respondWith(handleRequest(event.request));

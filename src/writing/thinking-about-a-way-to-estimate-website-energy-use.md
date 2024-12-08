@@ -38,7 +38,7 @@ In that post, I arrived at a formula for data center emissions that was:
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Data center CO2e (grams) = (Compute Kilowatt-Hours + Memory Kilowatt-Hours) * PUE * Local grid intensity + (Storage Kilowatt-Hours + Network Kilowatt-Hours) * PUE * Global grid intensity
+    Data center CO2e (grams) = (Compute Kilowatt-Hours + Memory Kilowatt-Hours) *PUE* Local grid intensity + (Storage Kilowatt-Hours + Network Kilowatt-Hours) *PUE* Global grid intensity
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -168,7 +168,7 @@ Bringing all the work above together, we arrive at the below calculation combini
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Data center Energy (kWh) = (Compute Kilowatt-Hours * PUE) + (Memory Kilowatt-Hours * PUE) + (Storage Kilowatt-Hours * PUE) + (Network Kilowatt-Hours * PUE)
+    Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
 
     Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
 

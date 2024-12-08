@@ -29,7 +29,7 @@ To exclude a website from the FLoC calculation you can add the following HTTP re
 This website is hosted on Cloudflare (using Cloudflare Pages). I've used a Cloudflare Worker to add the custom response headers. The code for the worker is below. I've assigned this worker to the route `fershad.com/*` so that it applies to every page.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     async function handleRequest(request) {
       // Make the headers mutable by re-constructing the Request.
       request = new Request(request)

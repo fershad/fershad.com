@@ -57,7 +57,7 @@ Let's now create a place for our data. Within your project folder create a `_dat
 
 With our data in place we can now create our template. I'll be using Liquid for this template, but you can use Nunjucks, or even HTML if you feel comfortable. In the root director of our project we'll create `books.liquid` which will be our template. Let's start with the most important part of the template - the permalink. Let's add the below frontmatter to our template.
 
-<!-- markdownlint-disable MD003 MD022 -->
+<!-- markdownlint-disable -->
 {% codeToHtml "yaml", "books.liquid"%}
 ---
 permalink: 'books.csv'

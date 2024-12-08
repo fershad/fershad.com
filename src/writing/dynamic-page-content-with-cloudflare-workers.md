@@ -37,7 +37,7 @@ In order to achieve what I wanted, I needed to find a way to modify the HTML tha
 Here's the Workers code to achieve this. You can see it in action on my [homepage](https://fershad.com/) and [services page](https://fershad.com/services/).
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "index.js"%}
+{% codeToHtml "javascript", "index.js"%}
 const quotes = [
     {
     quote: 'Numbers tell more than words: As a result to his involvement and actions, the time to first byte when starting the app was cut by 75%. This had an immediate impact on user satisfaction and revenue.',

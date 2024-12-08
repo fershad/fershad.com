@@ -5,11 +5,23 @@ import { hosting } from "@tgwf/co2"
 import markdownit from 'markdown-it'
 import mdfigcaption from 'markdown-it-image-figures'
 import { codeToHtml } from 'shiki'
+import greenLinks from "eleventy-plugin-green-links";
+import { markdownItShikiTwoslashSetup } from 'markdown-it-shiki-twoslash';
 
 const figoptions = {
     figcaption: true
 };
-const mdLib = markdownit({}).use(mdfigcaption, figoptions);
+
+const shiki = await markdownItShikiTwoslashSetup({
+	theme: "nord",
+  })
+
+const mdLib = markdownit({
+	html: true,
+//   linkify: true,
+//   typographer: true
+}).use(mdfigcaption, figoptions).use(shiki);
+
 const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
 
@@ -40,6 +52,10 @@ export default function(eleventyConfig) {
 			decoding: "async",
 		},
 	});
+
+	// eleventyConfig.addPlugin(greenLinks, {
+	// 	// ignore: ["fershad.com", "thegreenwebfoundation.org"],
+	//   });
 
 	eleventyConfig.addFilter("limitWords", function(value, limit = 50) {
 		// Return the first `limit` words, plus an ellipsis if needed
@@ -100,17 +116,33 @@ export default function(eleventyConfig) {
 		
 	});
 
-	eleventyConfig.addPairedShortcode("codeToHtml", function(code, lang = "text", filename) {
-		const html = codeToHtml(code, {
-			lang,
-			theme: "plastic",
-		});
+	eleventyConfig.addPairedShortcode("codeToHtml", async function(code, lang = "text", filename) {
+		code = code.replace(/\r?\n$/, '');
 
-		return `
-		<div class="code-block">
-		${filename ? `<p class="filename">${filename}</p>` : ""}
-		${html}
-		</div>`;
+		try {
+			const html = await codeToHtml(code, {
+				lang,
+				theme: "nord",
+			});
+
+			if (filename && lang) {
+				return `<div class="codeblock">
+				${filename ? `<div class="filename">${filename}</div>` : ""}
+				${lang ? `<div class="lang">${lang}</div>` : ""}
+				${html}
+				</div>`;
+			} else if (lang) {
+				return `<div class="codeblock">
+				${lang ? `<div class="lang">${lang}</div>` : ""}
+				${html}
+				</div>`;
+			} else {
+				return `<div class="codeblock">${html}</div>`;
+			}
+		} catch {
+			const html = code;
+			return `<pre><code>${html}</code></pre>`;
+		}
 	});
 
 	eleventyConfig.addPairedShortcode("callout", function(content, title) {

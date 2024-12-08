@@ -21,7 +21,7 @@ Out of the box, it works okay. If you'd like to make changes to the way elements
 **Example:** To give all links a particular class, you can pass something like the below into the serialiser.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     marks: {
       link: props => (
         h('a', {className: "your-class", href: props.mark.href}, props.children)
@@ -38,7 +38,7 @@ What this does is find all marks that are of type "link", and return HTML accord
 **Example:** To show all images with a particular class, and without using the figure element.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     types: {
       image: props => (
         h('img', {className: "lazy img-responsive", src: urlFor(props.node.asset._ref).url()})

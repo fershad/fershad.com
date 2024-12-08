@@ -54,7 +54,7 @@ Head over to the `index.js` file that’s in the root of the project. Here you�
 When you’re ready to proceed, delete the entire content of this file, and replace it with the code below:
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "index.js"%}
+{% codeToHtml "javascript", "index.js"%}
 import { Router } from 'itty-router'
 
 // Create a new router
@@ -81,7 +81,7 @@ Since we want to be able to send this API a number of bytes and have it return u
 Let’s add a new route to the `index.js` file, just before the `router.all` statement. We’ll leave it empty for now.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "index.js"%}
+{% codeToHtml "javascript", "index.js"%}
 router.get("/bytes/:value", ({ params }) => {})
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
@@ -97,7 +97,7 @@ To install CO2.js from NPM, run the `npm install @tgwf/co2` command. This will a
 To use CO2.js with our router, we’ll need to import it into the `index.js` file. Add the below import statement to the top of the file.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "index.js"%}
+{% codeToHtml "javascript", "index.js"%}
 import { co2 } from '@tgwf/co2'
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
@@ -105,7 +105,7 @@ import { co2 } from '@tgwf/co2'
 Now we can use CO2.js in the new route we created.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js", "index.js"%}
+{% codeToHtml "javascript", "index.js"%}
 router.get("/bytes/:value", ({params}) => {
     const { value } = params
 

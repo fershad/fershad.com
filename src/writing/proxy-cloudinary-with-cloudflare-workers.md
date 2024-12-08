@@ -19,7 +19,7 @@ On this website, I use Cloudinary to host and serve my images. Normally, this wo
 You can set up something similar on most CDNs that provide edge-compute, or even on your web host.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "js" %}
+{% codeToHtml "javascript" %}
     addEventListener('fetch', event => {
         event.respondWith(handleRequest(event));
     });
