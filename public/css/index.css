@@ -556,23 +556,34 @@ ol li {
 
 ul li:not(:last-of-type) {
   margin-block-end: 2rem;
+}
+
+ul li {
   position: relative;
-  padding: 0;
+  padding-left: 2.25rem;
 }
 
-ul li:not(:last-of-type)::before {
+ul li::before {
   content: "";
-  display: block;
   position: absolute;
-  border-bottom: 1px solid var(--line-color);
-  inline-size: 40%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 0;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: calc(100% + 2rem / 2);
+  left: 1ch;
+  top: 1ex;
+  height: 1ex;
+  width: 1ex;
+  /* background-color: var(--marker-color, var(--blue-0)); */
+  border: 2px solid var(--marker-color, var(--blue-4));
+  transition: all 0.2s;
 }
 
-ul li:not(:last-of-type)::after {
+ul li:hover::before {
+  background-color: var(--marker-color, var(--blue-7));
+  border-color: var(--marker-color, var(--blue-7));
+  /* border-radius: 50%; */
+  height: 100%;
+  top: 0;
+}
+
+/* ul li:not(:last-of-type)::after {
   content: "";
   display: block;
   position: absolute;
@@ -583,7 +594,7 @@ ul li:not(:last-of-type)::after {
   inset-block-start: calc(var(--line-offset) * -1);
   top: calc(100% + 2rem / 2);
   left: 60%;
-}
+} */
 
 header,
 footer {
