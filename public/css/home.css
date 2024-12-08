@@ -96,6 +96,11 @@
 
 #words > * {
   padding: 1.5rem;
+  justify-content: space-between;
+}
+
+#words div:has(small) + .banner {
+  margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {

@@ -509,6 +509,7 @@ h6,
   text-align: center;
   width: 100%;
   grid-column: -1/1;
+  --override-color: var(--stone-0);
 }
 
 .banner:hover {
@@ -631,6 +632,7 @@ footer nav ul {
 
 a {
   text-decoration: underline;
+  color: var(--override-color, var(--link-color));
 }
 
 a:hover {
@@ -638,13 +640,13 @@ a:hover {
 }
 
 a[data-green-link="true"] {
-  color: var(--blue-7);
+  --link-color: var(--blue-7);
   display: inline-block;
   position: relative;
 }
 
 a:not([data-green-link="true"]) {
-  color: var(--stone-10);
+  --link-color: var(--stone-10);
 }
 
 .visually-hidden:not(:focus):not(:active) {
