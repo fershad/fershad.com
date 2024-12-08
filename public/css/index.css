@@ -222,15 +222,19 @@ textarea:not([rows]) {
 :where(h2) {
   font-size: var(--font-size-6);
   max-inline-size: var(--size-header-2);
+  
 }
 :where(h3) {
   font-size: var(--font-size-5);
+  --deeplink-size: var(--size-header-5);
 }
 :where(h4) {
   font-size: var(--font-size-4);
+  --deeplink-size: var(--size-header-4);
 }
 :where(h5) {
   font-size: var(--font-size-3);
+  --deeplink-size: var(--size-header-3);
 }
 :where(h3, h4, h5, h6, dt) {
   max-inline-size: var(--size-header-3);
@@ -643,6 +647,18 @@ a:not([data-green-link="true"]) {
   color: var(--stone-10);
 }
 
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+
+  // https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/#div-comment-267
+  white-space: nowrap;
+  width: 1px;
+}
+
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
@@ -654,3 +670,5 @@ a:not([data-green-link="true"]) {
     grid-column: span 1;
   }
 }
+
+z

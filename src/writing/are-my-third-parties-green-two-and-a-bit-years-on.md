@@ -30,10 +30,10 @@ Anyway, my Nintendo Switch is out of battery right now so I'm going to finish th
 
 All the results of test run through the online version of AMTPG are stored so that they can be recovered if that specific test run is shared by a user. To run this analysis, I downloaded a dump of all the test results as of April 29, 2024. Results of tests run using the web extensions are not saved, and so are not reflected in this analysis.
 
-**Total tests:** 4,616  
-**Total identified third-party resources:** 131,086  
-**Total identified third-party resources served from green hosts:** 85,755  
-**Percentage green:** 65.42%
+- **Total tests:** 4,616  
+- **Total identified third-party resources:** 131,086  
+- **Total identified third-party resources served from green hosts:** 85,755  
+- **Percentage green:** 65.42%
 
 Those are the headline figures from this analysis. It blows my mind that over 4,500 web pages have been tested using this tool. In those 4,616 tests, 131,086 third-party resources were identified 85,755 of which were found to be served from green hosting.
 

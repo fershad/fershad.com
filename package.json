@@ -14,14 +14,14 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^5.0.0",
-    "@olets/eleventy-plugin-shiki-twoslash": "^2.0.12",
-    "@shikijs/markdown-it": "^1.24.0",
     "@shikijs/transformers": "^1.24.0",
+    "@sindresorhus/slugify": "^2.2.1",
     "@tgwf/co2": "^0.16.3",
     "dotenv": "^16.4.7",
     "eleventy-plugin-green-links": "^0.1.5",
     "linkedom": "^0.18.5",
     "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "~7.0",
     "markdown-it-image-figures": "^2.1.1",
     "markdown-it-shiki-twoslash": "^2.1.3",
     "shiki": "^1.24.0"

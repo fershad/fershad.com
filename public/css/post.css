@@ -3,7 +3,7 @@
 }
 
 section > * + * {
-  margin-top: 1.75rem;
+  margin-top: 2.15rem;
 }
 
 section > p:first-child {
@@ -24,30 +24,95 @@ section ul li,
 section ol,
 section ol li,
 section blockquote,
-section pre,
-section table {
+section pre {
   /* font-size: 1.25rem; */
   line-height: 1.75rem;
+  max-inline-size: 80ch;
 }
 
 section[class] ul li:after {
   display: none;
 }
 
+section h2,
+section h3,
+section h4 {
+  line-height: 1.35;
+  margin-block: 1.25rem;
+  max-inline-size: 40ch;
+}
+
+section h2[id],
+section h3[id],
+section h4[id] {
+  margin-left: -1.5ch;
+  position: relative;
+  padding-left: 1.5ch;
+}
+
+.heading-wrapper {
+  position: relative;
+}
+
+.heading-wrapper .deeplink {
+  position: absolute;
+  inset-inline-start: -1.5ch;
+  top: -0.15ex;
+  font-size: var(--deeplink-size);
+  color: var(--blue-7);
+  text-decoration: none;
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+
+.heading-wrapper:has(h2[id]) {
+  --deeplink-size: var(--font-size-6);
+}
+
+.heading-wrapper:has(h3[id]) {
+  --deeplink-size: var(--font-size-5);
+}
+
+.heading-wrapper:has(h4[id]) {
+  --deeplink-size: var(--font-size-4);
+}
+
+.heading-wrapper:has(h2[id], h3[id], h4[id]):hover .deeplink {
+  opacity: 1;
+  display: block;
+}
+
 section[class] ul li:before {
   content: "";
   position: absolute;
-  left: 12px;
-  top: 3px;
-  height: 2.1ex;
-  width: 7px;
-  background-color: var(--marker-color, var(--blue-4));
+  left: 1ch;
+  top: 1ex;
+  height: 1ex;
+  width: 1ex;
+  /* background-color: var(--marker-color, var(--blue-0)); */
+  border: 2px solid var(--marker-color, var(--blue-4));
+  transition: all 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section[class] ul li:before {
+    transition: none;
+  }
+}
+
+section[class] ul li:hover:before,
+section[class] ul li:focus-within:before {
+  background-color: var(--marker-color, var(--blue-7));
+  border-color: var(--marker-color, var(--blue-7));
+  /* border-radius: 50%; */
+  height: 100%;
+  top: 0;
 }
 
 section[class] ul li {
   list-style-type: none;
   position: relative;
-  padding-left: 1.75rem;
+  padding-left: 2.25rem;
 }
 
 ol {
@@ -75,6 +140,7 @@ blockquote p {
 
 pre:has(code) code {
   background: none;
+  border: none;
 }
 
 pre:has(code) {
@@ -90,10 +156,11 @@ pre {
 }
 
 code {
-  background-color: var(--blue-12);
-  color: var(--stone-0);
-  padding: 0.25rem 0.5rem;
+  background-color: var(--blue-0);
+  /* color: var(--stone-0); */
+  padding: 0.1rem 0.5rem;
   border-radius: 0.25rem;
+  border: 1px solid var(--blue-7);
 }
 
 .codeblock {
@@ -126,4 +193,59 @@ code {
   padding: 0.5rem 1rem 0.5rem 1.5rem;
   margin-left: -1.5rem;
   font-size: 1.5rem;
+}
+
+table {
+  max-inline-size: 100%;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+table th,
+table td {
+  border-top: 1px solid var(--blue-4);
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+}
+
+table th {
+  background-color: var(--blue-0);
+  /* border: 1px solid var(--blue-7); */
+}
+
+table td + td,
+table th + th {
+  border-left: 1px solid var(--blue-4);
+}
+
+table tr {
+  position: relative;
+}
+
+table tr:hover td:first-of-type:before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 2rem;
+  block-size: 100%;
+  background-color: var(--blue-4);
+}
+
+figure {
+  margin: 1.5rem 0;
+  border: 1px solid var(--blue-4);
+  padding: 0.35rem;
+  /* border-left: 2rem solid var(--blue-4); */
+}
+
+figcaption {
+  font-size: 0.875rem;
+  max-inline-size: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--blue-4);
+  background-color: var(--blue-7);
+  color: var(--stone-0);
 }

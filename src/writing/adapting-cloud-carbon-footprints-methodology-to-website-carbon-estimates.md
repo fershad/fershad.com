@@ -211,9 +211,9 @@ The question is, what value should our model use for PUE? If you're operating a 
 
 As a fallback, if PUE is unknown, then I think a good value to use would be that produced by the [Uptime Institute's annual data center survey for 2023](https://journal.uptimeinstitute.com/global-pues-are-they-going-anywhere/). This gives an average PUE value of `1.58`.
 
-Uncertainty
-
+{% callout "Uncertainty" %}
 I'm uncertain if including PUE into the calculation is the right approach here, and would be keen to hear what others think.
+{% endcallout %}
 
 ## Turning it into a carbon estimate
 

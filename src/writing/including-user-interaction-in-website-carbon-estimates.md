@@ -21,7 +21,7 @@ This is great for baselining the estimated carbon emissions of a web page when i
 
 The [Performance API PerformanceResourceTiming API](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming) is a browser interface allows developers to get data on the loading of network resources on a web page.
 
-`PerformanceResourceTiming` can be run from inside the browser's console, or from.a script loaded on a page. It returns an array of the resources loaded on the page being viewed. This includes lazy-loaded resources, or other resources that are downloaded as a result of a user interaction. That makes it perfect for going beyond page load and capturing web page emissions that includes user interactions.
+`PerformanceResourceTiming` can be run from inside the browser's console, or from a script loaded on a page. It returns an array of the resources loaded on the page being viewed. This includes lazy-loaded resources, or other resources that are downloaded as a result of a user interaction. That makes it perfect for going beyond page load and capturing web page emissions that includes user interactions.
 
 ## Using PerformanceResourceTiming with CO2.js to estimate web page carbon emissions
 
