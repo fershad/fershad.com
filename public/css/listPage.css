@@ -119,22 +119,37 @@ li.note {
   border-right: 2px solid;
   border-top: 2px solid;
   margin: 0;
-  transition: all 0.25s ease;
   border-color: var(--blue-4);
   /* max-width: 10ch; */
   /* max-inline-size: 40ch !important; */
 }
 
 li.note:hover {
-  border-left: 1ch solid var(--blue-7);
+  /* border-left: 1ch solid var(--blue-7);
   border-color: var(--blue-7);
   background-color: var(--blue-0);
   padding-right: 1.5rem;
-  padding-left: calc(1.5rem - 1ch);
+  padding-left: calc(1.5rem - 1ch); */
 }
 
 li.note:before {
   display: none;
+}
+
+li.note:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1ch;
+  height: 0;
+  background-color: var(--blue-4);
+  transition: all 0.25s ease;
+}
+
+li.note:hover:after {
+  height: 100%;
 }
 
 ul:has(.note) {
