@@ -8,7 +8,9 @@ summary: >-
   improve your site's Core Web Vitals can also help make it more sustainable!
 ---
 
+{% callout "Original" %}
 This article was [originally published on the EcoPing blog](https://ecoping.earth/blog/core-web-vitals-and-sustainability).
+{% endcallout %}
 
 There's been a lot of talk about Core Web Vitals recently. Rightly so too. Early data is showing that [Core Web Vitals does seem to be playing a factor in Google Search rankings](https://www.sistrix.com/blog/core-web-vitals-is-a-measurable-ranking-factor). With all the talk has come a fair bit of action too. Website owners are looking for ways to improve their base Core Web Vitals scores in a bit to capture some vital SEO juice.
 

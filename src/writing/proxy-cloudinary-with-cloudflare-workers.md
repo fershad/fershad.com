@@ -20,33 +20,33 @@ You can set up something similar on most CDNs that provide edge-compute, or even
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    addEventListener('fetch', event => {
-        event.respondWith(handleRequest(event));
-    });
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event));
+});
 
-    const CLOUD_URL = `https://res.cloudinary.com/${CLOUD_NAME}`;
+const CLOUD_URL = `https://res.cloudinary.com/${CLOUD_NAME}`;
 
-    async function serveAsset(event) {
-        const url = new URL(event.request.url);
-        const cloudinaryURL = `${CLOUD_URL}${url.pathname}`;
-        response = await fetch(cloudinaryURL);
-        const headers = {
-            'timing-allow-origin': '*'
-        };
-        response = new Response(response.body, { ...response, headers });
+async function serveAsset(event) {
+    const url = new URL(event.request.url);
+    const cloudinaryURL = `${CLOUD_URL}${url.pathname}`;
+    response = await fetch(cloudinaryURL);
+    const headers = {
+        'timing-allow-origin': '*'
+    };
+    response = new Response(response.body, { ...response, headers });
+    return response;
+}
+
+async function handleRequest(event) {
+    if (event.request.method === 'GET') {
+        let response = await serveAsset(event);
+        if (response.status > 399) {
+            response = new Response(response.statusText, { status: response.status });
+        }
         return response;
     }
-
-    async function handleRequest(event) {
-        if (event.request.method === 'GET') {
-            let response = await serveAsset(event);
-            if (response.status > 399) {
-                response = new Response(response.statusText, { status: response.status });
-            }
-            return response;
-        }
-        return new Response('Method not allowed', { status: 405 });
-    }
+    return new Response('Method not allowed', { status: 405 });
+}
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

@@ -51,10 +51,10 @@ Let's stick with the July 2020 Review blog post I've used above. What do the OG 
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <meta property="og:title" content="July 2020 Review | Fershad Irani">
-    <meta property="og:url" content="https://www.fershad.com/blog/posts/july-2020-review/">
-    <meta property="og:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
-    <meta property="og:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
+<meta property="og:title" content="July 2020 Review | Fershad Irani">
+<meta property="og:url" content="https://www.fershad.com/blog/posts/july-2020-review/">
+<meta property="og:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
+<meta property="og:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -81,43 +81,43 @@ Adding this to the basic code earlier would give us the below. Please note that 
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <!-- Key OG tags -->
-    <meta property="og:title" content="July 2020 Review | Fershad Irani">
-    <meta property="og:url" content="https://www.fershad.com/blog/posts/july-2020-review/">
-    <meta property="og:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
-    <meta property="og:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
+<!-- Key OG tags -->
+<meta property="og:title" content="July 2020 Review | Fershad Irani">
+<meta property="og:url" content="https://www.fershad.com/blog/posts/july-2020-review/">
+<meta property="og:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
+<meta property="og:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
 
-    <!-- Additional OG tags -->
-    <meta property="og:type" content="article">
-    <meta property="og:locale" content="en_GB" />
-    <meta property="og:site_name" content="Fershad Irani">
+<!-- Additional OG tags -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_GB" />
+<meta property="og:site_name" content="Fershad Irani">
 
-    <meta property="og:audio" content="https://www.fershad.com/example.mp3" />
-    <meta property="og:video" content="https://www.fershad.com/example.mp4" />
-    <meta property="og:image:alt" content="Page image for July 2020 Review">
+<meta property="og:audio" content="https://www.fershad.com/example.mp3" />
+<meta property="og:video" content="https://www.fershad.com/example.mp4" />
+<meta property="og:image:alt" content="Page image for July 2020 Review">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
-{% callout "A note about Twitter"%}
+### A note about Twitter
+
 Twitter actually has its own sharing standard, but does use OG meta tags when that standard is not provided. There are a couple of extra lines of code you can add to make sure your content is well presented when shared on Twitter.
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <!--
-    Additional tags for Twitter
-    Add this to the OG tags shown previously in this post.
-        -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
-    <meta name="twitter:image:alt" content="Page image for July 2020 Review">
-    <meta name="twitter:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
+<!--
+Additional tags for Twitter
+Add this to the OG tags shown previously in this post.
+    -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.fershad.com/ogImages/post-july-2020-review.png">
+<meta name="twitter:image:alt" content="Page image for July 2020 Review">
+<meta name="twitter:description" content="July was a bit of a strange month. I had plenty of plans heading into the month, but a few unexpected twists promted me to shift focus towards the end of the month. Though I'm not one for surprises, these sudden changes are undoubtedly for the better.">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 Using `summary_large_image` to define the content of the card here will tell Twitter to show a large version of the image, similar to what we get on Facebook.
 
 ![Preview of large Twitter card.](../../public/img/blog/62a72bee85b6c1cdf7feebaae4bbdd8605ccc4ad-2160x2160.jpeg "Preview of large Twitter card.")
-{% endcallout %}
 
 ## Guidelines for creating useable images for Open Graph
 

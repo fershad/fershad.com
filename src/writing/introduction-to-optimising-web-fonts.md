@@ -73,7 +73,7 @@ The `preload` tag you'd place in the head of your HTML page should end up lookin
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="preload" href="webfont.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="webfont.woff2" as="font" type="font/woff2" crossorigin>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

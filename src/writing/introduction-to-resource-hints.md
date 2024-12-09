@@ -28,7 +28,7 @@ Using YouTube as an example, you'd include this line early on in the HEAD of you
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -51,7 +51,7 @@ Sticking with the YouTube example above, you can including this line early in th
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="preconnect" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.youtube.com">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -61,8 +61,8 @@ Same as `dns-prefetch` though [**browser support**](https://caniuse.com/link-
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="preconnect" href="https://www.youtube.com">
-    <link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.youtube.com">
+<link rel="dns-prefetch" href="https://www.youtube.com">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -83,7 +83,7 @@ You'll notice the `as="image"` attribute in the code below. This tells the bro
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="preload" href="main-image.webp" as="image" type="image/webp" />
+<link rel="preload" href="main-image.webp" as="image" type="image/webp" />
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -111,7 +111,7 @@ As with all other resource hints, you can include `prefetch` in the HEAD of yo
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="prefetch" href="/css/product.css" />
+<link rel="prefetch" href="/css/product.css" />
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

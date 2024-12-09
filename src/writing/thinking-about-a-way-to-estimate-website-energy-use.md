@@ -38,7 +38,7 @@ In that post, I arrived at a formula for data center emissions that was:
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Data center CO2e (grams) = (Compute Kilowatt-Hours + Memory Kilowatt-Hours) *PUE* Local grid intensity + (Storage Kilowatt-Hours + Network Kilowatt-Hours) *PUE* Global grid intensity
+Data center CO2e (grams) = (Compute Kilowatt-Hours + Memory Kilowatt-Hours) *PUE* Local grid intensity + (Storage Kilowatt-Hours + Network Kilowatt-Hours) *PUE* Global grid intensity
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -46,15 +46,15 @@ So the data center segment has got several sub-segments - Compute (CPU), Memory,
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
+Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
 
-    Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
+Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
 
-    Storage Kilowatt-Hours = 0.0000000009 kWh/MB * data transfer MB * number of CDN regions
+Storage Kilowatt-Hours = 0.0000000009 kWh/MB * data transfer MB * number of CDN regions
 
-    Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
+Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
 
-    Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
+Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -68,9 +68,9 @@ The carbon trust report allocates a fixed baseline power load to fixed and mobil
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Fixed Network Energy = 9.55W + 0.03W/Mbps
+Fixed Network Energy = 9.55W + 0.03W/Mbps
 
-    Mobile Network Energy = 1.2W + 1.53W/Mbps
+Mobile Network Energy = 1.2W + 1.53W/Mbps
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -80,9 +80,9 @@ For this part, we can use values from the Malmodin research mentioned above. In 
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 = 0.00956kWh
+Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 = 0.00956kWh
 
-    Mobile Network Energy (kWh) = 1.2W + 1.53W x 0.4Mbps = 1.81W / 1000 = 0.00181kWh
+Mobile Network Energy (kWh) = 1.2W + 1.53W x 0.4Mbps = 1.81W / 1000 = 0.00181kWh
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -98,9 +98,9 @@ And, as a final step, we'll covert this value to kilowatt-hours per second. This
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 / 3600 = 0.0000026556kWh/s x transfer time (s)
+Fixed Network Energy (kWh) = 9.55W + 0.03W x 0.4Mbps = 9.56W / 1000 / 3600 = 0.0000026556kWh/s x transfer time (s)
 
-    Mobile Network Energy (kWh) = 2.5W + 1.53W x 0.4Mbps = 3.11W / 1000 / 3600 = 0.0000008639kWh/s x transfer time (s)
+Mobile Network Energy (kWh) = 2.5W + 1.53W x 0.4Mbps = 3.11W / 1000 / 3600 = 0.0000008639kWh/s x transfer time (s)
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -128,7 +128,7 @@ Now using DIMPACT's calculations:
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Device Energy (kWh) = Device active power draw (W) / 1000 / 3600 x Duration of pageview (s)
+Device Energy (kWh) = Device active power draw (W) / 1000 / 3600 x Duration of pageview (s)
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -160,7 +160,7 @@ Bringing all the work above together, we arrive at the below calculation combini
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Website Energy Use (kWh) = Data Center Energy (kWh) + Network Energy (kWh) + User Device Energy (kWh)
+Website Energy Use (kWh) = Data Center Energy (kWh) + Network Energy (kWh) + User Device Energy (kWh)
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -168,15 +168,15 @@ Bringing all the work above together, we arrive at the below calculation combini
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
+Data center Energy (kWh) = (Compute Kilowatt-Hours *PUE) + (Memory Kilowatt-Hours* PUE) + (Storage Kilowatt-Hours *PUE) + (Network Kilowatt-Hours* PUE)
 
-    Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
+Compute Kilowatt-Hours = (2.292 * server process time (seconds)) / 1000 / 3600
 
-    Storage Kilowatt-Hours = 0.0000000009 kWh/MB * data transfer MB * number of CDN regions
+Storage Kilowatt-Hours = 0.0000000009 kWh/MB * data transfer MB * number of CDN regions
 
-    Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
+Network Kilowatt-Hours = 0.000001 kWh/MB * data transfer MB * number of CDN regions
 
-    Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
+Memory Kilowatt-Hours = 0.000000392 kWh/MB * data transfer MB
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -186,9 +186,9 @@ Choose the calculation appropriate to the network being tested.
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Fixed Network Energy (kWh) = 0.0000026556kWh/s x transfer time (s)
+Fixed Network Energy (kWh) = 0.0000026556kWh/s x transfer time (s)
 
-    Mobile Network Energy (kWh) = 0.0000008639kWh/s x transfer time (s)
+Mobile Network Energy (kWh) = 0.0000008639kWh/s x transfer time (s)
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -198,11 +198,11 @@ Choose the calculation appropriate for the device being tested.
 
 <!-- markdownlint-disable -->
 {% codeToHtml %}
-    Computer Device Energy (kWh) = 0.0532 x Duration of pageview (s)
+Computer Device Energy (kWh) = 0.0532 x Duration of pageview (s)
 
-    Tablet Device Energy (kWh) = 0.003 x Duration of pageview (s)
+Tablet Device Energy (kWh) = 0.003 x Duration of pageview (s)
 
-    Smartphone Device Energy (kWh) = 0.00077 x Duration of pageview (s)
+Smartphone Device Energy (kWh) = 0.00077 x Duration of pageview (s)
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

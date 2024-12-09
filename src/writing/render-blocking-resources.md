@@ -37,17 +37,17 @@ Because JavaScript can be used to manipulate CSS, the browser will first try to 
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <!-- CSS will download and parse first -->
-    <link rel="stylesheet" href="/css/my-styles.css" />
-    <script src="/js/important-file.js"></script>
+<!-- CSS will download and parse first -->
+<link rel="stylesheet" href="/css/my-styles.css" />
+<script src="/js/important-file.js"></script>
 
-    <!-- JS will download, parse and execute first -->
-    <script src="/js/important-file.js"></script>
-    <link rel="stylesheet" href="/css/my-styles.css" />
+<!-- JS will download, parse and execute first -->
+<script src="/js/important-file.js"></script>
+<link rel="stylesheet" href="/css/my-styles.css" />
 
-    <!-- JS will start downloading in parallel with the CSS file -->
-    <script async src="/js/important-file.js"></script>
-    <link rel="stylesheet" href="/css/my-styles.css" />
+<!-- JS will start downloading in parallel with the CSS file -->
+<script async src="/js/important-file.js"></script>
+<link rel="stylesheet" href="/css/my-styles.css" />
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

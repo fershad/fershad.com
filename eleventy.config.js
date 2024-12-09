@@ -94,6 +94,7 @@ const markdownItAnchorOptions = {
 
 const mdLib = markdownit({
 	html: true,
+	breaks: true,
 //   linkify: true,
 //   typographer: true
 }).use(mdfigcaption, figoptions).use(markdownItAnchor, markdownItAnchorOptions);

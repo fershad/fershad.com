@@ -14,7 +14,12 @@ The environmental impact of our digital lives is growing rapidly. I've [written
 
 When I started planning out the redesign of this site I wanted to ensure I applied as many [sustainable design and development](https://sustainablewebdesign.org/) principles as possible. I also wanted to ensure the site was as fast and performant as I could make it. This case study looks at some of the decisions I made during the planning and development of the redesigned website.
 
-![ ](../../public//img/blog/2fe48fec288606f7bb2cb60ef1f4cf8ca6c8bc31-2690x1531.jpeg "A screenshot of my old homepage. Much more cluttered and "wall of text"-ish than the current version.")
+<figure>
+<img src="../../public/img/blog/2fe48fec288606f7bb2cb60ef1f4cf8ca6c8bc31-2690x1531.jpeg" alt="">
+<figcaption>
+<p>"A screenshot of my old homepage. Much more cluttered and "wall of text"-ish than the current version."</p>
+</figcaption>
+</figure>
 
 {% callout "Legend" %}
 Through this article you will see these two icons next to some of the headings/bullet points.

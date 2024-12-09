@@ -39,11 +39,11 @@ To understand what’s going on we’ll start from the bottom.
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <style>
-        .wf-loading * {
-            opacity: 0;
-        }
-    </style>
+<style>
+    .wf-loading * {
+        opacity: 0;
+    }
+</style>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -57,12 +57,12 @@ The script block above the style tag is where the magic happens.
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <script>
-        var Webflow = Webflow || [];
-        Webflow.push(function () {
-            $('html').addClass('webflow-loaded')
-        });
-    </script>
+<script>
+    var Webflow = Webflow || [];
+    Webflow.push(function () {
+        $('html').addClass('webflow-loaded')
+    });
+</script>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

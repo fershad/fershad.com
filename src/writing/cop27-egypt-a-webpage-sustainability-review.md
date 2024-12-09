@@ -9,7 +9,7 @@ summary: >-
 
 Around this time last year there was a lot of focus on the upcoming COP26 summit in Glasgow. Rightly so, as it marked the five-year anniversary of the Paris Agreement. Under that agreement, countries agreed to revisit and strengthen their commitments towards limiting global temperature rise to 1.5 degrees Celsius at the 26th COP.
 
-With so much attention on COP26, I got curious about how their website stacked up in terms of digital sustainability and performance. So, I took a look under the cover and wrote up \***\*[COP26.org: A quick sustainability check](https://fershad.com/writing/cop26-a-quick-sustainability-check/)\*\***.
+With so much attention on COP26, I got curious about how their website stacked up in terms of digital sustainability and performance. So, I took a look under the cover and wrote up **[COP26.org: A quick sustainability check](https://fershad.com/writing/cop26-a-quick-sustainability-check/)**.
 
 The article got a fair bit of attention, definitely more than anything I’d written before. This attention helped catch the eye of some folks over at the UK’s Government Digital Services (GDS) team. With their help, we were able to address one of the factors contributing to the large size of the COP26 homepage.
 
@@ -152,7 +152,7 @@ The homepage also features a self-hosted video file near the bottom of the page.
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <video preload="auto" controls poster="path/to/post/image.jpg">
+<video preload="auto" controls poster="path/to/post/image.jpg">
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

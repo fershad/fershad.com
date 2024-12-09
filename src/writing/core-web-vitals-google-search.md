@@ -12,13 +12,13 @@ summary: >-
   they?
 ---
 
-{% callout Archived %}
+{% callout "Archived" %}
 Core Web Vitals have evolved significantly since I wrote this post. You should try to reference more recent content. [Google's developer docs](https://developers.google.com/search/docs/appearance/core-web-vitals) is a good place to start.
 {% endcallout %}
 
 A couple of weeks ago Google put out a [short blog post](https://developers.google.com/search/blog/2020/11/timing-for-page-experience) to announce something rather significant. Core Web Vitals metrics will be added to the page experience signals mix as part of the May 2021 search update.
 
-{% callout Update%}
+{% callout "Update"%}
 Google has delayed the implementation of Core Web Vitals in its search rankings. The new timeframe for its inclusion is mid-June to August.
 
 Read Google's [update announcement here](https://developers.google.com/search/blog/2021/04/more-details-page-experience).

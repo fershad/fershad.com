@@ -1,5 +1,5 @@
 ---
-title: The best bits from this week (Week 26, 2024)
+title: Links, quotes & articles (Week 26, 2024)
 published: 2024-06-25
 lang: en
 type: post

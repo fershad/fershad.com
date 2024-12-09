@@ -9,8 +9,6 @@ summary: >-
   website faster!
 ---
 
-_This post was [originally published](https://optimised.email/issues/issue-19-speed-up-your-wordpress-website) in my fortnightly newsletter, Optimised._
-
 WordPress powers over 40% of the internet. That's a lot of websites. When it was first released, WordPress revolutionised online publishing. It democratised it, opening up the ability to publish content online to anyone.
 
 WordPress has grown from its early days as a blogging platform to now provide a rich ecosystem of plugins that power some of the web's leading content publishers and ecommerce sites. With that has also come performance issues, as everyday users add multiple plugins to their site only to begin experiencing performance bottlenecks.

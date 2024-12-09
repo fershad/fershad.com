@@ -54,6 +54,14 @@ section h4[id] {
   position: relative;
 }
 
+.heading-wrapper:has(h2, h3) {
+  margin-block-start: 4rem;
+}
+
+.heading-wrapper + .heading-wrapper {
+  margin-block-start: 2.15rem;
+}
+
 .heading-wrapper .deeplink {
   position: absolute;
   inset-inline-start: -1.5ch;
@@ -105,10 +113,15 @@ blockquote {
   /* border-right: 0.25rem solid var(--blue-7); */
   border-left: 1.25rem solid var(--blue-4);
   /* max-width: 80%; */
+  font-family: var(--font-monospace-slab-serif);
 }
 
 blockquote p {
-  margin: 0;
+  margin-inline: 0;
+}
+
+blockquote p:first-of-type {
+  margin-block-start: 0;
 }
 
 pre:has(code) code {
@@ -150,6 +163,20 @@ code {
   z-index: 1;
 }
 
+.codeblock > .filename {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  color: var(--stone-12);
+  z-index: 1;
+  width: 100%;
+  border-bottom: 1px solid var(--blue-0);
+  color: var(--stone-0);
+  padding-inline-start: 1.5rem;
+}
+
 .callout {
   padding: 1.75rem 1.5rem;
   margin: 1.5rem 0;
@@ -168,6 +195,11 @@ code {
   font-size: 1.5rem;
 }
 
+.callout code {
+  background-color: var(--blue-12);
+  color: var(--stone-0);
+}
+
 table {
   max-inline-size: 100%;
   border-collapse: collapse;
@@ -177,19 +209,20 @@ table {
 
 table th,
 table td {
-  border-top: 1px solid var(--blue-4);
+  border-top: 1px solid var(--blue-7);
   padding: 0.75rem 1.5rem;
   text-align: center;
 }
 
 table th {
-  background-color: var(--blue-0);
+  background-color: var(--blue-7);
+  color: var(--stone-0);
   /* border: 1px solid var(--blue-7); */
 }
 
 table td + td,
 table th + th {
-  border-left: 1px solid var(--blue-4);
+  border-left: 1px solid var(--blue-7);
 }
 
 table tr {
@@ -201,9 +234,13 @@ table tr:hover td:first-of-type:before {
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
-  inline-size: 2rem;
+  inline-size: 1.5rem;
   block-size: 100%;
-  background-color: var(--blue-4);
+  background-color: var(--blue-7);
+}
+
+table tr:hover td {
+  background-color: var(--blue-0);
 }
 
 figure {
@@ -217,9 +254,13 @@ figcaption {
   font-size: 0.875rem;
   max-inline-size: 100%;
   text-align: center;
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--blue-4);
+  padding: 1rem 1.5rem;
+  border-top: 2px solid var(--stone-0);
   background-color: var(--blue-7);
   color: var(--stone-0);
   --override-color: var(--stone-0);
+}
+
+figcaption p {
+  margin: 0;
 }

@@ -13,7 +13,7 @@ A busy month front loading work at the start of September, before spending the r
 
 ## September 2024
 
-🇳🇴 **India**. I'm Indian by birth. My parents moved the family to Australia when I was 2 years old, and although we went back regularly when I was younger it's been a full 20 years since I last returned to the country. So I was pretty excited by the chance to join Kay in Rishikesh and the surrounding region for a couple of weeks. She was there for some classes with her Pranayama teacher, and then traveling with a group of students and their teacher to four major Hindu temples.
+🇮🇳 **India**. I'm Indian by birth. My parents moved the family to Australia when I was 2 years old, and although we went back regularly when I was younger it's been a full 20 years since I last returned to the country. So I was pretty excited by the chance to join Kay in Rishikesh and the surrounding region for a couple of weeks. She was there for some classes with her Pranayama teacher, and then traveling with a group of students and their teacher to four major Hindu temples.
 
 It was a great trip, despite the fact that a landslide prevented us from visiting one of the temples at Kedarnath. India was as chaotic as I remembered, but you could see definite areas where the country has progressed. There's a lot of construction happening in the north eastern regions, especially around the Chinese border. The roads there at the moment are pretty terrible, but I reckon if we returned in 5 years that'd be a different story.
 

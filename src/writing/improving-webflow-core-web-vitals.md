@@ -43,9 +43,9 @@ You'd do this by adding the code snippets below as a custom code block in the He
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <!-- preconnect to google font apis -->
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<!-- preconnect to google font apis -->
+<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

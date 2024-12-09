@@ -25,6 +25,6 @@ By combining CSS `pointer-events: none` with media queries I was able to achieve
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
-Gotcha
-
+{% callout "Gotcha" %}
 It's worth noting that the input item will still be tab accessible.
+{% endcallout %}

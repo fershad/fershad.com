@@ -46,9 +46,9 @@ eleventyExcludeFromCollections: true
           <time class="postlist-date" datetime="{{ post.data.published | date_to_rfc822 }}">{{ post.data.published | date_to_long_string }}</time>
           {% if post.data.archived %}
             |
-            <b>
+            <strong>
               Archived
-            </b>
+            </strong>
           {% endif %}
         </small>
         {% unless post.data.archived %}
@@ -56,7 +56,9 @@ eleventyExcludeFromCollections: true
             <p>{{ post.data.summary }}</p>
           {% endif %}
         {% else %}
-          <p>{{ post.data.archiveNote }}</p>
+          <p>
+            This post is archived.
+            {{ post.data.archiveNote }}</p>
         {% endunless %}
       </li>
     {% endfor %}

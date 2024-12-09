@@ -60,11 +60,11 @@ WebP is a modern image format for the web that is being [championed by Google](h
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <picture>
-      <source srcset="yourWebPImage.webp" type="image/webp">
-      <source srcset="yourJPEGImage.jpg" type="image/jpeg">
-      <img src="yourJPEGImage.jpg" alt="Don't forget ALT text for your images">
-    </picture>
+<picture>
+  <source srcset="yourWebPImage.webp" type="image/webp">
+  <source srcset="yourJPEGImage.jpg" type="image/jpeg">
+  <img src="yourJPEGImage.jpg" alt="Don't forget ALT text for your images">
+</picture>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -72,7 +72,7 @@ Alternately you can use a service like Cloudinary to host/serve your images. Thi
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <img src="https://res.cloudinary.com/demo/image/upload/f_auto/yourJPEGImage.jpg" alt="Don't forget ALT text for your images"/>
+<img src="https://res.cloudinary.com/demo/image/upload/f_auto/yourJPEGImage.jpg" alt="Don't forget ALT text for your images"/>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -82,11 +82,11 @@ The same applies to video. If you're embedding video on your web page, you'll li
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <video controls>
-      <source src="yourMP4Video.mp4" type="video/mp4">
-      <source src="yourWebMVideo.webm" type="video/webm">
-      <p>Your browser doesn't support HTML5 video.</p>
-    </video>
+<video controls>
+  <source src="yourMP4Video.mp4" type="video/mp4">
+  <source src="yourWebMVideo.webm" type="video/webm">
+  <p>Your browser doesn't support HTML5 video.</p>
+</video>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -106,10 +106,10 @@ Just like images, videos can also be lazy-loaded though the technique to do so d
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <video controls preload="none" poster="videoCoverImage.jpg">
-      <source src="yourWebMVideo.webm" type="video/webm">
-      <source src="yourMP4Video.mp4" type="video/mp4">
-    </video>
+<video controls preload="none" poster="videoCoverImage.jpg">
+  <source src="yourWebMVideo.webm" type="video/webm">
+  <source src="yourMP4Video.mp4" type="video/mp4">
+</video>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -138,9 +138,9 @@ Putting these together we get a code sample similar to the below:
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" media="print" onload="this.media='all'" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" media="print" onload="this.media='all'" />
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

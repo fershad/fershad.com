@@ -8,7 +8,9 @@ summary: >-
   slides, and other notes from those events.
 ---
 
-_This post was [first published on the Green Web Foundation's blog](https://www.thegreenwebfoundation.org/news/speaking-about-green-it-in-asia-green-io-conference-singapore-and-more/) on April 25, 2024._
+{% callout "Original" %}
+This post was [first published on the Green Web Foundation's blog](https://www.thegreenwebfoundation.org/news/speaking-about-green-it-in-asia-green-io-conference-singapore-and-more/) on April 25, 2024.
+{% endcallout %}
 
 Tackling the climate crisis is a global challenge, and one that is not restricted by geographic boundaries. This is something that we, as a team, acknowledge at [our recent team days in Berlin](https://www.linkedin.com/posts/hanopcan_digitalsustainability-activity-7174409712384249857-yjAT?utm_source=share&utm_medium=member_desktop). Until recently, a lot of our work as the Green Web Foundation has been focused in Western Europe where the organisation was founded and where the majority of our team have been based. So when the opportunity came up to speak at events in Asia about the digital sustainability work that’s close to our heart, we couldn’t say no.
 

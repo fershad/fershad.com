@@ -13,21 +13,21 @@ Inside your Svelte project create a new component named `Toggle.svelte`. It's go
 
 <!-- markdownlint-disable -->
 {% codeToHtml "svelte", "Toggle.svelte" %}
-    <script>
-    	let darkMode = false;
-    	function toggle() {
-            darkMode = !darkMode;
-            window.document.body.classList.toggle('dark');
-        }
-    </script>
+<script>
+    let darkMode = false;
+    function toggle() {
+        darkMode = !darkMode;
+        window.document.body.classList.toggle('dark');
+    }
+</script>
 
-    <button on:click={toggle}>
-    	{#if darkMode }
-    		Go light
-    	{:else}
-    		Go dark
-    	{/if}
-    </button>
+<button on:click={toggle}>
+    {#if darkMode }
+        Go light
+    {:else}
+        Go dark
+    {/if}
+</button>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -53,22 +53,22 @@ Of course, none of the above will work with having the right CSS in place to cha
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html","App.svelte" %}
-    <style>
-     :root{
-      --bg-color: #FFFFFF;
-      --text-color: #000000;
-     }
+<style>
+    :root{
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    }
 
-     :global(body) {
-      background: var(--bg-color);
-      color: var(--text-color);
-     }
+    :global(body) {
+    background: var(--bg-color);
+    color: var(--text-color);
+    }
 
-     :global(body.dark) {
-      --bg-color: #000000;
-      --text-color: #FFFFFF;
-     }
-    </style>
+    :global(body.dark) {
+    --bg-color: #000000;
+    --text-color: #FFFFFF;
+    }
+</style>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

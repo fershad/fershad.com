@@ -16,32 +16,32 @@ In the example below I use a Cloudflare worker to proxy requests from a website 
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    addEventListener('fetch', event => {
-      event.respondWith(handleRequest(event))
-    })
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event))
+})
 
-    async function handleRequest(event) {
-      let requestFolder = '/files'
-      let s3Folder = '/uploads'
+async function handleRequest(event) {
+  let requestFolder = '/files'
+  let s3Folder = '/uploads'
 
-      let url = new URL(event.request.url)
-      const cache = caches.default
+  let url = new URL(event.request.url)
+  const cache = caches.default
 
-      let origPathname = url.pathname
-      const filename = url.toString().split('/').pop()
+  let origPathname = url.pathname
+  const filename = url.toString().split('/').pop()
 
-      url.hostname = '[YOUR_S3_BUCKET_URL_HERE]'
-      url.pathname = origPathname.replace(new RegExp('^'+escapeRegExp(requestFolder)), s3Folder)
+  url.hostname = '[YOUR_S3_BUCKET_URL_HERE]'
+  url.pathname = origPathname.replace(new RegExp('^'+escapeRegExp(requestFolder)), s3Folder)
 
-      response = await fetch(url)
-      response = new Response(response.body, { ...response})
+  response = await fetch(url)
+  response = new Response(response.body, { ...response})
 
-      return response;
-    }
+  return response;
+}
 
-    function escapeRegExp(string) {
-      return string.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
-    }
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
+}
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

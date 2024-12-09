@@ -7,7 +7,9 @@ summary: >-
   also has a sustainability plugin powered by CO2.js.
 ---
 
-_This post was originally published on [The Green Web Foundation's blog](https://www.thegreenwebfoundation.org/news/sitespeed-io-using-and-contributing-to-co2-js/)._
+{% callout "Original" %}
+This post was originally published on [The Green Web Foundation's blog](https://www.thegreenwebfoundation.org/news/sitespeed-io-using-and-contributing-to-co2-js/).
+{% endcallout %}
 
 Visiting a fast website is always a pleasant experience. In fact, most of the time you won’t even notice that a website is fast. But you sure will notice when one isn’t! The field of website performance exists, in part, to aid website owners in creating these unnoticeable, pleasant experiences. And doing so can be [worth](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf) [_a lot_](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf) to companies operating online.
 

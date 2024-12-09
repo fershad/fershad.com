@@ -28,73 +28,73 @@ You can find the code for [this Cloudflare Worker on GitHub](https://github.com/
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    import * as cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 
-    const ytIdRegex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+const ytIdRegex = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
 
-    function getID(url) {
-      var match = url.match(ytIdRegex);
-      return (match && match[7].length == 11) ? match[7] : false;
-    }
+function getID(url) {
+  var match = url.match(ytIdRegex);
+  return (match && match[7].length == 11) ? match[7] : false;
+}
 
-    async function findIframes(req) {
-      const html = await req.text()
-      try {
-        const $ = cheerio.load(html)
+async function findIframes(req) {
+  const html = await req.text()
+  try {
+    const $ = cheerio.load(html)
 
-        const iframes = $('iframe[src*="youtube"]')
-        for (const iframe of $(iframes)) {
-          let src = $(iframe).attr('src')
-          const id = await getID(src)
-          const className = $(iframe).attr('class')
-          const params = new URL(src).searchParams.toString()
+    const iframes = $('iframe[src*="youtube"]')
+    for (const iframe of $(iframes)) {
+      let src = $(iframe).attr('src')
+      const id = await getID(src)
+      const className = $(iframe).attr('class')
+      const params = new URL(src).searchParams.toString()
 
-          if (id) {
-            const lite = `<lite-youtube class="${className || ''}" videoid="${id}" nocookie params='${params}'> </lite-youtube>`
-            $(iframe).replaceWith(lite)
-          }
-        }
-
-        return $.html()
-      } catch {
-        console.log('Error parsing html')
-        return html
+      if (id) {
+        const lite = `<lite-youtube class="${className || ''}" videoid="${id}" nocookie params='${params}'> </lite-youtube>`
+        $(iframe).replaceWith(lite)
       }
     }
 
-    class addJS {
-      async element(element) {
-        element.append(`<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.3.1/lite-youtube.js"></script>`, {
-          html: true,
-        })
-      }
-    }
+    return $.html()
+  } catch {
+    console.log('Error parsing html')
+    return html
+  }
+}
 
-    async function handleRequest(req) {
-      const acceptHeader = req.headers.get('accept');
-
-      if (acceptHeader && acceptHeader.indexOf('text/html') >= 0) {
-        const url = new URL(request.url);
-        const res = await fetch(url)
-        const html = await findIframes(res);
-        const newRes = new Response(html, {
-          headers: {
-            'Content-Type': 'text/html',
-          }
-        });
-
-
-        const rewritter = new HTMLRewriter().on('body', new addJS())
-
-        return rewritter.transform(newRes)
-      }
-
-      return fetch(req.url, req)
-    }
-
-    addEventListener('fetch', event => {
-      event.respondWith(handleRequest(event.request))
+class addJS {
+  async element(element) {
+    element.append(`<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.3.1/lite-youtube.js"></script>`, {
+      html: true,
     })
+  }
+}
+
+async function handleRequest(req) {
+  const acceptHeader = req.headers.get('accept');
+
+  if (acceptHeader && acceptHeader.indexOf('text/html') >= 0) {
+    const url = new URL(request.url);
+    const res = await fetch(url)
+    const html = await findIframes(res);
+    const newRes = new Response(html, {
+      headers: {
+        'Content-Type': 'text/html',
+      }
+    });
+
+
+    const rewritter = new HTMLRewriter().on('body', new addJS())
+
+    return rewritter.transform(newRes)
+  }
+
+  return fetch(req.url, req)
+}
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -108,4 +108,4 @@ Once all this is done (within a few tens of milliseconds), the HTML then gets re
 
 ## The same can be done for Vimeo
 
-I’ve also created a [similar repository for Vimeo](https://github.com/fershad/vimeo-lite-worker) embeds. It works much in the same way as described above. That said, Vimeo doesn’t seem to send down _as much_ data initially when compared to YouTube, so the sustainability and performance upsides are less pronounced.
+I’ve also created a [similar repository for Vimeo](https://github.com/fershad/vimeo-lite-worker) embeds. It works much in the same way as described above. That said, Vimeo doesn’t seem to send down *as much* data initially when compared to YouTube, so the sustainability and performance upsides are less pronounced.

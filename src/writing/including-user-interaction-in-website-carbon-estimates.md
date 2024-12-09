@@ -57,15 +57,15 @@ The code below shows a simple implementation that imports CO2.js and uses the fu
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    import { co2 } from '@tgwf/co2';
+import { co2 } from '@tgwf/co2';
 
-    const model = new co2({ model: "swd", version: 4 });
+const model = new co2({ model: "swd", version: 4 });
 
-    setInterval(() => {
-     pageWeight = getPageWeight();
-     const emissions = model.perByte(pageWeight);
-     return emissions;
-    }, 10000);
+setInterval(() => {
+    pageWeight = getPageWeight();
+    const emissions = model.perByte(pageWeight);
+    return emissions;
+}, 10000);
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

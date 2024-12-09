@@ -1,5 +1,5 @@
 ---
-title: The best things I heard this week (Week 19, 2024)
+title: Links, quotes & articles (Week 19, 2024)
 published: 2024-05-12
 lang: en
 type: post

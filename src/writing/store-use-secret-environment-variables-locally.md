@@ -16,8 +16,8 @@ Store any sensitive data you'll use in your app within this file
 
 <!-- markdownlint-disable -->
 {% codeToHtml "bash" %}
-    export MY_API_KEY="ANAOFWQ14124124js214g"
-    export EMIAL_PASSWORD="apasswordhere"
+export MY_API_KEY="ANAOFWQ14124124js214g"
+export EMIAL_PASSWORD="apasswordhere"
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -25,7 +25,7 @@ Enter the root folder of your project using your terminal, and use the source co
 
 <!-- markdownlint-disable -->
 {% codeToHtml "bash" %}
-    source local-env
+source local-env
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -33,7 +33,7 @@ Now you can call the local environment variables in your app. An example with No
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    const Airtable_API_Key = process.env.MY_API_KEY
+const Airtable_API_Key = process.env.MY_API_KEY
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

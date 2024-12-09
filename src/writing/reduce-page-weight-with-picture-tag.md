@@ -21,11 +21,11 @@ To do this you simply need to present your images in a block like the below:
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-     <picture>
-    	<source srcset="img/example.avif" type="image/avif">
-    	<source srcset="img/example.webp" type="image/webp">
-    	<img src="img/example.jpg" alt="Don't forget ALT text">
-    </picture>
+<picture>
+  <source srcset="img/example.avif" type="image/avif">
+  <source srcset="img/example.webp" type="image/webp">
+  <img src="img/example.jpg" alt="Don't forget ALT text">
+</picture>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

@@ -17,24 +17,27 @@ In the end, you pass the first variable to the filter as you normally would, and
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript", ".eleventy.js" %}
-    eleventyConfig.addFilter("changeTime", require("./filters/time.js") );
+eleventyConfig.addFilter("changeTime", require("./filters/time.js") );
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript", "time.js" %}
-    module.exports = function (match, zone) {
-      // ... stuff happens here
-    };
+module.exports = function (match, zone) {
+  // ... stuff happens here
+};
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 <!-- markdownlint-disable -->
+{% capture codeblock %}
 {% raw %}
-{% codeToHtml "html", "zones.html" %}
-    <p>{{ match.datetime | changeTime: zone | date: "%H:%M" }}</p>
-{% endcodeToHtml %}
+<p>{{ match.datetime | changeTime: zone | date: "%H:%M" }}</p>
 {% endraw %}
+{% endcapture %}
+{% codeToHtml "html", "zones.html" %}
+{{ codeblock }}
+{% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 One interesting aside is that you can join filters to each other. In the example above the changeTime filter is run first, and then the result of that is formatted using Liquid's date filter. Pretty neat!

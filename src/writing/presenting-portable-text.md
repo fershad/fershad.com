@@ -22,11 +22,11 @@ Out of the box, it works okay. If you'd like to make changes to the way elements
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    marks: {
-      link: props => (
-        h('a', {className: "your-class", href: props.mark.href}, props.children)
-      )
-    }
+marks: {
+  link: props => (
+    h('a', {className: "your-class", href: props.mark.href}, props.children)
+  )
+}
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -39,11 +39,11 @@ What this does is find all marks that are of type "link", and return HTML accord
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    types: {
-      image: props => (
-        h('img', {className: "lazy img-responsive", src: urlFor(props.node.asset._ref).url()})
-      )
-    }
+types: {
+  image: props => (
+    h('img', {className: "lazy img-responsive", src: urlFor(props.node.asset._ref).url()})
+  )
+}
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

@@ -8,7 +8,9 @@ summary: >-
   methodology.
 ---
 
+{% callout "Original" %}
 This post was originally published on the [Green Web Foundation blog on July 4, 2024](https://www.thegreenwebfoundation.org/news/understanding-the-latest-sustainable-web-design-model-update/).
+{% endcallout %}
 
 The [Sustainable Web Design Model](https://sustainablewebdesign.org/) (SWDM) is a widely adopted methodology for estimating digital emissions relating to websites. First formally released publicly in 2020, the model is a multi-organisation collaboration between [Wholegrain Digital](https://wholegraindigital.com/), [Mightybytes](https://www.mightybytes.com/), [Footsprint](https://www.footsprint.co/), [EcoPing](https://ecoping.earth/), and ourselves, [Green Web Foundation](https://www.thegreenwebfoundation.org/).
 

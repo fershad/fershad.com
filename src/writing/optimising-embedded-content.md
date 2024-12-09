@@ -29,13 +29,13 @@ If you want to keep things very simple, just remove the `<script>` tag that's ta
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="<https://t.co/Ok1WpgjgJS>">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="<https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw>">January 21, 2021</a></blockquote> <script async src="<https://platform.twitter.com/widgets.js>" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="<https://t.co/Ok1WpgjgJS>">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="<https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw>">January 21, 2021</a></blockquote> <script async src="<https://platform.twitter.com/widgets.js>" charset="utf-8"></script>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="<https://t.co/Ok1WpgjgJS>">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="<https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw>">January 21, 2021</a></blockquote>
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Bernie...go home already <a href="<https://t.co/Ok1WpgjgJS>">pic.twitter.com/Ok1WpgjgJS</a></p>&mdash; The Daily Show (@TheDailyShow) <a href="<https://twitter.com/TheDailyShow/status/1352074243911999489?ref_src=twsrc%5Etfw>">January 21, 2021</a></blockquote>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -59,7 +59,7 @@ We've seen that it's possible to lazy-load images, but did you know that the sam
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <iframe width="560" height="315" src="<https://www.youtube.com/embed/YM3KszYmn58>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe loading="lazy" width="560" height="315" src="<https://www.youtube.com/embed/YM3KszYmn58>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="<https://www.youtube.com/embed/YM3KszYmn58>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <iframe loading="lazy" width="560" height="315" src="<https://www.youtube.com/embed/YM3KszYmn58>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -71,21 +71,21 @@ This [sick little trick](https://css-tricks.com/lazy-load-embedded-youtube-video
 
 <!-- markdownlint-disable -->
 {% codeToHtml "html" %}
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/YM3KszYmn58"
-      srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/YM3KszYmn58?autoplay=1><img src=https://img.youtube.com/vi/YM3KszYmn58/hqdefault.jpg alt='Improving The Page Loading Experience To Reduce Layout Shift by Jen Simmons'><span>▶</span></a>"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-      title="Improving The Page Loading Experience To Reduce Layout Shift by Jen Simmons"
-    ></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/YM3KszYmn58"
+  srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/YM3KszYmn58?autoplay=1><img src=https://img.youtube.com/vi/YM3KszYmn58/hqdefault.jpg alt='Improving The Page Loading Experience To Reduce Layout Shift by Jen Simmons'><span>▶</span></a>"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  title="Improving The Page Loading Experience To Reduce Layout Shift by Jen Simmons"
+></iframe>
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
 Using this trick I was able to get the YouTube embed size down to 18kB on initial page load. Adding `loading=lazy` onto this iframe would bring that initial hit down to 0kB if the asset was further down the page.
 
-{% callout %}
+{% callout "Note" %}
 Be sure to replace the the YouTube video code in the code above - it appears in 3 places. You should also replace the title & alt fields with relevant text.
 {% endcallout %}

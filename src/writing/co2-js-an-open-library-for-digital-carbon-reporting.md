@@ -9,7 +9,9 @@ summary: >-
   electricity consumption.
 ---
 
+{% callout "Original" %}
 This article was originally published in [ClimateAction.tech's Branch Magazine](https://branch.climateaction.tech/issues/issue-4/co2js/).
+{% endcallout %}
 
 Uploading and downloading the bits and bytes that make up the internet uses _a lot_ of electricity. Breaking the internet down to a systems level, data transfer over networks accounts for an [estimated 14% of the web’s total electricity](https://sustainablewebdesign.org/calculating-digital-emissions/) consumption. Networks are also globally distributed, meaning that the bytes you downloaded to render this web page in your browser are probably passed through several different electricity grids. Those grids are made up of different mixes of green and fossil fuel energy.
 
@@ -49,7 +51,7 @@ CO2.js is covered by an Apache 2.0 license. This allows for the library to be us
 
 There are a few different models that can be used to measure digital carbon emissions. CO2.js includes two of these – the OneByte model, and the Sustainable Web Design model.
 
-**Sustainable Web Design**
+#### Sustainable Web Design
 
 By default, CO2.js uses the [Sustainable Web Design model](https://sustainablewebdesign.org/calculating-digital-emissions) developed by a collaboration of [Wholegrain Digital](https://www.wholegraindigital.com/), [Mightybytes](https://www.mightybytes.com/), [Medina Works](https://www.medina-works.com/), [EcoPing](https://ecoping.earth/), and the [Green Web Foundation](https://www.thegreenwebfoundation.org/). It is designed for helping understand the environmental impact of websites, as well as digital products and services.
 
@@ -59,11 +61,11 @@ This model segments the system (the internet) into four parts – data centres, 
 
 The carbon intensity of electricity figures used by the Sustainable Web Design model includes full lifecycle emissions. This includes upstream methane, supply-chain and manufacturing emissions, and includes all gases, converted into CO2 equivalent over a 100-year timescale.
 
-**OneByte Model**
+#### OneByte Model
 
 Additionally, CO2.js also allows developers to use the OneByte model introduced by The Shift Project in their report on CO2 emissions from digital infrastructure, [**Lean ICT: for a sober digital**](https://theshiftproject.org/en/lean-ict-2/). This model returns a number for the estimated carbon emissions given the number of bytes sent over the wire. It has been used for estimating the impact of video streaming, file downloads and websites.
 
-**How the models differ**
+#### How the models differ
 
 These models return slightly different results since they apply different system boundaries as part of their calculations. Tom Greenwood has written [a terrific blog post](https://www.wholegraindigital.com/blog/website-energy-consumption/) explaining system boundaries and how they impact carbon estimates.
 

@@ -2,7 +2,7 @@
 title: Making this website carbon aware
 published: 2023/02/03
 archived: true
-archiveNote: This website is now grid-aware
+archiveNote: This website is now grid-aware.
 permalink:  /writing/making-this-website-carbon-aware/
 summary: >-
   Building carbon awareness into products is an important strategy to in the

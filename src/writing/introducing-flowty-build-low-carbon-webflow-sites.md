@@ -84,8 +84,10 @@ Saying it’s just a simple page is a bit of disservice. It does include a backg
 
 Even with that additional script we’re able to get more than 1MB off the size of the page, and host it on Cloudflare Pages, one of the more sustainable options for static site CI/CD hosting. Pretty neat.
 
-~~## Want to find out more?
+~~## Want to find out more?~~
 
-Flowty will be open to a very early access set of alpha users in May. If you’re building sites with Webflow and would like to see a demo, then head over to the [Flowty landing page](https://flowty.site/) and use the link at the bottom (or drop me an email)!
+~~Flowty will be open to a very early access set of alpha users in May. If you’re building sites with Webflow and would like to see a demo, then head over to the [Flowty landing page](https://flowty.site/) and use the link at the bottom (or drop me an email)!~~
 
-**Update Sept 25, 2022:** Flowty is now an open source project. It is also no longer maintained, updated, or supported. Recent actions by Webflow towards similar paid services have made me decide to stop work on this project. By making the code available, I hope that those who do care about web sustainability, but want/need to use Webflow can still have a means to build & host their site sustainably.~~
+{% callout "Update Sept 25, 2022" %}
+Flowty is now an open source project. It is also no longer maintained, updated, or supported. Recent actions by Webflow towards similar paid services have made me decide to stop work on this project. By making the code available, I hope that those who do care about web sustainability, but want/need to use Webflow can still have a means to build & host their site sustainably.
+{% endcallout %}

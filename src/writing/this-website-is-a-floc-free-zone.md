@@ -30,23 +30,23 @@ This website is hosted on Cloudflare (using Cloudflare Pages). I've used a Cloud
 
 <!-- markdownlint-disable -->
 {% codeToHtml "javascript" %}
-    async function handleRequest(request) {
-      // Make the headers mutable by re-constructing the Request.
-      request = new Request(request)
-      const URL = request.url
+async function handleRequest(request) {
+  // Make the headers mutable by re-constructing the Request.
+  request = new Request(request)
+  const URL = request.url
 
-      // URL is set up to respond with dummy HTML
-      let response = await fetch(URL, request)
+  // URL is set up to respond with dummy HTML
+  let response = await fetch(URL, request)
 
-      // Make the headers mutable by re-constructing the Response.
-      response = new Response(response.body, response)
-      response.headers.set("Permissions-Policy", "interest-cohort=()")
-      return response
-    }
+  // Make the headers mutable by re-constructing the Response.
+  response = new Response(response.body, response)
+  response.headers.set("Permissions-Policy", "interest-cohort=()")
+  return response
+}
 
-    addEventListener("fetch", event => {
-      event.respondWith(handleRequest(event.request))
-    })
+addEventListener("fetch", event => {
+  event.respondWith(handleRequest(event.request))
+})
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
@@ -55,11 +55,11 @@ Previously on Netlify ...
 When this post was first published, this site is hosted on Netlify. [Their docs](https://docs.netlify.com/routing/headers/) show a couple of ways to add custom response headers. I've decided to make the change in my site's `netlify.toml` file.
 
 <!-- markdownlint-disable -->
-{% codeToHtml "toml" %}
-    [[headers]]
-      for ="/*"
-      [headers.values]
-        Permissions-Policy = "interest-cohort=()"
+{% codeToHtml "toml", "netlify.toml" %}
+[[headers]]
+  for ="/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 

@@ -7,7 +7,9 @@ summary: >-
   Calendar.
 ---
 
-_This post was originally published as part of the [2023 Web Performance Calendar](https://calendar.perfplanet.com/2023/why-web-perf-tools-should-be-reporting-website-carbon-emissions/)._
+{% callout "Original" %}
+This post was originally published as part of the [2023 Web Performance Calendar](https://calendar.perfplanet.com/2023/why-web-perf-tools-should-be-reporting-website-carbon-emissions/).
+{% endcallout %}
 
 Recently, a post from the web performance monitoring tool DebugBear about [why they won’t report website carbon emissions](https://www.debugbear.com/blog/website-carbon-emissions) in their platform caught my attention. It’s a very good post, pulling together information from a lot of sources, and presenting the reasoning behind their decision. As I read it, I found myself nodding along to parts and furrowing my brow to others in equal measure.
 
