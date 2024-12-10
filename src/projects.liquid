@@ -9,7 +9,7 @@ description: A few of the projects I'm working on currently, or have released in
 </section>
 
 <section class="twocol">
-  <ul>
+  <ul class="no-marker">
     {% for project in projects %}
       <li
         class="project {% if project.archived %}archived{% endif %}"
@@ -19,7 +19,9 @@ description: A few of the projects I'm working on currently, or have released in
         {% if project.archived %}
           <div class="title">
             <h2>{{ project.title }}</h2>
-            <small class="">Archived</small>
+            <small class="">
+              <strong>Archived</strong>
+            </small>
           </div>
         {% else %}
           <h2 class="title">{{ project.title }}</h2>

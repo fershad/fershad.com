@@ -621,9 +621,9 @@ footer {
 }
 
 header nav {
-  justify-self: flex-end;
+  /* justify-self: flex-end; */
   max-width: 100%;
-  width: 100%;
+  width: fit-content;
 }
 
 footer nav ul li {
