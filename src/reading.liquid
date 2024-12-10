@@ -14,6 +14,15 @@ description: A list of articles, books, and other resources I've read recently.
 <section class="twocol">
   <h2>Articles</h2>
   <p>Below is a list of the last 30 articles I've read.</p>
+  <div gaw:remove>
+    <small>
+      <span id="update-time">Last updated: {{ readwise.updated | date_to_rfc822 }}</span>
+      <a
+        href="#"
+        class="button outline"
+        id="refresh-reader">Refresh</a>
+    </small>
+  </div>
   <label for="show-summaries">
     <input
       gaw:remove
@@ -23,7 +32,7 @@ description: A list of articles, books, and other resources I've read recently.
   </label>
 </section>
 <section class="threecol">
-  <ul class="boxes">
+  <ul class="boxes" id="reading-list">
     {% for article in readwise.list %}
       <li>
         <a href="{{ article.source_url }}">
@@ -51,4 +60,28 @@ description: A list of articles, books, and other resources I've read recently.
       summary.classList.toggle('active');
     });
   });
+
+  document.getElementById('refresh-reader').addEventListener('click', function(e){
+    e.preventDefault();
+    fetch('/api/readwise/longlist')
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector('#reading-list').innerHTML = '';
+        data.reader.forEach(article => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${article.source_url}">
+              <p class="title">${article.title}</p>
+            </a>
+            <div>
+              <small>${article.site_name} <br/> Read on: ${article.last_opened_at}</small>
+            </div>
+            <p gaw:remove class="summary">${article.summary}</p>
+          `;
+          document.querySelector('#reading-list').appendChild(li);
+        });
+        document.querySelector('#update-time').textContent = 'Last updated: ' + data.updated;
+        document.querySelector('#refresh-reader').remove();
+      });
+  })
 </script>

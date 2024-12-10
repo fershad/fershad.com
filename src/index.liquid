@@ -18,7 +18,7 @@ css: home.css
     <div>
       <h1>Hey, I'm Fershad.</h1>
       <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                                           
+        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                                             
           a fossil free internet by 2030.
       </p>
     </div>
@@ -103,12 +103,11 @@ css: home.css
         {% endfor %}
       </ul>
       <div>
-        <div>
+        <div gaw:remove>
           <small>
             <span id="update-time">Last updated: {{ readwise.updated | date_to_rfc822 }}</span>
             <a
               href="#"
-              gaw:remove
               class="button outline"
               id="refresh-reader">Refresh</a>
           </small>
@@ -161,7 +160,7 @@ css: home.css
 
   document.getElementById('refresh-reader').addEventListener('click', function(e){
     e.preventDefault();
-    fetch('/api/readwise')
+    fetch('/api/readwise/shortlist')
       .then(response => response.json())
       .then(data => {
         document.querySelector('#reading ul').innerHTML = '';
