@@ -369,8 +369,15 @@ ul.no-marker li:not(:last-of-type):after {
   color: var(--color-icon-checkmark);
 }
 
-.onecol:has(*:only-child) {
+.onecol:has(.toggle:only-child) {
   display: grid;
   place-content: center;
   height: 100%;
 }
+
+/* #blogroll {
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  grid-row: span 2;
+} */
