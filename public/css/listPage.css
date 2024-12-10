@@ -233,3 +233,144 @@ ul.no-marker li:not(:last-of-type):after {
   top: calc(100% + 1rem);
   left: 0;
 }
+
+/* 
+  Define color variables using CSS custom properties for easy maintenance and theming.
+  This allows for quick updates and supports light/dark mode switching.
+*/
+:root {
+  --color-toggle-bg-default: var(--blue-0);
+  --color-toggle-bg-checked: var(--blue-7);
+  --color-toggle-border: var(--blue-12);
+  --color-focus-ring: var(--blue-12);
+  --color-icon-checkmark: var(--stone-0);
+  --color-icon-cross: var(--blue-12);
+}
+
+/* 
+  Set up the basic structure of the toggle component. 
+  Using flexbox to align items and create spacing between the elements.
+*/
+.toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 
+  Hide the actual checkbox input but keep it accessible.
+  Position it absolutely to cover the toggle switch area, making the entire area clickable.
+*/
+.toggle__input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+  Styling the visual representation of the toggle switch.
+  Using CSS variables for sizing and spacing, and applying a smooth transition for state changes.
+*/
+.toggle__display {
+  --offset: 0.25em;
+  --diameter: 1.8em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: content-box;
+  width: calc(var(--diameter) * 2 + var(--offset) * 2);
+  height: calc(var(--diameter) + var(--offset) * 2);
+  border: 0.1em solid var(--color-toggle-border);
+  position: relative;
+  border-radius: 100vw;
+  background-color: var(--color-toggle-bg-default);
+  transition: background-color 250ms, transform 250ms;
+}
+
+/* 
+  The knob inside the toggle switch, which moves when toggled.
+  Positioned absolutely inside the switch and centered vertically.
+*/
+.toggle__display::before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  inset-inline-start: var(--offset);
+  box-sizing: border-box;
+  width: var(--diameter);
+  height: var(--diameter);
+  border: 0.1em solid var(--color-toggle-border);
+  border-radius: 50%;
+  background-color: white;
+  transform: translateX(0) translateY(-50%);
+  will-change: transform;
+  transition: transform 250ms;
+}
+
+/* 
+  Focus-visible is used to apply the focus ring only when navigating via keyboard.
+  This prevents the focus ring from appearing during mouse clicks, enhancing the visual experience.
+*/
+.toggle__input:focus-visible + .toggle__display {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 4px;
+}
+
+/* 
+  Change the background color when the toggle is checked (active state).
+  This applies the green color to indicate the "on" state.
+*/
+.toggle__input:checked + .toggle__display {
+  background-color: var(--color-toggle-bg-checked);
+}
+
+/* 
+  Move the knob to the right when the toggle is checked.
+  This visually represents the "on" state.
+*/
+.toggle__input:checked + .toggle__display::before {
+  transform: translateX(100%) translateY(-50%);
+}
+
+/* 
+  Styling for the icons inside the toggle (e.g., checkmark and cross).
+  Using inline-block for flexibility and inheriting colors for easy theming.
+*/
+.toggle__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  fill: currentcolor;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* 
+  Specific styling for the "cross" icon (used for "off" state).
+  A slightly smaller size and dark red color.
+*/
+.toggle__icon--cross {
+  color: var(--color-icon-cross);
+  font-size: 85%;
+}
+
+/* 
+  Specific styling for the "checkmark" icon (used for "on" state).
+  A dark green color that contrasts well with the light green background.
+*/
+.toggle__icon--checkmark {
+  color: var(--color-icon-checkmark);
+}
+
+.onecol:has(*:only-child) {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
