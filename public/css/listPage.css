@@ -55,7 +55,7 @@ ul:not([class]) li {
   max-inline-size: 100%;
 }
 
-ul > * + * {
+:not(nav) > ul > * + * {
   margin-top: 2.15rem;
 }
 
