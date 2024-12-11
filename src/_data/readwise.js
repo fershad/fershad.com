@@ -29,7 +29,6 @@ export default async function () {
     await list.map(async (item) => {
         const origin = new URL(item.source_url).origin;
         const blogrollIndex = blogroll.findIndex(({url}) => url === origin);
-        console.log(blogrollIndex, origin);
         if (blogrollIndex === -1) {
             blogroll.push({url: origin, name: item.site_name});
         }

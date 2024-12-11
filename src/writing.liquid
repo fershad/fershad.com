@@ -4,31 +4,71 @@ layout: layouts/list.liquid
 css: listPage.css
 eleventyExcludeFromCollections: true
 ---
-<section class="twocol">
-  <h1>Writing</h1>
-  <p>My most recent writing on sustainable web development, performance tips for websites and apps, as well as a few other musings.</p>
+<section class="threecol flow">
   <div>
-    <p>This page has
-      <span class="count-posts">{{ collections.post | filterOnlyTag: "post", "note" | size }} posts</span>
-      and
-      <span class="count-notes">{{ collections.post | filterOnlyTag: "note" | size }} notes</span>.</p>
+    <h1>Writing</h1>
+    <p>A collection of ideas, inspirations, notes, and blog posts.</p>
+    <p>I also keep a list of recent articles I've read over on the
+      <a href="/reading">
+        <span>/reading</span>
+      </a>
+      &nbsp;page of this website.</p>
   </div>
 </section>
 
 
+{% comment %} <span class="threecol underline"></span> {% endcomment %}
+
 <section class="threecol">
+  <aside class="underline">
+    <p>Filters:
+    </p>
+    <div class="" id="filters">
+      <label
+        gaw:remove
+        for="show-all"
+        class="form-control">
+        <input
+          type="radio"
+          name="filter"
+          id="show-all"
+          value="all"
+          checked />
+        Show all {{ collections.post | size }} posts & notes
+      </label>
+      <label
+        gaw:remove
+        for="show-posts"
+        class="form-control">
+        <input
+          type="radio"
+          name="filter"
+          id="show-posts"
+          value="posts" />
+        Show only {{ collections.post | filterOnlyTag: "post", "note" | size }} posts
+      </label>
+      <label
+        gaw:remove
+        for="show-notes"
+        class="form-control">
+        <input
+          type="radio"
+          name="filter"
+          id="show-notes"
+          value="notes" />
+        Show only {{ collections.post | filterOnlyTag: "note" | size }} notes
+      </label>
+    </div>
+  </aside>
+
   {% assign postslist = collections.post | sortByPublishedDate %}
   <ul>
     {% for post in postslist %}
       {% assign tags = post.data.tags %}
       {% assign isNote = tags | find: "note" %}
       <li class="
-      {%- if post.data.archived -%}
-        archived
-      {%- endif -%}
-      {%- if isNote == "note" -%}
-        note
-      {%- endif -%}
+      {%- if post.data.archived -%}{{"archived " | raw}}{%- endif -%} 
+      {%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}
         ">
         <div>
           <small class="post-type">
@@ -64,3 +104,42 @@ eleventyExcludeFromCollections: true
     {% endfor %}
   </ul>
 </section>
+
+<script>
+  const showPosts = document.getElementById('show-posts');
+  const showNotes = document.getElementById('show-notes');
+  const showAll = document.getElementById('show-all');
+  const posts = document.querySelectorAll('.post');
+  const notes = document.querySelectorAll('.note');
+
+  function handleChange(event) {
+    console.log('Selected option:', event.target.value);
+    if (event.target.value === 'posts') {
+      posts.forEach(post => {
+        post.classList.remove('visually-hidden');
+      });
+      notes.forEach(note => {
+        note.classList.add('visually-hidden');
+      });
+    } else if (event.target.value === 'notes') {
+      posts.forEach(post => {
+        post.classList.add('visually-hidden');
+      });
+      notes.forEach(note => {
+        note.classList.remove('visually-hidden');
+      });
+    } else {
+      posts.forEach(post => {
+        post.classList.remove('visually-hidden');
+      });
+      notes.forEach(note => {
+        note.classList.remove('visually-hidden');
+      });
+    }
+  }
+
+
+  showPosts.addEventListener('change', handleChange);
+  showNotes.addEventListener('change', handleChange);
+  showAll.addEventListener('change', handleChange);
+</script>

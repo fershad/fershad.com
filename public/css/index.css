@@ -222,7 +222,6 @@ textarea:not([rows]) {
 :where(h2) {
   font-size: var(--font-size-6);
   max-inline-size: var(--size-header-2);
-  
 }
 :where(h3) {
   font-size: var(--font-size-5);
@@ -475,6 +474,24 @@ main {
   top: 100%;
 }
 
+.underline {
+  position: relative;
+  margin-block-end: 2.5rem;
+}
+
+.underline::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 2px solid var(--line-color);
+  margin: 1rem 0;
+  inline-size: 70%;
+  block-size: var(--line-thickness);
+  inset-inline-start: 0;
+  inset-block-start: calc(var(--line-offset) * -1);
+  top: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -679,6 +696,10 @@ a:not([data-green-link="true"]) {
   width: 1px;
 }
 
+.flow > * + * {
+  margin-block-start: 2rem;
+}
+
 /* li.hover-expose {
   position: relative;
   display: inline-block;
@@ -720,5 +741,3 @@ li.hover-expose ul li {
     grid-column: span 1;
   }
 }
-
-z
