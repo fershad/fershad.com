@@ -1,10 +1,28 @@
 import Fetch from "@11ty/eleventy-fetch";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 const token = process.env.READWISE_TOKEN;
 const currentDate = new Date()
 const updated = currentDate.toUTCString();
 
 currentDate.setDate(currentDate.getDate() - 30);
 const isoDate = currentDate.toISOString();
+
+const writeArticlesToFile = async (articles) => {
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    const outputDir = path.join(__dirname, '../../functions/api/readwise');
+    const outputFile = path.join(outputDir, 'articles.json');
+
+    // Ensure directory exists
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    // Write the file
+    fs.writeFileSync(outputFile, JSON.stringify(articles, null, 2));
+};
 
 export default async function () {
 	let url = `https://readwise.io/api/v3/list/?location=archive&updatedAfter=${isoDate}`;
@@ -21,6 +39,8 @@ export default async function () {
     // NOTE: The original JSON does include other things like notes & highlights. Maybe some that can be used later?
 
     const list = json.results.filter(result => !result.parent_id).slice(0, 30);
+    // Write articles to file
+    await writeArticlesToFile(list);
     // Limit to 5 items
     json = json.results.filter(result => !result.parent_id).slice(0, 5);
 

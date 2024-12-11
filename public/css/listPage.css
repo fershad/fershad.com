@@ -460,3 +460,30 @@ input[type="checkbox"]:checked::before {
   /* transform: scale(1); */
   height: 100%;
 }
+
+li.new {
+  transition: height 0.5s ease, color 2.5s ease;
+  /* transform: translate3d(0, 0, 0); */
+  height: 100%;
+  color: var(--text);
+
+  @starting-style {
+    height: 0;
+    color: transparent;
+    /* transform: translate3d(-10rem, 0, 0); */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  li.new {
+    transition: background-color 0.75s ease;
+    background-color: transparent;
+  }
+
+  @starting-style {
+    li.new {
+      transform: none;
+      background-color: var(--blue-0);
+    }
+  }
+}

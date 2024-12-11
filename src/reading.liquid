@@ -67,7 +67,7 @@ description: A list of articles, books, and other resources I've read recently.
     fetch('/api/readwise/longlist')
       .then(response => response.json())
       .then(data => {
-        document.querySelector('#reading-list').innerHTML = '';
+        console.log("New articles", data.reader.length);
         data.reader.forEach(article => {
           const li = document.createElement('li');
           li.innerHTML = `
@@ -79,7 +79,8 @@ description: A list of articles, books, and other resources I've read recently.
             </div>
             <p gaw:remove class="summary">${article.summary}</p>
           `;
-          document.querySelector('#reading-list').appendChild(li);
+          li.classList.add('new');
+          document.querySelector('#reading-list').prepend(li);
         });
         document.querySelector('#update-time').textContent = 'Last updated: ' + data.updated;
         document.querySelector('#refresh-reader').remove();
