@@ -204,8 +204,8 @@ textarea:not([rows]) {
   --stone-11: #252521;
   --stone-12: #121210;
 
-  --background: var(--stone-0);
-  --text: var(--stone-10);
+  --text: var(--stone-0);
+  --background: var(--stone-11);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
@@ -666,8 +666,35 @@ footer nav ul {
 }
 
 a {
+  position: relative;
   text-decoration: underline;
   color: var(--override-color, var(--link-color));
+}
+
+a::after {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+a::before {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+a:hover::before {
+  animation: glitch3 3.5s infinite;
+  color: #f16f6f;
+}
+
+a:hover::after {
+  animation: glitch2 3.5s infinite;
+  color: #67f3da;
 }
 
 a:hover {
