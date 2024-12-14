@@ -701,7 +701,7 @@ a:hover {
   text-decoration: none;
 }
 
-a[data-green-link="true"] {
+/* a[data-green-link="true"] {
   --link-color: var(--blue-7);
   display: inline-block;
   position: relative;
@@ -709,7 +709,7 @@ a[data-green-link="true"] {
 
 a:not([data-green-link="true"]) {
   --link-color: var(--stone-10);
-}
+} */
 
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);

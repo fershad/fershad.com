@@ -142,58 +142,58 @@ export default function(eleventyConfig) {
 	});
 
 
-	eleventyConfig.addShortcode("greenLinks", async function() {
-		if (dev) {
-			return "0 green links / 0 total links";
-		}
+	// eleventyConfig.addShortcode("greenLinks", async function() {
+	// 	if (dev) {
+	// 		return "0 green links / 0 total links";
+	// 	}
 		
-		const content = this.page.rawInput;
-		const filetype = this.page.inputPath.split('.').pop();
+	// 	const content = this.page.rawInput;
+	// 	const filetype = this.page.inputPath.split('.').pop();
 
-		let parsedContent;
+	// 	let parsedContent;
 
-		if (filetype === 'md') {
-			const md = markdownit();
-			const mdContent = md.render(content);
-			parsedContent = parseHTML(mdContent);
-		} else {
-			parsedContent = parseHTML(content);
-		}
+	// 	if (filetype === 'md') {
+	// 		const md = markdownit();
+	// 		const mdContent = md.render(content);
+	// 		parsedContent = parseHTML(mdContent);
+	// 	} else {
+	// 		parsedContent = parseHTML(content);
+	// 	}
 
-		const { document } = parsedContent;
-		const links = [...document.querySelectorAll('a')];
-		const allValidLinks = links.filter((link) => /^(https?\:\/\/|\/\/)/i.test(link.href));
+	// 	const { document } = parsedContent;
+	// 	const links = [...document.querySelectorAll('a')];
+	// 	const allValidLinks = links.filter((link) => /^(https?\:\/\/|\/\/)/i.test(link.href));
 
-		let greenLinksCount = 0;
+	// 	let greenLinksCount = 0;
 
-		if (links.length > 0) {
-			//   Get all unique hostnames from the links
-			const uniqueHostnames = [...new Set(allValidLinks.map((link) => new URL(link.href).hostname))];
+	// 	if (links.length > 0) {
+	// 		//   Get all unique hostnames from the links
+	// 		const uniqueHostnames = [...new Set(allValidLinks.map((link) => new URL(link.href).hostname))];
 
-		// 	//   Remove the hostnames that should be ignored
-		// 	ignore.forEach((hostname) => {
-		// 		const ignoreHostnameIndex = uniqueHostnames.indexOf(hostname);
-		// 	if (ignoreHostnameIndex > -1) {
-		// 		uniqueHostnames.splice(ignoreHostnameIndex, 1);
-		// 	}
-		//   });
+	// 	// 	//   Remove the hostnames that should be ignored
+	// 	// 	ignore.forEach((hostname) => {
+	// 	// 		const ignoreHostnameIndex = uniqueHostnames.indexOf(hostname);
+	// 	// 	if (ignoreHostnameIndex > -1) {
+	// 	// 		uniqueHostnames.splice(ignoreHostnameIndex, 1);
+	// 	// 	}
+	// 	//   });
 	  
-			  //   Check if the hostnames are green
-			  const greenHostnames = await hosting(uniqueHostnames);
+	// 		  //   Check if the hostnames are green
+	// 		  const greenHostnames = await hosting(uniqueHostnames);
 	  
-			  //   Add the green attribute to the links
-			  allValidLinks.forEach((link) => {
-				  const hostname = new URL(link.href).hostname;
-				  if (greenHostnames.includes(hostname)) {
-					  greenLinksCount++;
-				  }
-			  });
-		}
+	// 		  //   Add the green attribute to the links
+	// 		  allValidLinks.forEach((link) => {
+	// 			  const hostname = new URL(link.href).hostname;
+	// 			  if (greenHostnames.includes(hostname)) {
+	// 				  greenLinksCount++;
+	// 			  }
+	// 		  });
+	// 	}
 
-		return `<span class="green-links">${greenLinksCount} green links</span> / ${links.length} total links`;
+	// 	return `<span class="green-links">${greenLinksCount} green links</span> / ${links.length} total links`;
 
 		
-	});
+	// });
 
 	eleventyConfig.addPairedShortcode("codeToHtml", async function(code, lang = "text", filename) {
 		code = code.replace(/\r?\n$/, '');

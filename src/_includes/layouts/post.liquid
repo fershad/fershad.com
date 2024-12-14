@@ -7,7 +7,9 @@ css: post.css
 <article class="wrapper">
   {% if title %}
     <section class="twocol">
-      <h1>{{ title }}</h1>
+      <div class="glitch-wrapper">
+        <h1 data-glitch="{{ title }}">{{ title }}</h1>
+      </div>
       {% if date %}
         <p>Published:
           <time class="postlist-date" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>
@@ -23,3 +25,23 @@ css: post.css
     {{ content }}
   </section>
 </article>
+
+<script gaw:remove>
+  document.addEventListener('DOMContentLoaded', function() {
+    const glitch = document.querySelector('.glitch-wrapper');
+  
+    glitch.addEventListener('mouseover', function() {
+      glitch.classList.add('glitch');
+  
+    });
+    glitch.addEventListener('mouseout', function() {
+      glitch.classList.remove('glitch');
+    });
+  });
+
+
+  document.querySelectorAll('a:not(.deeplink)').forEach((a) => {
+    console.log(a.textContent)
+    a.setAttribute('data-glitch', a.textContent);
+  });
+</script>

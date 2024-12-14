@@ -115,6 +115,42 @@ blockquote {
   border-left: 1.25rem solid var(--blue-4);
   /* max-width: 80%; */
   font-family: var(--font-monospace-slab-serif);
+  transform: skew(-5deg);
+  position: relative;
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid #67f3da;
+  border-left: 1.25rem solid #67f3da;
+  opacity: 0;
+  animation: glitch3 2.5s infinite;
+}
+
+blockquote::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
+  height: 100%;
+  width: 100%;
+  border-bottom: 1px solid #f16f6f;
+  border-left: 1.25rem solid #f16f6f;
+  opacity: 0;
+  animation: glitch2 2.5s infinite;
+}
+
+blockquote:hover::before {
+  animation: none;
+}
+
+blockquote:hover::after {
+  animation: none;
 }
 
 blockquote p {
