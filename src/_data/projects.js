@@ -55,7 +55,7 @@ export default [
     links: [
       {
         text: 'Blog post',
-        url: 'https://fershad.com/writing/co2-estimates-in-firefox-profiler/',
+        url: 'https://fershad.com/writing/co2e-estimates-in-firefox-profiler/',
       }
     ]
   },
