@@ -206,13 +206,13 @@ export default function(eleventyConfig) {
 
 			if (filename && lang) {
 				return `<div class="codeblock">
-				${filename ? `<div class="filename">${filename}</div>` : ""}
-				${lang ? `<div class="lang">${lang}</div>` : ""}
+				${filename ? `<div class="filename" data-glitch="${filename}">${filename}</div>` : ""}
+				${lang ? `<div class="lang" data-glitch="${lang}">${lang}</div>` : ""}
 				${html}
 				</div>`;
 			} else if (lang) {
 				return `<div class="codeblock">
-				${lang ? `<div class="lang">${lang}</div>` : ""}
+				${lang ? `<div class="lang" data-glitch="${lang}">${lang}</div>` : ""}
 				${html}
 				</div>`;
 			} else {

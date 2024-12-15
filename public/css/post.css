@@ -117,6 +117,7 @@ blockquote {
   font-family: var(--font-monospace-slab-serif);
   transform: skew(-5deg);
   position: relative;
+  transition: transform 0.2s ease;
 }
 
 blockquote::before {
@@ -129,7 +130,7 @@ blockquote::before {
   border-bottom: 1px solid #67f3da;
   border-left: 1.25rem solid #67f3da;
   opacity: 0;
-  animation: list-glitch3 2.5s infinite;
+  animation: text-glitch3 2.5s infinite;
 }
 
 blockquote::after {
@@ -142,10 +143,19 @@ blockquote::after {
   border-bottom: 1px solid #f16f6f;
   border-left: 1.25rem solid #f16f6f;
   opacity: 0;
-  animation: list-glitch2 2.5s infinite;
+  animation: text-glitch2 2.5s infinite;
 }
 
-blockquote p {
+blockquote:hover::before,
+blockquote:hover::after {
+  animation: none;
+}
+
+blockquote:hover {
+  transform: skew(0);
+}
+
+b blockquote p {
   margin-inline: 0;
 }
 
@@ -153,9 +163,15 @@ blockquote p:first-of-type {
   margin-block-start: 0;
 }
 
-pre:has(code) code {
+pre:has(code) code,
+pre:has(code) code::before,
+pre:has(code) code::after,
+pre:has(code) code:hover,
+pre:has(code) code:hover::before,
+pre:has(code) code:hover::after {
   background: none;
   border: none;
+  animation: none;
 }
 
 pre:has(code) {
@@ -178,7 +194,6 @@ code {
   border: 1px solid var(--blue-4);
   /* color: var(--background); */
   position: relative;
-  animation: text-glitch1 2.5s infinite;
 }
 
 code:before,
@@ -189,18 +204,26 @@ code:after {
   left: 0;
   height: 100%;
   width: 100%;
+  opacity: 0;
   border-radius: 0.25rem;
   border: 2px solid;
-  /* background-color: var(--blue-7); */
-  opacity: 0;
 }
 
-code:before {
+code:hover {
+  border: 1px solid var(--blue-4);
+  animation: text-glitch1 2.5s infinite;
+}
+
+code:hover::before {
+  /* border-right: 2px solid;
+  border-bottom: 2px solid; */
   border-color: #67f3da;
   animation: list-glitch1 2.5s infinite;
 }
 
-code:after {
+code:hover::after {
+  /* border-left: 2px solid;
+  border-top: 2px solid; */
   border-color: #f16f6f;
   animation: list-glitch2 2.5s infinite;
 }
@@ -217,6 +240,7 @@ code:after {
   background-color: var(--blue-0);
   color: var(--stone-12);
   z-index: 1;
+  animation: text-glitch1 2.5s infinite;
 }
 
 .codeblock > .filename {
@@ -231,6 +255,53 @@ code:after {
   border-bottom: 1px solid var(--blue-0);
   color: var(--stone-0);
   padding-inline-start: 1.5rem;
+  animation: text-glitch1 2.5s infinite;
+}
+
+.codeblock > .lang::before,
+.codeblock > .filename::before {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  /* border-radius: 0.25rem;
+  border: 2px solid; */
+  color: #67f3da;
+  padding: 0.25rem 0.5rem;
+  animation: text-glitch2 2.5s infinite;
+}
+
+.codeblock > .lang::after,
+.codeblock > .filename::after {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  /* border-radius: 0.25rem;
+  border: 2px solid; */
+  color: #f16f6f;
+  padding: 0.25rem 0.5rem;
+  animation: text-glitch3 2.5s infinite;
+}
+
+.codeblock:hover > .lang,
+.codeblock:hover > .filename,
+.codeblock:hover > .lang::before,
+.codeblock:hover > .filename::before,
+.codeblock:hover > .lang::after,
+.codeblock:hover > .filename::after,
+.codeblock:hover > pre {
+  animation: none;
+}
+
+.codeblock pre {
+  animation: list-glitch1 2.5s infinite;
 }
 
 .callout {
@@ -239,6 +310,11 @@ code:after {
   border: 1px solid var(--blue-8);
   border-radius: 0.25rem;
   background-color: var(--blue-0);
+  color: var(--stone-11);
+}
+
+.callout p {
+  max-inline-size: 100%;
 }
 
 .callout .title {
@@ -268,6 +344,33 @@ table td {
   border-top: 1px solid var(--blue-7);
   padding: 0.75rem 1.5rem;
   text-align: center;
+  position: relative;
+}
+
+table th::before,
+table td::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-top: 1px solid #f16f6f;
+  display: block;
+  animation: text-glitch1 2.5s infinite;
+}
+
+table th::after,
+table td::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-top: 1px solid #67f3da;
+  display: block;
+  animation: text-glitch3 2.5s infinite;
 }
 
 table th {
@@ -279,6 +382,16 @@ table th {
 table td + td,
 table th + th {
   border-left: 1px solid var(--blue-7);
+}
+
+table td + td::before,
+table th + th::before {
+  border-left: 1px solid #f16f6f;
+}
+
+table td + td::after,
+table th + th::after {
+  border-left: 1px solid #67f3da;
 }
 
 table tr {
@@ -297,6 +410,15 @@ table tr:hover td:first-of-type:before {
 
 table tr:hover td {
   background-color: var(--blue-0);
+  color: var(--stone-11);
+}
+
+table:has(tr:hover) th::before,
+table:has(tr:hover) td::before,
+table:has(tr:hover) th::after,
+table:has(tr:hover) td::after {
+  border: none;
+  animation: none;
 }
 
 figure {
