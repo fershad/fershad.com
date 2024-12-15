@@ -8,6 +8,47 @@
   width: 100%;
   aspect-ratio: 1;
   margin: auto;
+  position: relative;
+}
+
+#intro picture {
+  position: relative;
+  width: fit-content;
+}
+
+#intro picture::before,
+#intro picture::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--glitch-img-src) no-repeat;
+  animation: text-glitch1 4.5s infinite;
+  z-index: 1;
+  opacity: 0.5;
+  background-size: 100% 100%;
+  /* filter: grayscale(80%); */
+  /* hue-rotate: 90deg; */
+}
+
+#intro picture::before {
+  filter: saturate(2);
+}
+
+#intro picture::after {
+  animation: text-glitch2 4.5s infinite;
+  opacity: 0.5;
+  z-index: 2;
+  filter: hue-rotate(160deg);
+}
+
+#intro picture:hover::before,
+#intro picture:hover::after {
+  animation: none;
+  display: none;
 }
 
 #intro {
