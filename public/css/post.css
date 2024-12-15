@@ -425,7 +425,36 @@ figure {
   margin: 1.5rem 0;
   border: 1px solid var(--blue-4);
   padding: 0.35rem;
+  position: relative;
   /* border-left: 2rem solid var(--blue-4); */
+}
+
+figure::before,
+figure::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  border: 1px solid;
+}
+
+figure::before {
+  border-color: #67f3da;
+  animation: text-glitch1 2.5s infinite;
+}
+
+figure::after {
+  border-color: #f16f6f;
+  animation: list-glitch2 2.5s infinite;
+}
+
+figure:hover::before,
+figure:hover::after {
+  border: none;
+  animation: none;
 }
 
 figcaption {

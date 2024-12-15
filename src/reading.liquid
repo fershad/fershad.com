@@ -33,15 +33,13 @@ description: A list of articles, books, and other resources I've read recently.
       Show article summary
     </label>
   </aside>
-  <ul class="boxes" id="reading-list">
+  <ul id="reading-list">
     {% for article in readwise.list %}
       <li>
         <a href="{{ article.source_url }}">
           <p class="title">{{ article.title }}</p>
         </a>
-        <div>
-          <small>{{ article.site_name }} <br/> Read on: {{ article.last_opened_at | date_to_string }}</small>
-        </div>
+          <small>{{ article.site_name }} | Read on: {{ article.last_opened_at | date_to_string }}</small>
         <p gaw:remove class="summary">{{ article.summary | limitWords }}</p>
       </li>
     {% else %}
