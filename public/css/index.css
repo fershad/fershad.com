@@ -581,25 +581,43 @@ ul:not([class]) li {
   padding-left: 2.25rem;
 }
 
-ul:not([class]) li::before {
+ul:not([class]) li::before,
+ul:not([class]) li::after {
   content: "";
   position: absolute;
   left: 1ch;
   top: 1ex;
   height: 1ex;
   width: 1ex;
-  /* background-color: var(--marker-color, var(--blue-0)); */
   border: 2px solid var(--marker-color, var(--blue-4));
   transition: all 0.2s;
 }
 
-ul:not([class]) li:hover::before {
-  background-color: var(--marker-color, var(--blue-7));
-  border-color: var(--marker-color, var(--blue-7));
-  /* border-radius: 50%; */
+ul:not([class]) li:hover::before,
+ul:not([class]) li:hover::after {
+  animation: none;
   height: 100%;
   top: 0;
+  --marker-color: var(--blue-4);
 }
+
+ul:not([class]) li::before {
+  /* transition: all 0.2s; */
+  --marker-color: #f16f6f;
+  animation: list-glitch1 5.5s infinite;
+}
+
+ul:not([class]) li::after {
+  --marker-color: #67f3da;
+  animation: list-glitch2 5.5s infinite;
+}
+
+/* ul:not([class]) li:hover::before {
+  background-color: var(--marker-color, var(--blue-7));
+  border-color: var(--marker-color, var(--blue-7));
+  height: 100%;
+  top: 0;
+} */
 
 /* ul li:not(:last-of-type)::after {
   content: "";
@@ -689,12 +707,12 @@ a::before {
 }
 
 a:hover::before {
-  animation: glitch3 3.5s infinite;
+  animation: text-glitch3 3.5s infinite;
   color: #f16f6f;
 }
 
 a:hover::after {
-  animation: glitch2 3.5s infinite;
+  animation: text-glitch2 3.5s infinite;
   color: #67f3da;
 }
 
@@ -757,5 +775,282 @@ li.hover-expose ul li {
   .twocol,
   .threecol {
     grid-column: span 1;
+  }
+}
+
+/*Keyframes*/
+
+@keyframes text-glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.85;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.85;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.85;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes text-glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.35;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.6;
+  }
+  10% {
+    transform: none;
+    opacity: 0.35;
+  }
+  27% {
+    transform: none;
+    opacity: 0.35;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.6;
+  }
+  35% {
+    transform: none;
+    opacity: 0.35;
+  }
+  52% {
+    transform: none;
+    opacity: 0.35;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: none;
+    opacity: 0.35;
+  }
+  72% {
+    transform: none;
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.6;
+  }
+  80% {
+    transform: none;
+    opacity: 0.35;
+  }
+  100% {
+    transform: none;
+    opacity: 0.35;
+  }
+}
+
+@keyframes text-glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.35;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.6;
+  }
+  10% {
+    transform: none;
+    opacity: 0.35;
+  }
+  27% {
+    transform: none;
+    opacity: 0.35;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.6;
+  }
+  35% {
+    transform: none;
+    opacity: 0.35;
+  }
+  52% {
+    transform: none;
+    opacity: 0.35;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: none;
+    opacity: 0.35;
+  }
+  72% {
+    transform: none;
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.6;
+  }
+  80% {
+    transform: none;
+    opacity: 0.35;
+  }
+  100% {
+    transform: none;
+    opacity: 0.35;
+  }
+}
+
+@keyframes list-glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: translate(0.5px, 0.9px);
+    opacity: 0.85;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: translate(0.8px, -0.1px);
+    opacity: 0.85;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: translate(-1px, 0.2px);
+    opacity: 0.85;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: translate(0.4px, 1px);
+    opacity: 0.85;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes list-glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.35;
+  }
+  7% {
+    transform: translate(-1px, -1.5px);
+    opacity: 0.6;
+  }
+  10% {
+    transform: none;
+    opacity: 0.35;
+  }
+  27% {
+    transform: none;
+    opacity: 0.35;
+  }
+  30% {
+    transform: translate(-2.5px, -1px);
+    opacity: 0.6;
+  }
+  35% {
+    transform: none;
+    opacity: 0.35;
+  }
+  52% {
+    transform: none;
+    opacity: 0.35;
+  }
+  55% {
+    transform: translate(-2.5px, -0.5px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: none;
+    opacity: 0.35;
+  }
+  72% {
+    transform: none;
+    opacity: 0.35;
+  }
+  75% {
+    transform: translate(-1px, -3px);
+    opacity: 0.6;
+  }
+  80% {
+    transform: none;
+    opacity: 0.35;
+  }
+  100% {
+    transform: none;
+    opacity: 0.35;
   }
 }

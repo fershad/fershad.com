@@ -31,7 +31,7 @@ section pre {
 }
 
 section[class] ul li:after {
-  display: none;
+  /* display: none; */
 }
 
 section h2,
@@ -129,7 +129,7 @@ blockquote::before {
   border-bottom: 1px solid #67f3da;
   border-left: 1.25rem solid #67f3da;
   opacity: 0;
-  animation: glitch3 2.5s infinite;
+  animation: list-glitch3 2.5s infinite;
 }
 
 blockquote::after {
@@ -142,7 +142,7 @@ blockquote::after {
   border-bottom: 1px solid #f16f6f;
   border-left: 1.25rem solid #f16f6f;
   opacity: 0;
-  animation: glitch2 2.5s infinite;
+  animation: list-glitch2 2.5s infinite;
 }
 
 blockquote p {
@@ -171,11 +171,38 @@ pre {
 }
 
 code {
-  background-color: var(--blue-0);
+  /* background-color: var(--blue-0); */
   /* color: var(--stone-0); */
-  padding: 0.1rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--blue-7);
+  border: 1px solid var(--blue-4);
+  /* color: var(--background); */
+  position: relative;
+  animation: text-glitch1 2.5s infinite;
+}
+
+code:before,
+code:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+  border: 2px solid;
+  /* background-color: var(--blue-7); */
+  opacity: 0;
+}
+
+code:before {
+  border-color: #67f3da;
+  animation: list-glitch1 2.5s infinite;
+}
+
+code:after {
+  border-color: #f16f6f;
+  animation: list-glitch2 2.5s infinite;
 }
 
 .codeblock {
@@ -335,7 +362,7 @@ article h4::after {
 article h2:hover,
 article h3:hover,
 article h4:hover {
-  animation: glitch1 3.5s infinite alternate;
+  animation: text-glitch1 3.5s infinite alternate;
 }
 
 .glitch-wrapper:hover > h1::before,
@@ -343,7 +370,7 @@ article h4:hover {
 article h2:hover::before,
 article h3:hover::before,
 article h4:hover::before {
-  animation: glitch2 3.5s infinite alternate;
+  animation: text-glitch2 3.5s infinite alternate;
   color: #67f3da;
 }
 
@@ -353,7 +380,7 @@ article h2:hover::after,
 article h3:hover::after,
 article h4:hover::after {
   color: #f16f6f;
-  animation: glitch3 3.5s infinite alternate;
+  animation: text-glitch3 3.5s infinite alternate;
 }
 
 . article a::before {
@@ -376,181 +403,15 @@ article a {
 }
 
 article a:hover {
-  animation: glitch1 2.5s infinite;
+  animation: text-glitch1 2.5s infinite;
 }
 
 article a:hover::before {
-  animation: glitch3 2.5s infinite;
+  animation: text-glitch3 2.5s infinite;
   color: #f16f6f;
 }
 
 article a:hover::after {
-  animation: glitch2 2.5s infinite;
+  animation: text-glitch2 2.5s infinite;
   color: #67f3da;
-}
-/*Keyframes*/
-
-@keyframes glitch1 {
-  0% {
-    transform: none;
-    opacity: 1;
-  }
-  7% {
-    transform: skew(-0.5deg, -0.9deg);
-    opacity: 0.85;
-  }
-  10% {
-    transform: none;
-    opacity: 1;
-  }
-  27% {
-    transform: none;
-    opacity: 1;
-  }
-  30% {
-    transform: skew(0.8deg, -0.1deg);
-    opacity: 0.85;
-  }
-  35% {
-    transform: none;
-    opacity: 1;
-  }
-  52% {
-    transform: none;
-    opacity: 1;
-  }
-  55% {
-    transform: skew(-1deg, 0.2deg);
-    opacity: 0.85;
-  }
-  50% {
-    transform: none;
-    opacity: 1;
-  }
-  72% {
-    transform: none;
-    opacity: 1;
-  }
-  75% {
-    transform: skew(0.4deg, 1deg);
-    opacity: 0.85;
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes glitch2 {
-  0% {
-    transform: none;
-    opacity: 0.35;
-  }
-  7% {
-    transform: translate(-2px, -3px);
-    opacity: 0.6;
-  }
-  10% {
-    transform: none;
-    opacity: 0.35;
-  }
-  27% {
-    transform: none;
-    opacity: 0.35;
-  }
-  30% {
-    transform: translate(-5px, -2px);
-    opacity: 0.6;
-  }
-  35% {
-    transform: none;
-    opacity: 0.35;
-  }
-  52% {
-    transform: none;
-    opacity: 0.35;
-  }
-  55% {
-    transform: translate(-5px, -1px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: none;
-    opacity: 0.35;
-  }
-  72% {
-    transform: none;
-    opacity: 0.35;
-  }
-  75% {
-    transform: translate(-2px, -6px);
-    opacity: 0.6;
-  }
-  80% {
-    transform: none;
-    opacity: 0.35;
-  }
-  100% {
-    transform: none;
-    opacity: 0.35;
-  }
-}
-
-@keyframes glitch3 {
-  0% {
-    transform: none;
-    opacity: 0.35;
-  }
-  7% {
-    transform: translate(2px, 3px);
-    opacity: 0.6;
-  }
-  10% {
-    transform: none;
-    opacity: 0.35;
-  }
-  27% {
-    transform: none;
-    opacity: 0.35;
-  }
-  30% {
-    transform: translate(5px, 2px);
-    opacity: 0.6;
-  }
-  35% {
-    transform: none;
-    opacity: 0.35;
-  }
-  52% {
-    transform: none;
-    opacity: 0.35;
-  }
-  55% {
-    transform: translate(5px, 1px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: none;
-    opacity: 0.35;
-  }
-  72% {
-    transform: none;
-    opacity: 0.35;
-  }
-  75% {
-    transform: translate(2px, 6px);
-    opacity: 0.6;
-  }
-  80% {
-    transform: none;
-    opacity: 0.35;
-  }
-  100% {
-    transform: none;
-    opacity: 0.35;
-  }
 }
