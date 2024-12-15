@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
+
 const token = process.env.READWISE_TOKEN;
 const currentDate = new Date()
 const updated = currentDate.toUTCString();
@@ -25,6 +27,19 @@ const writeArticlesToFile = async (articles) => {
 };
 
 export default async function () {
+    if (dev) {
+        // Get the content of the articles.json file in ../functions/api/readwise
+        const __dirname = path.dirname(fileURLToPath(import.meta.url));
+        const outputFile = path.join(__dirname, '../../functions/api/readwise/articles.json');
+        const articles = JSON.parse(fs.readFileSync(outputFile, 'utf8'));
+        return {
+            updated,
+            reader: articles.slice(0, 5),
+            list: articles,
+            blogroll: []
+        };
+    }
+    
 	let url = `https://readwise.io/api/v3/list/?location=archive&updatedAfter=${isoDate}`;
 
 	let json = await Fetch(url, {

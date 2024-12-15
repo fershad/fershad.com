@@ -1,6 +1,6 @@
-.wrapper {
+/* .wrapper {
   grid-template-rows: repeat(2, max-content);
-}
+} */
 
 section > * + * {
   margin-top: 2.15rem;
@@ -143,14 +143,6 @@ blockquote::after {
   border-left: 1.25rem solid #f16f6f;
   opacity: 0;
   animation: glitch2 2.5s infinite;
-}
-
-blockquote:hover::before {
-  animation: none;
-}
-
-blockquote:hover::after {
-  animation: none;
 }
 
 blockquote p {
@@ -303,66 +295,68 @@ figcaption p {
 }
 
 /* Glitch effect from */
-h1 {
+.glitch-wrapper h1,
+.glitch-wrapper p,
+article h2,
+article h3,
+article h4 {
   position: relative;
 }
 
-h1::before {
+article h2::before,
+article h3::before,
+article h4::before,
+article h2::after,
+article h3::after,
+article h4::after {
+  margin-left: 1.35ch;
+}
+
+.glitch-wrapper h1::before,
+.glitch-wrapper p::before,
+article h2::before,
+article h3::before,
+article h4::before,
+.glitch-wrapper h1::after,
+.glitch-wrapper p::after,
+article h2::after,
+article h3::after,
+article h4::after {
   content: attr(data-glitch);
   position: absolute;
   top: 0;
   left: 0;
-
+  opacity: 0;
   /* animation: glitch3 2.5s infinite; */
 }
 
-h1::after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  /* animation: glitch2 2.5s infinite; */
-}
-
-/* h1:nth-child(2) {
-  color: #67f3da;
-  display: none;
-}
-
-h1:nth-child(3) {
-  color: #f16f6f;
-  display: none;
-} */
-
-.glitch-wrapper {
-  display: grid;
-  place-content: center;
-  place-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-
-.glitch-wrapper > * {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.glitch-wrapper.glitch > h1 {
+.glitch-wrapper:hover > h1,
+.glitch-wrapper:hover > p,
+article h2:hover,
+article h3:hover,
+article h4:hover {
   animation: glitch1 3.5s infinite alternate;
 }
 
-.glitch-wrapper.glitch > h1::before {
+.glitch-wrapper:hover > h1::before,
+.glitch-wrapper:hover > p::before,
+article h2:hover::before,
+article h3:hover::before,
+article h4:hover::before {
   animation: glitch2 3.5s infinite alternate;
   color: #67f3da;
 }
 
-.glitch-wrapper.glitch > h1::after {
+.glitch-wrapper:hover > h1::after,
+.glitch-wrapper:hover > p::after,
+article h2:hover::after,
+article h3:hover::after,
+article h4:hover::after {
   color: #f16f6f;
   animation: glitch3 3.5s infinite alternate;
 }
 
-article a::before {
+. article a::before {
   content: attr(data-glitch);
   position: absolute;
   top: 0;

@@ -407,12 +407,12 @@ main {
   --line-offset: calc(var(--gap) / 2);
   --line-thickness: 2px;
   --line-color: var(--blue-2);
-  max-width: var(--size-xl);
+  max-width: var(--size-lg);
   padding: 1rem;
   margin: 0 auto;
 }
 
-.wrapper {
+/* .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
@@ -420,13 +420,14 @@ main {
   width: 100%;
   min-height: 90vh;
   align-items: start;
-}
+} */
 
 .wrapper > * {
   position: relative;
   padding: 1.5rem;
 }
 
+/*
 .wrapper > *::before,
 .wrapper > *::after {
   content: "";
@@ -445,7 +446,7 @@ main {
 
 .threecol {
   grid-column: span 3;
-}
+} */
 
 :where(html) {
   font-family: "Departure Mono", var(--font-monospace-code), monospace;
@@ -700,16 +701,6 @@ a:hover::after {
 a:hover {
   text-decoration: none;
 }
-
-/* a[data-green-link="true"] {
-  --link-color: var(--blue-7);
-  display: inline-block;
-  position: relative;
-}
-
-a:not([data-green-link="true"]) {
-  --link-color: var(--stone-10);
-} */
 
 .visually-hidden:not(:focus):not(:active) {
   clip: rect(0 0 0 0);

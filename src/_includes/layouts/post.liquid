@@ -6,16 +6,13 @@ css: post.css
 {% assign date = published %}
 <article class="wrapper">
   {% if title %}
-    <section class="twocol">
-      <div class="glitch-wrapper">
-        <h1 data-glitch="{{ title }}">{{ title }}</h1>
-      </div>
+    <section class="twocol glitch-wrapper">
+      <h1 data-glitch="{{ title }}">{{ title }}</h1>
       {% if date %}
-        <p>Published:
+        <p data-glitch="Published {{ date | date_to_long_string }}">Published:
           <time class="postlist-date" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>
         </p>
       {% endif %}
-      {% greenLinks %}
     {% comment %} TODO: Add Table of Content {% endcomment %}
     {% comment %} TODO: Add Share link & RSS link {% endcomment %}
     </section>
@@ -27,20 +24,7 @@ css: post.css
 </article>
 
 <script gaw:remove>
-  document.addEventListener('DOMContentLoaded', function() {
-    const glitch = document.querySelector('.glitch-wrapper');
-  
-    glitch.addEventListener('mouseover', function() {
-      glitch.classList.add('glitch');
-  
-    });
-    glitch.addEventListener('mouseout', function() {
-      glitch.classList.remove('glitch');
-    });
-  });
-
-
-  document.querySelectorAll('a:not(.deeplink)').forEach((a) => {
+  document.querySelectorAll('a:not(.deeplink), h2, h3, h4').forEach((a) => {
     console.log(a.textContent)
     a.setAttribute('data-glitch', a.textContent);
   });
