@@ -38,10 +38,10 @@
 
 .archived {
   /* background-color: var(--blue-0); */
-  color: var(--blue-4);
+  /* color: var(--blue-4); */
   opacity: 0.6;
-  --banner-line-color: var(--blue-4);
-  --banner-text-color: var(--blue-4);
+  /* --banner-line-color: var(--blue-4); */
+  /* --banner-text-color: var(--blue-4); */
 }
 
 .links {
@@ -53,6 +53,10 @@
   align-items: flex-end;
   height: 100%;
   gap: 0.75rem;
+}
+
+.talk > .links {
+  grid-row: 1;
 }
 
 ul:not([class]) li {
@@ -92,7 +96,7 @@ ul.boxes li:hover,
 
 .links a {
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 ul.boxes li:has(.summary.active):hover {
@@ -109,7 +113,8 @@ ul.boxes li:has(.summary.active):hover {
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
-  grid-column: span 2;
+  grid-column: 1/2;
+  grid-row: 1;
 }
 
 li.note {
@@ -220,10 +225,6 @@ span.count-notes:before {
   height: 100%;
   transition: all 0.25s ease;
   border-color: var(--blue-4);
-}
-
-strong {
-  color: var(--blue-12);
 }
 
 ul.no-marker li:before {

@@ -14,7 +14,7 @@ summary: >-
   newly migrated website pretty quickly too!
 ---
 
-{% callout Archived%}
+{% callout "Archived" %}
 {{ archiveNote }}
 {% endcallout %}
 

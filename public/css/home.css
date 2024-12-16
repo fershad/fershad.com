@@ -18,8 +18,15 @@
   max-width: 15rem;
 }
 
+#film picture {
+  position: relative;
+  width: fit-content;
+}
+
 #intro picture::before,
-#intro picture::after {
+#intro picture::after,
+#film picture::before,
+#film picture::after {
   content: "";
   display: none;
   height: 100%;
@@ -35,11 +42,13 @@
   /* hue-rotate: 90deg; */
 }
 
-#intro picture::before {
+#intro picture::before,
+#film picture::before {
   filter: saturate(2);
 }
 
-#intro picture::after {
+#intro picture::after,
+#film picture::after {
   opacity: 0.5;
   z-index: 2;
   filter: hue-rotate(160deg);
@@ -50,17 +59,21 @@
 #intro:hover picture::before,
 #intro:hover picture::after,
 #intro:has(.glitch-wrapper:hover) picture::before,
-#intro:has(.glitch-wrapper:hover) picture::after {
+#intro:has(.glitch-wrapper:hover) picture::after,
+#film picture:hover::before,
+#film picture:hover::after {
   display: block;
 }
 
 #intro:has(.glitch-wrapper:hover) picture::before,
-#intro:hover picture::before {
+#intro:hover picture::before,
+#film picture:hover::before {
   animation: text-glitch1 4.5s infinite;
 }
 
 #intro:has(.glitch-wrapper:hover) picture::after,
-#intro:hover picture::after {
+#intro:hover picture::after,
+#film picture:hover::after {
   animation: text-glitch2 4.5s infinite;
 }
 

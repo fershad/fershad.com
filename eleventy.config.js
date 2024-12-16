@@ -226,7 +226,7 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPairedShortcode("callout", function(content, title) {
 		const md = markdownit();
-		return `<aside class="callout">${ title ? `<p class="title">${title}</p>` : ""}${md.render(content)}</aside>`;
+		return `<aside class="banner outline callout">${ title ? `<p class="title" data-glitch="${ title || ''}">${title}</p>` : ""}${md.render(content)}</aside>`;
 	});
 
 	eleventyConfig.addShortcode("codepenIframe", function(penId, title, user = "fishintaiwan") {

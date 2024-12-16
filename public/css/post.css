@@ -295,22 +295,33 @@ code:hover::after {
 .codeblock:hover > .lang::before,
 .codeblock:hover > .filename::before,
 .codeblock:hover > .lang::after,
-.codeblock:hover > .filename::after,
-.codeblock:hover > pre {
+.codeblock:hover > .filename::after {
   animation: none;
 }
 
-.codeblock pre {
-  animation: list-glitch1 2.5s infinite;
+.codeblock:hover pre {
+  /* animation: list-glitch1 2.5s 1 reverse; */
 }
 
-.callout {
-  padding: 1.75rem 1.5rem;
-  margin: 1.5rem 0;
-  border: 1px solid var(--blue-8);
-  border-radius: 0.25rem;
-  background-color: var(--blue-0);
-  color: var(--stone-11);
+.callout:hover::before,
+.callout:hover::after,
+.callout:hover .title::before,
+.callout:hover .title::after {
+  animation: none;
+  display: none;
+}
+
+.callout::before {
+  border-color: #f16f6f;
+  animation: text-glitch1 1.5s infinite;
+  border: 1px solid;
+}
+
+.callout::after {
+  border-color: #67f3da;
+  animation: text-glitch2 1.5s infinite;
+  animation-delay: 0.5s;
+  border: 1px solid;
 }
 
 .callout p {
@@ -321,10 +332,11 @@ code:hover::after {
   margin: 0;
   width: fit-content;
   background-color: var(--blue-8);
-  color: var(--stone-0);
+  /* color: var(--stone-0); */
   padding: 0.5rem 1rem 0.5rem 1.5rem;
   margin-left: -1.5rem;
   font-size: 1.5rem;
+  position: relative;
 }
 
 .callout code {
@@ -472,11 +484,12 @@ figcaption p {
   margin: 0;
 }
 
-. article a::before {
+article a::before {
   content: attr(data-glitch);
   position: absolute;
   top: 0;
   left: 0;
+  display: inline-block;
 }
 
 article a::after {
@@ -484,6 +497,7 @@ article a::after {
   position: absolute;
   top: 0;
   left: 0;
+  display: inline-block;
 }
 
 article a {

@@ -18,8 +18,8 @@ description: A few of the projects I'm working on currently, or have released in
         {% endif %}>
         {% if project.archived %}
           <div class="title">
-            <h2>{{ project.title }}</h2>
-            <small class="">
+            <h2 class="title">{{ project.title }}</h2>
+            <small>
               <strong>Archived</strong>
             </small>
           </div>
@@ -29,7 +29,7 @@ description: A few of the projects I'm working on currently, or have released in
         <p class="summary">{{ project.content }}</p>
         <div class="links">
           {% for link in project.links %}
-            <a href="{{ link.url }}">{{ link.text }}</a>
+            <a href="{{ link.url }}" data-glitch="{{ link.text }} >">{{ link.text }} ></a>
           {% endfor %}
         </div>
       </li>

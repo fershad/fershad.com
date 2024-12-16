@@ -2,6 +2,7 @@
 layout: layouts/list.liquid
 title: Conferences & podcasts
 description: A few of the projects I'm working on currently, or have released into the wild.
+permalink: /speaking/index.html
 ---
   <section class="twocol">
     <h1>Conferences & podcasts</h1>
@@ -9,9 +10,9 @@ description: A few of the projects I'm working on currently, or have released in
   </section>
 
   <section class="twocol">
-    <h2>Upcoming events</h2>
     {% if talks.upcoming.size > 0 %}
-      <ul>
+    <h2>Upcoming events</h2>
+      <ul class="no-marker">
         {% for item in talks.upcoming %}
           <li class="talk">
             <div class="title">
@@ -25,20 +26,18 @@ description: A few of the projects I'm working on currently, or have released in
             {% endif %}
             <div class="links">
               {% if item.url %}
-                <a href="{{ item.url }}" class="banner outline">Event Website</a>
+                <a href="{{ item.url }}" data-glitch="Event website >">Event website ></a>
               {% endif %}
             </div>
           </li>
         {% endfor %}
       </ul>
-    {% else %}
-      <p>No upcoming events.</p>
     {% endif %}
   </section>
   <section class="twocol">
     <h2>Past events & podcasts</h2>
     {% if talks.past.size > 0 %}
-      <ul>
+      <ul class="no-marker">
         {% for item in talks.past %}
           <li class="talk">
             <div class="title">
@@ -47,13 +46,13 @@ description: A few of the projects I'm working on currently, or have released in
             </div>
             <div class="links">
               {% if item.slides %}
-                <a href="{{ item.slides }}">View slides</a>
+                <a href="{{ item.slides }}" data-glitch="View slides >">View slides ></a>
               {% endif %}
               {% if item.video %}
-                <a href="{{ item.video }}">Watch online</a>
+                <a href="{{ item.video }}" data-glitch="Watch online >">Watch online ></a>
               {% endif %}
               {% if item.episode %}
-                <a href="{{ item.episode }}">Listen online</a>
+                <a href="{{ item.episode }}" data-glitch="Listen online >">Listen online ></a>
               {% endif %}
             </div>
           </li>
