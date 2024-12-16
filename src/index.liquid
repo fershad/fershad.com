@@ -6,7 +6,7 @@ a fossil free internet by 2030."
 css: home.css
 ---
 
-<div class="wrapper" id="homepage">
+<div class="wrapper flow" id="homepage">
   <section id="intro" class="twocol">
     <img
       src="../public/img/profile.jpg"
@@ -15,113 +15,128 @@ css: home.css
       decoding="async"
       eleventy:widths="240, 480, 320, 640"
       sizes="100w" />
-    <div>
-      <h1>Hey, I'm Fershad.</h1>
-      <p class="subtag">
-        Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                                                                 
-          a fossil free internet by 2030.
-      </p>
-    </div>
-  </section>
-
-  <section id="current" class="onecol">
-    <div>
-      <h2 class="heading-underline">Currently</h2>
-      <p>
-        <span class="heading">Status:</span>
-        <br/>
-        {{ currently.status }}
-        {% if currently.key == "vacation" %}
-          Peace ✌️.
-        {% else %}
-          {{ currently.blurb }}
-        {% endif %}
-      </p>
+    <div class="flow">
+      <div class="glitch-wrapper">
+        <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
+        <p class="no-glitch subtag">
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                  
+            a fossil free internet by 2030.
+        </p>
+      </div>
+      <div class="banner outline">
+        <small class="no-glitch">
+          <span class="heading">Status:</span>
+          {{ currently.status }}
+          {% if currently.key == "vacation" %}
+            Peace ✌️.
+          {% else %}
+            {{ currently.blurb }}
+          {% endif %}
+        </small>
+      </div>
     </div>
   </section>
 
   <section id="projects" class="threecol">
-    <div class="lead-box">
-      <h2>Projects</h2>
-      <small>A couple of the highlight projects that I'm working on at the moment.</small>
-    </div>
-    {% for project in currently.projects %}
-      <div class="project">
-        <h3>
-          <a href="{{ project.url }}">{{ project.title }}</a>
-        </h3>
-        <p>{{ project.shortContent }}</p>
+    <div class="lead-box flow">
+      <div>
+        <h2>Projects</h2>
+        <p>A few of the best projects I've worked on.</p>
       </div>
-    {% endfor %}
-    <a href="/projects" class="banner">
-      More projects
-    </a>
+      <div>
+        <a href="/projects" data-glitch="More Projects >">
+          More projects >
+        </a>
+      </div>
+    </div>
+    <ul>
+      {% for project in currently.projects %}
+        <li>
+          <p>
+            <a href="{{ project.url }}">{{ project.title }}</a>
+            - {{ project.shortContent }}</p>
+        </li>
+      {% endfor %}
+    </ul>
   </section>
 
-  <section id="words" class="threecol">
-    <div id="writing">
+  <section id="writing" class="threecol">
+    {% assign postslist = collections.post | sortByPublishedDate | slice: 0, 5 %}
+    <div class="lead-box flow">
       <div>
         <h2>Writing</h2>
         <p>Notes and ideas mostly related to digital sustainability, occasionally other topics.</p>
       </div>
-      <ul>
-        {% assign postslist = collections.post | sortByPublishedDate | slice: 0, 5 %}
-        {% for post in postslist %}
-          <li>
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-            <div>
-              <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-            </div>
-          </li>
-        {% else %}
-          <li>
-            <p>There are no posts.</p>
-          </li>
-        {% endfor %}
-      </ul>
       {% if postslist.size > 0 %}
-        <a href="/writing" class="banner">More writing</a>
+        <div>
+          <a href="/writing" data-glitch="More Writing > ">More writing ></a>
+        </div>
       {% endif %}
     </div>
-    <div id="reading">
+    <ul>
+      {% for post in postslist %}
+        <li>
+          <a href="{{ post.url }}">{{ post.data.title }}</a>
+          <div>
+            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+          </div>
+        </li>
+      {% else %}
+        <li>
+          <p>There are no posts.</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section id="reading" class="threecol">
+    <div class="lead-box flow">
       <div>
         <h2>Reading</h2>
         <p>Here's a list of articles I've recently read.</p>
       </div>
-      <ul>
-        {% for article in readwise.reader %}
-          <li>
-            <a href="{{ article.source_url }}">{{ article.title }}</a>
-            <div>
-              <small>{{ article.site_name }}</small>
-            </div>
-          </li>
-        {% else %}
-          <li>
-            <p>There are no articles.</p>
-          </li>
-        {% endfor %}
-      </ul>
-      <div>
-        <div gaw:remove>
-          <small>
-            <span id="update-time">Last updated: {{ readwise.updated | date_to_rfc822 }}</span>
+      <div gaw:remove>
+        <small class="last-updated">
+          <span id="update-time">Last updated: <br/>{{ readwise.updated | date_to_rfc822 }}</span>
+          <div>
             <button class="button outline" id="refresh-reader">Refresh</button>
-          </small>
-        </div>
-        <div class="banner">
-          <a href="/reading">More reading</a>
-        </div>
+          </div>
+        </small>
+      </div>
+      <div>
+        <a href="/reading" data-glitch="More Reading >">More reading ></a>
       </div>
     </div>
+    <ul>
+      {% for article in readwise.reader %}
+        <li>
+          <a href="{{ article.source_url }}">{{ article.title }}</a>
+          <div>
+            <small>{{ article.site_name }}</small>
+          </div>
+        </li>
+      {% else %}
+        <li>
+          <p>There are no articles.</p>
+        </li>
+      {% endfor %}
+    </ul>
   </section>
 
   <section id="film" class="threecol">
-    <div class="lead-box clear">
+    <div class="lead-box flow">
       <span>
         <h2>Film</h2>
         <small>I do a bit of film photography while I'm out and about.</small>
       </span>
+      <div gaw:remove>
+        <a
+          href="https://film.fershad.com/random"
+          id="rando"
+          data-glitch="Get Random Image >">Get random image ></a>
+      </div>
+      <div>
+        <a data-glitch="See more @ film.fershad.com" href="https://film.fershad.com">See more @ film.fershad.com</a>
+      </div>
     </div>
     <div class="img-holder">
       <img src="{{ film.imageUrl }}" alt="{{ film.altText }}" />
@@ -131,11 +146,7 @@ css: home.css
           <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
         </span>
         <p>{{ film.description }}</p>
-        <a
-          href="https://film.fershad.com/random"
-          id="rando"
-          class="banner outline">Random image</a>
-        <a class="banner" href="https://film.fershad.com">More @ film.fershad.com</a>
+
       </div>
     </div>
   </section>

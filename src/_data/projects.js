@@ -121,7 +121,9 @@ export default [
   },
   {
     title: 'Are my third parties green?',
+    slug: 'are-my-third-parties-green',
     media: `./public/img/amtpg.jpg`,
+    shortContent: 'A tool to show if the third-party resources on a website are hosted on green infrastructure.',
     media_alt: '',
     content:
       'I built aremythirdpartiesgreen.com to help give some visibility to the sustainability of third-party requests on the web. Use it to test your own site, and find out if the external resources being used are hosted on green infrastructure.',

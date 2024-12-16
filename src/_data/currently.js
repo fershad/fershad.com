@@ -26,6 +26,7 @@ export const status = current.status;
 const projectsList = [
     "grid-aware-websites",
     "co2.js",
+    "are-my-third-parties-green"
 ]
 
 export const projects = projectsList.map(slug => {

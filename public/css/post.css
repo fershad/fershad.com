@@ -472,68 +472,6 @@ figcaption p {
   margin: 0;
 }
 
-/* Glitch effect from */
-.glitch-wrapper h1,
-.glitch-wrapper p,
-article h2,
-article h3,
-article h4 {
-  position: relative;
-}
-
-article h2::before,
-article h3::before,
-article h4::before,
-article h2::after,
-article h3::after,
-article h4::after {
-  margin-left: 1.35ch;
-}
-
-.glitch-wrapper h1::before,
-.glitch-wrapper p::before,
-article h2::before,
-article h3::before,
-article h4::before,
-.glitch-wrapper h1::after,
-.glitch-wrapper p::after,
-article h2::after,
-article h3::after,
-article h4::after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  /* animation: glitch3 2.5s infinite; */
-}
-
-.glitch-wrapper:hover > h1,
-.glitch-wrapper:hover > p,
-article h2:hover,
-article h3:hover,
-article h4:hover {
-  animation: text-glitch1 3.5s infinite alternate;
-}
-
-.glitch-wrapper:hover > h1::before,
-.glitch-wrapper:hover > p::before,
-article h2:hover::before,
-article h3:hover::before,
-article h4:hover::before {
-  animation: text-glitch2 3.5s infinite alternate;
-  color: #67f3da;
-}
-
-.glitch-wrapper:hover > h1::after,
-.glitch-wrapper:hover > p::after,
-article h2:hover::after,
-article h3:hover::after,
-article h4:hover::after {
-  color: #f16f6f;
-  animation: text-glitch3 3.5s infinite alternate;
-}
-
 . article a::before {
   content: attr(data-glitch);
   position: absolute;

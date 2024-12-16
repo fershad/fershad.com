@@ -1,15 +1,17 @@
 <header>
-  {% unless title == "Home" %}
-    <div>
-      <p>Fershad Irani</p>
+  {% comment %} {% unless title == "Home" %} {% endcomment %}
+  <div>
+    <div class="glitch-wrapper">
+      <p data-glitch="Fershad Irani">Fershad Irani</p>
       <small>Digital Sustainability Consultant</small>
     </div>
-  {% endunless %}
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/writing">Writing</a></li>
-      <li><a href="/projects">Projects</a></li>
-    </ul>
-  </nav>
+    {% comment %} {% endunless %} {% endcomment %}
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/writing">Writing</a></li>
+        <li><a href="/projects">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
