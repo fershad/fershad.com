@@ -132,11 +132,7 @@ export default function(eleventyConfig) {
 		},
 	});
 
-	eleventyConfig.addPlugin(pluginTOC, {
-		// tags: ['h2', 'h3'],
-		// flat: true,
-		ul: true
-	  })
+	eleventyConfig.addPlugin(pluginTOC)
 
 	// if (!dev) {
 	// 	eleventyConfig.addPlugin(greenLinks, {

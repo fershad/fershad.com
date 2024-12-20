@@ -323,6 +323,7 @@ code {
   margin-left: -1.5rem;
   font-size: 1.5rem;
   position: relative;
+  z-index: -1;
 }
 
 .callout code {
