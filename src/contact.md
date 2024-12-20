@@ -14,7 +14,7 @@ If you've got a project that you want to work on, [contact us at the Green Web F
 [Contact Green Web Foundation](https://www.thegreenwebfoundation.org/services/)
 {% endcallout %}
 
-{{ "## Contact me" | headingGlitch }}
+## Contact me
 
 Hey! I'd love to hear from you.
 

@@ -10,7 +10,7 @@ isPage: true
 I'm an Aussie who's called Taiwan home for over a decade. I'm a frontend developer, as well as a Touch Football player, referee, coach, and organiser. When at home I often serve as a sofa for my cat.
 {% endcallout %}
 
-{{"## Currently" | headingGlitch }}
+## Currently
 
 {{ currently.status }}
 {% if currently.key == "vacation" %}
@@ -19,7 +19,7 @@ I'm an Aussie who's called Taiwan home for over a decade. I'm a frontend develop
     {{ currently.blurb }}
 {% endif %}
 
-{{"### Work" | headingGlitch }}
+### Work
 
 I work with the Green Web Foundation to create a just, equitable, open, fossil-free internet. There are three key parts to my role at the moment:
 
@@ -29,7 +29,7 @@ I work with the Green Web Foundation to create a just, equitable, open, fossil-f
 
 You can find out about the other "professional stuff" I've done through my lifetime over on the hell site that is [LinkedIn](https://www.linkedin.com/in/fershad/).
 
-{{ "### Fun" | headingGlitch }}
+### Fun
 
 When I'm not at my computer, I'm normally doing one of the things below:
 
