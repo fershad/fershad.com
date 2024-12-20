@@ -18,10 +18,12 @@ css: post.css
         </p>
       {% endif %}
 
-      <details class="table-of-contents">
-        <summary>Table of Contents</summary>
-        {{ content | toc }}
-      </details>
+      {% if content | toc %}
+        <details class="table-of-contents">
+          <summary>Table of Contents</summary>
+          {{ content | toc }}
+        </details>
+      {% endif %}
     </section>
   {% endif %}
 
