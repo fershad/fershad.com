@@ -194,7 +194,11 @@
 }
 
 @media (max-width: 768px) {
-  #intro {
+  #intro,
+  #projects,
+  #writing,
+  #reading,
+  #film {
     grid-template-columns: 1fr;
   }
 

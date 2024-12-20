@@ -522,6 +522,15 @@ h6,
 
 .center-align {
   text-align: center;
+  margin-inline: auto;
+  width: fit-content;
+}
+
+.glitch-wrapper.center-align > [data-glitch]::before,
+.glitch-wrapper.center-align > [data-glitch]::after {
+  text-align: center;
+  margin-inline: auto;
+  width: 100%;
 }
 
 small .button {
@@ -714,13 +723,17 @@ footer::after {
   animation-delay: 0.5s;
 }
 
-header > div,
-footer > nav {
+header > div {
   width: var(--size-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-inline: auto;
+}
+
+footer > nav {
+  max-width: var(--size-lg);
   margin-inline: auto;
 }
 
@@ -739,6 +752,7 @@ footer nav ul {
   display: flex;
   gap: 1rem;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 header nav ul li,
@@ -911,7 +925,18 @@ article h4:hover::after {
   .onecol,
   .twocol,
   .threecol {
-    grid-column: span 1;
+    grid-column: 1;
+  }
+
+  footer {
+    padding-inline: 0.25rem;
+  }
+
+  footer nav ul {
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100vw;
+    justify-content: flex-start;
   }
 }
 
