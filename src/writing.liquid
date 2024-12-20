@@ -66,7 +66,7 @@ eleventyExcludeFromCollections: true
     {% for post in postslist %}
       {% assign tags = post.data.tags %}
       {% assign isNote = tags | find: "note" %}
-      <li class="
+      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};" class="
       {%- if post.data.archived -%}{{"archived " | raw}}{%- endif -%} 
       {%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}
         ">

@@ -19,7 +19,7 @@ css: home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                   
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                      
             a fossil free internet by 2030.
         </p>
       </div>
@@ -51,7 +51,7 @@ css: home.css
     </div>
     <ul>
       {% for project in currently.projects %}
-        <li>
+        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <p>
             <a href="{{ project.url }}">{{ project.title }}</a>
             - {{ project.shortContent }}</p>
@@ -75,7 +75,7 @@ css: home.css
     </div>
     <ul>
       {% for post in postslist %}
-        <li>
+        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <a href="{{ post.url }}">{{ post.data.title }}</a>
           <div>
             <small>{{ post.date | date: "%Y-%m-%d" }}</small>
@@ -108,7 +108,7 @@ css: home.css
     </div>
     <ul>
       {% for article in readwise.reader %}
-        <li>
+        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <a href="{{ article.source_url }}">{{ article.title }}</a>
           <div>
             <small>{{ article.site_name }}</small>

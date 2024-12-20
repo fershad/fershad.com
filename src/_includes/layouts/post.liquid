@@ -22,10 +22,3 @@ css: post.css
     {{ content }}
   </section>
 </article>
-
-<script gaw:remove>
-  document.querySelectorAll('a:not(.deeplink), h2, h3, h4').forEach((a) => {
-    console.log(a.textContent)
-    a.setAttribute('data-glitch', a.textContent);
-  });
-</script>

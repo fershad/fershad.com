@@ -255,6 +255,17 @@ export default function(eleventyConfig) {
 		});
 	});
 
+	// A filter to return a random number between 0 and 1000
+	eleventyConfig.addShortcode("random", function() {
+		return Math.random() * 1000;
+	});
+
+	// A shortcode to return 'normal', 'alternate', 'reverse', or 'alternate-reverse'
+	eleventyConfig.addShortcode("direction", function() {
+		const directions = ["normal", "alternate", "reverse", "alternate-reverse"];
+		return directions[Math.floor(Math.random() * directions.length)];
+	});
+
 	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
 	// 	return collectionsApi.getAllSorted().filter(function (item) {
 	// 		return "post" in item.data.tags;

@@ -635,11 +635,15 @@ ul:not([class]) li::before {
   /* transition: all 0.2s; */
   --marker-color: #f16f6f;
   animation: list-glitch1 5.5s infinite;
+  animation-delay: var(--local-delay, 0);
+  animation-direction: var(--local-direction, alternate-reverse);
 }
 
 ul:not([class]) li::after {
   --marker-color: #67f3da;
   animation: list-glitch2 5.5s infinite;
+  animation-delay: var(--local-delay, 0);
+  animation-direction: var(--local-direction, alternate-reverse);
 }
 
 /* ul:not([class]) li:hover::before {
