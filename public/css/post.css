@@ -187,45 +187,15 @@ pre {
 }
 
 code {
-  /* background-color: var(--blue-0); */
-  /* color: var(--stone-0); */
+  background-color: var(--blue-0);
+  color: var(--background);
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
-  border: 1px solid var(--blue-4);
+  /* border: 1px solid var(--blue-4); */
   /* color: var(--background); */
   position: relative;
-}
-
-code:before,
-code:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  border-radius: 0.25rem;
-  border: 2px solid;
-}
-
-code:hover {
-  border: 1px solid var(--blue-4);
-  animation: text-glitch1 2.5s infinite;
-}
-
-code:hover::before {
-  /* border-right: 2px solid;
-  border-bottom: 2px solid; */
-  border-color: #67f3da;
-  animation: list-glitch1 2.5s infinite;
-}
-
-code:hover::after {
-  /* border-left: 2px solid;
-  border-top: 2px solid; */
-  border-color: #f16f6f;
-  animation: list-glitch2 2.5s infinite;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .codeblock {
