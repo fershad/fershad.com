@@ -266,6 +266,13 @@ export default function(eleventyConfig) {
 		return directions[Math.floor(Math.random() * directions.length)];
 	});
 
+	// A filter that takes in a markdown table and returns a HTML table with a wrapper div
+	eleventyConfig.addFilter("markdownTable", function(value) {
+		const md = markdownit();
+		const html = md.render(value);
+		return `<div class="table-wrapper">${html}</div>`;
+	});
+
 	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
 	// 	return collectionsApi.getAllSorted().filter(function (item) {
 	// 		return "post" in item.data.tags;

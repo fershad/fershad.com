@@ -314,6 +314,11 @@ code {
   color: var(--stone-0);
 }
 
+.table-wrapper {
+  max-width: 100vw;
+  overflow: auto;
+}
+
 table {
   max-inline-size: 100%;
   border-collapse: collapse;

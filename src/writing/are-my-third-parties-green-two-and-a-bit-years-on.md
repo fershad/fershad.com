@@ -74,6 +74,8 @@ The largest single third-party resource appears to be some kind of mapping servi
 
 AMTPG uses categorises third-party requests based on data from Patrick Hulce's [third-party-web repository](https://github.com/patrickhulce/third-party-web/). Looking at results by category, we can see what types of third-party request make up the majority of resources found in tests run on AMTPG.
 
+{% capture tableContent %}
+
 | Category         | Requests | Green | Transfer Size |
 | ---------------- | -------- | ----- | ------------- |
 | CDN              | 14,117   | 90%   | 434 MB        |
@@ -88,6 +90,9 @@ AMTPG uses categorises third-party requests based on data from Patrick Hulce's 
 | Video            | 2,579    | 77%   | 117 MB        |
 | Consent Provider | 2,056    | 96%   | 32 MB         |
 | Customer Success | 1,198    | 40%   | 27 MB         |
+{% endcapture %}
+
+{{ tableContent | markdownTable }}
 
 There's a catch-all category of _other_ which I have excluded from the results above.
 
