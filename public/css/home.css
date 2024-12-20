@@ -198,7 +198,8 @@
   #projects,
   #writing,
   #reading,
-  #film {
+  #film,
+  #film .img-holder {
     grid-template-columns: 1fr;
   }
 
