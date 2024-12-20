@@ -145,7 +145,7 @@ css: home.css
           <h3 class="heading-underlined">{{ film.title }}</h3>
           <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
         </span>
-        <p>{{ film.description }}</p>
+        <p>{{ film.description | url_decode }}</p>
 
       </div>
     </div>
