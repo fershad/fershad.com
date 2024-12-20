@@ -7,6 +7,7 @@ summary: >-
   lot of electricity. Breaking the internet down to a systems level, data
   transfer over networks accounts for an estimated 14% of the web’s total
   electricity consumption.
+canonical: "https://branch.climateaction.tech/issues/issue-4/co2js/"
 ---
 
 {% callout "Original" %}

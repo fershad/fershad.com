@@ -6,6 +6,7 @@ summary: >-
   In the past month, we’ve had the opportunity to speak at a couple of events in
   Asia for the very first time. This post shares our experience, links to our
   slides, and other notes from those events.
+canonical: "https://www.thegreenwebfoundation.org/news speaking-about-green-it-in-asia-green-io-conference-singapore-and-more/"
 ---
 
 {% callout "Original" %}

@@ -15,6 +15,10 @@
   {% assign description = summary %}
 {% endunless %}
 
+{% if seo.canonical %}
+  {% assign canonical = seo.canonical %}
+{% endif %}
+
 <title>{{ pageTitle }}</title>
 <meta name="description" content="{{ description }}" />
 {% if canonical.size > 0 %}

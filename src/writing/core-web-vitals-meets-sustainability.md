@@ -6,6 +6,7 @@ summary: >-
   Everyone wants to make sure their website's Core Web Vitals are up to
   standard. What if we told you that some of the very things you'll do to
   improve your site's Core Web Vitals can also help make it more sustainable!
+canonical: "https://ecoping.earth/blog/core-web-vitals-and-sustainability"
 ---
 
 {% callout "Original" %}

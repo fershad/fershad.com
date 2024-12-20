@@ -6,6 +6,7 @@ summary: >-
   This post covers the changes made in version 4 of the Sustainable Web Design
   Model, and how those affect the estimation results for those using this
   methodology.
+canonical: "https://www.thegreenwebfoundation.org/news/understanding-the-latest-sustainable-web-design-model-update/"
 ---
 
 {% callout "Original" %}

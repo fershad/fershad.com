@@ -5,6 +5,7 @@ permalink:  /writing/sitespeed-io-using-and-contributing-to-co2-js/
 summary: >-
   Sitespeed.io is an open-source website performance monitoring solution that
   also has a sustainability plugin powered by CO2.js.
+canonical: "https://www.thegreenwebfoundation.org/news/sitespeed-io-using-and-contributing-to-co2-js/"
 ---
 
 {% callout "Original" %}

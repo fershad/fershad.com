@@ -50,9 +50,9 @@ addEventListener("fetch", event => {
 {% endcodeToHtml %}
 <!-- markdownlint-enable -->
 
-Previously on Netlify ...
-
+{% callout "Previously on Netlify ..." %}
 When this post was first published, this site is hosted on Netlify. [Their docs](https://docs.netlify.com/routing/headers/) show a couple of ways to add custom response headers. I've decided to make the change in my site's `netlify.toml` file.
+{% endcallout %}
 
 <!-- markdownlint-disable -->
 {% codeToHtml "toml", "netlify.toml" %}

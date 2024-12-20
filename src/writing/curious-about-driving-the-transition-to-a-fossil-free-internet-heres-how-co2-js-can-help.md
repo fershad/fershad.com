@@ -10,6 +10,7 @@ summary: >-
   transition to a fossil-free internet. This article will explain the concepts
   behind CO2.js, it’s uses, and when other tools might be better options to
   consider.
+canonical: "https://www.thegreenwebfoundation.org/news/curious-about-driving-the-transition-to-a-fossil-free-internet-heres-how-co2-js-can-help/"
 ---
 
 {% callout "Original" %}
