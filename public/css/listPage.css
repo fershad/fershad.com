@@ -110,8 +110,8 @@ ul.boxes li:has(.summary.active):hover {
 } */
 
 .title {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  /* font-size: 1.5rem; */
+  /* line-height: 2rem; */
   margin: 0;
   grid-column: 1/2;
   grid-row: 1;
@@ -528,5 +528,23 @@ li.new {
       transform: none;
       background-color: var(--blue-0);
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .project:has(.title),
+  .talk:has(.title) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .project .summary {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .links {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
