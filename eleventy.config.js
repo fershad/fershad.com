@@ -93,13 +93,37 @@ const markdownItAnchorOptions = {
   };
 
 
-
+// Using markdownit, how can I add an data attribute to all headings of level 2 and 3?
 const mdLib = markdownit({
 	html: true,
 	breaks: true,
 //   linkify: true,
 //   typographer: true
-}).use(mdfigcaption, figoptions).use(markdownItAnchor, markdownItAnchorOptions).use(markdownItAttrs);
+})
+
+// Add this custom ruler before other plugins
+mdLib.core.ruler.before('inline', 'heading-data-attr', state => {
+    state.tokens.forEach((token, idx) => {
+        if (token.type === 'heading_open') {
+            const level = parseInt(token.tag.slice(1));
+            if (level === 2 || level === 3) {
+                // Find the content in the next token
+                const contentToken = state.tokens[idx + 1];
+                if (contentToken && contentToken.type === 'inline') {
+                    const headingText = contentToken.content;
+                    // Add the data-glitch attribute to the token's attrs array
+                    token.attrs = token.attrs || [];
+                    token.attrs.push(['data-glitch', headingText]);
+                }
+            }
+        }
+    });
+});
+
+// Now add the other plugins
+mdLib.use(mdfigcaption, figoptions)
+    .use(markdownItAnchor, markdownItAnchorOptions)
+    .use(markdownItAttrs);
 
 const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
