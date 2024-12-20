@@ -359,8 +359,8 @@ textarea:not([rows]) {
   font-family: "Departure Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("/static/fonts/DepartureMono-Regular.woff2") format("woff2"),
-    url("/static/fonts/DepartureMono-Regular.woff") format("woff");
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
+    url("/fonts/DepartureMono-Regular.woff") format("woff");
 }
 
 html {
