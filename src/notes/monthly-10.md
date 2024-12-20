@@ -11,7 +11,7 @@ categories:
 
 October was a month of getting back into the regular swing of things after a very disrupted by rewarding Summer.
 
-## October 2024
+{{ "## October 2024" | headingGlitch}}
 
 🏉 **Japan Nationals**. The month ended with a trip to Japan to referee at their Elite Nationals tournament. It was my first time blowing the whistle in anger for a long time. It was good to get the legs going again, especially after a few months of inactivity post-World Cup.
 
@@ -21,11 +21,11 @@ The trip to Japan also gave me a chance to get my old Olympus Pen EE-3 serviced.
 
 🚲 **Back on the bike**. Before leaving for India in September, I left my bike at a local Giant bike shop to be serviced. I picked it up after we go back, and then took advantage of a few clear days between typhoons to get in a couple of rides. On one ride, I made it all the way out to the north eastern city of Keelung - about 40km away from Taipei, making it an 80km round trip. It was good to get out there & realise I could make the ride in a morning and be back in Taipei by lunch.
 
-### Tracking start, stop, continue targets
+{{"### Tracking start, stop, continue targets" | headingGlitch }}
 
 These are things [I set out to do more or less of in 2024](https://qt.fershad.com/writing/start-stop-continue-2024/). I'm not big on habit tracking, so this "tracking" report is all just vibes.
 
-#### **Start**
+{{"#### Start" | headingGlitch }}
 
 - _Going to the gym regularly:_ 😐 Nah, no motivation post World Cup.
 - _Doing 20k+ bike rides each week:_ Yep ✅.
@@ -33,12 +33,12 @@ These are things [I set out to do more or less of in 2024](https://qt.fershad.co
 - _Taking the cat outside the apartment:_ Nope ❎.
 - _Capturing thoughts in a notebook:_ 😐 Picked up a Hobonichi diary in Japan for 2025.
 
-#### **Stop**
+{{"#### Stop" | headingGlitch }}
 
 - _Sugary snacks:_ Yep ⭐. I feel that the trip to India helped with this. Now the hard part will be keeping up the discipline back in Taiwan.
 - _Using my phone in bed:_ Nope ❎. But I've got my eye on the Boox Palma 2, a "dumb phone" e-reader device that I hope can become my regular reading device.
 
-#### **Continue**
+{{"#### Continue" | headingGlitch }}
 
 - _Taking regular breaks/vacations with Kay:_ 😀 We're planning our next trips, but aiming to make them more manageable than the ones we've had this year.
 - _Getting nerd-sniped by work stuff:_ Yes 😀. I _still_ want to make a carbon tracking page for my website. Also had a few other ideas during the India trip.

@@ -18,6 +18,10 @@ section:first-of-type::before {
   top: calc(100% + var(--gap) / 2);
 }
 
+small + h1 {
+  margin-top: 0.5rem;
+}
+
 section p,
 section ul,
 section ul li,
@@ -32,6 +36,18 @@ section pre {
 
 section[class] ul li:after {
   /* display: none; */
+}
+
+.table-of-contents {
+  margin-block-start: 2.15rem;
+  padding-block: 1.5rem;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+.toc ul > li,
+.toc ol > li {
+  margin-block-start: 0.5rem;
 }
 
 section h2,

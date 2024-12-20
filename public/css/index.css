@@ -862,6 +862,7 @@ li.hover-expose ul li {
 /* Glitch effect from */
 .glitch-wrapper h1,
 .glitch-wrapper p,
+.glitch-wrapper small,
 article h2,
 article h3,
 article h4 {
@@ -873,7 +874,9 @@ article h3::before,
 article h4::before,
 article h2::after,
 article h3::after,
-article h4::after {
+article h4::after,
+.glitch-wrapper small::before,
+.glitch-wrapper small::after {
   margin-left: 1.35ch;
 }
 
@@ -886,7 +889,9 @@ article h4::before,
 .glitch-wrapper p:not(.no-glitch)::after,
 article h2::after,
 article h3::after,
-article h4::after {
+article h4::after,
+.glitch-wrapper small::before,
+.glitch-wrapper small::after {
   content: attr(data-glitch);
   position: absolute;
   top: 0;
@@ -899,7 +904,8 @@ article h4::after {
 .glitch-wrapper:hover > p:not(.no-glitch),
 article h2:hover,
 article h3:hover,
-article h4:hover {
+article h4:hover,
+.glitch-wrapper:hover > small {
   animation: text-glitch1 3.5s infinite alternate;
 }
 
@@ -907,7 +913,8 @@ article h4:hover {
 .glitch-wrapper:hover > p:not(.no-glitch)::before,
 article h2:hover::before,
 article h3:hover::before,
-article h4:hover::before {
+article h4:hover::before,
+.glitch-wrapper:hover > small::before {
   animation: text-glitch2 3.5s infinite alternate;
   color: #67f3da;
 }
@@ -916,7 +923,8 @@ article h4:hover::before {
 .glitch-wrapper:hover > p:not(.no-glitch)::after,
 article h2:hover::after,
 article h3:hover::after,
-article h4:hover::after {
+article h4:hover::after,
+.glitch-wrapper:hover > small::after {
   color: #f16f6f;
   animation: text-glitch3 3.5s infinite alternate;
 }

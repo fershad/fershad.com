@@ -8,6 +8,8 @@ import { codeToHtml } from 'shiki'
 import greenLinks from "eleventy-plugin-green-links";
 import markdownItAnchor from 'markdown-it-anchor'
 import slugify from '@sindresorhus/slugify'
+import pluginTOC from 'eleventy-plugin-nesting-toc';
+import markdownItAttrs from 'markdown-it-attrs';
 
 const figoptions = {
     figcaption: true
@@ -97,7 +99,7 @@ const mdLib = markdownit({
 	breaks: true,
 //   linkify: true,
 //   typographer: true
-}).use(mdfigcaption, figoptions).use(markdownItAnchor, markdownItAnchorOptions);
+}).use(mdfigcaption, figoptions).use(markdownItAnchor, markdownItAnchorOptions).use(markdownItAttrs);
 
 const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
@@ -130,11 +132,17 @@ export default function(eleventyConfig) {
 		},
 	});
 
-	if (!dev) {
-		eleventyConfig.addPlugin(greenLinks, {
-			// ignore: ["fershad.com", "thegreenwebfoundation.org"],
-		  });
-	}
+	eleventyConfig.addPlugin(pluginTOC, {
+		// tags: ['h2', 'h3'],
+		// flat: true,
+		ul: true
+	  })
+
+	// if (!dev) {
+	// 	eleventyConfig.addPlugin(greenLinks, {
+	// 		// ignore: ["fershad.com", "thegreenwebfoundation.org"],
+	// 	  });
+	// }
 
 	eleventyConfig.addFilter("limitWords", function(value, limit = 50) {
 		// Return the first `limit` words, plus an ellipsis if needed
@@ -271,6 +279,12 @@ export default function(eleventyConfig) {
 		const md = markdownit();
 		const html = md.render(value);
 		return `<div class="table-wrapper">${html}</div>`;
+	});
+
+	// A filter that takes a markdown heading and returns it with a attr attached
+	eleventyConfig.addFilter("headingGlitch", function(value) {
+		const headingText = value.replaceAll('#', '').trim();
+		return `${value} { data-glitch="${headingText}" }`;
 	});
 
 	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
