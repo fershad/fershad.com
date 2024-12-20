@@ -7,10 +7,12 @@ css: post.css
 <article class="wrapper">
   {% if title %}
     <section class="twocol glitch-wrapper">
-      {% assign isNote = tags | find: "note" %}
-      <small data-glitch="{%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}">
-        {%- if isNote == "note" -%}Note{%- else -%}Post{%- endif -%}
-      </small>
+      {% unless isPage %}
+        {% assign isNote = tags | find: "note" %}
+        <small data-glitch="{%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}">
+          {%- if isNote == "note" -%}Note{%- else -%}Post{%- endif -%}
+        </small>
+      {% endunless %}
       <h1 data-glitch="{{ title }}">{{ title }}</h1>
       {% if date %}
         <p data-glitch="Published {{ date | date_to_long_string }}">Published:
@@ -18,7 +20,10 @@ css: post.css
         </p>
       {% endif %}
 
-      {% if content | toc %}
+      {% capture tableOfContent %}
+        {{ content | toc  }}
+      {% endcapture %}
+      {% if tableOfContent %}
         <details class="table-of-contents">
           <summary>Table of Contents</summary>
           {{ content | toc }}

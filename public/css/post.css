@@ -498,13 +498,18 @@ article a {
   overflow-wrap: break-word;
 }
 
-article a:hover {
+article a:not(.deeplink):hover {
   animation: link-glitch 2.5s infinite;
 }
 
 @media (max-width: 768px) {
   blockquote {
     transform: skew(-2deg);
+  }
+
+  .heading-wrapper a.deeplink {
+    top: -2.15ex;
+    inset-inline-start: 0;
   }
 }
 
