@@ -1,8 +1,9 @@
 ---
 title: Contact
-layout: layouts/base.liquid
+layout: layouts/post.liquid
 description: I'd love to hear your web sustainability related questions. Contact me.
-css: contact.css
+css: post.css
+isPage: true
 ---
 
 {% callout "Have a project idea?" %}

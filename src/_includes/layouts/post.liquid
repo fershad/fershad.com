@@ -7,7 +7,7 @@ css: post.css
 <article class="wrapper">
   {% if title %}
     <section class="twocol glitch-wrapper">
-      {% unless isPage %}
+      {% unless isPage == true %}
         {% assign isNote = tags | find: "note" %}
         <small data-glitch="{%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}">
           {%- if isNote == "note" -%}Note{%- else -%}Post{%- endif -%}
