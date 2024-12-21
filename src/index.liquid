@@ -159,9 +159,9 @@ css: home.css
       .then(response => response.json())
       .then(data => {
         document.querySelector('.img-holder img').src = data.imageUrl;
-        document.querySelector('.img-desc h3').textContent = encodeURIComponent(data.title);
+        document.querySelector('.img-desc h3').textContent = decodeURIComponent(data.title);
         document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
-        document.querySelector('.img-desc p').textContent = encodeURIComponent(data.description);
+        document.querySelector('.img-desc p').textContent = decodeURIComponent(data.description);
         document.querySelector('.img-holder > picture > source').remove();
 
 let filmImg = document.querySelector('#film img');
