@@ -18,17 +18,11 @@ eleventyExcludeFromCollections: true
   <aside class="banner outline callout">
     <p class="title">RSS</p>
     <p>This blog has a mixture of longer form blog posts, and shorter notes that include monthly summaries of my life. You can subscribe to some, or all, of the content using the RSS feeds below:</p>
-  <ul>
-    <li>
-      <a href="/feed.xml">RSS: All posts and notes</a>
-    </li>
-    <li>
-      <a href="/feed-posts.xml">RSS: Only posts - No monthly updates or link posts.</a>
-    </li>
-    <li>
-      <a href="/feed-notes.xml">RSS: Only notes - No long, meandering blog posts.</a>
-    </li>
-  </ul>
+    <ul>
+      <li><a href="/feed.xml">RSS: All posts and notes</a></li>
+      <li><a href="/feed-posts.xml">RSS: Only posts - No monthly updates or link posts.</a></li>
+      <li><a href="/feed-notes.xml">RSS: Only notes - No long, meandering blog posts.</a></li>
+    </ul>
   </aside>
 </section>
 
@@ -41,7 +35,7 @@ eleventyExcludeFromCollections: true
     </p>
     <div class="" id="filters">
       <label
-        gaw:remove
+        data-gaw-remove
         for="show-all"
         class="form-control">
         <input
@@ -53,7 +47,7 @@ eleventyExcludeFromCollections: true
         Show all {{ collections.post | size }} posts & notes
       </label>
       <label
-        gaw:remove
+        data-gaw-remove
         for="show-posts"
         class="form-control">
         <input
@@ -64,7 +58,7 @@ eleventyExcludeFromCollections: true
         Show only {{ collections.post | filterOnlyTag: "post", "note" | size }} posts
       </label>
       <label
-        gaw:remove
+        data-gaw-remove
         for="show-notes"
         class="form-control">
         <input

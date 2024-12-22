@@ -14,7 +14,7 @@ description: A list of articles, books, and other resources I've read recently.
 <section class="twocol">
   <h2>Articles</h2>
   <p>Below is a list of the last 30 articles I've read.</p>
-  <div gaw:remove>
+  <div data-gaw-remove>
     <small>
       <span id="update-time">Last updated: {{ readwise.updated | date_to_rfc822 }}</span>
       <button
@@ -28,7 +28,7 @@ description: A list of articles, books, and other resources I've read recently.
 <section class="threecol">
   <aside class="underline">
     <p>Controls</p>
-    <label class="form-control" gaw:remove for="show-summaries">
+    <label class="form-control" data-gaw-remove for="show-summaries">
       <input type="checkbox" id="show-summaries" />
       Show article summary
     </label>
@@ -40,7 +40,7 @@ description: A list of articles, books, and other resources I've read recently.
           <p class="title">{{ article.title }}</p>
         </a>
           <small>{{ article.site_name }} | Read on: {{ article.last_opened_at | date_to_string }}</small>
-        <p gaw:remove class="summary">{{ article.summary | limitWords }}</p>
+        <p data-gaw-remove class="summary">{{ article.summary | limitWords }}</p>
       </li>
     {% else %}
       <li>
@@ -50,7 +50,7 @@ description: A list of articles, books, and other resources I've read recently.
   </ul>
 </section>
 
-<script gaw:remove>
+<script data-gaw-remove>
   const showSummaries = document.getElementById('show-summaries');
   const summaries = document.querySelectorAll('.summary');
 
@@ -75,7 +75,7 @@ description: A list of articles, books, and other resources I've read recently.
             <div>
               <small>${article.site_name} <br/> Read on: ${article.last_opened_at}</small>
             </div>
-            <p gaw:remove class="summary">${article.summary}</p>
+            <p data-gaw-remove class="summary">${article.summary}</p>
           `;
           li.classList.add('new');
           document.querySelector('#reading-list').prepend(li);

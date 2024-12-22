@@ -19,7 +19,7 @@ css: home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                 
             a fossil free internet by 2030.
         </p>
       </div>
@@ -94,7 +94,7 @@ css: home.css
         <h2>Reading</h2>
         <p>Here's a list of articles I've recently read.</p>
       </div>
-      <div gaw:remove>
+      <div data-gaw-remove>
         <small class="last-updated">
           <span id="update-time">Last updated: <br/>{{ readwise.updated | date_to_rfc822 }}</span>
           <div>
@@ -128,7 +128,7 @@ css: home.css
         <h2>Film</h2>
         <small>I do a bit of film photography while I'm out and about.</small>
       </span>
-      <div gaw:remove>
+      <div data-gaw-remove>
         <a
           href="https://film.fershad.com/random"
           id="rando"
@@ -153,7 +153,7 @@ css: home.css
 </div>
 
 
-<script gaw:remove>
+<script data-gaw-remove>
 
   const decodeHTML = function (html) {
   	const txt = document.createElement('textarea');
