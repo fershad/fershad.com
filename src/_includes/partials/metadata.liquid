@@ -27,3 +27,20 @@
   <link rel="canonical" href="{{ site.baseURL }}{{ page.url }}" />
 {% endif %}
 <meta name="theme-color" content="#1c7ed6">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:description" content="{{ description }}" />
+
+<meta property="og:image" content="https://browser-worker.fershad.workers.dev/?title={{ title }}&page={{ page.url }}" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="{{ site.baseURL }}{{ page.url }}" />
+<meta property="twitter:title" content="{{ pageTitle }}" />
+<meta property="twitter:description" content="{{ description }}" />
+<meta property="twitter:image" content="https://browser-worker.fershad.workers.dev/?title={{ title }}&page={{ page.url }}" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
