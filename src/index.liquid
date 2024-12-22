@@ -145,7 +145,7 @@ css: home.css
           <h3 class="heading-underlined">{{ film.title }}</h3>
           <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
         </span>
-        <p>{{ film.description }}</p>
+        <p>{{ film.description | url_decode }}</p>
 
       </div>
     </div>
@@ -160,10 +160,14 @@ css: home.css
       .then(response => response.json())
       .then(data => {
         document.querySelector('.img-holder img').src = data.imageUrl;
-        document.querySelector('.img-desc h3').textContent = data.title;
+        document.querySelector('.img-desc h3').textContent = decodeURIComponent(data.title);
         document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
-        document.querySelector('.img-desc p').textContent = data.description;
+        document.querySelector('.img-desc p').textContent = decodeURIComponent(data.description);
         document.querySelector('.img-holder > picture > source').remove();
+
+let filmImg = document.querySelector('#film img');
+  let filmPicture = document.querySelector('#film picture');
+  filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
       });
   });
 
@@ -192,7 +196,7 @@ css: home.css
   const picture = document.querySelector('#intro picture');
   picture.setAttribute('style', '--glitch-img-src: url(' + introImg.src + ')');
 
-  const filmImg = document.querySelector('#film img');
-  const filmPicture = document.querySelector('#film picture');
+  let filmImg = document.querySelector('#film img');
+  let filmPicture = document.querySelector('#film picture');
   filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
 </script>
