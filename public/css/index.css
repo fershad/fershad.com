@@ -966,6 +966,44 @@ article h4:hover::after,
   z-index: -1;
 }
 
+[data-gaw-remove] + .gaw-banner {
+  display: none;
+}
+
+.gaw-banner {
+  background: var(--background);
+  margin-top: 0;
+  padding-block: 0.5rem;
+  margin-inline: -2rem;
+  width: calc(100% + 4rem);
+  position: relative;
+  --line-color: var(--blue-2);
+  border-bottom: 2px solid var(--line-color);
+}
+
+.gaw-banner::before,
+.gaw-banner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.gaw-banner::before {
+  border-color: #f16f6f;
+  animation: list-glitch1 3.5s infinite;
+}
+
+.gaw-banner::after {
+  border-color: #67f3da;
+  animation: list-glitch2 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
