@@ -111,6 +111,8 @@ eleventyExcludeFromCollections: true
 
         // Set the title
         document.querySelector('h1').textContent = decodedTitle;
+        // Set the h1[data-glitch] attribute to the title
+        document.querySelector('h1').setAttribute('data-glitch', decodedTitle);
     </script>
 </body>
 </html>
