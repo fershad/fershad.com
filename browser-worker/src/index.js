@@ -15,6 +15,10 @@ export default {
     const { searchParams } = new URL(request.url);
     let title = searchParams.get("title");
 		let page = searchParams.get("page");
+
+		// Decode the page string
+		page = decodeURIComponent(page);
+
 		const url = "https://beta.fershad.com/og/?title=" + title + "&page=" + page;
     let img;
     if (title) {
