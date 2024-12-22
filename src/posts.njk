@@ -1,11 +1,11 @@
 ---
-permalink: feed.xml
+permalink: feed-posts.xml
 eleventyExcludeFromCollections: true
 metadata:
-  title: Fershad Irani - Writing
-  subtitle: Blog posts and notes.
+  title: Fershad Irani - Posts
+  subtitle: Writings about web sustainability, and how we can takes steps towards a greener web.
   url: https://fershad.com/
-  feedUrl: https://fershad.com/feed.xml
+  feedUrl: https://fershad.com/feed-posts.xml
 author:
   name: Fershad Irani
   email:
@@ -17,13 +17,13 @@ author:
     <subtitle>{{ metadata.subtitle }}</subtitle>
     <link href="{{ metadata.feedUrl }}" rel="self"/>
     <link href="{{ metadata.url }}"/>
-    <updated>{{ collections.post | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections.blog | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
     <id>{{ metadata.url }}</id>
     <author>
         <name>{{ author.name }}</name>
         <email>{{ author.email }}</email>
     </author>
-    {% for post in collections.post | sortByPublishedDate %}
+    {% for post in collections.blog | sortByPublishedDate %}
         {% if not post.externalLink %}
             {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
             <entry>
