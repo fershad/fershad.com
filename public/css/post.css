@@ -289,43 +289,6 @@ code {
   /* animation: list-glitch1 2.5s 1 reverse; */
 }
 
-.callout:hover::before,
-.callout:hover::after,
-.callout:hover .title::before,
-.callout:hover .title::after {
-  animation: none;
-  display: none;
-}
-
-.callout::before {
-  border-color: #f16f6f;
-  animation: text-glitch1 1.5s infinite;
-  border: 1px solid;
-}
-
-.callout::after {
-  border-color: #67f3da;
-  animation: text-glitch2 1.5s infinite;
-  animation-delay: 0.5s;
-  border: 1px solid;
-}
-
-.callout p {
-  max-inline-size: 100%;
-}
-
-.callout .title {
-  margin: 0;
-  width: fit-content;
-  background-color: var(--blue-8);
-  /* color: var(--stone-0); */
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
-  margin-left: -1.5rem;
-  font-size: 1.5rem;
-  position: relative;
-  z-index: -1;
-}
-
 .callout code {
   background-color: var(--blue-12);
   color: var(--stone-0);
