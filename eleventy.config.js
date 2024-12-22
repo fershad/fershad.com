@@ -10,6 +10,7 @@ import markdownItAnchor from 'markdown-it-anchor'
 import slugify from '@sindresorhus/slugify'
 import pluginTOC from 'eleventy-plugin-nesting-toc';
 import markdownItAttrs from 'markdown-it-attrs';
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
 const figoptions = {
     figcaption: true
@@ -136,6 +137,30 @@ export default function(eleventyConfig) {
     eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");
 
     // NOTE: PLUGINS
+	// eleventyConfig.addPlugin(feedPlugin, {
+	// 	type: "atom", // or "rss", "json"
+	// 	outputPath: "/feed.xml",
+	// 	collection: {
+	// 		name: "post", // iterate over `collections.posts`
+	// 		limit: 0,     // 0 means no limit
+	// 	},
+	// 	metadata: {
+	// 		language: "en",
+	// 		title: "Fershad Irani - Writing",
+	// 		subtitle: "Writings about web sustainability, and how we can takes steps towards a greener web.",
+	// 		base: "https://fershad.com/",
+	// 		author: {
+	// 			name: "Fershad Irani",
+	// 			// email: "", // Optional
+	// 		}
+	// 	}
+	// });
+
+	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addFilter("getNewestCollectionItemPublishedDate", function(collection) {
+		return new Date(Math.max(...collection.map(item => {return  new Date(item.data.published) || item.date})));
+	});
+
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
 		// which file extensions to process
 		extensions: "html",

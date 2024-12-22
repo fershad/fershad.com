@@ -1,0 +1,38 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+metadata:
+  title: Fershad Irani
+  subtitle: Writings about web sustainability, and how we can takes steps towards a greener web.
+  url: https://fershad.com/
+  feedUrl: https://fershad.com/feed.xml
+author:
+  name: Fershad Irani
+  email:
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ metadata.title }}</title>
+    <subtitle>{{ metadata.subtitle }}</subtitle>
+    <link href="{{ metadata.feedUrl }}" rel="self"/>
+    <link href="{{ metadata.url }}"/>
+    <updated>{{ collections.post | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
+    <id>{{ metadata.url }}</id>
+    <author>
+        <name>{{ author.name }}</name>
+        <email>{{ author.email }}</email>
+    </author>
+    {% for post in collections.post %}
+        {% if not post.externalLink %}
+            {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+            <entry>
+                <title>{{ post.data.title }}</title>
+                <link href="{{ absolutePostUrl }}"/>
+                <updated>{{ post.date | dateToRfc3339 }}</updated>
+                <id>{{ absolutePostUrl }}</id>
+                <content type="html">{{ post.data.feed | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+            </entry>
+        {% endif %}
+    {% endfor %}
+</feed>
