@@ -159,8 +159,6 @@ export default function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addFilter("getNewestCollectionItemPublishedDate", function(collection) {
 		return new Date(Math.max(...collection.map(item => {
-			console.log(item.data.published);
-			// console.log(item.data)
 			return  new Date(item.data.published) || item.date
 		})));
 	});

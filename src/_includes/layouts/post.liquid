@@ -35,20 +35,23 @@ css: post.css
   <section class="twocol flow">
     {{ content }}
   </section>
-  
+
   {% unless isPage == true %}
     <section>
       <aside class="banner outline callout">
         <p class="title">RSS</p>
         <p>Subscribe to receive more content like this by RSS.</p>
-        
+
         {% if isNote == "note" %}
-          <p><a href="/feed-notes.xml">Subscribe to Notes RSS feed</a></p>
-          {% else %}
-          <p><a href="/feed-posts.xml">Subscribe to Posts RSS feed</a></p>
+          <p>
+            <a href="/feed-notes.xml">Subscribe to Notes RSS feed</a>
+          </p>
+        {% else %}
+          <p>
+            <a href="/feed-posts.xml">Subscribe to Posts RSS feed</a>
+          </p>
         {% endif %}
-        </ul>
-        </aside>
-        </section>
-      {% endunless %}
+      </aside>
+    </section>
+  {% endunless %}
 </article>
