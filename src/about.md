@@ -4,6 +4,7 @@ layout: layouts/post.liquid
 css: post.css
 permalink: about/index.html
 isPage: true
+ghEdit: true
 ---
 
 {% callout "TL;DR" %}

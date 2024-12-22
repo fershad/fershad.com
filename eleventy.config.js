@@ -307,6 +307,11 @@ export default function(eleventyConfig) {
 		return `${value} { data-glitch="${headingText}" }`;
 	});
 
+	eleventyConfig.addShortcode("editLink", function(page) {
+		const repoLink = 'https://github.com/fershad/fershad.com'
+		return `See something that needs fixing? <a href="${repoLink}/edit/main/${page.inputPath.replace('./','')}">Edit on GitHub.</a>`;
+	})
+
 	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
 	// 	return collectionsApi.getAllSorted().filter(function (item) {
 	// 		return "post" in item.data.tags;

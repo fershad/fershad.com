@@ -4,6 +4,7 @@ layout: layouts/post.liquid
 css: post.css
 permalink: grid-aware/index.html
 isPage: true
+ghEdit: true
 ---
 
 ## This website is grid-aware

@@ -503,6 +503,40 @@ article a:not(.deeplink):hover {
   animation: link-glitch 2.5s infinite;
 }
 
+.gh-edit {
+  background: var(--background);
+  margin-top: -3rem;
+  padding-block: 0.5rem;
+  margin-inline: -2rem;
+  width: calc(100% + 4rem);
+  position: relative;
+  --line-color: var(--blue-2);
+  border-bottom: 2px solid var(--line-color);
+}
+
+.gh-edit::before,
+.gh-edit::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.gh-edit::before {
+  border-color: #f16f6f;
+  animation: list-glitch1 3.5s infinite;
+}
+
+.gh-edit::after {
+  border-color: #67f3da;
+  animation: list-glitch2 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
 @media (max-width: 768px) {
   blockquote {
     transform: skew(-2deg);
@@ -511,6 +545,11 @@ article a:not(.deeplink):hover {
   .heading-wrapper a.deeplink {
     top: -2.15ex;
     inset-inline-start: 0;
+  }
+
+  .gh-edit {
+    margin-inline: -0.25rem;
+    width: calc(100% + 0.5rem);
   }
 }
 

@@ -4,6 +4,7 @@ layout: layouts/post.liquid
 description: I'd love to hear your web sustainability related questions. Contact me.
 css: post.css
 isPage: true
+ghEdit: true
 ---
 
 {% callout "Have a project idea?" %}

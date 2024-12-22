@@ -1,4 +1,9 @@
 <footer class="flow">
+  {% if ghEdit %}
+    <div class="gh-edit center-align">
+      <small class="">{% editLink page %}</small>
+    </div>
+  {% endif %}
   <nav role="navigation" aria-label="Secondary">
     <ul>
       <li style="--local-delay: 171.584125ms">
