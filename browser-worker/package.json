@@ -1,0 +1,17 @@
+{
+  "name": "browser-worker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/puppeteer": "^0.0.14",
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "vitest": "2.1.8",
+    "wrangler": "^3.60.3"
+  }
+}
