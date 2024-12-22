@@ -19,7 +19,7 @@ css: home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                             
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                              
             a fossil free internet by 2030.
         </p>
       </div>
@@ -154,18 +154,25 @@ css: home.css
 
 
 <script gaw:remove>
+
+  var decodeHTML = function (html) {
+  	var txt = document.createElement('textarea');
+  	txt.innerHTML = html;
+  	return txt.value;
+  };
+
   document.getElementById('rando').addEventListener('click', function(e) {
     e.preventDefault();
     fetch('/api/rando')
       .then(response => response.json())
       .then(data => {
         document.querySelector('.img-holder img').src = data.imageUrl;
-        document.querySelector('.img-desc h3').textContent = decodeURIComponent(data.title);
+        document.querySelector('.img-desc h3').textContent = decodeHTML(data.title);
         document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
-        document.querySelector('.img-desc p').textContent = decodeURIComponent(data.description);
+        document.querySelector('.img-desc p').textContent = decodeHTML(data.description);
         document.querySelector('.img-holder > picture > source').remove();
 
-let filmImg = document.querySelector('#film img');
+  let filmImg = document.querySelector('#film img');
   let filmPicture = document.querySelector('#film picture');
   filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
       });
