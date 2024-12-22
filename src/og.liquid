@@ -1,0 +1,116 @@
+---
+eleventyExcludeFromCollections: true
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/index.css">
+</html>
+
+<body>
+    <style>
+      .wrapper {
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        justify-content: flex-start;
+        align-items: center;
+        padding-inline-start: 4rem;
+      }
+
+      footer {
+        margin-top: auto;
+        width: 100vw;
+        margin-left: -4rem;
+        padding-left: 4rem !important; 
+      }
+
+      .flow {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .flow {
+        height: 100%;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 5rem;
+        line-height: 1.15;
+        position: relative;
+      }
+
+      .glitch-wrapper * {
+        animation: none !important;
+      }
+
+      .glitch-wrapper p::before,
+      .glitch-wrapper h1::before,
+      .glitch-wrapper small::before {
+        display: block;
+        transform: translate(-2px, -3px);
+        opacity: 0.6 !important;
+        color: #f16f6f;
+        width: 100%;      }
+
+     .glitch-wrapper p::after,
+     .glitch-wrapper h1::after,
+     .glitch-wrapper small::after {
+        display: block;
+        transform: translate(2px, 3px);
+        opacity: 0.6 !important;
+        color: #67f3da;
+        width: 100%;
+     }
+
+     .glitch-wrapper h1::after {
+        transform: translate(-5px, -1px);
+     }
+
+     .glitch-wrapper h1::before {
+        transform: translate(5px, 1px);
+     }
+
+     .glitch-wrapper small::after {
+        transform: translate(-5px, -1px);
+     }
+
+     .glitch-wrapper small::before {
+        transform: translate(5px, 1px);
+     }
+    </style>
+    
+    <div class="wrapper">
+      <div class="flow glitch-wrapper">
+          <h1 data-glitch="Homepage"></h1>
+      </div>
+
+      <footer>
+          <div class="glitch-wrapper">
+          <p data-glitch="Fershad Irani">Fershad Irani</p>
+          </div>
+      </footer>
+    </div>
+
+    <script>
+        // Get the title query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const title = urlParams.get('title');
+
+        const txt = document.createElement('textarea');
+  	    txt.innerHTML = title;
+        const decodedTitle = txt.value;
+
+        // Set the title
+        document.querySelector('h1').textContent = decodedTitle;
+    </script>
+</body>
+</html>
