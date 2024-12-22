@@ -14,10 +14,11 @@ export default {
   async fetch(request, env) {
     const { searchParams } = new URL(request.url);
     let title = searchParams.get("title");
-	const url = "https://beta.fershad.com/og/?title=" + title;
+		let page = searchParams.get("page");
+		const url = "https://beta.fershad.com/og/?title=" + title + "&page=" + page;
     let img;
     if (title) {
-      img = await env.FERSHAD_OG_IMAGES.get(title, { type: "arrayBuffer" });
+      img = await env.FERSHAD_OG_IMAGES.get(`${page}_${title}`, { type: "arrayBuffer" });
       if (img === null) {
         const browser = await puppeteer.launch(env.MYBROWSER);
         const page = await browser.newPage();
@@ -28,7 +29,10 @@ export default {
 		});
         await page.goto(url);
         img = await page.screenshot();
-        await env.FERSHAD_OG_IMAGES.put(title, img);
+        await env.FERSHAD_OG_IMAGES.put(`${page}_${title}`, img, {
+          // cache for 1 year
+					expirationTtl: 60 * 60 * 24 * 365,
+        });
         await browser.close();
       }
       return new Response(img, {
