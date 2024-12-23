@@ -6,6 +6,10 @@ compatibility_flags = ["nodejs_compat"]
 
 routes = [{ pattern = "beta.fershad.com/*", zone_name = "fershad.com" }]
 
+[[kv_namespaces]]
+binding = "GAW_CACHE"
+id = "47b63fd22cbe440f86d2384ef1d152ce"
+
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
 # Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs

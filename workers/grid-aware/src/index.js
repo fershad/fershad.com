@@ -58,6 +58,25 @@ export default {
 
 		// If the gridAware value is set to true, then let's modify the page
 		if (gridData.gridAware) {
+			// Check if the response is already stored in KV
+			const cachedResponse = await env.GAW_CACHE.get(request.url);
+
+			if (cachedResponse) {
+				return new Response(cachedResponse, {
+					...response,
+					headers: {
+						...response.headers,
+						'Content-Type': 'text/html;charset=UTF-8',
+						'grid-aware': 'true',
+						'grid-aware-zone': gridData.region,
+						'grid-aware-power-mode': gridData.data.mode,
+						'grid-aware-power-minimum': gridData.data.minimumPercentage,
+						'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
+						'grid-aware-cached': 'true',
+					},
+				});
+			}
+
 			let gridAwarePage = response
 			/*
 				Here you can use the HTMLRewriter API, or you can
@@ -80,35 +99,45 @@ export default {
 				});
 			*/
 
-			return new Response(new HTMLRewriter().on('[data-gaw-remove]', {
+			const modifyHTML = new HTMLRewriter().on('[data-gaw-remove]', {
 				element(element) {
 					element.remove();
-				}
-			}).transform(gridAwarePage).body, {
-				contentType: 'text/html',
+				},
+			})
+
+			let modifiedResponse = new Response(modifyHTML.transform(gridAwarePage).body, {
+				...gridAwarePage,
 				headers: {
 					...gridAwarePage.headers,
+					'Content-Type': 'text/html;charset=UTF-8',
 					// We can also add some of the grid-aware data to the headers of the response
 					'grid-aware': 'true',
 					'grid-aware-zone': gridData.region,
 					'grid-aware-power-mode': gridData.data.mode,
 					'grid-aware-power-minimum': gridData.data.minimumPercentage,
 					'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
+					'grid-aware-cached': 'false',
 				},
 			});
+
+			// ctx.waitUntil(cache.put(request.url, modifiedResponse.clone()))
+			await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body);
+
+			return modifiedResponse;
 		}
 
 		// If the gridAware value is set to false, then return the response as is.
 		return new Response(response.body, {
-			contentType: 'text/html',
 			headers: {
 				...response.headers,
+				'Content-Type': 'text/html;charset=UTF-8',
 				// We can also add some of the grid-aware data to the headers of the response
 				'grid-aware': 'false',
 				'grid-aware-zone': gridData.region,
 				'grid-aware-power-mode': gridData.data.mode,
 				'grid-aware-power-minimum': gridData.data.minimumPercentage,
 				'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
+				'grid-aware-cached': 'false',
 			},
 		});
 	},
