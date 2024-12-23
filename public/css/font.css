@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Departure Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
+    url("/fonts/DepartureMono-Regular.woff") format("woff");
+}
+
+:where(html) {
+  font-family: "Departure Mono", var(--font-monospace-code), monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
+}

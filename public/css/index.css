@@ -204,7 +204,7 @@ textarea:not([rows]) {
   --stone-11: #252521;
   --stone-12: #121210;
 
-  --text: var(--stone-0);
+  --text: var(--stone-1);
   --background: var(--stone-11);
 }
 
@@ -355,14 +355,6 @@ textarea:not([rows]) {
 
 /* NOTE: General stuff */
 
-@font-face {
-  font-family: "Departure Mono";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
-    url("/fonts/DepartureMono-Regular.woff") format("woff");
-}
-
 html {
   background: var(--background);
   color: var(--text);
@@ -370,6 +362,11 @@ html {
 
 body {
   margin: 0;
+  color-scheme: light dark;
+}
+
+body.dark {
+  color-scheme: dark;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -452,8 +449,18 @@ main {
   grid-column: span 3;
 } */
 
+:root {
+  color-scheme: light dark;
+}
+body {
+  color: light-dark(var(--background), var(--text));
+  background-color: light-dark(var(--text), var(--background));
+  --header-background: light-dark(var(--stone-0), var(--stone-10));
+  --callout-background: light-dark(var(--stone-2), var(--stone-11));
+}
+
 :where(html) {
-  font-family: "Departure Mono", var(--font-monospace-code), monospace;
+  font-family: var(--font-monospace-code), monospace;
 }
 
 .heading-underline {
@@ -504,7 +511,7 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: "Departure Mono", var(--font-monospace-code), monospace;
+  font-family: var(--font-monospace-slab-serif), monospace;
 }
 
 .heading {
@@ -524,6 +531,7 @@ h6,
   text-align: center;
   margin-inline: auto;
   width: fit-content;
+  justify-content: center;
 }
 
 .glitch-wrapper.center-align > [data-glitch]::before,
@@ -547,7 +555,7 @@ small .button {
   /* --banner-line-color: var(--blue-12); */
   background: transparent;
   --banner-line-color: var(--blue-4);
-  --banner-text-color: var(--text);
+  --banner-text-color: currentColor;
   border: 2px solid var(--banner-line-color, var(--blue-12));
   color: var(--banner-text-color, var(--blue-12));
   /* animation: flicker-in 1.35s 1; */
@@ -671,7 +679,7 @@ footer {
   --line-color: var(--blue-2);
   width: 100%;
   padding: 3rem 2rem;
-  background: var(--stone-10);
+  background: var(--header-background);
   position: relative;
   overflow: hidden;
 }
@@ -742,7 +750,6 @@ footer > nav {
 }
 
 footer {
-  color: var(--stone-0);
   border-top: 2px solid var(--line-color);
   justify-content: center;
 }
@@ -958,12 +965,11 @@ article h4:hover::after,
   margin: 0;
   width: fit-content;
   background-color: var(--blue-8);
-  /* color: var(--stone-0); */
+  color: var(--stone-0);
   padding: 0.5rem 1rem 0.5rem 1.5rem;
   margin-left: -1.5rem;
   font-size: 1.5rem;
   position: relative;
-  z-index: -1;
 }
 
 [data-gaw-remove] + .gaw-banner {
@@ -971,10 +977,10 @@ article h4:hover::after,
 }
 
 .gaw-banner {
-  background: var(--background);
+  background: var(--callout-background);
   margin-top: 0;
   padding-block: 0.5rem;
-  width: 100%
+  width: 100%;
   position: relative;
   --line-color: var(--blue-2);
   border-bottom: 2px solid var(--line-color);
@@ -1001,6 +1007,115 @@ article h4:hover::after,
   border-color: #67f3da;
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
+}
+
+:root {
+  --form-control-color: var(--blue-4);
+}
+
+.form-control {
+  /* font-family: system-ui, sans-serif; */
+  /* font-size: 2rem; */
+  /* font-weight: bold; */
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  /* Not removed via appearance */
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--blue-7);
+  /* border-radius: 50%; */
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  position: relative;
+  animation: list-glitch1 2.5s infinite;
+}
+
+input[type="radio"]::after,
+input[type="checkbox"]::after {
+  content: "";
+  width: calc(100% + 0.3em);
+  height: calc(100% + 0.3em);
+  top: -0.15em;
+  position: absolute;
+  /* border-radius: 50%; */
+  /* transform: scale(0); */
+  transition: 120ms height ease-in-out;
+  animation: list-glitch2 2.5s infinite;
+  border: 0.15em solid #f16f6f;
+  left: -0.15em;
+}
+
+input[type="radio"]::before,
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0em;
+  top: 0;
+  position: absolute;
+  /* border-radius: 50%; */
+  /* transform: scale(0); */
+  transition: 120ms height ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  animation: text-glitch2 2.5s infinite;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  animation: none;
+  background-color: #fff;
+}
+
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
+  /* transform: scale(1); */
+  height: 100%;
+  animation: none;
+}
+
+input[type="radio"]:checked::after,
+input[type="checkbox"]:checked::after {
+  /* transform: scale(1); */
+  /* height: 100%; */
+  display: none;
+  animation: none;
+}
+
+#filters,
+.controls > div:first-of-type,
+.controls {
+  display: flex;
+  flex-direction: row;
+  /* margin: 0; */
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.controls > div:first-of-type {
+  max-width: var(--size-lg);
+  margin-inline: auto;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.controls #filters,
+.controls > * {
+  margin: 0;
 }
 
 @media (max-width: 768px) {

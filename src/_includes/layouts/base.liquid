@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/metadata" %}
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/font.css">
     {% if css %}
       <link rel="stylesheet" href="/css/{{ css }}">
     {% endif %}
@@ -14,6 +15,7 @@
       rel="stylesheet"
       href="/css/glitch.css"
       data-gaw-remove>
+
 
     <link rel="shortcut icon" href="/favicon.ico" />
     <link
@@ -40,7 +42,34 @@
 
   <body>
     {% include 'partials/header.liquid' %}
-    <div data-gaw-remove></div>
+    <div class="gaw-banner center-align controls" data-gaw-remove>
+      <div class="">
+        <label for="glitch-toggle" class="form-control">
+          <input
+            type="checkbox"
+            name="glitch-toggle"
+            id="glitch-toggle"
+            value="glitchSwitch" />
+          <span>Stop glitching</span>
+        </label>
+        <label for="font-toggle" class="form-control">
+          <input
+            type="checkbox"
+            name="font-toggle"
+            id="font-toggle"
+            value="fontSwitch" />
+          <span>Depixelate</span>
+        </label>
+        <label for="theme-toggle" class="form-control">
+          <input
+            type="checkbox"
+            name="theme-toggle"
+            id="theme-toggle"
+            value="themeSwitch" />
+          <span>Switch theme</span>
+        </label>
+      </div>
+    </div>
     <div class="gaw-banner center-align">
       <small>This website is grid-aware, and some functionality has been changed.
         <a href="/grid-aware">Find out more</a>.</small>
@@ -68,6 +97,72 @@
         }
       }, i * 100)
     }
+
+    // Check local storage for glitch and font settings
+    const glitchToggle = document.getElementById('glitch-toggle')
+    const fontToggle = document.getElementById('font-toggle')
+    const glitchStyles = document.querySelector('link[href="/css/glitch.css"]')
+    const fontStyles = document.querySelector('link[href="/css/font.css"]')
+
+    if (localStorage.getItem('glitch') === 'true') {
+      glitchToggle.checked = true
+      glitchStyles.remove()
+    }
+
+    if (localStorage.getItem('font') === 'true') {
+      fontToggle.checked = true
+      fontStyles.remove()
+    }
+
+
+    // Glitch toggle
+    const glitchToggleText = document.querySelector('label[for="glitch-toggle"] span')
+
+    glitchToggle.addEventListener('change', () => {
+      if (glitchToggle.checked) {
+        glitchStyles.remove()
+        glitchToggleText.textContent = 'Allow glitching'
+        localStorage.setItem('glitch', 'true')
+      } else {
+        document.head.appendChild(glitchStyles)
+        glitchToggleText.textContent = 'Stop glitching'
+        localStorage.setItem('glitch', 'false')
+      }
+    })
+
+    // Font toggle
+    const fontToggleText = document.querySelector('label[for="font-toggle"] span')
+
+    fontToggle.addEventListener('change', () => {
+      if (fontToggle.checked) {
+        fontToggleText.textContent = 'Pixelate'
+        fontStyles.remove()
+        localStorage.setItem('font', 'true')
+      } else {
+        fontToggleText.textContent = 'Depixelate'
+        document.head.appendChild(fontStyles)
+        localStorage.setItem('font', 'false')
+      }
+    })
+
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle')
+
+    // Check local storage for theme settings
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark')
+      themeToggle.checked = true
+    }
+
+    themeToggle.addEventListener('change', () => {
+      if (themeToggle.checked) {
+        document.body.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
+      } else {
+        document.body.classList.remove('dark')
+        localStorage.setItem('theme', 'light')
+      }
+    })
   </script>
 
   <script

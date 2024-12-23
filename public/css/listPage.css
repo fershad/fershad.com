@@ -417,17 +417,7 @@ ul.no-marker li:not(:last-of-type):after {
 }
 
 #filters {
-  display: flex;
-  flex-direction: row;
-  /* margin: 0; */
   padding: 0;
-  list-style: none;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-#filters > * {
-  margin: 0;
 }
 
 /* #filters > h2 {
@@ -446,90 +436,6 @@ ul.no-marker li:not(:last-of-type):after {
 } */
 
 /* Styled radio buttons from: https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
-:root {
-  --form-control-color: var(--blue-4);
-}
-
-.form-control {
-  font-family: system-ui, sans-serif;
-  /* font-size: 2rem; */
-  /* font-weight: bold; */
-  line-height: 1.1;
-  display: grid;
-  grid-template-columns: 1em auto;
-  gap: 0.5em;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  appearance: none;
-  /* For iOS < 15 to remove gradient background */
-  /* Not removed via appearance */
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid var(--blue-7);
-  /* border-radius: 50%; */
-  transform: translateY(-0.075em);
-  display: grid;
-  place-content: center;
-  position: relative;
-  animation: list-glitch1 2.5s infinite;
-}
-
-input[type="radio"]::after,
-input[type="checkbox"]::after {
-  content: "";
-  width: calc(100% + 0.3em);
-  height: calc(100% + 0.3em);
-  top: -0.15em;
-  position: absolute;
-  /* border-radius: 50%; */
-  /* transform: scale(0); */
-  transition: 120ms height ease-in-out;
-  animation: list-glitch2 2.5s infinite;
-  border: 0.15em solid #f16f6f;
-  left: -0.15em;
-}
-
-input[type="radio"]::before,
-input[type="checkbox"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0em;
-  top: 0;
-  position: absolute;
-  /* border-radius: 50%; */
-  /* transform: scale(0); */
-  transition: 120ms height ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-  animation: text-glitch2 2.5s infinite;
-}
-
-input[type="radio"]:checked,
-input[type="checkbox"]:checked {
-  animation: none;
-  background-color: #fff;
-}
-
-input[type="radio"]:checked::before,
-input[type="checkbox"]:checked::before {
-  /* transform: scale(1); */
-  height: 100%;
-  animation: none;
-}
-
-input[type="radio"]:checked::after,
-input[type="checkbox"]:checked::after {
-  /* transform: scale(1); */
-  /* height: 100%; */
-  display: none;
-  animation: none;
-}
 
 li.new {
   transition: height 0.5s ease, color 2.5s ease;
