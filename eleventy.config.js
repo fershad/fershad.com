@@ -140,9 +140,7 @@ mdLib.use(mdfigcaption, figoptions)
 
 const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
-
-	eleventyConfig.addWatchTarget("./public/css/");
-
+	
     eleventyConfig.addPassthroughCopy({"public": "/"});
 
     // Layouts
