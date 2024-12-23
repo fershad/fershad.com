@@ -21,6 +21,6 @@ With the extra content that will be published on this blog going forwards, I wan
 
 Of course, if you love duplication then you can subscribe to all three though I'd advise against that.
 
-## How will you now when the new site is online?
+## How will you know when the new site is online?
 
 I'll blog about it, of course!
