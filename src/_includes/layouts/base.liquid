@@ -178,8 +178,10 @@
     const gawScript = document.querySelector('script[data-gaw-remove]');
 
     // Send an event to analytics tracking how many grid-aware view there are
-    if (!gawScript && fathom) {
-    	fathom.trackEvent('gaw views')
+    if (!gawScript) {
+      window.addEventListener('load', (event) => {
+        fathom.trackEvent('gaw views')
+      });
     }
 
       const gawReject = document.getElementById('gaw-reject');
