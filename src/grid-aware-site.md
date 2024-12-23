@@ -39,15 +39,21 @@ If at any point along in that process there is no data available, something goes
 
 When the grid-aware flag is set on this website, the following changes are made inside the Cloudflare Worker before the page is returned to the user:
 
-- Images are pixelated.
-    - Visitors can click to download better quality versions of any image if they need to.
-- Remove AVIF images, since decoding AVIF images for display can also take up more CPU power than other formats.
-- Non-critical JavaScript is removed from the site. This includes:
-    - Analytics scripts are removed.
-    - Progress bars when reading blog posts.
-    - Share links (using the Navigator.share API).
-    - Instant.page script.
-    - JavaScript that creates CodePen embeds. The embeds are replaced with a link to the pen.
+- Glitch animations are removed.
+- The [https://departuremono.com/](Depature Mono webfont) is replaced with [System Font alternatives](https://modernfontstacks.com/).
+- **_Most_ JavaScript is removed**. That includes:
+    - Filters and controls on the [/writing](/writing) and [/reading](/reading) pages.
+    - Site controls to "deglitch", "depixelate", and switch themes.
+    - Functionality that fetches a random image in the Film section of the homepage.
+    - Functionality to refresh the list of articles on the [/reading](/reading) page and on the homepage.
+    - The silly random emoji favicon code that runs on each page.
+- Codepen embeds are replaced with links to the project on Codepen itself.
+
+There is also a banner shown at the top of the page, which allows visitors to learn more about the grid-aware changes they're seeing (this page). It also allows them to opt-out and view the regular site. That is controlled by a cookie that expires after one day.
+
+{% callout About analytics %}
+You might have noticed that disabling analytics is missing from the list above. I use Fathom Analytics on this website, and have decided to keep it on when other grid-aware changes are applied. Why? Because, grid-aware websites is a new idea we're working on at the Green Web Foundation, and I'd like to be able to see how many people are getting that experience, and how many are also opting-out.
+{% endcallout %}
 
 ## Open source
 
