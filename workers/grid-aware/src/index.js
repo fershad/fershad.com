@@ -28,10 +28,10 @@ export default {
 		}
 
 		const COOKIE_NAME = "gaw-status";
-		const cookie = parse(request.headers.get("Cookie") || "");
-		gridAwareCookie = cookie[COOKIE_NAME];
+		const cookie = request.headers.get("cookie");
 
-		  if (gridAwareCookie === "0") {
+
+		  if (cookie && cookie.includes(`${COOKIE_NAME}=disable`)) {
 			// if user has rejected the grid-aware site
 			return new Response(response.body, {
 				...response,
@@ -118,7 +118,11 @@ export default {
 				element(element) {
 					element.remove();
 				},
-			})
+			}).on('body', {
+				element(element) {
+					element.setAttribute('class', 'deglitch');
+				},
+			});
 
 			let modifiedResponse = new Response(modifyHTML.transform(gridAwarePage).body, {
 				...gridAwarePage,
