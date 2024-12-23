@@ -135,8 +135,9 @@ export default {
 				},
 			});
 
-			// ctx.waitUntil(cache.put(request.url, modifiedResponse.clone()))
-			await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body);
+
+			// Store the modified response in the KV for 24 hours
+			await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body, { expirationTtl: 60 * 60 * 24 });
 
 			return modifiedResponse;
 		}
