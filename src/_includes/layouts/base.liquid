@@ -122,10 +122,12 @@
       if (glitchToggle.checked) {
         glitchStyles.remove()
         glitchToggleText.textContent = 'Glitch'
+        document.body.classList.add('deglitch')
         localStorage.setItem('glitch', 'true')
       } else {
         document.head.appendChild(glitchStyles)
         glitchToggleText.textContent = 'Deglitch'
+        document.body.classList.remove('deglitch')
         localStorage.setItem('glitch', 'false')
       }
     })
