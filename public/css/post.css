@@ -19,8 +19,15 @@ section:first-of-type::before {
 }
 
 h1 span {
+  max-width: 100vw;
   width: 100%;
   display: block;
+  overflow-wrap: anywhere;
+}
+
+h1::before,
+h1::after {
+  overflow-wrap: anywhere;
 }
 
 small + h1 {
@@ -61,6 +68,7 @@ section h4 {
   line-height: 1.35;
   margin-block: 1.25rem;
   max-inline-size: 40ch;
+  overflow-wrap: anywhere;
 }
 
 section h2[id],
