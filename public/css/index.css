@@ -1100,7 +1100,7 @@ input[type="checkbox"]:checked::after {
 }
 
 #filters,
-.controls > div:first-of-type,
+.controls > small:first-of-type,
 .controls {
   display: flex;
   flex-direction: row;
@@ -1110,7 +1110,7 @@ input[type="checkbox"]:checked::after {
   align-items: center;
 }
 
-.controls > div:first-of-type {
+.controls > small:first-of-type {
   max-width: var(--size-lg);
   margin-inline: auto;
   justify-content: flex-end;
