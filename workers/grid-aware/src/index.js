@@ -27,6 +27,21 @@ export default {
 			});
 		}
 
+		const COOKIE_NAME = "gaw-status";
+		const cookie = parse(request.headers.get("Cookie") || "");
+		gridAwareCookie = cookie[COOKIE_NAME];
+
+		  if (gridAwareCookie === "0") {
+			// if user has rejected the grid-aware site
+			return new Response(response.body, {
+				...response,
+				headers: {
+					...response.headers,
+					'grid-aware': 'opt-out',
+				},
+			});
+		  }
+
 		// Get the country of the user from the Cloudflare data
 		let cfData = getLocation(request);
 		let { country } = cfData;

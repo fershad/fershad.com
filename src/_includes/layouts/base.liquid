@@ -71,8 +71,9 @@
       </small>
     </div>
     <div class="gaw-banner center-align">
-      <small>This website is grid-aware, and some functionality has been changed.
-        <a href="/grid-aware">Find out more</a>.</small>
+      <small>This website is grid-aware, some functionality has changed.
+        <a href="/grid-aware">Find out more</a>. View the
+        <a href="#" id="gaw-reject">regular website</a>.</small>
     </div>
     <a class="skip-link banner" href="#main-content">Skip to content</a>
     <main id="main-content">{{ content }}</main>
@@ -172,4 +173,15 @@
     data-site="FCHIIDAN"
     data-honor-dnt="true"
     defer></script>
+
+  <script>
+      const gawReject = document.getElementById('gaw-reject');
+      
+      gawReject.addEventListener('click', (event) => {
+          event.preventDefault();
+          // Save the user's preference as a cookie for 24 hours
+          document.cookie = 'gaw-status=disable;max-age=86400;path=/;';
+          window.location.reload();
+      });
+  </script>
 </html>
