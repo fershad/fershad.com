@@ -1118,6 +1118,12 @@ input[type="checkbox"]:checked::after {
   width: 100%;
 }
 
+.controls:has(small) {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .controls #filters,
 .controls > * {
   margin: 0;
