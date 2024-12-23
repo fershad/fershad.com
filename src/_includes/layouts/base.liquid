@@ -52,7 +52,7 @@
 
   <script data-gaw-remove>
     // Go through an array of emojis and set the favicon-emoji to a random one. The code should loop through the array, like a slot machine before settling on one.
-    const emojiArray = ['🚴‍♂️', '🏉', '🇹🇼', '🇦🇺', '💚', '👨🏽‍💻', '🐱', '<image href="/apple-touch-icon.png" height="200" width="200" />']
+    const emojiArray = ['🚴‍♂️', '🏉', '🇹🇼', '🇦🇺', '💚', '👨🏽‍💻', '🐱', '/apple-touch-icon.png']
 
     const faviconEmoji = document.getElementById('favicon-emoji')
     const loopCount = 10
@@ -60,8 +60,8 @@
     
     for (let i = 0; i < loopCount; i++) {
       setTimeout(() => {
-      let emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)]
-        if (emoji === '<image href="/apple-touch-icon.png" height="200" width="200" />') {
+        let emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)]
+        if (emoji === '/apple-touch-icon.png') {
           faviconEmoji.setAttribute('href', '/apple-touch-icon.png')
         } else {
           faviconEmoji.setAttribute('href', `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`)
