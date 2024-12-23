@@ -974,8 +974,7 @@ article h4:hover::after,
   background: var(--background);
   margin-top: 0;
   padding-block: 0.5rem;
-  margin-inline: -2rem;
-  width: calc(100% + 4rem);
+  width: 100%
   position: relative;
   --line-color: var(--blue-2);
   border-bottom: 2px solid var(--line-color);
