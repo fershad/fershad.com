@@ -35,7 +35,7 @@ description: A list of articles, books, and other resources I've read recently.
   </aside>
   <ul id="reading-list">
     {% for article in readwise.list %}
-      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
+      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};" aria-live="polite">
         <a href="{{ article.source_url }}">
           <p class="title">{{ article.title }}</p>
         </a>

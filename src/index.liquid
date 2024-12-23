@@ -19,7 +19,7 @@ css: home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                 
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                  
             a fossil free internet by 2030.
         </p>
       </div>
@@ -106,7 +106,7 @@ css: home.css
         <a href="/reading" data-glitch="More Reading >">More reading ></a>
       </div>
     </div>
-    <ul>
+    <ul aria-live="polite">
       {% for article in readwise.reader %}
         <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <a href="{{ article.source_url }}">{{ article.title }}</a>
@@ -139,8 +139,11 @@ css: home.css
       </div>
     </div>
     <div class="img-holder">
-      <img src="{{ film.imageUrl }}" alt="{{ film.altText }}" />
-      <div class="img-desc">
+      <img
+        src="{{ film.imageUrl }}"
+        alt="{{ film.altText }}"
+        aria-live="polite" />
+      <div class="img-desc" aria-live="polite">
         <span>
           <h3 class="heading-underlined">{{ film.title }}</h3>
           <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
