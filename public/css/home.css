@@ -42,29 +42,6 @@
   /* hue-rotate: 90deg; */
 }
 
-#intro picture::before,
-#film picture::before {
-  filter: saturate(2);
-}
-
-#intro picture::after,
-#film picture::after {
-  opacity: 0.5;
-  z-index: 2;
-  filter: hue-rotate(160deg);
-}
-
-#intro picture:hover::before,
-#intro picture:hover::after,
-#intro:hover picture::before,
-#intro:hover picture::after,
-#intro:has(.glitch-wrapper:hover) picture::before,
-#intro:has(.glitch-wrapper:hover) picture::after,
-#film picture:hover::before,
-#film picture:hover::after {
-  display: block;
-}
-
 #intro:has(.glitch-wrapper:hover) picture::before,
 #intro:hover picture::before,
 #film picture:hover::before {
