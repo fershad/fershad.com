@@ -23,6 +23,48 @@
   display: block;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .banner.outline::before,
+  .button.outline::before,
+  .banner.outline::after,
+  .button.outline::after,
+  header::before,
+  header::after,
+  footer::before,
+  footer::after,
+  a::before,
+  a::after,
+  article h2::before,
+  article h3::before,
+  article h4::before,
+  article h2::after,
+  article h3::after,
+  article h4::after,
+  picture::before,
+  picture::after,
+  figure::before,
+  figure::after,
+  blockquote::before,
+  blockquote::after,
+  td::before,
+  td::after,
+  th::before,
+  th::after,
+  .gh-edit::before,
+  .gh-edit::after,
+  .gaw-banner::before,
+  .gaw-banner::after {
+    display: none;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .glitch-wrapper h1 {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 /*Keyframes*/
 
 @keyframes text-glitch1 {

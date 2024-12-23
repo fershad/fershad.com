@@ -95,34 +95,10 @@ textarea:not([rows]) {
 
 :where(html) {
   --font-system-ui: system-ui, sans-serif;
-  --font-transitional: Charter, Bitstream Charter, Sitka Text, Cambria, serif;
-  --font-old-style: Iowan Old Style, Palatino Linotype, URW Palladio L, P052,
-    serif;
-  --font-humanist: Seravek, Gill Sans Nova, Ubuntu, Calibri, DejaVu Sans,
-    source-sans-pro, sans-serif;
-  --font-geometric-humanist: Avenir, Montserrat, Corbel, URW Gothic,
-    source-sans-pro, sans-serif;
-  --font-classical-humanist: Optima, Candara, Noto Sans, source-sans-pro,
-    sans-serif;
-  --font-neo-grotesque: Inter, Roboto, Helvetica Neue, Arial Nova, Nimbus Sans,
-    Arial, sans-serif;
   --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
   --font-monospace-code: Dank Mono, Operator Mono, Inconsolata, Fira Mono,
     ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro,
     Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace;
-  --font-industrial: Bahnschrift, DIN Alternate, Franklin Gothic Medium,
-    Nimbus Sans Narrow, sans-serif-condensed, sans-serif;
-  --font-rounded-sans: ui-rounded, Hiragino Maru Gothic ProN, Quicksand,
-    Comfortaa, Manjari, Arial Rounded MT, Arial Rounded MT Bold, Calibri,
-    source-sans-pro, sans-serif;
-  --font-slab-serif: Rockwell, Rockwell Nova, Roboto Slab, DejaVu Serif,
-    Sitka Small, serif;
-  --font-antique: Superclarendon, Bookman Old Style, URW Bookman, URW Bookman L,
-    Georgia Pro, Georgia, serif;
-  --font-didone: Didot, Bodoni MT, Noto Serif Display, URW Palladio L, P052,
-    Sylfaen, serif;
-  --font-handwritten: Segoe Print, Bradley Hand, Chilanka, TSCu_Comic, casual,
-    cursive;
   --font-sans: var(--font-system-ui);
   --font-serif: ui-serif, serif;
   --font-mono: var(--font-monospace-code);
@@ -135,21 +111,7 @@ textarea:not([rows]) {
   --font-weight-7: 700;
   --font-weight-8: 800;
   --font-weight-9: 900;
-  --font-lineheight-00: 0.95;
-  --font-lineheight-0: 1.1;
   --font-lineheight-1: 1.25;
-  --font-lineheight-2: 1.375;
-  --font-lineheight-3: 1.5;
-  --font-lineheight-4: 1.75;
-  --font-lineheight-5: 2;
-  --font-letterspacing-0: -0.05em;
-  --font-letterspacing-1: 0.025em;
-  --font-letterspacing-2: 0.05em;
-  --font-letterspacing-3: 0.075em;
-  --font-letterspacing-4: 0.15em;
-  --font-letterspacing-5: 0.5em;
-  --font-letterspacing-6: 0.75em;
-  --font-letterspacing-7: 1em;
   --font-size-00: 0.5rem;
   --font-size-0: 0.75rem;
   --font-size-1: 1rem;
@@ -179,9 +141,6 @@ textarea:not([rows]) {
   --size-header-1: 20ch;
   --size-header-2: 25ch;
   --size-header-3: 35ch;
-
-  --var-sand-0: #f8fafb;
-  --var-sand-10: #38352d;
 
   --blue-0: #e7f5ff;
   --blue-1: #d0ebff;
@@ -373,13 +332,6 @@ body.dark {
   color-scheme: dark;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  html {
-    --background: var(--stone-12);
-    --text: var(--stone-0);
-  }
-} */
-
 .skip-link {
   position: absolute;
   top: auto;
@@ -417,41 +369,10 @@ main {
   margin: 0 auto;
 }
 
-/* .wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
-  grid-template-rows: auto;
-  width: 100%;
-  min-height: 90vh;
-  align-items: start;
-} */
-
 .wrapper > * {
   position: relative;
   padding: 1.5rem;
 }
-
-/*
-.wrapper > *::before,
-.wrapper > *::after {
-  content: "";
-  position: absolute;
-  background-color: var(--line-color);
-  z-index: 1;
-}
-
-.onecol {
-  grid-column: span 1;
-}
-
-.twocol {
-  grid-column: span 2;
-}
-
-.threecol {
-  grid-column: span 3;
-} */
 
 :root {
   color-scheme: light dark;
@@ -462,6 +383,8 @@ body {
   --header-background: light-dark(var(--stone-0), var(--stone-10));
   --callout-background: light-dark(var(--stone-2), var(--stone-11));
   --glitch-lightest-opacity: light-dark(0.95, 0.85);
+  --inline-code-background: light-dark(var(--blue-12), var(--blue-0));
+  --inline-code-color: light-dark(var(--stone-0), var(--stone-12));
 }
 
 :where(html) {
@@ -659,26 +582,6 @@ ul:not([class]) li::after {
   animation-direction: var(--local-direction, alternate-reverse);
 }
 
-/* ul:not([class]) li:hover::before {
-  background-color: var(--marker-color, var(--blue-7));
-  border-color: var(--marker-color, var(--blue-7));
-  height: 100%;
-  top: 0;
-} */
-
-/* ul li:not(:last-of-type)::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 1px solid var(--line-color);
-  inline-size: 40%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 0;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: calc(100% + 2rem / 2);
-  left: 60%;
-} */
-
 header,
 footer {
   --line-color: var(--blue-2);
@@ -841,36 +744,6 @@ a:hover {
   pointer-events: none;
 }
 
-/* li.hover-expose {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 100vw;
-} */
-
-/* li.hover-expose ul {
-  display: none;
-}
-
-li.hover-expose:hover ul,
-li.hover-expose:focus ul,
-li.hover-expose:focus-within ul {
-  position: absolute;
-  top: -1rem;
-  left: calc(6ch + 1.5rem);
-  display: inline-flex;
-  gap: 1rem;
-  flex-direction: row;
-  width: 100%;
-  max-width: 100%;
-}
-
-li.hover-expose ul li {
-  display: inline-block;
-  background: var(--background);
-  margin-block: 1rem;
-} */
-
 /* Glitch effect from */
 .glitch-wrapper h1,
 .glitch-wrapper p,
@@ -1009,12 +882,6 @@ article h4:hover::after,
   overflow: hidden;
 }
 
-/* .gaw-banner::before {
-  border-bottom: 2px solid;
-  border-color: var(--glitch-off-color, #f16f6f);;
-  animation: list-glitch1 3.5s infinite;
-} */
-
 .gaw-banner::after {
   border-bottom: 2px solid;
   border-color: var(--glitch-off-color, #f16f6f);
@@ -1027,9 +894,6 @@ article h4:hover::after,
 }
 
 .form-control {
-  /* font-family: system-ui, sans-serif; */
-  /* font-size: 2rem; */
-  /* font-weight: bold; */
   line-height: 1.1;
   display: grid;
   grid-template-columns: 1em auto;
@@ -1219,46 +1083,4 @@ body.deglitch .gaw-banner::after {
   display: none;
   animation: none !important;
   transition: none !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .banner.outline::before,
-  .button.outline::before,
-  .banner.outline::after,
-  .button.outline::after,
-  header::before,
-  header::after,
-  footer::before,
-  footer::after,
-  a::before,
-  a::after,
-  article h2::before,
-  article h3::before,
-  article h4::before,
-  article h2::after,
-  article h3::after,
-  article h4::after,
-  picture::before,
-  picture::after,
-  figure::before,
-  figure::after,
-  blockquote::before,
-  blockquote::after,
-  td::before,
-  td::after,
-  th::before,
-  th::after,
-  .gh-edit::before,
-  .gh-edit::after,
-  .gaw-banner::before,
-  .gaw-banner::after {
-    display: none;
-    animation: none !important;
-    transition: none !important;
-  }
-
-  .glitch-wrapper h1 {
-    animation: none !important;
-    transition: none !important;
-  }
 }

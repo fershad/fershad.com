@@ -11,6 +11,18 @@ import slugify from '@sindresorhus/slugify'
 import pluginTOC from 'eleventy-plugin-nesting-toc';
 import markdownItAttrs from 'markdown-it-attrs';
 import pluginRss from "@11ty/eleventy-plugin-rss";
+import CleanCSS from 'clean-css';
+
+function do_minifycss(source, output_path) {
+	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
+    if(!output_path.endsWith(".css")) return source;
+
+    const result = new CleanCSS({
+        level: 2
+    }).minify(source).styles.trim();
+    console.log(`MINIFY ${output_path}`, source.length, `→`, result.length, `(${((1 - (result.length / source.length)) * 100).toFixed(2)}% reduction)`);
+    return result;
+}
 
 const figoptions = {
     figcaption: true
@@ -155,6 +167,8 @@ export default function(eleventyConfig) {
 	// 		}
 	// 	}
 	// });
+
+	eleventyConfig.addTransform("cssmin", do_minifycss);
 
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addFilter("getNewestCollectionItemPublishedDate", function(collection) {

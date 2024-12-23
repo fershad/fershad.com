@@ -1,0 +1,271 @@
+.wrapper {
+  --gap: 1.5rem;
+}
+
+.summary {
+  display: none;
+}
+
+.summary.active {
+  display: block;
+}
+
+.project:has(.title),
+.talk:has(.title) {
+  width: 100%;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 20ch;
+  grid-gap: 2rem;
+  grid-template-rows: auto;
+  min-height: 10rem;
+  max-height: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.talk:has(.title) {
+  min-height: 5rem;
+  grid-template-rows: auto;
+}
+
+.project .summary {
+  display: block;
+  grid-column: 1;
+}
+
+.archived {
+  opacity: 0.6;
+}
+
+.links {
+  grid-column: 2;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+  gap: 0.75rem;
+}
+
+.talk > .links {
+  grid-row: 1;
+}
+
+ul:not([class]) li {
+  max-inline-size: 100%;
+}
+
+:not(nav) > ul > * + * {
+  margin-top: 2.15rem;
+}
+
+ul.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a {
+  width: 100%;
+}
+
+ul.boxes li:has(.summary.active):hover {
+  border-left: 1rem solid var(--blue-7);
+  padding-right: 1.5rem;
+  padding-left: 0.75rem;
+}
+
+.title {
+  margin: 0;
+  grid-column: 1/2;
+  grid-row: 1;
+}
+
+li.note {
+  display: block;
+  margin-inline-end: 1.5rem;
+  padding: 0 1.5rem;
+  position: relative;
+  margin: 0;
+}
+
+li.note:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--blue-4);
+  animation: list-glitch2 2.5s infinite;
+  transition: all 0.25s ease;
+}
+
+li.note:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--glitch-off-color, #67f3da);
+  animation: list-glitch3 2.5s infinite;
+  transition: all 0.25s ease;
+}
+
+li.note:hover:before,
+li.note:hover:after {
+  height: calc(100% + 2px);
+}
+
+ul:has(.note) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+ul:has(.note) li:not(.note) {
+  grid-column: -1/1;
+}
+
+ul:has(.note) li.note {
+  grid-column: span 1;
+}
+
+span.count-posts {
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+span.count-posts:before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  left: 0ch;
+  top: 0.75ex;
+  height: 1ex;
+  width: 1ex;
+  border: 2px solid var(--marker-color, var(--blue-4));
+}
+
+span.count-notes {
+  position: relative;
+  display: inline-block;
+  padding-inline: 0.25rem;
+}
+
+span.count-notes:before {
+  content: "";
+  position: absolute;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  border-top: 2px solid;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.25s ease;
+  border-color: var(--blue-4);
+}
+
+ul.no-marker li:not(:last-of-type) {
+  position: relative;
+}
+
+ul.no-marker li:not(:last-of-type)::before,
+ul.no-marker li:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-bottom: 2px solid;
+  top: calc(100% + 1rem);
+  left: 0;
+  overflow: hidden;
+}
+
+ul.no-marker li:not(:last-of-type)::before {
+  border-color: var(--glitch-off-color, #f16f6f);
+  animation: list-glitch1 3.5s infinite;
+}
+
+ul.no-marker li:not(:last-of-type)::after {
+  border-color: var(--glitch-off-color, #67f3da);
+  animation: list-glitch2 2.5s infinite;
+  animation-delay: 0.5s;
+}
+
+.onecol:has(.toggle:only-child) {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+
+#filters {
+  padding: 0;
+}
+
+li.new {
+  transition: height 0.5s ease, color 2.5s ease;
+  /* transform: translate3d(0, 0, 0); */
+  height: 100%;
+  color: var(--text);
+
+  @starting-style {
+    height: 0;
+    color: transparent;
+    /* transform: translate3d(-10rem, 0, 0); */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  li.new {
+    transition: background-color 0.75s ease;
+    background-color: transparent;
+  }
+
+  @starting-style {
+    li.new {
+      transform: none;
+      background-color: var(--blue-0);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project:has(.title),
+  .talk:has(.title) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-inline: 0;
+  }
+
+  .project .summary {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .talk .title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .talk > .links {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .links {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

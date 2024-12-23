@@ -1,7 +1,3 @@
-/* .wrapper {
-  grid-template-rows: repeat(2, max-content);
-} */
-
 section > * + * {
   margin-top: 2.15rem;
 }
@@ -39,13 +35,8 @@ section ol,
 section ol li,
 section blockquote,
 section pre {
-  /* font-size: 1.25rem; */
   line-height: 1.75rem;
   max-inline-size: 80ch;
-}
-
-section[class] ul li:after {
-  /* display: none; */
 }
 
 .table-of-contents {
@@ -136,11 +127,8 @@ ul li > ul {
 blockquote {
   padding: 1.75rem 1.5rem;
   margin: 1.5rem 0;
-  /* border-top: 1px solid var(--blue-7); */
   border-bottom: 1px solid var(--blue-7);
-  /* border-right: 0.25rem solid var(--blue-7); */
   border-left: 1.25rem solid var(--blue-4);
-  /* max-width: 80%; */
   font-family: var(--font-monospace-slab-serif);
   transform: skew(-5deg);
   position: relative;
@@ -214,12 +202,10 @@ pre {
 }
 
 code {
-  background-color: var(--blue-0);
-  color: var(--background);
+  background-color: var(--inline-code-background, var(--blue-0));
+  color: var(--inline-code-color, var(--background));
   padding: 0.2rem 0.5rem;
   border-radius: 0.25rem;
-  /* border: 1px solid var(--blue-4); */
-  /* color: var(--background); */
   position: relative;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -264,8 +250,6 @@ code {
   height: 100%;
   width: 100%;
   opacity: 0;
-  /* border-radius: 0.25rem;
-  border: 2px solid; */
   color: var(--glitch-off-color, #67f3da);
   padding: 0.25rem 0.5rem;
   animation: text-glitch2 2.5s infinite;
@@ -280,8 +264,6 @@ code {
   height: 100%;
   width: 100%;
   opacity: 0;
-  /* border-radius: 0.25rem;
-  border: 2px solid; */
   color: var(--glitch-off-color, #f16f6f);
   padding: 0.25rem 0.5rem;
   animation: text-glitch3 2.5s infinite;
@@ -294,10 +276,6 @@ code {
 .codeblock:hover > .lang::after,
 .codeblock:hover > .filename::after {
   animation: none;
-}
-
-.codeblock:hover pre {
-  /* animation: list-glitch1 2.5s 1 reverse; */
 }
 
 .callout code {
@@ -354,7 +332,6 @@ table td::after {
 table th {
   background-color: var(--blue-7);
   color: var(--stone-0);
-  /* border: 1px solid var(--blue-7); */
 }
 
 table td + td,
@@ -404,7 +381,6 @@ figure {
   border: 1px solid var(--blue-4);
   padding: 0.35rem;
   position: relative;
-  /* border-left: 2rem solid var(--blue-4); */
 }
 
 figure::before,
