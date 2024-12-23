@@ -981,6 +981,10 @@ article h4:hover::after,
   display: none;
 }
 
+.gaw-banner > small {
+  max-width: var(--size-lg);
+}
+
 .gaw-banner {
   background: var(--callout-background);
   margin-top: 0;
@@ -1166,6 +1170,15 @@ input[type="checkbox"]:checked::after {
 
   .wrapper > * {
     padding: 0.75rem;
+    max-inline-size: 100%;
+  }
+
+  .gaw-banner {
+    padding-inline-end: 0.75rem;
+  }
+
+  header {
+    padding-block-end: 2rem;
   }
 }
 

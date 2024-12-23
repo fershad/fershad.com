@@ -50,7 +50,7 @@
             name="glitch-toggle"
             id="glitch-toggle"
             value="glitchSwitch" />
-          <span>Stop glitching</span>
+          <span>Deglitch</span>
         </label>
         <label for="font-toggle" class="form-control">
           <input
@@ -121,11 +121,11 @@
     glitchToggle.addEventListener('change', () => {
       if (glitchToggle.checked) {
         glitchStyles.remove()
-        glitchToggleText.textContent = 'Allow glitching'
+        glitchToggleText.textContent = 'Glitch'
         localStorage.setItem('glitch', 'true')
       } else {
         document.head.appendChild(glitchStyles)
-        glitchToggleText.textContent = 'Stop glitching'
+        glitchToggleText.textContent = 'Deglitch'
         localStorage.setItem('glitch', 'false')
       }
     })
