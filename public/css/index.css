@@ -371,7 +371,6 @@ body.deglitch {
 
 body.dark {
   color-scheme: dark;
-  --glitch-off-color: var(--blue-4);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -1123,7 +1122,7 @@ input[type="checkbox"]:checked::after {
   max-width: var(--size-lg);
   margin-inline: auto;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
 }
 
