@@ -19,4 +19,8 @@ With the extra content that will be published on this blog going forwards, I wan
 - Subscribe to the new Posts feed at [https://fershad.com/feed-posts.xml](https://fershad.com/feed-posts.xml) to receive my longer form content - mostly focused on web sustainability but with some change ups thrown in occasionally.
 - Subscribe to the new Notes feed at [https://fershad.com/feed-notes.xml](https://fershad.com/feed-notes.xml) to get the short notes, quick thoughts, monthly recaps, and link posts that I'm hoping to publish more of in 2025.
 
-Of course, if you love duplication then you can subscribe to all three. Though I'd advise against that.
+Of course, if you love duplication then you can subscribe to all three. Though I'd advise against that.\
+
+### How will you now when the new site is online?
+
+I'll blog about it, of course!
