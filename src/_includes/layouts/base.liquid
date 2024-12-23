@@ -49,25 +49,20 @@
             type="checkbox"
             name="glitch-toggle"
             id="glitch-toggle"
-            value="glitchSwitch" />
-          <span>Deglitch</span>
+            value="glitchSwitch"
+            checked />
+          <span>Glitch</span>
         </label>
         <label for="font-toggle" class="form-control">
           <input
             type="checkbox"
             name="font-toggle"
             id="font-toggle"
-            value="fontSwitch" />
-          <span>Depixelate</span>
+            value="fontSwitch"
+            checked />
+          <span>Pixelate</span>
         </label>
-        <label for="theme-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="theme-toggle"
-            id="theme-toggle"
-            value="themeSwitch" />
-          <span>Switch theme</span>
-        </label>
+        <button class="button outline" id="theme-toggle">Switch theme</button>
       </small>
     </div>
     <div class="gaw-banner center-align">
@@ -106,45 +101,42 @@
     const fontStyles = document.querySelector('link[href="/css/font.css"]')
 
     if (localStorage.getItem('glitch') === 'true') {
-      glitchToggle.checked = true
+      glitchToggle.checked = false
+      document.body.classList.add('deglitch')
       glitchStyles.remove()
     }
 
     if (localStorage.getItem('font') === 'true') {
-      fontToggle.checked = true
+      fontToggle.checked = false
       fontStyles.remove()
     }
 
 
     // Glitch toggle
-    const glitchToggleText = document.querySelector('label[for="glitch-toggle"] span')
+    
 
     glitchToggle.addEventListener('change', () => {
       if (glitchToggle.checked) {
-        glitchStyles.remove()
-        glitchToggleText.textContent = 'Glitch'
-        document.body.classList.add('deglitch')
-        localStorage.setItem('glitch', 'true')
-      } else {
         document.head.appendChild(glitchStyles)
-        glitchToggleText.textContent = 'Deglitch'
         document.body.classList.remove('deglitch')
         localStorage.setItem('glitch', 'false')
+      } else {
+        glitchStyles.remove()
+        document.body.classList.add('deglitch')
+        localStorage.setItem('glitch', 'true')
       }
     })
 
     // Font toggle
-    const fontToggleText = document.querySelector('label[for="font-toggle"] span')
+    
 
     fontToggle.addEventListener('change', () => {
       if (fontToggle.checked) {
-        fontToggleText.textContent = 'Pixelate'
-        fontStyles.remove()
-        localStorage.setItem('font', 'true')
-      } else {
-        fontToggleText.textContent = 'Depixelate'
         document.head.appendChild(fontStyles)
         localStorage.setItem('font', 'false')
+      } else {
+        fontStyles.remove()
+        localStorage.setItem('font', 'true')
       }
     })
 
@@ -157,13 +149,13 @@
       themeToggle.checked = true
     }
 
-    themeToggle.addEventListener('change', () => {
-      if (themeToggle.checked) {
-        document.body.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-      } else {
+    themeToggle.addEventListener('click', () => {
+      if (document.body.classList.contains('dark')) {
         document.body.classList.remove('dark')
         localStorage.setItem('theme', 'light')
+      } else {
+        document.body.classList.add('dark')
+        localStorage.setItem('theme', 'dark')
       }
     })
   </script>
