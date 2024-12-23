@@ -13,7 +13,9 @@ css: post.css
           {%- if isNote == "note" -%}Note{%- else -%}Post{%- endif -%}
         </small>
       {% endunless %}
-      <h1 data-glitch="{{ title }}">{{ title }}</h1>
+      <h1 data-glitch="{{ title }}">
+        <span>{{ title }}</span>
+      </h1>
       {% if date %}
         <p data-glitch="Published {{ date | date_to_long_string }}">Published:
           <time class="postlist-date" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>

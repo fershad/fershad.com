@@ -457,6 +457,7 @@ body {
   background-color: light-dark(var(--text), var(--background));
   --header-background: light-dark(var(--stone-0), var(--stone-10));
   --callout-background: light-dark(var(--stone-2), var(--stone-11));
+  --glitch-lightest-opacity: light-dark(0.95, 0.85);
 }
 
 :where(html) {
@@ -876,6 +877,10 @@ article h4 {
   position: relative;
 }
 
+.glitch-wrapper h1 {
+  --custom-glitch-opacity: 0.15;
+}
+
 article h2::before,
 article h3::before,
 article h4::before,
@@ -986,25 +991,25 @@ article h4:hover::after,
   border-bottom: 2px solid var(--line-color);
 }
 
-.gaw-banner::before,
 .gaw-banner::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid;
   top: 0;
   left: 0;
   overflow: hidden;
 }
 
-.gaw-banner::before {
+/* .gaw-banner::before {
+  border-bottom: 2px solid;
   border-color: #f16f6f;
   animation: list-glitch1 3.5s infinite;
-}
+} */
 
 .gaw-banner::after {
-  border-color: #67f3da;
+  border-bottom: 2px solid;
+  border-color: #f16f6f;
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }

@@ -18,6 +18,11 @@ section:first-of-type::before {
   top: calc(100% + var(--gap) / 2);
 }
 
+h1 span {
+  width: 100%;
+  display: block;
+}
+
 small + h1 {
   margin-top: 0.5rem;
 }
@@ -467,7 +472,7 @@ article a:not(.deeplink):hover {
 }
 
 .gh-edit {
-  background: var(--background);
+  background: var(--callout-background);
   margin-top: -3rem;
   padding-block: 0.5rem;
   margin-inline: -2rem;
@@ -483,19 +488,20 @@ article a:not(.deeplink):hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid;
   top: 0;
   left: 0;
   overflow: hidden;
 }
 
 .gh-edit::before {
+  border-top: 2px solid;
   border-color: #f16f6f;
   animation: list-glitch1 3.5s infinite;
 }
 
 .gh-edit::after {
-  border-color: #67f3da;
+  border-bottom: 2px solid;
+  border-color: #f16f6f;
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }
