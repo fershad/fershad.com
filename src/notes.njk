@@ -17,7 +17,7 @@ author:
     <subtitle>{{ metadata.subtitle }}</subtitle>
     <link href="{{ metadata.feedUrl }}" rel="self"/>
     <link href="{{ metadata.url }}"/>
-    <updated>{{ collections.note | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
+    <updated>{{ collections.note | sortByPublishedDate | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
     <id>{{ metadata.url }}</id>
     <author>
         <name>{{ author.name }}</name>

@@ -292,6 +292,10 @@ export default function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("sortByPublishedDate", function(array) {
+		// Filter any items that don't have a data.published value
+		array = array.filter((item) => {
+			return "published" in item.data;
+		});
 		// The data.published value is a string in the format "YYYY/MM/DD"
 		return array.sort((a, b) => {
 			const dateA = new Date(a.data.published);
