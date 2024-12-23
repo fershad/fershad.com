@@ -154,8 +154,8 @@ blockquote::before {
   left: -1.25rem;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid #67f3da;
-  border-left: 1.25rem solid #67f3da;
+  border-bottom: 1px solid var(--glitch-off-color, #67f3da);
+  border-left: 1.25rem solid var(--glitch-off-color, #67f3da);
   opacity: 0;
   animation: text-glitch3 2.5s infinite;
 }
@@ -167,8 +167,8 @@ blockquote::after {
   left: -1.25rem;
   height: 100%;
   width: 100%;
-  border-bottom: 1px solid #f16f6f;
-  border-left: 1.25rem solid #f16f6f;
+  border-bottom: 1px solid var(--glitch-off-color, #f16f6f);
+  border-left: 1.25rem solid var(--glitch-off-color, #f16f6f);
   opacity: 0;
   animation: text-glitch2 2.5s infinite;
 }
@@ -266,7 +266,7 @@ code {
   opacity: 0;
   /* border-radius: 0.25rem;
   border: 2px solid; */
-  color: #67f3da;
+  color: var(--glitch-off-color, #67f3da);
   padding: 0.25rem 0.5rem;
   animation: text-glitch2 2.5s infinite;
 }
@@ -282,7 +282,7 @@ code {
   opacity: 0;
   /* border-radius: 0.25rem;
   border: 2px solid; */
-  color: #f16f6f;
+  color: var(--glitch-off-color, #f16f6f);
   padding: 0.25rem 0.5rem;
   animation: text-glitch3 2.5s infinite;
 }
@@ -333,7 +333,7 @@ table td::before {
   top: 0;
   left: 0;
   position: absolute;
-  border-top: 1px solid #f16f6f;
+  border-top: 1px solid var(--glitch-off-color, #f16f6f);
   display: block;
   animation: text-glitch1 2.5s infinite;
 }
@@ -346,7 +346,7 @@ table td::after {
   top: 0;
   left: 0;
   position: absolute;
-  border-top: 1px solid #67f3da;
+  border-top: 1px solid var(--glitch-off-color, #67f3da);
   display: block;
   animation: text-glitch3 2.5s infinite;
 }
@@ -364,12 +364,12 @@ table th + th {
 
 table td + td::before,
 table th + th::before {
-  border-left: 1px solid #f16f6f;
+  border-left: 1px solid var(--glitch-off-color, #f16f6f);
 }
 
 table td + td::after,
 table th + th::after {
-  border-left: 1px solid #67f3da;
+  border-left: 1px solid var(--glitch-off-color, #67f3da);
 }
 
 table tr {
@@ -420,12 +420,12 @@ figure::after {
 }
 
 figure::before {
-  border-color: #67f3da;
+  border-color: var(--glitch-off-color, #67f3da);
   animation: text-glitch1 2.5s infinite;
 }
 
 figure::after {
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch2 2.5s infinite;
 }
 
@@ -501,13 +501,13 @@ article a:not(.deeplink):hover {
 
 .gh-edit::before {
   border-top: 2px solid;
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch1 3.5s infinite;
 }
 
 .gh-edit::after {
   border-bottom: 2px solid;
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }

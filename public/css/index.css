@@ -365,8 +365,13 @@ body {
   color-scheme: light dark;
 }
 
+body.deglitch {
+  --glitch-off-color: var(--blue-4);
+}
+
 body.dark {
   color-scheme: dark;
+  --glitch-off-color: var(--blue-4);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -576,14 +581,14 @@ small .button {
 
 .banner.outline:hover::before,
 .button.outline:hover::before {
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: text-glitch1 1.5s infinite;
   border: 1px solid;
 }
 
 .banner.outline:hover::after,
 .button.button:hover::after {
-  border-color: #67f3da;
+  border-color: var(--glitch-off-color, #67f3da);
   animation: text-glitch2 1.5s infinite;
   animation-delay: 0.5s;
   border: 1px solid;
@@ -642,14 +647,14 @@ ul:not([class]) li:hover::after {
 
 ul:not([class]) li::before {
   /* transition: all 0.2s; */
-  --marker-color: #f16f6f;
+  --marker-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch1 5.5s infinite;
   animation-delay: var(--local-delay, 0);
   animation-direction: var(--local-direction, alternate-reverse);
 }
 
 ul:not([class]) li::after {
-  --marker-color: #67f3da;
+  --marker-color: var(--glitch-off-color, #67f3da);
   animation: list-glitch2 5.5s infinite;
   animation-delay: var(--local-delay, 0);
   animation-direction: var(--local-direction, alternate-reverse);
@@ -704,12 +709,12 @@ header::after {
 }
 
 header::before {
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch1 3.5s infinite;
 }
 
 header::after {
-  border-color: #67f3da;
+  border-color: var(--glitch-off-color, #67f3da);
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }
@@ -726,12 +731,12 @@ footer::after {
 }
 
 footer::before {
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch1 3.5s infinite;
 }
 
 footer::after {
-  border-color: #67f3da;
+  border-color: var(--glitch-off-color, #67f3da);
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }
@@ -804,12 +809,12 @@ a::before {
 
 a:hover::before {
   animation: text-glitch3 3.5s infinite;
-  color: #f16f6f;
+  color: var(--glitch-off-color, #f16f6f);
 }
 
 a:hover::after {
   animation: text-glitch2 3.5s infinite;
-  color: #67f3da;
+  color: var(--glitch-off-color, #67f3da);
 }
 
 a:hover {
@@ -928,7 +933,7 @@ article h3:hover::before,
 article h4:hover::before,
 .glitch-wrapper:hover > small::before {
   animation: text-glitch2 3.5s infinite alternate;
-  color: #67f3da;
+  color: var(--glitch-off-color, #67f3da);
 }
 
 .glitch-wrapper:hover > h1::after,
@@ -937,7 +942,7 @@ article h2:hover::after,
 article h3:hover::after,
 article h4:hover::after,
 .glitch-wrapper:hover > small::after {
-  color: #f16f6f;
+  color: var(--glitch-off-color, #f16f6f);
   animation: text-glitch3 3.5s infinite alternate;
 }
 
@@ -950,13 +955,13 @@ article h4:hover::after,
 }
 
 .callout::before {
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: text-glitch1 1.5s infinite;
   border: 1px solid;
 }
 
 .callout::after {
-  border-color: #67f3da;
+  border-color: var(--glitch-off-color, #67f3da);
   animation: text-glitch2 1.5s infinite;
   animation-delay: 0.5s;
   border: 1px solid;
@@ -1007,13 +1012,13 @@ article h4:hover::after,
 
 /* .gaw-banner::before {
   border-bottom: 2px solid;
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);;
   animation: list-glitch1 3.5s infinite;
 } */
 
 .gaw-banner::after {
   border-bottom: 2px solid;
-  border-color: #f16f6f;
+  border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
 }
@@ -1064,7 +1069,7 @@ input[type="checkbox"]::after {
   /* transform: scale(0); */
   transition: 120ms height ease-in-out;
   animation: list-glitch2 2.5s infinite;
-  border: 0.15em solid #f16f6f;
+  border: 0.15em solid var(--glitch-off-color, #f16f6f);
   left: -0.15em;
 }
 
@@ -1182,6 +1187,41 @@ input[type="checkbox"]:checked::after {
   }
 }
 
+body.deglitch .banner.outline::before,
+body.deglitch .button.outline::before,
+body.deglitch .banner.outline::after,
+body.deglitch .button.outline::after,
+body.deglitch header::before,
+body.deglitch header::after,
+body.deglitch footer::before,
+body.deglitch footer::after,
+body.deglitch a::before,
+body.deglitch a::after,
+body.deglitch article h2::before,
+body.deglitch article h3::before,
+body.deglitch article h4::before,
+body.deglitch article h2::after,
+body.deglitch article h3::after,
+body.deglitch article h4::after,
+body.deglitch picture::before,
+body.deglitch picture::after,
+body.deglitch figure::before,
+body.deglitch figure::after,
+body.deglitch blockquote::before,
+body.deglitch blockquote::after,
+body.deglitch td::before,
+body.deglitch td::after,
+body.deglitch th::before,
+body.deglitch th::after,
+body.deglitch .gh-edit::before,
+body.deglitch .gh-edit::after,
+body.deglitch .gaw-banner::before,
+body.deglitch .gaw-banner::after {
+  display: none;
+  animation: none !important;
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .banner.outline::before,
   .button.outline::before,
@@ -1208,7 +1248,11 @@ input[type="checkbox"]:checked::after {
   td::before,
   td::after,
   th::before,
-  th::after {
+  th::after,
+  .gh-edit::before,
+  .gh-edit::after,
+  .gaw-banner::before,
+  .gaw-banner::after {
     display: none;
     animation: none !important;
     transition: none !important;
