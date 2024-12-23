@@ -7,7 +7,7 @@ summary: "As part of a website redesign, I'm making some changes to the main RSS
 
 This post is a heads up for those of you who subscribe to my blog (fershad.com/writing) via RSS.
 
-I'm close to completing a website redesign, and am hoping to have it all merged into the main website later this week. As part of that, I've also decided to move my notes blog from a separate subdomain [qt.fershad.com](<https://qt.fershad.com> onto my main site. With this change, I'll be consolidating both my (ir)regular posts and notes into the RSS feed for this blog (the one you're subscribed to - [https://fershad.com/feed.xml](https://fershad.com/feed.xml)).
+I'm close to completing a website redesign, and am hoping to have it all merged into the main website later this week. As part of that, I've also decided to move my notes blog from a separate subdomain [qt.fershad.com](https://qt.fershad.com) onto my main site. With this change, I'll be consolidating both my (ir)regular posts and notes into the RSS feed for this blog (the one you're subscribed to - [https://fershad.com/feed.xml](https://fershad.com/feed.xml)).
 
 ## Actions you can take
 
