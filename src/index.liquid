@@ -19,7 +19,7 @@ css: /css/home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                   
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                     
             a fossil free internet by 2030.
         </p>
       </div>
@@ -98,7 +98,10 @@ css: /css/home.css
         <small class="last-updated">
           <span id="update-time">Last updated: <br/>{{ readwise.updated | date_to_rfc822 }}</span>
           <div>
-            <button class="button outline" id="refresh-reader">Refresh</button>
+            <button
+              class="button outline"
+              id="refresh-reader"
+              aria-live="assertive">Refresh</button>
           </div>
         </small>
       </div>
@@ -183,6 +186,7 @@ css: /css/home.css
 
   document.getElementById('refresh-reader').addEventListener('click', function(e){
     e.preventDefault();
+    document.querySelector('#refresh-reader').textContent = 'Refreshing list...';
     fetch('/api/readwise/shortlist')
       .then(response => response.json())
       .then(data => {
