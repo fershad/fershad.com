@@ -19,7 +19,7 @@ css: /css/home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                     
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                      
             a fossil free internet by 2030.
         </p>
       </div>
@@ -190,6 +190,7 @@ css: /css/home.css
     fetch('/api/readwise/shortlist')
       .then(response => response.json())
       .then(data => {
+        document.querySelector('#refresh-reader').textContent = 'Refresh complete';
         document.querySelector('#reading ul').innerHTML = '';
         data.reader.forEach(article => {
           const li = document.createElement('li');
