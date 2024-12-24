@@ -167,10 +167,8 @@ export default function(eleventyConfig) {
 	// 		}
 	// 	}
 	// });
-	eleventyConfig.addPlugin(cacheBuster({
-		outputDirectory: "./_site",
-	}));
 	eleventyConfig.addTransform("cssmin", do_minifycss);
+	
 
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addFilter("getNewestCollectionItemPublishedDate", function(collection) {
@@ -376,6 +374,10 @@ export default function(eleventyConfig) {
 	// });
 
 	eleventyConfig.setLibrary("md", mdLib);
+
+	eleventyConfig.addPlugin(cacheBuster({
+		outputDirectory: "./_site",
+	}));
     
     return {
         dir: {
