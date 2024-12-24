@@ -13,6 +13,8 @@ import markdownItAttrs from 'markdown-it-attrs';
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import CleanCSS from 'clean-css';
 import stringHash from '@sindresorhus/string-hash';
+import {globby} from 'globby';
+import fs from 'fs';
 
 function do_minifycss(source, output_path) {
 	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -198,6 +200,22 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(pluginTOC)
 
+
+	
+	eleventyConfig.addFilter("versionHashCSS", async function(value) {
+		const cssFiles = await globby("src/_includes/css/*.css");
+		// Remove src/_includes from the path
+		const files = cssFiles.map(file => file.replace("src/_includes", ""));
+		const match = files.find(file => file.includes(value));
+		if (match) {
+			// Return the last modified date as a string
+			const lastModifiedDate = new Date(fs.statSync(`src/_includes${match}`).mtime);
+			return lastModifiedDate ? `${value}?v=${lastModifiedDate.getTime()}` : "";
+		} else {
+			return value;
+		}
+	});
+
 	// if (!dev) {
 	// 	eleventyConfig.addPlugin(greenLinks, {
 	// 		// ignore: ["fershad.com", "thegreenwebfoundation.org"],
@@ -208,60 +226,6 @@ export default function(eleventyConfig) {
 		// Return the first `limit` words, plus an ellipsis if needed
 		return value.split(" ").slice(0, limit).join(" ") + (value.split(" ").length > limit ? "..." : "");
 	});
-
-
-	// eleventyConfig.addShortcode("greenLinks", async function() {
-	// 	if (dev) {
-	// 		return "0 green links / 0 total links";
-	// 	}
-		
-	// 	const content = this.page.rawInput;
-	// 	const filetype = this.page.inputPath.split('.').pop();
-
-	// 	let parsedContent;
-
-	// 	if (filetype === 'md') {
-	// 		const md = markdownit();
-	// 		const mdContent = md.render(content);
-	// 		parsedContent = parseHTML(mdContent);
-	// 	} else {
-	// 		parsedContent = parseHTML(content);
-	// 	}
-
-	// 	const { document } = parsedContent;
-	// 	const links = [...document.querySelectorAll('a')];
-	// 	const allValidLinks = links.filter((link) => /^(https?\:\/\/|\/\/)/i.test(link.href));
-
-	// 	let greenLinksCount = 0;
-
-	// 	if (links.length > 0) {
-	// 		//   Get all unique hostnames from the links
-	// 		const uniqueHostnames = [...new Set(allValidLinks.map((link) => new URL(link.href).hostname))];
-
-	// 	// 	//   Remove the hostnames that should be ignored
-	// 	// 	ignore.forEach((hostname) => {
-	// 	// 		const ignoreHostnameIndex = uniqueHostnames.indexOf(hostname);
-	// 	// 	if (ignoreHostnameIndex > -1) {
-	// 	// 		uniqueHostnames.splice(ignoreHostnameIndex, 1);
-	// 	// 	}
-	// 	//   });
-	  
-	// 		  //   Check if the hostnames are green
-	// 		  const greenHostnames = await hosting(uniqueHostnames);
-	  
-	// 		  //   Add the green attribute to the links
-	// 		  allValidLinks.forEach((link) => {
-	// 			  const hostname = new URL(link.href).hostname;
-	// 			  if (greenHostnames.includes(hostname)) {
-	// 				  greenLinksCount++;
-	// 			  }
-	// 		  });
-	// 	}
-
-	// 	return `<span class="green-links">${greenLinksCount} green links</span> / ${links.length} total links`;
-
-		
-	// });
 
 	eleventyConfig.addPairedShortcode("codeToHtml", async function(code, lang = "text", filename) {
 		code = code.replace(/\r?\n$/, '');
@@ -359,18 +323,6 @@ export default function(eleventyConfig) {
 		const repoLink = 'https://github.com/fershad/fershad.com'
 		return `See something that needs fixing? <a href="${repoLink}/edit/main/${page.inputPath.replace('./','')}">Edit on GitHub.</a>`;
 	})
-
-	// eleventyConfig.addCollection("onlyPosts", function (collectionsApi) {
-	// 	return collectionsApi.getAllSorted().filter(function (item) {
-	// 		return "post" in item.data.tags;
-	// 	});
-	// });
-
-	// eleventyConfig.addCollection("onlyNotes", function (collectionsApi) {
-	// 	return collectionsApi.getAllSorted().filter(function (item) {
-	// 		return "note" in item.data.tags;
-	// 	});
-	// });
 
 	eleventyConfig.setLibrary("md", mdLib);
     

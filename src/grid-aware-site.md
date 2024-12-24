@@ -1,7 +1,6 @@
 ---
 title: Grid-aware site
 layout: layouts/post.liquid
-css: post.css
 permalink: grid-aware/index.html
 isPage: true
 ghEdit: true

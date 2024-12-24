@@ -1,7 +1,6 @@
 ---
 title: Carbon aware site
 layout: layouts/post.liquid
-css: post.css
 isPage: true
 ghEdit: true
 ---
