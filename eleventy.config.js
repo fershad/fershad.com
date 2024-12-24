@@ -13,7 +13,6 @@ import markdownItAttrs from 'markdown-it-attrs';
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import CleanCSS from 'clean-css';
 import stringHash from '@sindresorhus/string-hash';
-import cacheBuster from '@mightyplow/eleventy-plugin-cache-buster';
 
 function do_minifycss(source, output_path) {
 	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -374,10 +373,6 @@ export default function(eleventyConfig) {
 	// });
 
 	eleventyConfig.setLibrary("md", mdLib);
-
-	eleventyConfig.addPlugin(cacheBuster({
-		outputDirectory: "./_site",
-	}));
     
     return {
         dir: {
