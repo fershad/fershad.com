@@ -16,8 +16,6 @@ export default {
     let title = searchParams.get("title");
 		let page = searchParams.get("page");
 
-		const path = new URL(page).pathname;
-
 		const url = "https://beta.fershad.com/og/?title=" + title;
     let img;
     if (title) {
@@ -32,7 +30,7 @@ export default {
 		});
         await page.goto(url);
         img = await page.screenshot();
-        await env.FERSHAD_OG_IMAGES.put(`${path}_${title}`, img, {
+        await env.FERSHAD_OG_IMAGES.put(`${page}_${title}`, img, {
           // cache for 1 year
 					expirationTtl: 60 * 60 * 24 * 365,
         });
