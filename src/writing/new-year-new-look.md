@@ -14,13 +14,13 @@ I'm really chuffed with how this website redesign has turned out. More than just
 
 I've been using [Sanity](https://sanity.io/) as a headless CMS (content management system) for my blog for many years. When I got back into blogging and freelance work in 2019 I wasn't really comfortable with Markdown, and so the thought of having a customisable, visual content editing environment for my blog sounded nice.
 
-I've enjoyed building out my Sanity Studio, and it has given me a place to write pretty much all the content you see on this blog until today. But now, 5 years on, I'm at peace with Markdown and prefer writing in it when I can. Also, this past year, I've been feeling that the need to login to an external website to write out my posts and ideas was starting to become a blocker to me actually getting content out there.
+I've enjoyed building out my Sanity Studio, and it has given me a place to write pretty much all the content you see on this blog until today. But now, five years on, I'm at peace with Markdown and prefer writing in it when I can. Also, this past year, I've been feeling that the need to log in to an external website to write out my posts and ideas was starting to become a blocker to me actually getting content out there.
 
 As I sat down to redesign this blog, one of the key things I wanted to do was bring _alllll_ the blog content I had on Sanity into Markdown files in this project's repository. With a bit of AI help to parse the HTML content from my previous blog and convert it to Markdown, as well as a bit regex and "replace all" action to tidy up the frontmatter, I was able to achieve that goal. I've also been able to go through and archive a few older posts that are no longer relevant.
 
 So here's to hoping that I might be able to get out a few more blog posts in 2025!
 
-## Brining in notes
+## Bringing in notes
 
 For a little over a year, I've been using [qt.fershad.com](https://qt.fershad.com) as a place to keep short notes, quick thoughts, monthly recaps, and link posts. Originally, I didn't want to have to log in to Sanity Studio for small things like that - hence the subdomain. The notes were kept in Markdown files, and were pretty quick to write up and publish.
 
@@ -40,7 +40,7 @@ When I started out, I was going to make something with boxes and CSS Grid. Half-
 
 Something I've never had on any previous iteration of this website has been dark-light color theming. I always just felt like it was too much faffing about with CSS and JavaScript to get it to work.
 
-I started out designing this site in a dark-only theme. But, then I heard Chris and Dave on [ShopTalk Show](https://shoptalkshow.com) talking about the CSS `light-dark` function. From what they described, it sounded like that one bit of CSS could take out a load of complexity when it comes to theming a site. Boy oh boy were they right!
+I started out designing this site in a dark-only theme. But then I heard Chris and Dave on [ShopTalk Show](https://shoptalkshow.com) talking about the CSS `light-dark` function. From what they described, it sounded like that one bit of CSS could take out a load of complexity when it comes to theming a site. Boy oh boy were they right!
 
 I'll blog about it later, but for now do yourself a favour and [check out the MDN Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/light-dark) for this thing.
 
@@ -54,9 +54,9 @@ Pixelated fonts and glitching text, lines, and images, or changing favicons aren
 
 ## Reading list
 
-I'm not a regular reader, and that's something I want to improve on over time. I've used [Readwise Reader](https://readwise.io/read) as an app to help with that, giving me a place to triage articles & documents, and then read them with the added ability to make highlights and annotations. Recentlty, I feel that I've been getting better at reading more consistently before bed, and in the morning while having coffee or waiting for breakfast at one of the shops we frequent near home.
+I'm not a regular reader, and that's something I want to improve on over time. I've used [Readwise Reader](https://readwise.io/read) as an app to help with that, giving me a place to triage articles & documents, and then read them with the added ability to make highlights and annotations. Recently, I feel that I've been getting better at reading more consistently before bed, and in the morning while having coffee or waiting for breakfast at one of the shops we frequent near home.
 
-It's also nice that [Readwise Reader has an API](https://readwise.io/reader_api) which I've been able to connect to. This has allowed me to explore surfacing the articles and documents I have been reading for others to discover as well. At the moment, they're just presented in a single list on the [/reading](/reading) page, but as time passes that might change. I've also toyed with the idea of having a blogroll, or some kind of list of folks who's stuff I've been reading on the regular.
+It's also nice that [Readwise Reader has an API](https://readwise.io/reader_api) which I've been able to connect to. This has allowed me to explore surfacing the articles and documents I have been reading for others to discover as well. At the moment, they're just presented in a single list on the [/reading](/reading) page, but as time passes that might change. I've also toyed with the idea of having a blogroll, or some kind of list of folks whose content I've been reading on the regular.
 
 The list gets updated whenever the site rebuilds, and there's also an option for users to refresh the list - in the event that the site's not been updated for a while, or if they're just super keen to see what I'm reading.
 
