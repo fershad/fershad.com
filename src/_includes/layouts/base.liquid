@@ -39,7 +39,31 @@
       rel="icon"
       id="favicon-emoji"
       href="">
+
+
+    <script id="rando-favicon" data-gaw-remove>
+          // Go through an array of emojis and set the favicon-emoji to a random one. The code should loop through the array, like a slot machine before settling on one.
+          const emojiArray = ['🚴‍♂️', '🏉', '🇹🇼', '🇦🇺', '💚', '👨🏽‍💻', '🐱', '📷', '/apple-touch-icon.png']
+
+          const faviconEmoji = document.getElementById('favicon-emoji')
+          const loopCount = 10
+
+          
+          const loopFavicon = () => {
+      for (let i = 0; i < loopCount; i++) {
+        setTimeout(() => {
+          let emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)]
+          if (emoji === '/apple-touch-icon.png') {
+            faviconEmoji.setAttribute('href', '/apple-touch-icon.png')
+          } else {
+            faviconEmoji.setAttribute('href', `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`)
+          }
+        }, i * 100)
+      }
+          }
+    </script>
   </head>
+
 
   <body>
     {% include 'partials/header.liquid' %}
@@ -74,6 +98,96 @@
         <button class="button outline" id="theme-toggle">Switch theme</button>
       </small>
     </div>
+
+    <!-- Blocking JS to prevent content flashing -->
+    <script data-gaw-remove>
+        // Check local storage for glitch and font settings
+        const glitchToggle = document.getElementById('glitch-toggle')
+        const fontToggle = document.getElementById('font-toggle')
+        const glitchStyles = document.querySelector('link[href^="/css/glitch.css"]')
+        const fontStyles = document.querySelector('link[href^="/css/font.css"]')
+        const faviconToggle = document.getElementById('favicon-toggle')
+        const faviconScript = document.getElementById('rando-favicon')
+          
+        if (localStorage.getItem('glitch') === 'true') {
+          glitchToggle.checked = false
+          document.body.classList.add('deglitch')
+          glitchStyles.remove()
+        }
+          
+        if (localStorage.getItem('font') === 'true') {
+          fontToggle.checked = false
+          fontStyles.remove()
+        }
+          
+        if (localStorage.getItem('favicon') === 'true') {
+          faviconToggle.checked = true
+          faviconScript.remove()
+        } else {
+          loopFavicon()
+        }
+          
+          
+        // Glitch toggle
+        
+          
+        glitchToggle.addEventListener('change', () => {
+          if (glitchToggle.checked) {
+            document.head.appendChild(glitchStyles)
+            document.body.classList.remove('deglitch')
+            localStorage.setItem('glitch', 'false')
+          } else {
+            glitchStyles.remove()
+            document.body.classList.add('deglitch')
+            localStorage.setItem('glitch', 'true')
+          }
+        })
+          
+        // Font toggle
+        
+          
+        fontToggle.addEventListener('change', () => {
+          if (fontToggle.checked) {
+            document.head.appendChild(fontStyles)
+            localStorage.setItem('font', 'false')
+          } else {
+            fontStyles.remove()
+            localStorage.setItem('font', 'true')
+          }
+        })
+          
+        // Favicon toggle
+        faviconToggle.addEventListener('change', () => {
+          if (faviconToggle.checked) {
+            faviconScript.remove()
+            localStorage.setItem('favicon', 'true')
+          } else {
+            document.body.appendChild(faviconScript)
+            localStorage.setItem('favicon', 'false')
+            loopFavicon()
+          }
+        })
+          
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle')
+          
+        // Check local storage for theme settings
+        if (localStorage.getItem('theme') === 'dark') {
+          document.body.classList.add('dark')
+          themeToggle.checked = true
+        }
+          
+        themeToggle.addEventListener('click', () => {
+          if (document.body.classList.contains('dark')) {
+            document.body.classList.remove('dark')
+            localStorage.setItem('theme', 'light')
+          } else {
+            document.body.classList.add('dark')
+            localStorage.setItem('theme', 'dark')
+          }
+        })
+    </script>
+
     <div class="gaw-banner center-align">
       <small>This website is grid-aware, some functionality has changed.
         <a href="/grid-aware">Find out more</a>. View the
@@ -83,116 +197,6 @@
     <main id="main-content">{{ content }}</main>
     {% include 'partials/footer.liquid' %}
   </body>
-
-  <script id="rando-favicon" data-gaw-remove>
-    // Go through an array of emojis and set the favicon-emoji to a random one. The code should loop through the array, like a slot machine before settling on one.
-    const emojiArray = ['🚴‍♂️', '🏉', '🇹🇼', '🇦🇺', '💚', '👨🏽‍💻', '🐱', '📷', '/apple-touch-icon.png']
-
-    const faviconEmoji = document.getElementById('favicon-emoji')
-    const loopCount = 10
-
-    
-    const loopFavicon = () => {
-      for (let i = 0; i < loopCount; i++) {
-        setTimeout(() => {
-          let emoji = emojiArray[Math.floor(Math.random() * emojiArray.length)]
-          if (emoji === '/apple-touch-icon.png') {
-            faviconEmoji.setAttribute('href', '/apple-touch-icon.png')
-          } else {
-            faviconEmoji.setAttribute('href', `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`)
-          }
-        }, i * 100)
-      }
-    }
-  </script>
-
-  <script data-gaw-remove>
-    // Check local storage for glitch and font settings
-    const glitchToggle = document.getElementById('glitch-toggle')
-    const fontToggle = document.getElementById('font-toggle')
-    const glitchStyles = document.querySelector('link[href="/css/glitch.css"]')
-    const fontStyles = document.querySelector('link[href="/css/font.css"]')
-    const faviconToggle = document.getElementById('favicon-toggle')
-    const faviconScript = document.getElementById('rando-favicon')
-
-    if (localStorage.getItem('glitch') === 'true') {
-      glitchToggle.checked = false
-      document.body.classList.add('deglitch')
-      glitchStyles.remove()
-    }
-
-    if (localStorage.getItem('font') === 'true') {
-      fontToggle.checked = false
-      fontStyles.remove()
-    }
-
-    if (localStorage.getItem('favicon') === 'true') {
-      faviconToggle.checked = true
-      faviconScript.remove()
-    } else {
-      loopFavicon()
-    }
-
-
-    // Glitch toggle
-    
-
-    glitchToggle.addEventListener('change', () => {
-      if (glitchToggle.checked) {
-        document.head.appendChild(glitchStyles)
-        document.body.classList.remove('deglitch')
-        localStorage.setItem('glitch', 'false')
-      } else {
-        glitchStyles.remove()
-        document.body.classList.add('deglitch')
-        localStorage.setItem('glitch', 'true')
-      }
-    })
-
-    // Font toggle
-    
-
-    fontToggle.addEventListener('change', () => {
-      if (fontToggle.checked) {
-        document.head.appendChild(fontStyles)
-        localStorage.setItem('font', 'false')
-      } else {
-        fontStyles.remove()
-        localStorage.setItem('font', 'true')
-      }
-    })
-
-    // Favicon toggle
-    faviconToggle.addEventListener('change', () => {
-      if (faviconToggle.checked) {
-        faviconScript.remove()
-        localStorage.setItem('favicon', 'true')
-      } else {
-        document.body.appendChild(faviconScript)
-        localStorage.setItem('favicon', 'false')
-        loopFavicon()
-      }
-    })
-
-    // Theme toggle
-    const themeToggle = document.getElementById('theme-toggle')
-
-    // Check local storage for theme settings
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark')
-      themeToggle.checked = true
-    }
-
-    themeToggle.addEventListener('click', () => {
-      if (document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-      } else {
-        document.body.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-      }
-    })
-  </script>
 
   <script
     src="https://cdn.usefathom.com/script.js"
