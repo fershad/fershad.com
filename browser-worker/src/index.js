@@ -19,7 +19,7 @@ export default {
 		const url = "https://beta.fershad.com/og/?title=" + title;
     let img;
     if (title) {
-      img = await env.FERSHAD_OG_IMAGES.get(`${path}_${title}`, { type: "arrayBuffer" });
+      img = await env.FERSHAD_OG_IMAGES.get(`${page}_${title}`, { type: "arrayBuffer" });
       if (img === null) {
         const browser = await puppeteer.launch(env.MYBROWSER);
         const page = await browser.newPage();
