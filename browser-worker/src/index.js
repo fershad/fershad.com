@@ -16,7 +16,7 @@ export default {
     let title = searchParams.get("title");
 		let page = searchParams.get("page");
 
-		const url = "https://beta.fershad.com/og/?title=" + title;
+		const url = "https://fershad.com/og/?title=" + title;
     let img;
     if (title) {
       img = await env.FERSHAD_OG_IMAGES.get(`${page}_${title}`, { type: "arrayBuffer" });
