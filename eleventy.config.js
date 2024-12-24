@@ -12,6 +12,8 @@ import pluginTOC from 'eleventy-plugin-nesting-toc';
 import markdownItAttrs from 'markdown-it-attrs';
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import CleanCSS from 'clean-css';
+import stringHash from '@sindresorhus/string-hash';
+import cacheBuster from '@mightyplow/eleventy-plugin-cache-buster';
 
 function do_minifycss(source, output_path) {
 	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -165,7 +167,9 @@ export default function(eleventyConfig) {
 	// 		}
 	// 	}
 	// });
-
+	eleventyConfig.addPlugin(cacheBuster({
+		outputDirectory: "./_site",
+	}));
 	eleventyConfig.addTransform("cssmin", do_minifycss);
 
 	eleventyConfig.addPlugin(pluginRss);
@@ -324,6 +328,10 @@ export default function(eleventyConfig) {
 				return item.data.tags.includes(tag);
 			}
 		});
+	});
+
+	eleventyConfig.addFilter("stringHash", function(value) {
+		return stringHash(value);
 	});
 
 	// A filter to return a random number between 0 and 1000
