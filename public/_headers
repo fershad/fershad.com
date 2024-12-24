@@ -1,0 +1,17 @@
+/css/*
+  Cache-Control: max-age=604800
+
+/*.jpg
+  Cache-Control: max-age=604800
+
+/*.webp
+  Cache-Control: max-age=604800
+
+/*.avif
+  Cache-Control: max-age=604800
+
+/img/*
+  Cache-Control: max-age=604800
+
+/fonts/*
+  Cache-Control: max-age=604800
