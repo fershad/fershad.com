@@ -4,7 +4,10 @@ main = "src/index.js"
 compatibility_date = "2024-12-18"
 compatibility_flags = ["nodejs_compat"]
 
-routes = [{ pattern = "beta.fershad.com/*", zone_name = "fershad.com" }]
+routes = [
+	{ pattern = "fershad.com", zone_name = "fershad.com" },
+	{ pattern = "fershad.com/*", zone_name = "fershad.com" },
+]
 
 [[kv_namespaces]]
 binding = "GAW_CACHE"
