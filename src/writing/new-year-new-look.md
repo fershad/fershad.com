@@ -88,4 +88,4 @@ It's on my mind to add a few more things to add on this website, but right now I
 
 ## What hasn't changed?
 
-The one constant through all this change has been [Eleventy](https://11ty.dev). It's the 🐐, and I've got such huge admiration and thanks to the work that [Zach](https://www.zachleat.com/) and [all the team](https://github.com/11ty/eleventy/graphs/contributors).
+The one constant through all this change has been [Eleventy](https://11ty.dev). It's the 🐐, and I've got such huge admiration and thanks to the work that [Zach](https://www.zachleat.com/) and [all the team](https://github.com/11ty/eleventy/graphs/contributors) put into it..
