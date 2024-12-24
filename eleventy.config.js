@@ -185,7 +185,7 @@ export default function(eleventyConfig) {
 		// Add any other Image utility options here:
 
 		// optional, output image formats - avif since I don't have many images.
-		formats: ["webp", "jpeg", "avif"],
+		formats: ["avif", "webp", "jpeg"],
 		// formats: ["auto"],
 
 		// optional, output image widths
