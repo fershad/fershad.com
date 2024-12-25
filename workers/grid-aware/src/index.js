@@ -9,13 +9,33 @@
  */
 
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
-import { getLocation } from '@greenweb/gaw-plugin-cloudflare-workers';
+import { getLocation, savePageToKv } from '@greenweb/gaw-plugin-cloudflare-workers';
+
+const excludedPaths = [
+	'/wp-includes/',
+	'/wp-content/',
+	'/wp-admin/',
+	'/contact?'
+];
+
+const excludedExtenstion = [
+	'.php',
+]
 
 export default {
 	async fetch(request, env, ctx) {
 
+		const requestUrl = request.url;
+		if (excludedPaths.some((path) => requestUrl.includes(path))) {
+			return new Response(null, { status: 404 });
+		} else if (excludedExtenstion.some((ext) => requestUrl.endsWith(ext))) {
+			return new Response(null, { status: 404 });
+		}
+
+
 		// First fetch the request
 		const response = await fetch(request.url);
+		console.log('response', response.status);
 		// Then check if the request content type is HTML. If not, return the request and headers as is.
 		const contentType = response.headers.get('content-type');
 
@@ -43,7 +63,10 @@ export default {
 		  }
 
 		// Get the country of the user from the Cloudflare data
-		let cfData = getLocation(request);
+		const cfData = getLocation(request, {
+			mode: 'country',
+		});
+
 		let { country } = cfData;
 
 		// If the country is not found, return the response as is.
@@ -141,7 +164,8 @@ export default {
 
 
 			// Store the modified response in the KV for 24 hours
-			await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body, { expirationTtl: 60 * 60 * 24 });
+			// await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body, { expirationTtl: 60 * 60 * 24 });
+			await savePageToKv(env, request.url, modifiedResponse.clone());
 
 			return modifiedResponse;
 		}
