@@ -9,13 +9,14 @@
  */
 
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
-import { getLocation, savePageToKv } from '@greenweb/gaw-plugin-cloudflare-workers';
+import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv } from '@greenweb/gaw-plugin-cloudflare-workers';
 
 const excludedPaths = [
 	'/wp-includes/',
 	'/wp-content/',
 	'/wp-admin/',
-	'/contact?'
+	'/contact?',
+	'.php?'
 ];
 
 const excludedExtenstion = [
@@ -35,7 +36,6 @@ export default {
 
 		// First fetch the request
 		const response = await fetch(request.url);
-		console.log('response', response.status);
 		// Then check if the request content type is HTML. If not, return the request and headers as is.
 		const contentType = response.headers.get('content-type');
 
@@ -63,9 +63,9 @@ export default {
 		  }
 
 		// Get the country of the user from the Cloudflare data
-		const cfData = getLocation(request, {
-			mode: 'country',
-		});
+		const cfData = await getLocation(request, {
+			"mode": "country"
+		})
 
 		let { country } = cfData;
 
@@ -80,26 +80,36 @@ export default {
 			});
 		}
 
-		// Fetch the grid data for the country using the @greenweb/grid-aware-websites package
-		const gridData = await gridAwarePower(country, env.EMAPS_API_KEY);
+		let gridData = await fetchDataFromKv(env, country).then((data) => { return JSON.parse(data) });
 
-		// If the grid data is not found, return the response as is.
-		if (gridData.status === 'error') {
-			return new Response(response.body, {
-				...response,
-				headers: {
-					...response.headers,
-					'grid-aware': 'Error - Unable to fetch grid data',
-				},
-			});
+		if (!gridData) {
+			console.log('Fetching grid data for the country');
+			// Fetch the grid data for the country using the @greenweb/grid-aware-websites package
+			gridData = await gridAwarePower(country, env.EMAPS_API_KEY);
+			await saveDataToKv(env, country, JSON.stringify(gridData));
+
+			// If the grid data is not found, return the response as is.
+			if (gridData.status === 'error') {
+				return new Response(response.body, {
+					...response,
+					headers: {
+						...response.headers,
+						'grid-aware': 'Error - Unable to fetch grid data',
+					},
+				});
+			}
+		} else {
+			console.log('Using cached grid data');
 		}
 
 		// If the gridAware value is set to true, then let's modify the page
 		if (gridData.gridAware) {
 			// Check if the response is already stored in KV
-			const cachedResponse = await env.GAW_CACHE.get(request.url);
+			const cachedResponse = await fetchPageFromKv(env, request.url);
+			// const cachedResponse = await env.GAW_CACHE.get(request.url);
 
 			if (cachedResponse) {
+				console.log('Returning cached response');
 				return new Response(cachedResponse, {
 					...response,
 					headers: {
@@ -114,6 +124,8 @@ export default {
 					},
 				});
 			}
+
+			console.log('Modifying the page');
 
 			let gridAwarePage = response
 			/*

@@ -13,6 +13,14 @@ routes = [
 binding = "GAW_CACHE"
 id = "47b63fd22cbe440f86d2384ef1d152ce"
 
+[[kv_namespaces]]
+binding = "GAW_PAGE_KV"
+id = "f10fc280015e4c7c8fd40d022cdf9416"
+
+[[kv_namespaces]]
+binding = "GAW_DATA_KV"
+id = "214800f6f0df43a4a747ca28faebbdd3"
+
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
 # Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
