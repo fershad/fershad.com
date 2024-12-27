@@ -9,7 +9,7 @@
  */
 
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
-import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv } from '@greenweb/gaw-plugin-cloudflare-workers';
+import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv, setResponseHeaders } from '@greenweb/gaw-plugin-cloudflare-workers';
 
 const excludedPaths = [
 	'/wp-includes/',
@@ -22,6 +22,8 @@ const excludedPaths = [
 const excludedExtenstion = [
 	'.php',
 ]
+
+
 
 export default {
 	async fetch(request, env, ctx) {
@@ -51,7 +53,7 @@ export default {
 		const cookie = request.headers.get("cookie");
 
 
-		  if (cookie && cookie.includes(`${COOKIE_NAME}=disable`)) {
+		  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || request.url.includes("/og/?")) {
 			// if user has rejected the grid-aware site
 			return new Response(response.body, {
 				...response,
@@ -62,6 +64,7 @@ export default {
 			});
 		  }
 
+
 		// Get the country of the user from the Cloudflare data
 		const cfData = await getLocation(request, {
 			"mode": "country"
@@ -71,33 +74,28 @@ export default {
 
 		// If the country is not found, return the response as is.
 		if (!country) {
-			return new Response(response.body, {
-				...response,
-				headers: {
-					...response.headers,
-					'grid-aware': 'Error - Country not found',
-				},
-			});
+			return new Response(response.body, response);
 		}
 
 		let gridData = await fetchDataFromKv(env, country).then((data) => { return JSON.parse(data) });
+
+		if (gridData?.status === 'error') {
+			const resp = setResponseHeaders(response, gridData);
+			return resp;
+		}
 
 		if (!gridData) {
 			console.log('Fetching grid data for the country');
 			// Fetch the grid data for the country using the @greenweb/grid-aware-websites package
 			gridData = await gridAwarePower(country, env.EMAPS_API_KEY);
-			await saveDataToKv(env, country, JSON.stringify(gridData));
 
 			// If the grid data is not found, return the response as is.
 			if (gridData.status === 'error') {
-				return new Response(response.body, {
-					...response,
-					headers: {
-						...response.headers,
-						'grid-aware': 'Error - Unable to fetch grid data',
-					},
-				});
+				const resp = setResponseHeaders(response, gridData)
+				return resp;
 			}
+
+			await saveDataToKv(env, country, JSON.stringify(gridData));
 		} else {
 			console.log('Using cached grid data');
 		}
@@ -110,19 +108,10 @@ export default {
 
 			if (cachedResponse) {
 				console.log('Returning cached response');
-				return new Response(cachedResponse, {
-					...response,
-					headers: {
-						...response.headers,
-						'Content-Type': 'text/html;charset=UTF-8',
-						'grid-aware': 'true',
-						'grid-aware-zone': gridData.region,
-						'grid-aware-power-mode': gridData.data.mode,
-						'grid-aware-power-minimum': gridData.data.minimumPercentage,
-						'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
-						'grid-aware-cached': 'true',
-					},
-				});
+				const resp = setResponseHeaders(cachedResponse, gridData)
+				resp.headers.append('GAW-Cached', 'true');
+				resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
+				return resp;
 			}
 
 			console.log('Modifying the page');
@@ -165,12 +154,7 @@ export default {
 					...gridAwarePage.headers,
 					'Content-Type': 'text/html;charset=UTF-8',
 					// We can also add some of the grid-aware data to the headers of the response
-					'grid-aware': 'true',
-					'grid-aware-zone': gridData.region,
-					'grid-aware-power-mode': gridData.data.mode,
-					'grid-aware-power-minimum': gridData.data.minimumPercentage,
-					'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
-					'grid-aware-cached': 'false',
+					'GAW-cached': 'false',
 				},
 			});
 
@@ -178,23 +162,16 @@ export default {
 			// Store the modified response in the KV for 24 hours
 			// await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body, { expirationTtl: 60 * 60 * 24 });
 			await savePageToKv(env, request.url, modifiedResponse.clone());
-
-			return modifiedResponse;
+			const resp = setResponseHeaders(modifiedResponse, gridData);
+			resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
+			resp.headers.append('GAW-Cached', 'false');
+			return resp;
 		}
 
 		// If the gridAware value is set to false, then return the response as is.
-		return new Response(response.body, {
-			headers: {
-				...response.headers,
-				'Content-Type': 'text/html;charset=UTF-8',
-				// We can also add some of the grid-aware data to the headers of the response
-				'grid-aware': 'false',
-				'grid-aware-zone': gridData.region,
-				'grid-aware-power-mode': gridData.data.mode,
-				'grid-aware-power-minimum': gridData.data.minimumPercentage,
-				'grid-aware-renewable-percentage': gridData.data.renewablePercentage,
-				'grid-aware-cached': 'false',
-			},
-		});
+		const resp = setResponseHeaders(response, gridData);
+		resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
+		resp.headers.append('GAW-Cached', 'false');
+		return resp;
 	},
 };
