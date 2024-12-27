@@ -42,10 +42,6 @@
 
 
     <script id="rando-favicon" data-gaw-remove>
-      if (localStorage.getItem('favicon') !== 'true') {
-        loopFavicon()
-      } 
-         
         // Go through an array of emojis and set the favicon-emoji to a random one. The code should loop through the array, like a slot machine before settling on one.
           const emojiArray = ['🚴‍♂️', '🏉', '🇹🇼', '🇦🇺', '💚', '👨🏽‍💻', '🐱', '📷', '/apple-touch-icon.png']
 
@@ -65,6 +61,10 @@
         }, i * 100)
       }
           }
+
+          if (localStorage.getItem('favicon') !== 'true') {
+        loopFavicon()
+      }
     </script>
   </head>
 
