@@ -29,6 +29,7 @@ export default {
 	async fetch(request, env, ctx) {
 
 		const requestUrl = request.url;
+
 		if (excludedPaths.some((path) => requestUrl.includes(path))) {
 			return new Response(null, { status: 404 });
 		} else if (excludedExtenstion.some((ext) => requestUrl.endsWith(ext))) {
@@ -53,7 +54,7 @@ export default {
 		const cookie = request.headers.get("cookie");
 
 
-		  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || request.url.includes("/og/?")) {
+		  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || request.url.includes("/og/?") || request.url.includes("/api/")) {
 			// if user has rejected the grid-aware site
 			return new Response(response.body, {
 				...response,
