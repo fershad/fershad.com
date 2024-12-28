@@ -18,7 +18,7 @@ import fs from 'fs';
 
 function do_minifycss(source, output_path) {
 	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
-    if(!output_path.endsWith(".css")) return source;
+    if(!output_path.endsWith(".css") || output_path.endsWith('listPage.css')) return source;
 
     const result = new CleanCSS({
         level: 2
