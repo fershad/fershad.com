@@ -14,12 +14,13 @@ css: /css/home.css
       loading="eager"
       decoding="async"
       eleventy:widths="240, 480, 320, 640"
+      eleventy:formats="avif, webp, jpg"
       sizes="100w" />
     <div class="flow">
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                      
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                        
             a fossil free internet by 2030.
         </p>
       </div>
@@ -145,6 +146,7 @@ css: /css/home.css
       <img
         src="{{ film.imageUrl }}"
         alt="{{ film.altText }}"
+        eleventy:formats="avif, webp, jpg"
         aria-live="polite" />
       <div class="img-desc" aria-live="polite">
         <span>
