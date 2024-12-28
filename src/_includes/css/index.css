@@ -387,6 +387,10 @@ body.dark {
   color-scheme: dark !important;
 }
 
+body:not(.dark) {
+  color-scheme: light !important;
+}
+
 :where(html) {
   font-family: var(--font-monospace-code), monospace;
 }
