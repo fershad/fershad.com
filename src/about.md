@@ -42,3 +42,11 @@ When I'm not at my computer, I'm normally doing one of the things below:
 - Organising the local Touch Football association.
 
 You might have guessed that Touch Football plays a pretty big part in my life. I love the sport, and the friends it's given me all around the globe. I've been fortunate enough to both referee and play for Taiwan at an international level, including two Mixed Open World Cup campaigns (one as co-captain).
+
+<figure>
+<img
+      src="../public/img/w-meifu.png"
+      alt="A man looking towards the camera with a skeptical face. A cat looks up at him lovingly."
+      eleventy:formats="avif, webp, jpg" />
+    <figcaption>The author with his cat.</figcaption>
+</figure>
