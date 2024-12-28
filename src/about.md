@@ -47,6 +47,6 @@ You might have guessed that Touch Football plays a pretty big part in my life. I
 <img
       src="../public/img/w-meifu.png"
       alt="A man looking towards the camera with a skeptical face. A cat looks up at him lovingly."
-      eleventy:formats="avif, webp, jpg" />
+      eleventy:formats="avif,webp,jpg" />
     <figcaption>The author with his cat.</figcaption>
 </figure>
