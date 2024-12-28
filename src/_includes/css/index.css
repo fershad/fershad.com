@@ -328,10 +328,6 @@ body.deglitch {
   --glitch-off-color: var(--blue-4);
 }
 
-body.dark {
-  color-scheme: dark;
-}
-
 .skip-link {
   position: absolute;
   top: auto;
@@ -385,6 +381,10 @@ body {
   --glitch-lightest-opacity: light-dark(0.95, 0.85);
   --inline-code-background: light-dark(var(--blue-12), var(--blue-0));
   --inline-code-color: light-dark(var(--stone-0), var(--stone-12));
+}
+
+body.dark {
+  color-scheme: dark !important;
 }
 
 :where(html) {
