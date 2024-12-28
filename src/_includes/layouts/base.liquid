@@ -97,9 +97,16 @@
             name="favicon-toggle"
             id="favicon-toggle"
             value="faviconSwitch" />
-          <span>Fixed favicon</span>
+          <span>Static icon</span>
         </label>
-        <button class="button outline" id="theme-toggle">Switch theme</button>
+        <label for="theme-toggle" class="form-control">
+          <input
+            type="checkbox"
+            name="theme-toggle"
+            id="theme-toggle"
+            value="themeSwitch" />
+          <span>Dark theme</span>
+        </label>
       </small>
     </div>
 
@@ -178,14 +185,15 @@
           themeToggle.checked = true
         }
           
-        themeToggle.addEventListener('click', (event) => {
-          event.preventDefault()
+        themeToggle.addEventListener('change', (event) => {
           if (document.body.classList.contains('dark')) {
             document.body.classList.remove('dark')
             localStorage.setItem('theme', 'light')
+            themeToggle.checked = false
           } else {
             document.body.classList.add('dark')
             localStorage.setItem('theme', 'dark')
+            themeToggle.checked = true
           }
         })
     </script>
