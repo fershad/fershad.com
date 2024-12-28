@@ -994,6 +994,7 @@ input[type="checkbox"]:checked::after {
   position: sticky;
   top: 0;
   z-index: 10;
+  padding-inline: 0.75rem;
 }
 
 .controls #filters,
