@@ -9,7 +9,8 @@
  */
 
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
-import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv, setResponseHeaders } from '@greenweb/gaw-plugin-cloudflare-workers';
+import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv } from '@greenweb/gaw-plugin-cloudflare-workers';
+import { setResponseHeaders } from './helpers';
 
 const excludedPaths = [
 	'/wp-includes/',
@@ -22,6 +23,8 @@ const excludedPaths = [
 const excludedExtenstion = [
 	'.php',
 ]
+
+
 
 
 
@@ -38,7 +41,9 @@ export default {
 
 
 		// First fetch the request
-		const response = await fetch(request.url);
+		const response = await fetch(request.url, {
+			method: "GET",
+		});
 		// Then check if the request content type is HTML. If not, return the request and headers as is.
 		const contentType = response.headers.get('content-type');
 
@@ -54,7 +59,7 @@ export default {
 		const cookie = request.headers.get("cookie");
 
 
-		  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || request.url.includes("/og/?") || request.url.includes("/api/")) {
+		  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || request.url.includes("/og/?") || request.url.includes("/api/") || request.url.includes("/img/")) {
 			// if user has rejected the grid-aware site
 			return new Response(response.body, {
 				...response,
@@ -117,7 +122,6 @@ export default {
 
 			console.log('Modifying the page');
 
-			let gridAwarePage = response
 			/*
 				Here you can use the HTMLRewriter API, or you can
 				use other methods such as redirecting the user to a different page,
@@ -125,20 +129,9 @@ export default {
 
 				You can also import other libraries like Cheerio or JSDOM to modify the page
 				if you are more comfortable with those.
-
-				For this example, we will use the HTMLRewriter API to add a banner to the top of the page
-				to show that this is a modified page.
-
-				return new Response(new HTMLRewriter().on('html', {
-					element(element) {
-						element.prepend('<div>This is a modified page</div>', { html: true });
-					},
-				}).transform(response).body, {
-					...response,
-					contentType: 'text/html',
-				});
 			*/
 
+			// Remove the elements with the data-gaw-remove attribute & add a class to deglitch the page.
 			const modifyHTML = new HTMLRewriter().on('[data-gaw-remove]', {
 				element(element) {
 					element.remove();
@@ -149,10 +142,10 @@ export default {
 				},
 			});
 
-			let modifiedResponse = new Response(modifyHTML.transform(gridAwarePage).body, {
-				...gridAwarePage,
+			let modifiedResponse = new Response(modifyHTML.transform(response).body, {
+				...response,
 				headers: {
-					...gridAwarePage.headers,
+					...response.headers,
 					'Content-Type': 'text/html;charset=UTF-8',
 					// We can also add some of the grid-aware data to the headers of the response
 					'GAW-cached': 'false',
