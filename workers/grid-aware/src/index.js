@@ -11,7 +11,6 @@
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
 import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv } from '@greenweb/gaw-plugin-cloudflare-workers';
 
-
 // Spammy paths that I don't want to serve the content for.
 const spammyPaths = [
 	'/wp-includes/',
@@ -29,7 +28,6 @@ const spammyPaths = [
 
 export default {
 	async fetch(request, env, ctx) {
-
 		// Get the request URL
 		const requestUrl = request.url;
 
@@ -38,10 +36,9 @@ export default {
 			return new Response(null, { status: 404 });
 		}
 
-
 		// Fetch the request URL
 		const response = await fetch(requestUrl, {
-			method: "GET",
+			method: 'GET',
 		});
 
 		try {
@@ -58,12 +55,17 @@ export default {
 			// Okay, we've got an HTML response.
 			// Let's check if the user has opted out of the grid-aware website.
 			// We do this by looking for a cookie named "gaw-status" with the value "disable".
-			const COOKIE_NAME = "gaw-status";
-			const cookie = request.headers.get("cookie");
+			const COOKIE_NAME = 'gaw-status';
+			const cookie = request.headers.get('cookie');
 
 			// If the cookie is found, or the request URL contains "/og/?" or "/api/" or "/img/", then return the response as is.
 			// We don't want to modify the content for these requests.
-			  if ((cookie && cookie.includes(`${COOKIE_NAME}=disable`)) || requestUrl.includes("/og/?") || requestUrl.includes("/api/") || requestUrl.includes("/img/")) {
+			if (
+				(cookie && cookie.includes(`${COOKIE_NAME}=disable`)) ||
+				requestUrl.includes('/og/?') ||
+				requestUrl.includes('/api/') ||
+				requestUrl.includes('/img/')
+			) {
 				return new Response(response.body, {
 					...response,
 					headers: {
@@ -71,14 +73,13 @@ export default {
 						'grid-aware': 'opt-out',
 					},
 				});
-			  }
-
+			}
 
 			// Since there's no opt-out, we can now check the user's location to determine the grid data.
 			// We'll use the Cloudflare Workers plugin (@greenweb/gaw-plugin-cloudflare-workers) to get the user's country.
 			const cfData = await getLocation(request, {
-				"mode": "country"
-			})
+				mode: 'country',
+			});
 
 			let { country } = cfData;
 
@@ -89,7 +90,9 @@ export default {
 
 			// Check to see if we've already got the grid data for the country in a Cloudflare Workers KV.
 			// Again, we'll use the Cloudflare Workers plugin to perform this check.
-			let gridData = await fetchDataFromKv(env, country).then((data) => { return JSON.parse(data) });
+			let gridData = await fetchDataFromKv(env, country).then((data) => {
+				return JSON.parse(data);
+			});
 
 			// If we've got cached data that is an error, return the response as is, with additional headers.
 			// We'd likely get an error message if we're checking for a country that Electricity Maps has no data for.
@@ -110,7 +113,7 @@ export default {
 				// The grid data is fetched using the gridAwarePower function from the @greenweb/grid-aware-websites package.
 				// That function also runs some logic to determine if the current status of the user's energy grid warrants activating the grid-aware flag.
 				gridData = await gridAwarePower(country, env.EMAPS_API_KEY, {
-					mode: "low-carbon",
+					mode: 'low-carbon',
 				});
 
 				// If the grid data is not found, return the response as is.
@@ -136,18 +139,18 @@ export default {
 				'GAW-grid-aware': 'true',
 				'GAW-region': gridData.region,
 				'GAW-mode': gridData.data.mode,
-			}
+			};
 
-			if(gridData.data.mode === "renewable" || gridData.data.mode === "low-carbon") {
-				gawHeaders['GAW-Percentage'] = gridData.data.renewablePercentage || gridData.data.lowCarbonPercentage
-				gawHeaders['GAW-Minimum'] = gridData.data.minimumPercentage
-			  } else if (gridData.data.mode === "average") {
-				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity
-				gawHeaders['GAW-Average-Intensity'] = gridData.data.averageIntensity
-			  } else if (gridData.data.mode === "limit") {
-				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity
-				gawHeaders['GAW-Minimum-Intensity'] = gridData.data.minimumIntensity
-			  }
+			if (gridData.data.mode === 'renewable' || gridData.data.mode === 'low-carbon') {
+				gawHeaders['GAW-Percentage'] = gridData.data.renewablePercentage || gridData.data.lowCarbonPercentage;
+				gawHeaders['GAW-Minimum'] = gridData.data.minimumPercentage;
+			} else if (gridData.data.mode === 'average') {
+				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity;
+				gawHeaders['GAW-Average-Intensity'] = gridData.data.averageIntensity;
+			} else if (gridData.data.mode === 'limit') {
+				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity;
+				gawHeaders['GAW-Minimum-Intensity'] = gridData.data.minimumIntensity;
+			}
 
 			// If the grid aware flag is triggered (gridAware === true), then we'll return a modified HTML page to the user.
 			if (gridData.gridAware) {
@@ -162,7 +165,7 @@ export default {
 							...response.headers,
 							'Content-Type': 'text/html;charset=UTF-8',
 							'GAW-cached-page': 'true',
-							...gawHeaders
+							...gawHeaders,
 						},
 					});
 				}
@@ -180,15 +183,17 @@ export default {
 
 				// For my website, I'm using the HTMLRewriter API to remove elements with the data-gaw-remove attribute.
 				// I'm also adding a class to the body to deglitch the page.
-				const modifyHTML = new HTMLRewriter().on('[data-gaw-remove]', {
-					element(element) {
-						element.remove();
-					},
-				}).on('body', {
-					element(element) {
-						element.setAttribute('class', 'deglitch');
-					},
-				});
+				const modifyHTML = new HTMLRewriter()
+					.on('[data-gaw-remove]', {
+						element(element) {
+							element.remove();
+						},
+					})
+					.on('body', {
+						element(element) {
+							element.setAttribute('class', 'deglitch');
+						},
+					});
 
 				// Transform the response using the HTMLRewriter API.
 				let modifiedResponse = new Response(modifyHTML.transform(response).body, {
@@ -197,10 +202,9 @@ export default {
 						...response.headers,
 						'Content-Type': 'text/html;charset=UTF-8',
 						'GAW-cached-page': 'false',
-						...gawHeaders
+						...gawHeaders,
 					},
 				});
-
 
 				// Store the modified response in the KV for 24 hours
 				// We'll use the Cloudflare Workers plugin to perform this action. The plugin sets an expirationTtl of 24 hours by default, but this can be changed
@@ -214,9 +218,9 @@ export default {
 				headers: {
 					...response.headers,
 					'GAW-Cached-Page': 'false',
-					...gawHeaders
-				}
-			})
+					...gawHeaders,
+				},
+			});
 		} catch (error) {
 			// If there's an error, return the response as is with an additional header.
 			console.error(error);
@@ -224,8 +228,8 @@ export default {
 				...response,
 				headers: {
 					...response.headers,
-					'GAW-error': "Fatal error"
-				}
+					'GAW-error': 'Fatal error',
+				},
 			});
 		}
 	},
