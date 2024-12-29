@@ -10,7 +10,6 @@
 
 import { gridAwarePower } from '@greenweb/grid-aware-websites';
 import { getLocation, savePageToKv, fetchPageFromKv, saveDataToKv, fetchDataFromKv } from '@greenweb/gaw-plugin-cloudflare-workers';
-import { setResponseHeaders } from './helpers';
 
 const excludedPaths = [
 	'/wp-includes/',
@@ -93,12 +92,18 @@ export default {
 			let gridData = await fetchDataFromKv(env, country).then((data) => { return JSON.parse(data) });
 
 			if (gridData?.status === 'error') {
-				const resp = setResponseHeaders(response, gridData);
-				return resp;
+				return new Response(response.body, {
+					...response,
+					headers: {
+						...response.headers,
+						'GAW-Status': 'error',
+						'GAW-Error': gridData?.message,
+						'GAW-Cached-Data': 'true',
+					},
+				});
 			}
 
 			if (!gridData) {
-				console.log('Fetching grid data for the country');
 				// Fetch the grid data for the country using the @greenweb/grid-aware-websites package
 				gridData = await gridAwarePower(country, env.EMAPS_API_KEY, {
 					mode: "low-carbon",
@@ -106,14 +111,36 @@ export default {
 
 				// If the grid data is not found, return the response as is.
 				if (gridData.status === 'error') {
-					const resp = setResponseHeaders(response, gridData)
-					return resp;
+					return new Response(response.body, {
+						...response,
+						headers: {
+							...response.headers,
+							'GAW-Status': 'error',
+							'GAW-Error': gridData.message,
+							'GAW-Cached-Data': 'false',
+						},
+					});
 				}
 
 				await saveDataToKv(env, country, JSON.stringify(gridData));
-			} else {
-				console.log('Using cached grid data');
 			}
+
+			let gawHeaders = {
+				'GAW-grid-aware': 'true',
+				'GAW-region': gridData.region,
+				'GAW-mode': gridData.data.mode,
+			}
+
+			if(gridData.data.mode === "renewable" || gridData.data.mode === "low-carbon") {
+				gawHeaders['GAW-Percentage'] = gridData.data.renewablePercentage || gridData.data.lowCarbonPercentage
+				gawHeaders['GAW-Minimum'] = gridData.data.minimumPercentage
+			  } else if (gridData.data.mode === "average") {
+				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity
+				gawHeaders['GAW-Average-Intensity'] = gridData.data.averageIntensity
+			  } else if (gridData.data.mode === "limit") {
+				gawHeaders['GAW-Current-Intensity'] = gridData.data.carbonIntensity
+				gawHeaders['GAW-Minimum-Intensity'] = gridData.data.minimumIntensity
+			  }
 
 			// If the gridAware value is set to true, then let's modify the page
 			if (gridData.gridAware) {
@@ -122,14 +149,16 @@ export default {
 				// const cachedResponse = await env.GAW_CACHE.get(request.url);
 
 				if (cachedResponse) {
-					console.log('Returning cached response');
-					const resp = setResponseHeaders(cachedResponse, gridData)
-					resp.headers.append('GAW-Cached', 'true');
-					resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
-					return resp;
+					return new Response(cachedResponse, {
+						...response,
+						headers: {
+							...response.headers,
+							'Content-Type': 'text/html;charset=UTF-8',
+							'GAW-cached-page': 'true',
+							...gawHeaders
+						},
+					});
 				}
-
-				console.log('Modifying the page');
 
 				/*
 					Here you can use the HTMLRewriter API, or you can
@@ -156,8 +185,7 @@ export default {
 					headers: {
 						...response.headers,
 						'Content-Type': 'text/html;charset=UTF-8',
-						// We can also add some of the grid-aware data to the headers of the response
-						'GAW-cached': 'false',
+						...gawHeaders
 					},
 				});
 
@@ -165,20 +193,27 @@ export default {
 				// Store the modified response in the KV for 24 hours
 				// await env.GAW_CACHE.put(request.url, modifiedResponse.clone().body, { expirationTtl: 60 * 60 * 24 });
 				await savePageToKv(env, request.url, modifiedResponse.clone());
-				const resp = setResponseHeaders(modifiedResponse, gridData);
-				resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
-				resp.headers.append('GAW-Cached', 'false');
-				return resp;
+				return modifiedResponse;
 			}
 
 			// If the gridAware value is set to false, then return the response as is.
-			const resp = setResponseHeaders(response, gridData);
-			resp.headers.append('Content-Type', 'text/html;charset=UTF-8');
-			resp.headers.append('GAW-Cached', 'false');
-			return resp;
+			return new Response(response.body, {
+				...response,
+				headers: {
+					...response.headers,
+					'GAW-Cached-Page': 'false',
+					...gawHeaders
+				}
+			})
 		} catch (error) {
 			console.error(error);
-			return new Response(response.body, response);
+			return new Response(response.body, {
+				...response,
+				headers: {
+					...response.headers,
+					'GAW-error': "Fatal error"
+				}
+			});
 		}
 	},
 };
