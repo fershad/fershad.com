@@ -17,11 +17,16 @@ const excludedPaths = [
 	'/wp-content/',
 	'/wp-admin/',
 	'/contact?',
-	'.php?'
+	'.php?',
+	'/ueditor/',
+	'/Ueditor/',
+	'/php-cgi/',
+	'/wp-json/'
 ];
 
 const excludedExtenstion = [
 	'.php',
+	'.php7',
 ]
 
 
@@ -93,7 +98,9 @@ export default {
 		if (!gridData) {
 			console.log('Fetching grid data for the country');
 			// Fetch the grid data for the country using the @greenweb/grid-aware-websites package
-			gridData = await gridAwarePower(country, env.EMAPS_API_KEY);
+			gridData = await gridAwarePower(country, env.EMAPS_API_KEY, {
+				mode: "low-carbon",
+			});
 
 			// If the grid data is not found, return the response as is.
 			if (gridData.status === 'error') {

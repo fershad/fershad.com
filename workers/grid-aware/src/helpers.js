@@ -22,16 +22,16 @@ export function setResponseHeaders(resp, gridData) {
 		response.headers.append("GAW-Mode", "renewable");
 		response.headers.append("GAW-Percentage", gridData.data.renewablePercentage.toString());
 		response.headers.append("GAW-Minimum", gridData.data.minimumPercentage.toString());
-	  } else if (gridData.data.mode === "lowcarbon") {
-		response.headers.append("GAW-Mode", "low carbon");
+	  } else if (gridData.data.mode === "low-carbon") {
+		response.headers.append("GAW-Mode", "low-carbon");
 		response.headers.append("GAW-Percentage", gridData.data.lowCarbonPercentage.toString());
 		response.headers.append("GAW-Minimum", gridData.data.minimumPercentage.toString());
 	  } else if (gridData.data.mode === "average") {
-		response.headers.append("GAW-Mode", "carbon intensity - average");
+		response.headers.append("GAW-Mode", "carbon-intensity/average");
 		response.headers.append("GAW-Current-Intensity", gridData.data.carbonIntensity.toString());
 		response.headers.append("GAW-Average-Intensity", gridData.data.averageIntensity.toString());
 	  } else if (gridData.data.mode === "limit") {
-		response.headers.append("GAW-Mode", "carbon intensity - limit");
+		response.headers.append("GAW-Mode", "carbon-intensity/limit");
 		response.headers.append("GAW-Current-Intensity", gridData.data.carbonIntensity.toString());
 		response.headers.append("GAW-Minimum-Intensity", gridData.data.minimumIntensity.toString());
 	  }
