@@ -1,11 +1,8 @@
 import 'dotenv/config';
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
-import { parseHTML } from "linkedom";
-import { hosting } from "@tgwf/co2"
 import markdownit from 'markdown-it'
 import mdfigcaption from 'markdown-it-image-figures'
 import { codeToHtml } from 'shiki'
-import greenLinks from "eleventy-plugin-green-links";
 import markdownItAnchor from 'markdown-it-anchor'
 import slugify from '@sindresorhus/slugify'
 import pluginTOC from 'eleventy-plugin-nesting-toc';
@@ -15,6 +12,7 @@ import CleanCSS from 'clean-css';
 import stringHash from '@sindresorhus/string-hash';
 import {globby} from 'globby';
 import fs from 'fs';
+import sitemap from '@quasibit/eleventy-plugin-sitemap';
 
 function do_minifycss(source, output_path) {
 	// https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -197,6 +195,12 @@ export default function(eleventyConfig) {
 			decoding: "async",
 		},
 	});
+
+	eleventyConfig.addPlugin(sitemap, {
+		sitemap: {
+		  hostname: "https://fershad.com",
+		},
+	  });
 
 	eleventyConfig.addPlugin(pluginTOC)
 
