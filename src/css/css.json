@@ -1,3 +1,4 @@
 {
-    "tags": "css"
+    "tags": "css",
+    "eleventyExcludeFromCollections": true
 }
