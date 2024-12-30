@@ -136,7 +136,7 @@ export default {
 
 			// This is a bit of extra (optional) code that adds headers to the response based on the grid data.
 			let gawHeaders = {
-				'GAW-grid-aware': 'true',
+				'GAW-grid-aware': gridData.gridAware,
 				'GAW-region': gridData.region,
 				'GAW-mode': gridData.data.mode,
 			};
