@@ -167,7 +167,6 @@ export default function(eleventyConfig) {
 	// 	}
 	// });
 	eleventyConfig.addTransform("cssmin", do_minifycss);
-	
 
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addFilter("getNewestCollectionItemPublishedDate", function(collection) {
@@ -204,6 +203,9 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addPlugin(pluginTOC)
 
+	eleventyConfig.addFilter("removeDeepLinks", function(source) {
+		return source.replace(/<a class="deeplink" href="#.*?">(.*?)<\/a>/g, "");
+	});
 
 	
 	eleventyConfig.addFilter("versionHashCSS", async function(value) {

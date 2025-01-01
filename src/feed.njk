@@ -30,8 +30,7 @@ author:
                 <title>{{ post.data.title }}</title>
                 <link href="{{ absolutePostUrl }}"/>
                 <updated>{{ post.date | dateToRfc3339 }}</updated>
-                <id>{{ absolutePostUrl }}</id>
-                <content type="html">{{ post.content | renderTransforms(post.data.page, metadata.url) }}</content>
+                <content type="html">{{ post.content | removeDeepLinks | renderTransforms(post.data.page, metadata.url) }}</content>
             </entry>
         {% endif %}
     {% endfor %}
