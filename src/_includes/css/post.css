@@ -381,6 +381,8 @@ figure {
   border: 1px solid var(--blue-4);
   padding: 0.35rem;
   position: relative;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 figure::before,
