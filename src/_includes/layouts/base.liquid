@@ -227,7 +227,6 @@
       const gawReject = document.getElementById('gaw-reject');
       
       gawReject.addEventListener('click', (event) => {
-          event.preventDefault();
           if (fathom) {
               fathom.trackGoal('gaw reject', 0);
           }
