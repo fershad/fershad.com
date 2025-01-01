@@ -220,14 +220,17 @@
     // Send an event to analytics tracking how many grid-aware view there are
     if (!gawScript) {
       window.addEventListener('load', (event) => {
-        fathom.trackEvent('gaw views')
+        if (window && fathom) {
+          fathom.trackGoal('gaw views', 0);
+        }
       });
     }
 
       const gawReject = document.getElementById('gaw-reject');
       
       gawReject.addEventListener('click', (event) => {
-          if (fathom) {
+        event.preventDefault();
+          if (window && fathom) {
               fathom.trackGoal('gaw reject', 0);
           }
           // Save the user's preference as a cookie for 24 hours
