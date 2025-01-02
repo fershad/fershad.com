@@ -26,6 +26,80 @@ const spammyPaths = [
 	'.php7',
 ];
 
+// This helper function runs the code to modify, cache, and return the HTML page to the user if the grid-aware flag is triggered.
+async function gridAwareness(response, request, env, optionalHeaders = {}) {
+	// First, check if we've already got a cached response for the request URL. We do this using the Cloudflare Workers plugin.
+	const cachedResponse = await fetchPageFromKv(env, request.url);
+
+	// If there's a cached response, return it with the additional headers.
+	if (cachedResponse) {
+		return new Response(cachedResponse, {
+			...response,
+			headers: {
+				...response.headers,
+				'Content-Type': 'text/html;charset=UTF-8',
+				'GAW-cached-page': 'true',
+				'Set-Cookie': 'gaw-session=enabled',
+				...optionalHeaders
+			},
+		});
+	}
+
+	// If there's no cached response, we'll modify the HTML page.
+
+				/*
+					Here you can use the HTMLRewriter API, or you can
+					use other methods such as redirecting the user to a different page,
+					or using a regular expression to change the CSS file used by the page.
+
+					You can also import other libraries like Cheerio or JSDOM to modify the page
+					if you are more comfortable with those.
+				*/
+
+				// For my website, I'm using the HTMLRewriter API to remove elements with the data-gaw-remove attribute.
+				// I'm also adding a class to the body to deglitch the page.
+	const modifyHTML = new HTMLRewriter()
+		.on('[data-gaw-remove]', {
+			element(element) {
+				element.remove();
+			},
+		})
+		.on('body', {
+			element(element) {
+				element.setAttribute('class', 'deglitch');
+			},
+		});
+
+	// Transform the response using the HTMLRewriter API.
+	let modifiedResponse = new Response(modifyHTML.transform(response).body, {
+		...response,
+		headers: {
+			...response.headers,
+			'Content-Type': 'text/html;charset=UTF-8',
+			'GAW-cached-page': 'false',
+			'Set-Cookie': 'gaw-session=enabled',
+			...optionalHeaders
+		},
+	});
+
+	// Store the modified response in the KV for 24 hours
+	// We'll use the Cloudflare Workers plugin to perform this action. The plugin sets an expirationTtl of 24 hours by default, but this can be changed
+	await savePageToKv(env, request.url, modifiedResponse.clone());
+	return modifiedResponse;
+}
+
+// This helper function returns the regular page response to the user.
+async function returnResponse(response, headers = {}) {
+	return new Response(response.body, {
+		...response,
+		headers: {
+			...response.headers,
+			...headers,
+		},
+	});
+}
+
+// This is the main function that fetches the user's location, fetches the grid data, and determines what page (regular or grid-aware) to return the to the user.
 export default {
 	async fetch(request, env, ctx) {
 		// Get the request URL
@@ -47,32 +121,32 @@ export default {
 			// Check if the content type is HTML.
 			// If not, return the response as is.
 			if (!contentType || !contentType.includes('text/html')) {
-				return new Response(response.body, {
-					...response,
-				});
+				return returnResponse(response);
 			}
 
 			// Okay, we've got an HTML response.
 			// Let's check if the user has opted out of the grid-aware website.
 			// We do this by looking for a cookie named "gaw-status" with the value "disable".
-			const COOKIE_NAME = 'gaw-status';
+			const COOKIE_NAME_REJECT = 'gaw-status';
 			const cookie = request.headers.get('cookie');
+			const COOKIE_NAME_SESSION = 'gaw-session';
 
-			// If the cookie is found, or the request URL contains "/og/?" or "/api/" or "/img/", then return the response as is.
+			// If either cookie is found, or the request URL contains "/og/?" or "/api/" or "/img/", then return the response as is.
 			// We don't want to modify the content for these requests.
 			if (
-				(cookie && cookie.includes(`${COOKIE_NAME}=disable`)) ||
+				(cookie && (cookie.includes(`${COOKIE_NAME_REJECT}=disable`) || cookie.includes(`${COOKIE_NAME_SESSION}=disabled`))) ||
 				requestUrl.includes('/og/?') ||
 				requestUrl.includes('/api/') ||
 				requestUrl.includes('/img/')
 			) {
-				return new Response(response.body, {
-					...response,
-					headers: {
-						...response.headers,
-						'grid-aware': 'opt-out',
-					},
+				return returnResponse(response, {
+					'Grid-aware': 'opt-out',
+					'Set-Cookie': 'gaw-session=disabled',
 				});
+			}
+
+			if (cookie && cookie.includes(`${COOKIE_NAME_SESSION}=enabled`)) {
+				return gridAwareness(response, request, env);
 			}
 
 			// Since there's no opt-out, we can now check the user's location to determine the grid data.
@@ -97,14 +171,10 @@ export default {
 			// If we've got cached data that is an error, return the response as is, with additional headers.
 			// We'd likely get an error message if we're checking for a country that Electricity Maps has no data for.
 			if (gridData?.status === 'error') {
-				return new Response(response.body, {
-					...response,
-					headers: {
-						...response.headers,
-						'GAW-Status': 'error',
-						'GAW-Error': gridData?.message,
-						'GAW-Cached-Data': 'true',
-					},
+				return returnResponse(response, {
+					'GAW-Status': 'error',
+					'GAW-Error': gridData.message,
+					'GAW-Cached-Data': 'true',
 				});
 			}
 
@@ -118,14 +188,10 @@ export default {
 
 				// If the grid data is not found, return the response as is.
 				if (gridData.status === 'error') {
-					return new Response(response.body, {
-						...response,
-						headers: {
-							...response.headers,
-							'GAW-Status': 'error',
-							'GAW-Error': gridData.message,
-							'GAW-Cached-Data': 'false',
-						},
+					return returnResponse(response, {
+						'GAW-Status': 'error',
+						'GAW-Error': gridData.message,
+						'GAW-Cached-Data': 'true',
 					});
 				}
 
@@ -154,82 +220,21 @@ export default {
 
 			// If the grid aware flag is triggered (gridAware === true), then we'll return a modified HTML page to the user.
 			if (gridData.gridAware) {
-				// First, check if we've already got a cached response for the request URL. We do this using the Cloudflare Workers plugin.
-				const cachedResponse = await fetchPageFromKv(env, request.url);
-
-				// If there's a cached response, return it with the additional headers.
-				if (cachedResponse) {
-					return new Response(cachedResponse, {
-						...response,
-						headers: {
-							...response.headers,
-							'Content-Type': 'text/html;charset=UTF-8',
-							'GAW-cached-page': 'true',
-							...gawHeaders,
-						},
-					});
-				}
-
-				// If there's no cached response, we'll modify the HTML page.
-
-				/*
-					Here you can use the HTMLRewriter API, or you can
-					use other methods such as redirecting the user to a different page,
-					or using a regular expression to change the CSS file used by the page.
-
-					You can also import other libraries like Cheerio or JSDOM to modify the page
-					if you are more comfortable with those.
-				*/
-
-				// For my website, I'm using the HTMLRewriter API to remove elements with the data-gaw-remove attribute.
-				// I'm also adding a class to the body to deglitch the page.
-				const modifyHTML = new HTMLRewriter()
-					.on('[data-gaw-remove]', {
-						element(element) {
-							element.remove();
-						},
-					})
-					.on('body', {
-						element(element) {
-							element.setAttribute('class', 'deglitch');
-						},
-					});
-
-				// Transform the response using the HTMLRewriter API.
-				let modifiedResponse = new Response(modifyHTML.transform(response).body, {
-					...response,
-					headers: {
-						...response.headers,
-						'Content-Type': 'text/html;charset=UTF-8',
-						'GAW-cached-page': 'false',
-						...gawHeaders,
-					},
-				});
-
-				// Store the modified response in the KV for 24 hours
-				// We'll use the Cloudflare Workers plugin to perform this action. The plugin sets an expirationTtl of 24 hours by default, but this can be changed
-				await savePageToKv(env, request.url, modifiedResponse.clone());
-				return modifiedResponse;
+				return gridAwareness(response, request, env, gawHeaders);
 			}
 
 			// If the gridAware value is set to false, then return the response as is.
-			return new Response(response.body, {
-				...response,
-				headers: {
-					...response.headers,
-					'GAW-Cached-Page': 'false',
-					...gawHeaders,
-				},
+			return returnResponse(response, {
+				'Set-Cookie': 'gaw-session=disabled',
+				...gawHeaders,
 			});
+
 		} catch (error) {
 			// If there's an error, return the response as is with an additional header.
 			console.error(error);
-			return new Response(response.body, {
-				...response,
-				headers: {
-					...response.headers,
-					'GAW-error': 'Fatal error',
-				},
+			return returnResponse(response, {
+				'GAW-Status': 'error',
+				'GAW-Error': 'Fatal error',
 			});
 		}
 	},
