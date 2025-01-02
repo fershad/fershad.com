@@ -4,6 +4,18 @@ css: /css/post.css
 ---
 
 {% assign date = published %}
+
+{% unless date %}
+  <aside class="banner outline callout"><p class="title">Draft Content</p>
+  <p>
+    The content on this page is a draft. It's not yet ready to be shared, so please don't.
+  </p>
+  <p>
+    If you have any feedback, please let me know through one of the channels listed on my <a href="/contact">contact page</a>.</a>
+  </p>
+  </aside>
+{% endunless %}
+
 <article class="wrapper">
   {% if title %}
     <section class="twocol glitch-wrapper">
