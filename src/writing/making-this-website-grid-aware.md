@@ -70,7 +70,7 @@ In this example a user's already visited the site in their current session, and 
 
 3. Is the request to a special path that we don't want grid-awareness applied to?
 
-I've got a few paths (e.g. `/api/`) that I grid-aware code to run on. If the request is for one of those paths, return the response straight back to the browser.
+I've got a few paths (e.g. `/api/`) that I *don't want* grid-aware code to run on. If the request is for one of those paths, return the response straight back to the browser.
 
 ### Using the Grid-aware Websites libraries
 
@@ -114,7 +114,7 @@ If grid-aware changes don't need to be applied, then just return the response as
 1. Use the `fetchPageFromKv` function to check if there's already a cached version of the page with grid-aware changes applied. If there is, return the cached page.
 2. If there's no cached page, use the [HTMLRewriter API](https://developers.cloudflare.com/workers/runtime-apis/html-rewriter/) to:
 	1. Remove all HTML elements on the page that have the `data-gaw-remove` attribute.
-	2. Add a glass of `"deglitch"` to the body tag of the page.
+	2. Add a class of `"deglitch"` to the body tag of the page. This removes the glitching animation that's used on a few different elements on the regular website.
 3. Cache the modified page for 24 hours using the `savePageToKv` function.
 4. Return the modified page to the user's browser.
 
@@ -122,7 +122,7 @@ If grid-aware changes don't need to be applied, then just return the response as
 
 When coding my website, rather than create duplicate versions of pages without and with grid-aware changes applied, I've decided to mark any HTML elements that I want to remove from grid-aware pages using the `data-gaw-remove` attribute.
 
-This allows me to really easily see, in my code, what things will get removed when a grid-aware page is returned. It allows me to easily target those elements with CSS or JavaScript as well should I need to.
+This allows me to really easily see, in my code, what elements are the extra ✨shiny✨ things that I've added to the site. Think of these as bits of progressive functionality that we can afford to have when the grid-aware context allows for it.
 
 One place I've used this is for the grid-aware information banner that's shown on any page that's been returned with changes applied. That banner is coded into the site, but gets hidden on the regular ("non-grid-aware") site because it's a sibling of the website theme toggles. These toggles get removed when grid-aware changes are applied, allowing me to use CSS to hide/show the information banner.
 <!-- markdownlint-disable -->
