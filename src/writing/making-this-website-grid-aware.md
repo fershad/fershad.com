@@ -6,23 +6,23 @@ eleventyExcludeFromCollections: true
 
 In a few recent blog posts I've talked about a new project we're working on at the Green Web Foundation called "[Grid-aware Websites](https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/)". At its core, the idea of a "grid-aware website" is one that does less on a user's device when that user is visiting from a location that's powered by more fossil fuel electricity.
 
-Often, when I'm working on stuff like this, I dogfood it here on this website. That's what I've done as part of a [recent website redesign](https://fershad.com/writing/new-year-new-look/) that I've implemented. Every time someone visits a page on this website, parts of the page's design/functionality are adjusted depending on the fuel mix of the visitor's energy grid.
+Often, when I'm working on stuff like this, I dogfood it here on this website. That's what I've done as part of a [recent website redesign](https://fershad.com/writing/new-year-new-look/). Every time someone visits a page on this website, parts of the page's design/functionality are adjusted depending on the fuel mix of the visitor's energy grid.
 
 {% callout "Jargon: Fuel mix" %}
 A term used to describe the balance of renewable, low-carbon, and fossil fuel energy used to generate the electricity of a particular region or electricity grid.
 {% endcallout %}
 
-In this post, I'll cover the technical details behind how I've implemented grid-awareness to this website using Cloudflare Workers. I will also touch on what changes are made to the website content when grid-aware design changes are applied. Finally, I'll do some (non-scientific) checks on the impacts these changes make.
+In this post, I'll cover the technical details behind how I've implemented grid-awareness on this website using Cloudflare Workers. I will also touch on what changes are made to the website content when grid-aware design changes are applied. Finally, I'll do some (non-scientific) checks on the impacts these changes make.
 
 ## The Grid-aware Websites project
 
 The idea to make websites grid aware stems from the growing body of work and tooling for backend systems which enables them to be shifted to greener regions, or to times of the day when more renewable energy is available. Projects like our own [Grid Intensity Go library](https://github.com/thegreenwebfoundation/grid-intensity-go), [Carbon Aware Scheduler](https://github.com/abel-vs/carbon-scheduler), [Carbon Aware KEDA Operator](https://github.com/Azure/carbon-aware-keda-operator), as well as services from other organisations such as [Electricity Maps](https://www.electricitymaps.com/) and [WattTime](https://watttime.org/) make this possible.
 
-Seeing work in the backend like this got us thinking - *what about frontend developers?* A website user can't really ask to come back at another time, or to visit from a different location.  *So then what, if anything, can frontend developers do to make the interfaces and apps we build respond to the state of the energy grid they’re being run on?*
+Seeing work in the backend like this got us thinking - *what about frontend developers?* A website user can't really be asked to come back at another time, or to visit from a different location.  *So then what, if anything, can frontend developers do to make the interfaces and apps we build respond to the state of the energy grid they’re being run on?*
 
-Through the Grid-aware Websites project, we (Green Web Foundation) plan to build a core open-source library that exposes APIs so developers can retrieve information about the energy grid their users are on.
+Through the Grid-aware Websites project, we ([Green Web Foundation](https://thegreenwebfoundation.org)) plan to build a core open-source library that exposes APIs so developers can retrieve information about the energy grid their users are on.
 
-Around this core library will be a set of plugins that developers can use to get this code working with different platforms. And, most importantly, we’ll be creating a UI/UX catalogue to give ideas and guidance to designers, developers, and product teams about the what visual or functional changes they can to make to their websites when implementing grid awareness.
+Around this core library will be a set of plugins that developers can use to get this code working with different platforms. And, most importantly, we’ll be creating a UI/UX catalogue to give ideas and guidance to designers, developers, and product teams about the visual or functional changes they can to make to their websites when implementing grid awareness.
 
 You can [follow the project](https://www.thegreenwebfoundation.org/tools/grid-aware-websites/) on the Green Web Foundation's website.
 
@@ -42,7 +42,7 @@ To implement grid awareness to this site, I'll get Cloudflare Workers to act alm
 
 ## Stepping through a web page request
 
-This next sections goes into more detail about what goes on *inside* the Cloudflare Worker ("CDN Edge Function" in the diagram above) when someone visits a page on this website. The explanations below provide extra context, but you can also [step through source code](https://github.com/fershad/fershad.com/blob/main/workers/grid-aware/src/index.js), or [follow a simplified flowchart](#a-visual-walkthrough) if you find those easier.
+This next section goes into more detail about what goes on *inside* the Cloudflare Worker ("CDN Edge Function" in the diagram above) when someone visits a page on this website. The explanations below provide extra context, but you can also [step through the source code](https://github.com/fershad/fershad.com/blob/main/workers/grid-aware/src/index.js), or [follow a simplified flowchart](#a-visual-walkthrough) if you find those easier.
 
 ### A Cloudflare Worker intercepts that request
 
@@ -85,10 +85,10 @@ From here, the [Grid-aware Websites library](https://github.com/thegreenwebfound
 
 #### Getting the user's country location
 
-To do this, we first need to get an approximation of where the user's visiting from. To do this, we can use one of the helper functions (`getLocation`) that the [Cloudflare Workers Plugin for Grid-aware Websites exposes](https://github.com/thegreenwebfoundation/gaw-plugin-cloudflare-workers). The plugin also provides other helpers for saving data (`saveDataToKv` and `fetchDataFromKv`) and responses (`savePageToKv` and `fetchPageFromKv`) to [Cloudflare Workers KV](https://developers.cloudflare.com/kv/) stores, effectively allowing us to cache information we might use repeatedly for future requests.
+To do this, we first need to get an approximation of where the user's visiting from. We can use one of the helper functions (`getLocation`) that the [Cloudflare Workers Plugin for Grid-aware Websites exposes](https://github.com/thegreenwebfoundation/gaw-plugin-cloudflare-workers). The plugin also provides other helpers for saving data (`saveDataToKv` and `fetchDataFromKv`) and responses (`savePageToKv` and `fetchPageFromKv`) to [Cloudflare Workers KV](https://developers.cloudflare.com/kv/) stores, effectively allowing us to cache information we might use repeatedly for future requests.
 
 1. Using the `getLocation` function we can get the country from which the request has been made. We will base our checks of the energy grid on this.
-2. The `fetchDataFromKv` function is then used to check if there's already got cached data for that country.  
+2. The `fetchDataFromKv` function is then used to check if there's already cached data for that country.  
 	1. If there's cached data is, we use that!
 3. If there's no cached data, we then use the `gridAwarePower` function of the core Grid-aware Websites library to fetch the latest information about the power breakdown of the visitor's national grid.
 
@@ -165,7 +165,7 @@ You might have noticed that disabling analytics is missing from the list above. 
 
 I looked at website performance metrics and energy usage as two means to assess the "impact" of these changes. As mentioned way back at the start of this post, the key idea behind Grid-aware Websites is to "do less" in the browser when the grid is not running on a lot of clean energy.
 
-I want to emphasise that "*do less*" in this context, does not mean "*give the user a lesser experience*". My website is a content site, the few people who visit come along to read a blog post and occasionally have a nosey around. In the changes I've made, all those things are still possible in the grid-aware version of the site, just without some of the "visual flare".
+I want to emphasise that "*do less*" in this context, does not mean "*give the user a lesser experience*". My website is a content site, the few people who visit come along to read a blog post and occasionally have a nosey around. In the changes I've made, all those things are still possible in the grid-aware version of the site, just without some of the "visual flair".
 
 ### Testing web performance
 
@@ -186,7 +186,7 @@ To test energy usage, [I turned to the Firefox Profiler](https://fershad.com/wri
 
 In these tests, I visited the website's homepage five times and scrolled to the bottom of that page. Before the first visit, I cleared the browser cache and set the `gaw-session` cookie to force the appropriate version of the site to be displayed. For visits 2 - 5 I did not clear any cache.
 
-The results for each test run can be found in the table below. I've also pulled out the key energy usage result and shown it alongside as well. The duration for each run is shown in seconds (s), and the energy used for each run is shown in microwatt-hours (µWh). The results only looking at the power used by the process running my web page. While that might exclude some other processes that are involved with loading the web page content, it also excludes a lot of other noise that the power profile picks up.  I feel it's the best way to give a narrow view that *just* looks at the changes made to the page that's shown.
+The results for each test run can be found in the table below. I've also pulled out the key energy usage result and show it alongside as well. The duration for each run is shown in seconds (s), and the energy used for each run is shown in microwatt-hours (µWh). The results only looking at the power used by the process running my web page. While that might exclude some other processes that are involved with loading the web page content, it also excludes a lot of other noise that the power profile picks up.  I feel it's the best way to give a narrow view that *just* looks at the changes made to the page that's shown.
 
 #### Regular site
 
@@ -222,9 +222,9 @@ These are test runs with a cookie of `gaw-session=enabled` set.
 
 {{ tableContent | markdownTable }}
 
-The difference in those results is probably more than I was expecting to see to be honest. Grid-aware changes (even the limited ones I'm making) are showing a pretty sizeable reduction in energy used. The regular site has *a lot* of animation to give the glitch effects which get removed on the grid-aware version. The vibe I'm getting from these results is that they make up a fair portion of the energy use.
+The difference in those results is probably more than I was expecting to see to be honest. Grid-aware changes (even the limited ones I'm making) are showing a pretty sizeable reduction in energy used. The regular site has *a lot* of animation to give the glitch effects which get removed on the grid-aware version. The vibe I'm getting from these results is that these animations make up a fair portion of the energy use.
 
-## What next?
+## What's next?
 
 For this website, I'll probably take a bit of time and see if I can speed up the check for the `gaw-session` cookie in the Cloudflare Worker. Besides that, I don't think I'll be doing too much more tweaking of this website for the next few months at least.
 
