@@ -13,7 +13,7 @@ summary: >-
 {% callout "This website is now grid-aware" %}
 Through a new project we're working on at Green Web Foundation, called Grid-aware Websites I've changed the functionality of this site to be grid-aware and respond to the fuel mix of a visitors national energy grid.
 
-[Learn more about that here.](https://fershad.com/grid-aware-site)
+[Learn more about that here.](https://fershad.com/writing/making-this-website-grid-aware)
 {% endcallout %}
 
 The idea of building carbon awareness into digital products, services, or apps is something that you’ll probably start to read a bit more about in the coming years. You might here some people talk about it as _“moving compute through time and space”_. Sounds very sci-fi, ey?

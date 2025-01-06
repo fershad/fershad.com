@@ -1,7 +1,8 @@
 ---
-title: Making this website grid aware
+title: Making this website respond to your local energy grid
+permalink: /writing/making-this-website-grid-aware/index.html
 summary: "This post covers the technical steps I've taken to make this website respond to a visitor's energy grid. It also touches on the design changes that happen as a result, and the performance and energy impacts of those changes."
-eleventyExcludeFromCollections: true
+published: 2025-01-06
 ---
 
 In a few recent blog posts I've talked about a new project we're working on at the Green Web Foundation called "[Grid-aware Websites](https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/)". At its core, the idea of a "grid-aware website" is one that does less on a user's device when that user is visiting from a location that's powered by more fossil fuel electricity.

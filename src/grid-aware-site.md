@@ -20,6 +20,8 @@ There was a bit of jargon in that first sentence, and there might be more furthe
 
 ## What makes this site grid-aware?
 
+Below is a short version of how this site is grid-aware. For a longer read with more detail, see the block post [_Making this website respond to your local energy grid_](/writing/making-this-website-grid-aware)
+
 All of the magic that makes this website grid-aware is thanks to [Cloudflare Workers](https://developers.cloudflare.com/workers), [Electricity Maps](https://www.electricitymaps.com/), and the [Grid-aware Websites](https://github.com/thegreenwebfoundation/grid-aware-websites) library.
 
 When someone visits this website, the following process is kicked off:
