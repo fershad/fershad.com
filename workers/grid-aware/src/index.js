@@ -121,7 +121,10 @@ export default {
 			// Check if the content type is HTML.
 			// If not, return the response as is.
 			if (!contentType || !contentType.includes('text/html')) {
-				return returnResponse(response);
+				return returnResponse(response, {
+					'Cache-Control': 'public, max-age=86400',
+					"Content-Encoding": "gzip",
+				});
 			}
 
 			// Okay, we've got an HTML response.
@@ -142,6 +145,8 @@ export default {
 				return returnResponse(response, {
 					'Grid-aware': 'opt-out',
 					'Set-Cookie': 'gaw-session=disabled',
+					"Content-Encoding": "gzip",
+					"Cache-Control": "public, max-age=86400",
 				});
 			}
 
