@@ -5,6 +5,7 @@ css: /css/post.css
 
 {% assign date = published %}
 
+{% unless isPage %}
 {% unless date %}
   <aside class="banner outline callout"><p class="title">Draft Content</p>
   <p>
@@ -14,6 +15,7 @@ css: /css/post.css
     If you have any feedback, please let me know through one of the channels listed on my <a href="/contact">contact page</a>.</a>
   </p>
   </aside>
+{% endunless %}
 {% endunless %}
 
 <article class="wrapper">
