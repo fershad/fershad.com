@@ -13,13 +13,17 @@ export default [
       'A project with the Green Web Foundation to explore our idea for making grid-aware websites a commonplace tool in website developer toolkits.',
     links: [
       {
-        text: 'Introduction',
-        url: 'https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/',
+        text: 'Project home',
+        url: 'https://www.thegreenwebfoundation.org/tools/grid-aware-websites/',
       },
       {
         text: 'Source code',
         url: 'https://github.com/thegreenwebfoundation/grid-aware-websites'
       },
+      {
+        text: 'Blog post',
+        url: 'https://fershad.com/writing/making-this-website-grid-aware/'
+      }
     ]
   },
   {
