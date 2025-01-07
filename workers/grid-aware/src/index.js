@@ -140,7 +140,8 @@ export default {
 				(cookie && (cookie.includes(`${COOKIE_NAME_REJECT}=disable`) || cookie.includes(`${COOKIE_NAME_SESSION}=disabled`))) ||
 				requestUrl.includes('/og/?') ||
 				requestUrl.includes('/api/') ||
-				requestUrl.includes('/img/')
+				requestUrl.includes('/img/') ||
+				requestUrl.endsWith('.xml')
 			) {
 				return returnResponse(response, {
 					'Grid-aware': 'opt-out',
