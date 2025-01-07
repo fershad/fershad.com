@@ -330,6 +330,19 @@ export default function(eleventyConfig) {
 		return `See something that needs fixing? <a href="${repoLink}/edit/main/${page.inputPath.replace('./','')}">Edit on GitHub.</a>`;
 	})
 
+	eleventyConfig.addFilter("publishedToDate", function(value) {
+		return new Date(value);
+	})
+
+	eleventyConfig.addNunjucksFilter("limit", (arr, limit=Infinity) => {
+		if (limit < 0) {
+		  // Return the last N items.
+		  return arr.slice(limit);
+		}
+		// Return the first N items.
+		return arr.slice(0, limit);
+	  });
+
 	eleventyConfig.setLibrary("md", mdLib);
     
     return {

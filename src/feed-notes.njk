@@ -11,7 +11,6 @@ author:
   email:
 ---
 
-<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>{{ metadata.title }}</title>
     <subtitle>{{ metadata.subtitle }}</subtitle>
@@ -23,13 +22,13 @@ author:
         <name>{{ author.name }}</name>
         <email>{{ author.email }}</email>
     </author>
-    {% for post in collections.note | sortByPublishedDate %}
+    {% for post in collections.note | sortByPublishedDate | limit(10) %}
         {% if not post.externalLink %}
             {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
             <entry>
                 <title>{{ post.data.title }}</title>
                 <link href="{{ absolutePostUrl }}"/>
-                <updated>{{ post.date | dateToRfc3339 }}</updated>
+                <updated>{{ post.data.published | publishedToDate | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
                 <content type="html">{{ post.content | removeDeepLinks | renderTransforms(post.data.page, metadata.url) }}</content>
             </entry>
