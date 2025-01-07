@@ -1,7 +1,7 @@
 ---
 title: Grid-aware site
 layout: layouts/post.liquid
-permalink: grid-aware/index.html
+permalink: grid-aware-site/index.html
 isPage: true
 ghEdit: true
 ---

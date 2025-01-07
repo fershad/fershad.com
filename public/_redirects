@@ -1,1 +1,3 @@
 # /api/*  https://fershad-com.pages.dev/api/:splat
+
+/grid-aware/*  /grid-aware-site/:splat

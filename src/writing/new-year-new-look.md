@@ -64,7 +64,7 @@ The list gets updated whenever the site rebuilds, and there's also an option for
 
 If you've followed this blog for some time, you'll know that I [made this website carbon-aware](/writing/making-this-website-carbon-aware/) in early 2023. In recent months, I changed that to implement a new idea we're exploring at the Green Web Foundation - [Grid-aware Websites](https://www.thegreenwebfoundation.org/news/introducing-our-grid-aware-websites-project/).
 
-A grid-aware website is one that adjusts how it functions based on how clean or dirty the energy grid on which it's being used is. I've written a bit of a longer explainer, including an overview of how it works, and what changes are applied on this site over on the [/grid-aware](/grid-aware) page. I'll definitely be writing a longer blog post about this in the coming weeks.
+A grid-aware website is one that adjusts how it functions based on how clean or dirty the energy grid on which it's being used is. I've written a bit of a longer explainer, including an overview of how it works, and what changes are applied on this site over on the [/grid-aware-site](/grid-aware-site) page. I'll definitely be writing a longer blog post about this in the coming weeks.
 
 ### Reducing work on the frontend and server
 
