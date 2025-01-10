@@ -131,18 +131,23 @@ export default {
 			// Let's check if the user has opted out of the grid-aware website.
 			// We do this by looking for a cookie named "gaw-status" with the value "disable".
 			const COOKIE_NAME_REJECT = 'gaw-status';
-			const cookie = request.headers.get('cookie');
 			const COOKIE_NAME_SESSION = 'gaw-session';
+			const cookie = request.headers.get('cookie');
 
 			// If either cookie is found, or the request URL contains "/og/?" or "/api/" or "/img/", then return the response as is.
 			// We don't want to modify the content for these requests.
-			if (
-				(cookie && (cookie.includes(`${COOKIE_NAME_REJECT}=disable`) || cookie.includes(`${COOKIE_NAME_SESSION}=disabled`))) ||
-				requestUrl.includes('/og/?') ||
-				requestUrl.includes('/api/') ||
-				requestUrl.includes('/img/') ||
-				requestUrl.endsWith('.xml')
-			) {
+
+			if (cookie && cookie.includes(`${COOKIE_NAME_SESSION}=disabled`)) {
+				return returnResponse(response, {
+					'Grid-aware': 'session-disabled',
+					"Content-Encoding": "gzip",
+					"Cache-Control": "public, max-age=86400",
+				});
+			};
+
+
+
+			if (cookie && cookie.includes(`${COOKIE_NAME_REJECT}=disable`)) {
 				return returnResponse(response, {
 					'Grid-aware': 'opt-out',
 					'Set-Cookie': 'gaw-session=disabled',
@@ -151,10 +156,21 @@ export default {
 				});
 			}
 
+
+			if (requestUrl.includes('/og/?') ||
+			requestUrl.includes('/api/') ||
+			requestUrl.includes('/img/') ||
+			requestUrl.endsWith('.xml')) {
+				return returnResponse(response, {
+					'Grid-aware': 'excluded',
+					"Content-Encoding": "gzip",
+					"Cache-Control": "public, max-age=86400",
+				});
+			};
+
 			if (cookie && cookie.includes(`${COOKIE_NAME_SESSION}=enabled`)) {
 				return gridAwareness(response, request, env);
 			}
-
 			// Since there's no opt-out, we can now check the user's location to determine the grid data.
 			// We'll use the Cloudflare Workers plugin (@greenweb/gaw-plugin-cloudflare-workers) to get the user's country.
 			const cfData = await getLocation(request, {
