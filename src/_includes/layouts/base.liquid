@@ -228,10 +228,10 @@
         }
       });
 
+      const gawReject = document.getElementById('gaw-reject');
       
       gawReject.addEventListener('click', (event) => {
         event.preventDefault();
-        const gawReject = document.getElementById('gaw-reject');
         try {
           if (fathom) {
               fathom.trackEvent('gaw reject');
