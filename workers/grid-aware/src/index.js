@@ -39,7 +39,7 @@ async function gridAwareness(response, request, env, optionalHeaders = {}) {
 				...response.headers,
 				'Content-Type': 'text/html;charset=UTF-8',
 				'GAW-cached-page': 'true',
-				'Set-Cookie': 'gaw-session=enabled',
+				'Set-Cookie': 'gaw-hourly-session=enabled; Domain=.fershad.com; max-age=3600',
 				...optionalHeaders
 			},
 		});
@@ -77,7 +77,7 @@ async function gridAwareness(response, request, env, optionalHeaders = {}) {
 			...response.headers,
 			'Content-Type': 'text/html;charset=UTF-8',
 			'GAW-cached-page': 'false',
-			'Set-Cookie': 'gaw-session=enabled',
+			'Set-Cookie': 'gaw-hourly-session=enabled; Domain=.fershad.com; max-age=3600',
 			...optionalHeaders
 		},
 	});
@@ -131,7 +131,7 @@ export default {
 			// Let's check if the user has opted out of the grid-aware website.
 			// We do this by looking for a cookie named "gaw-status" with the value "disable".
 			const COOKIE_NAME_REJECT = 'gaw-status';
-			const COOKIE_NAME_SESSION = 'gaw-session';
+			const COOKIE_NAME_SESSION = 'gaw-hourly-session';
 			const cookie = request.headers.get('cookie');
 
 			// If either cookie is found, or the request URL contains "/og/?" or "/api/" or "/img/", then return the response as is.
@@ -150,7 +150,6 @@ export default {
 			if (cookie && cookie.includes(`${COOKIE_NAME_REJECT}=disable`)) {
 				return returnResponse(response, {
 					'Grid-aware': 'opt-out',
-					'Set-Cookie': 'gaw-session=disabled',
 					"Content-Encoding": "gzip",
 					"Cache-Control": "public, max-age=86400",
 				});
@@ -247,7 +246,7 @@ export default {
 
 			// If the gridAware value is set to false, then return the response as is.
 			return returnResponse(response, {
-				'Set-Cookie': 'gaw-session=disabled',
+				'Set-Cookie': 'gaw-hourly-session=disabled; Domain=.fershad.com; max-age=3600',
 				...gawHeaders,
 			});
 
