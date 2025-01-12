@@ -222,7 +222,7 @@
       window.addEventListener('load', (event) => {
         try {
           if (window && fathom) {
-            fathom.trackGoal('gaw views');
+            fathom.trackEvent('gaw views');
           }
         } catch (error) {
         }
@@ -235,7 +235,7 @@
         event.preventDefault();
         try {
           if (window && fathom) {
-              fathom.trackGoal('gaw reject');
+              fathom.trackEvent('gaw reject');
           }
         } catch (error) {
       } finally {
