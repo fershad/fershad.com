@@ -25,4 +25,3 @@ Below is a list of the best ways you can reach me, in order of how frequently I'
 - [Bluesky](https://bsky.app/profile/fershad.com)
 - [Mastodon](https://indieweb.social/@fershad)
 - [Github](https://github.com/fershad)
-- [Twitter](https://twitter.com/fershad)
