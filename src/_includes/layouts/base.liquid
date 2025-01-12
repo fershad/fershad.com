@@ -215,26 +215,25 @@
     defer></script>
 
   <script defer>
-    const gawScript = document.querySelector('script[data-gaw-remove]');
-
+    
     // Send an event to analytics tracking how many grid-aware view there are
-    if (!gawScript) {
-      window.addEventListener('load', (event) => {
+    window.addEventListener('load', (event) => {
+      const gawScript = document.querySelector('script[data-gaw-remove]');
+      if (!gawScript) {
         try {
-          if (window && fathom) {
+          if (fathom) {
             fathom.trackEvent('gaw views');
           }
         } catch (error) {
         }
       });
-    }
 
-      const gawReject = document.getElementById('gaw-reject');
       
       gawReject.addEventListener('click', (event) => {
         event.preventDefault();
+        const gawReject = document.getElementById('gaw-reject');
         try {
-          if (window && fathom) {
+          if (fathom) {
               fathom.trackEvent('gaw reject');
           }
         } catch (error) {
