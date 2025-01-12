@@ -3,8 +3,6 @@ title: "Links and listens #1"
 published: 2025-01-12
 ---
 
-# {{ title }}
-
 One of the things [I wanted to start doing regularly this year](https://fershad.com/notes/start-stop-continue-2025/#making-a-weekly-links-and-listens-list) was publishing a weekly "Links and listens" note. The purpose is to capture some of the really interesting content I've read or heard during the week, so that I can hopefully find it again in the future if I need to. This is the first of those notes. Perhaps a weekly cadence might be too ambitious, let's see how it goes.
 
 ## Links
