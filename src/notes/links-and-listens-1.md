@@ -9,11 +9,11 @@ One of the things [I wanted to start doing regularly this year](https://fershad.
 
 ### [Digital sustainability in WordPress](https://www.thegreenwebfoundation.org/news/digital-sustainability-in-wordpress/)
 
-This post by Hannah Smith, my colleague at the Green Web Foundation, captures our sentiments about this week's drama the Kingdom of ~~WordPress~~ Matt Mullenweg. The WordPress sustainability group was suddenly dissolved by Matt Mullenweg, apparently shortly after the learnt WordPress even had a group of *volunteers* working on sustainability in the WordPress community.
+This post by Hannah Smith, my colleague at the Green Web Foundation, captures our sentiments about this week's drama in the Kingdom of ~~WordPress~~ Matt Mullenweg. The WordPress sustainability group was suddenly dissolved by Matt Mullenweg, apparently shortly after he learnt WordPress even had a group of *volunteers* working on sustainability in the WordPress community.
 
 ### [Things we learned out about LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
 
-In the last few weeks, I've read a lot of year in review posts. [I even wrote on myself](https://fershad.com/writing/2024-in-review/). This one by Simon Willison is pretty much a must read for anyone who wants to be updated on what's happening in the realm of AI and LLMs. He covers a lot of ground, including making several points throughout about the neuance with which we should be thinking about AI, LLMs, and their environmental impacts.
+In the last few weeks, I've read a lot of year in review posts. [I even wrote on myself](https://fershad.com/writing/2024-in-review/). This one by Simon Willison is pretty much a must read for anyone who wants to be updated on what's happening in the realm of AI and LLMs. He covers a lot of ground, including making several points throughout about the nuance with which we should be thinking about AI, LLMs, and their environmental impacts.
 
 > I think telling people that this whole field is environmentally catastrophic plagiarism machines that constantly make things up is doing those people a disservice, no matter how much truth that represents. There is genuine value to be had here, but getting to that value is unintuitive and needs guidance.
 >
