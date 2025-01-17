@@ -20,7 +20,7 @@ css: /css/home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                             
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                   
             a fossil free internet by 2030.
         </p>
       </div>
@@ -171,6 +171,11 @@ css: /css/home.css
 
   document.getElementById('rando').addEventListener('click', function(e) {
     e.preventDefault();
+
+    const rando = document.getElementById('rando');
+    rando.textContent = 'Fetching image ...';
+    rando.setAttribute('disabled', 'disabled');
+    
     fetch('/api/rando')
       .then(response => response.json())
       .then(data => {
@@ -178,12 +183,19 @@ css: /css/home.css
         document.querySelector('.img-desc h3').textContent = decodeHTML(data.title);
         document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
         document.querySelector('.img-desc p').textContent = decodeHTML(data.description);
-        document.querySelector('.img-holder > picture > source').remove();
+        const sources = document.querySelector('.img-holder > picture > source');
+        if (sources) {
+          sources.forEach(source => source.remove());
+        }
 
   let filmImg = document.querySelector('#film img');
   let filmPicture = document.querySelector('#film picture');
   filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
       });
+
+    rando.textContent = 'Get random image >';
+    rando.removeAttribute('disabled');
+    
   });
 
   document.getElementById('refresh-reader').addEventListener('click', function(e){
