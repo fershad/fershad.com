@@ -101,8 +101,8 @@ If at any point along this journey there's an error (normally this would be that
 
 In step 3 above, we use the `gridAwarePower` function to get data about a user's energy grid. This same function also does some checks to determine if the "low-carbon" power percentage (i.e. renewables plus nuclear) is above or below 50%.
 
-- If it's above 50%, a flag is set that grid-aware changes should be made to the website.
-- If it's below 50%, the same flag is set to `false` indicating that the grid has passed the checks.
+- If it's below 50%, a flag is set that grid-aware changes should be made to the website.
+- If it's above 50%, the same flag is set to `false` indicating that the grid has passed the checks.
 
 50% is the default percentage in the library at this time, though it can be changed by developers when using the function in their own code. The library also allows for checks to be made against only "renewable" energy, as well as by using the carbon intensity of the grid instead. More of that's explained in the [project's readme on GitHub](https://github.com/thegreenwebfoundation/grid-aware-websites/blob/main/README.md).
 
