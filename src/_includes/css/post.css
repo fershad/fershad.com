@@ -428,6 +428,10 @@ figcaption {
   --override-color: var(--stone-0);
 }
 
+figcaption[data-gaw-remove] + figcaption {
+  display: none;
+}
+
 figcaption p {
   margin: 0;
 }
@@ -492,6 +496,14 @@ article a:not(.deeplink):hover {
   border-color: var(--glitch-off-color, #f16f6f);
   animation: list-glitch2 2.5s infinite;
   animation-delay: 0.5s;
+}
+
+image-compare img {
+  width: 100%;
+}
+
+image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
+  border-top: 1.25rem solid var(--blue-7);
 }
 
 @media (max-width: 768px) {
