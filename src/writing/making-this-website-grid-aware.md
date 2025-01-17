@@ -189,6 +189,8 @@ In these tests, I visited the website's homepage five times and scrolled to the 
 
 The results for each test run can be found in the table below. I've also pulled out the key energy usage result and show it alongside as well. The duration for each run is shown in seconds (s), and the energy used for each run is shown in microwatt-hours (µWh). The results only looking at the power used by the process running my web page. While that might exclude some other processes that are involved with loading the web page content, it also excludes a lot of other noise that the power profile picks up.  I feel it's the best way to give a narrow view that *just* looks at the changes made to the page that's shown.
 
+Tests were run on an MacBook Air Apple Silicon M2 Device with 8 physical cores and 8 logical cores, runnning macOS 15.2.0.
+
 #### Regular site
 
 These are test runs with a cookie of `gaw-session=disabled` set.
@@ -228,6 +230,8 @@ The difference in those results is probably more than I was expecting to see to 
 ## What's next?
 
 For this website, I'll probably take a bit of time and see if I can speed up the check for the `gaw-session` cookie in the Cloudflare Worker. Besides that, I don't think I'll be doing too much more tweaking of this website for the next few months at least.
+
+Update - Jan 17, 2025 - I've really been thinking about how to change the approach I've taken to be more of a progressive enhancement approach. That is, how would I start with a low-impact version of the site as default and then *add* extra bits of functionality when a user's grid allows it. It's on my mind, and I might have a crack at implementing it before March.
 
 ### Grid-aware Websites project
 
