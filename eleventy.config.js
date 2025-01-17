@@ -143,6 +143,7 @@ const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function(eleventyConfig) {
 	
     eleventyConfig.addPassthroughCopy({"public": "/"});
+	eleventyConfig.watchIgnores.add("public/img/.DS_Store");
 
     // Layouts
     eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");

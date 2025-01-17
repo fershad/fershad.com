@@ -93,8 +93,8 @@ async function returnResponse(response, headers = {}) {
 	return new Response(response.body, {
 		...response,
 		headers: {
-			...response.headers,
 			...headers,
+			...response.headers,
 		},
 	});
 }
@@ -115,6 +115,25 @@ export default {
 			method: 'GET',
 		});
 
+
+		if (requestUrl.includes('/og/?') ||
+			requestUrl.includes('/img/') ||
+			requestUrl.endsWith('.xml')) {
+				return returnResponse(response, {
+					'Grid-aware': 'excluded',
+					"Content-Encoding": "gzip",
+					"Cache-Control": "public, max-age=86400",
+				});
+			};
+
+			if (requestUrl.includes('/api/')) {
+				return returnResponse(response, {
+					'Grid-aware': 'excluded',
+					"Content-Encoding": "gzip",
+					"cache-control": "no-cache",
+				});
+			};
+
 		try {
 			const contentType = response.headers.get('content-type');
 
@@ -122,8 +141,8 @@ export default {
 			// If not, return the response as is.
 			if (!contentType || !contentType.includes('text/html')) {
 				return returnResponse(response, {
-					'Cache-Control': 'public, max-age=86400',
 					"Content-Encoding": "gzip",
+					"Cache-Control": "public, max-age=86400",
 				});
 			}
 
@@ -154,18 +173,6 @@ export default {
 					"Cache-Control": "public, max-age=86400",
 				});
 			}
-
-
-			if (requestUrl.includes('/og/?') ||
-			requestUrl.includes('/api/') ||
-			requestUrl.includes('/img/') ||
-			requestUrl.endsWith('.xml')) {
-				return returnResponse(response, {
-					'Grid-aware': 'excluded',
-					"Content-Encoding": "gzip",
-					"Cache-Control": "public, max-age=86400",
-				});
-			};
 
 			if (cookie && cookie.includes(`${COOKIE_NAME_SESSION}=enabled`)) {
 				return gridAwareness(response, request, env);
