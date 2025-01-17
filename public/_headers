@@ -17,4 +17,7 @@
   Cache-Control: public, max-age=691200
 
 /api/*
-  Cache-Control: none
+  Cache-Control: no-cache
+
+/video/*
+  Cache-Control: public, max-age=691200

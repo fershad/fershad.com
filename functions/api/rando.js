@@ -7,6 +7,7 @@ export async function onRequestGet() {
     return new Response(JSON.stringify(random), {
         headers: {
             "content-type": "application/json",
+            "cache-control": "no-cache",
         },
     });
   }
