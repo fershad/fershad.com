@@ -15,3 +15,6 @@
 
 /fonts/*
   Cache-Control: public, max-age=691200
+
+/api/*
+  Cache-Control: none
