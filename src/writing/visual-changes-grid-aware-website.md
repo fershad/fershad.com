@@ -14,8 +14,8 @@ In the post below, I'll be compare the "regular site" (the site that is presente
 
 <figure>
     <image-compare>
-      <img slot="image-1" alt="Alt Text" eleventy:ignore src="/img/blog/changes_regular_site.png"/>
-      <img slot="image-2" alt="Alt text" eleventy:ignore src="/img/blog/changes_low-impact_site.png"/>
+      <img slot="image-1" alt="A screenshot of this website showing pixelated text and a user controls bar under the header section of the page." eleventy:ignore src="/img/blog/changes_regular_site.png"/>
+      <img slot="image-2" alt="A screenshot of this website showing text in a monospace font and a notice banner under the header section of the page." eleventy:ignore src="/img/blog/changes_low-impact_site.png"/>
     </image-compare>
     <figcaption data-gaw-remove>A visual comparison of the font and user controls between the regular site  (left) and the grid-aware site (right).</figcaption>
     <figcaption>A visual comparison of the font and user controls between the regular site (top) and the grid-aware site (bottom).</figcaption>
@@ -31,8 +31,8 @@ When I look at this image now, I realise that I probably should retain the toggl
 
 <figure>
     <image-compare>
-      <img slot="image-1" alt="Alt Text" eleventy:ignore src="/img/blog/compare_favicon_regular.png"/>
-      <img slot="image-2" alt="Alt text" eleventy:ignore src="/img/blog/compare_favicon_low.png"/>
+      <img slot="image-1" alt="A screenshot of a browser tab showing a favicon that is an Australian flag emoji." eleventy:ignore src="/img/blog/compare_favicon_regular.png"/>
+      <img slot="image-2" alt="A screenshot of a browser tab showing a favicon that is an light blue F in a charcoal black box." eleventy:ignore src="/img/blog/compare_favicon_low.png"/>
     </image-compare>
     <figcaption data-gaw-remove>A random favicon that is displayed on the regular site (left) - it changes on each page refresh or navigation. On the grid-aware site, a fixed favicon (right) is shown instead.</figcaption>
     <figcaption>A random favicon that is displayed on the regular site (top) - it changes on each page refresh or navigation. On the grid-aware site, a fixed favicon (bottom) is shown instead.</figcaption>
@@ -59,8 +59,8 @@ The glitch effects are entirely driven by CSS, but they result in a lot of anima
 
 <figure>
     <image-compare>
-      <img slot="image-1" alt="Alt Text" eleventy:ignore src="/img/blog/changes_filter_regular.png"/>
-      <img slot="image-2" alt="Alt text" eleventy:ignore src="/img/blog/changes_filter_low-impact.png"/>
+      <img slot="image-1" alt="A screenshot of the writing page of this website showing the 'show all posts and notes', 'show only posts', and 'show only posts' filters." eleventy:ignore src="/img/blog/changes_filter_regular.png"/>
+      <img slot="image-2" alt="A screenshot of the writing page of this website showing no filters on the page." eleventy:ignore src="/img/blog/changes_filter_low-impact.png"/>
     </image-compare>
     <figcaption data-gaw-remove>A screenshot of the writing page showing three filters to control the type of content shown on the page. On the regular site (left) the filters are show, while the grid-aware site (right) does not have them.</figcaption>
     <figcaption>A screenshot of the writing page showing three filters to control the type of content shown on the page. On the regular site (top) the filters are show, while the grid-aware site (bottom) does not have them.</figcaption>
@@ -74,8 +74,8 @@ On the `/reading` page, the list of content is shorter. But when I fetch the art
 
 <figure>
     <image-compare>
-      <img slot="image-1" alt="Alt Text" eleventy:ignore src="/img/blog/changes_reading_regular.png"/>
-      <img slot="image-2" alt="Alt text" eleventy:ignore src="/img/blog/changes_reading_low-impact.png"/>
+      <img slot="image-1" alt="A screenshot of the reading section on the homepage. A list of articles is on the right, with a section title 'Reading' and a 'refresh' button on the left. There's a timestamp showing when the content was last updated." eleventy:ignore src="/img/blog/changes_reading_regular.png"/>
+      <img slot="image-2" alt="A screenshot of the reading section on the homepage. A list of articles is on the right, with a section title 'Reading' and a timestamp showing when the content was last updated on the left." eleventy:ignore src="/img/blog/changes_reading_low-impact.png"/>
     </image-compare>
     <figcaption data-gaw-remove>A screenshot of the reading list from the homepage. On the regular site (left) a refresh button is visible on the right side of the image. On the grid-aware site (right) it is removed.</figcaption>
     <figcaption>A screenshot of the reading list from the homepage. On the regular site (top) a refresh button is visible on the right side of the image. On the grid-aware site (bottom) it is removed.</figcaption>
@@ -98,11 +98,11 @@ On this page, I've had to present several comparison images. To do that, I using
 
 So on the regular site, visitors can use the web component to view comparison images. *Pssst - The image below is a static image for illustration purposes - don't try to move the handle in the middle 😅.*
 
-![](../../public/img/blog/compare_imagecompare_regular.png '')
+![A screenshot showing an image slider being used to show a comparison in this blog post.](../../public/img/blog/compare_imagecompare_regular.png '')
 
 While visitors who use the grid-aware site will see the same images, but stacked on top of each other. The figure caption content is also slightly adjusted to accommodate the two layouts.
 
-![](../../public/img/blog/compare_imagecompare_low.png '')
+![A screenshot showing two images stacked on each other being used to show a comparison in the grid-aware version of this blog post.](../../public/img/blog/compare_imagecompare_low.png '')
 
 There's also video content on this page, which I've used because it was the easiest way to show the respective bits of content. For now, the video is the same for all visitors.
 
