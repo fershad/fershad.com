@@ -23,9 +23,13 @@ In the post below, I'll be compare the "regular site" (the site that is presente
 
 By default, users visiting this website have the choice "depixelate" the site - that is to remove the pixelated [Depature Mono webfont](https://departuremono.com/). They are also presented with the option to "deglitch" (more on that later) the site, and set a "static favicon" (more on that later too).
 
-On the grid-aware site, the Depature Mono font is already removed, the glitch effects are not applied, and the favicon doesn't change. Therefore, there's no need to include those "feature" switches on the website. Visually, the switches are removed, and under the hood the associated JavaScript that controls them is also removed from the page's HTML In their place is a banner pointing the user to some more information about the grid-aware website they are seeing, and an option to view the regular website instead.
+On the grid-aware site, the Depature Mono font is already removed, the glitch effects are not applied, and the favicon doesn't change. Therefore, there's no need to include those "feature" switches on the website. Visually, the switches are removed, and under the hood the associated JavaScript that controls them is also removed from the page's HTML In their place is a banner pointing the user to some more information about the grid-aware website they are seeing, and a link to view the regular website instead. Clicking this link
+
+{% callout "Visitor control" %}
+That last bit is important to note - visitors who do receive the grid-aware site experience have the option to "View the regular website" if they want to. Not many do click this (1.1% of visitors in the last 30 days - or 6 people), but it's there if they want it. This idea of making the user aware they are seeing an altered version of the site, and then allowing them the ability to view the regular site is something that came out of our [Grid-aware Websites Advisory Group meetings](https://www.thegreenwebfoundation.org/news/first-grid-aware-websites-advisory-group-meeting/).
 
 When I look at this image now, I realise that I probably should retain the toggle allowing users to switch between light & dark themes on both versions, because choice. I'll update this post & images when I make that change.
+{% endcallout %}
 
 ## Exhibit 2 - Favicon fun
 
