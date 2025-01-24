@@ -1,5 +1,7 @@
 {
     "layout": "layouts/post.liquid",
+    "hasTOC": true,
+    "ghEdit": true,
     "tags": [
         "note",
         "post"
