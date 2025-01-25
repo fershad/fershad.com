@@ -156,7 +156,7 @@ When the grid-aware flag is set on this website, the following changes are made 
     - The silly random emoji favicon code that runs on each page.
 - Codepen embeds are replaced with links to the project on Codepen itself.
 
-A banner is also added to the top of the website, letting users know that the page their viewing has been modified. This banner also includes a link that allows users to "opt-out" of seeing the grid-aware website for 24 hours. This is done by setting a cookie, which is then checked for by the Cloudflare Worker described above.
+A banner is also added to the top of the website, letting users know that the page their viewing has been modified. This banner also includes a link that allows users to "opt-out" of seeing the grid-aware website for 24 hours. This is done by setting a cookie, which is then checked for by the Cloudflare Worker described above. I've written another blog post showing these changes visually. You can read that at - *[What visual changes does grid-awareness trigger on this site?](/writing/visual-changes-grid-aware-website)*
 
 {% callout About analytics %}
 You might have noticed that disabling analytics is missing from the list above. I use Fathom Analytics on this website, and have decided to keep it on when other grid-aware changes are applied. Why? Because, grid-aware websites is a new idea we're working on at the Green Web Foundation, and I'd like to be able to see how many people are getting that experience, and how many are also opting-out.
