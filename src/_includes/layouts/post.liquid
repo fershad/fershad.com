@@ -56,17 +56,7 @@ css: /css/post.css
     <section>
       <aside class="banner outline callout">
         <p class="title">RSS</p>
-        <p>Get more content like this by RSS.</p>
-
-        {% if isNote == "note" %}
-          <p>
-            <a href="/feed-notes.xml">Subscribe to Notes RSS feed</a>
-          </p>
-        {% else %}
-          <p>
-            <a href="/feed-posts.xml">Subscribe to Posts RSS feed</a>
-          </p>
-        {% endif %}
+        <p>Get more content like this by RSS. <a href="/feed.xml">Subscribe to the RSS feed</a></p>
       </aside>
     </section>
   {% endunless %}
