@@ -27,6 +27,30 @@ export default [
     ]
   },
   {
+    slug: 'green-web-tracker',
+    title: 'Green Web Tracker',
+    url: 'https://tracker.greenweb.org',
+    media_alt: '',
+    shortContent:
+      'An open source project to track how many domains run on green hosting.',
+    content:
+      'An open source website that tracks green hosting of domains across a number of user submitted indexes.',
+    links: [
+      {
+        text: 'Website',
+        url: 'https://tracker.greenweb.org',
+      },
+      {
+        text: 'Source code',
+        url: 'https://github.com/thegreenwebfoundation/green-web-tracker'
+      },
+      {
+        text: 'Blog post',
+        url: 'https://fershad.com/writing/introducing-green-web-tracker'
+      }
+    ]
+  },
+  {
     slug: 'co2.js',
     title: 'CO2.js',
     url: 'https://github.com/thegreenwebfoundation/co2.js',
