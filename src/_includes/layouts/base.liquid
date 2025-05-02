@@ -14,10 +14,6 @@
     {% if css %}
       <link rel="stylesheet" href="{{ css | versionHashCSS }}">
     {% endif %}
-    <link
-      rel="stylesheet"
-      href="{{"/css/glitch.css"  | versionHashCSS }}"
-      data-gaw-remove>
 
     <link
       rel="apple-touch-icon"
@@ -71,44 +67,44 @@
 
   <body>
     {% include 'partials/header.liquid' %}
-    <div class="gaw-banner center-align controls" data-gaw-remove>
-      <small class="">
-        <label for="glitch-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="glitch-toggle"
-            id="glitch-toggle"
-            value="glitchSwitch"
-            checked />
-          <span>Glitch</span>
-        </label>
-        <label for="font-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="font-toggle"
-            id="font-toggle"
-            value="fontSwitch"
-            checked />
-          <span>Pixelate</span>
-        </label>
-        <label for="favicon-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="favicon-toggle"
-            id="favicon-toggle"
-            value="faviconSwitch" />
-          <span>Static icon</span>
-        </label>
-        <label for="theme-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="theme-toggle"
-            id="theme-toggle"
-            value="themeSwitch" />
-          <span>Dark theme</span>
-        </label>
-      </small>
-    </div>
+    {% comment %} <div class="gaw-banner center-align controls" data-gaw-remove>
+            <small class="">
+              <label for="glitch-toggle" class="form-control">
+                <input
+                  type="checkbox"
+                  name="glitch-toggle"
+                  id="glitch-toggle"
+                  value="glitchSwitch"
+                  checked />
+                <span>Glitch</span>
+              </label>
+              <label for="font-toggle" class="form-control">
+                <input
+                  type="checkbox"
+                  name="font-toggle"
+                  id="font-toggle"
+                  value="fontSwitch"
+                  checked />
+                <span>Pixelate</span>
+              </label>
+              <label for="favicon-toggle" class="form-control">
+                <input
+                  type="checkbox"
+                  name="favicon-toggle"
+                  id="favicon-toggle"
+                  value="faviconSwitch" />
+                <span>Static icon</span>
+              </label>
+              <label for="theme-toggle" class="form-control">
+                <input
+                  type="checkbox"
+                  name="theme-toggle"
+                  id="theme-toggle"
+                  value="themeSwitch" />
+                <span>Dark theme</span>
+              </label>
+            </small>
+        </div> {% endcomment %}
 
     <!-- Blocking JS to prevent content flashing -->
     <script data-gaw-remove>
