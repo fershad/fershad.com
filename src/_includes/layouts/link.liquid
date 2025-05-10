@@ -1,0 +1,20 @@
+---
+layout: layouts/base.liquid
+css: /css/post.css
+---
+
+<article class="wrapper">
+  {% if title %}
+    <section class="twocol glitch-wrapper">
+      <h1 data-glitch="{{ title }}">
+        <a href="{{canonical}}"><span>{{ title }}</span></a>
+      </h1>
+      <p data-glitch="Source: {{canonical | getDomain }}">Source: <a href="{{canonical}}">{{canonical | getDomain }}</a>
+      </p>
+    </section>
+  {% endif %}
+
+  <section class="twocol flow">
+    {{ content }}
+  </section>
+</article>

@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/link.liquid",
+  "hasTOC": false,
+  "ghEdit": true,
+  "tags": ["link"]
+}

@@ -1,0 +1,27 @@
+---
+title: Links and listens
+layout: layouts/list.liquid
+eleventyExcludeFromCollections: true
+---
+<section class="threecol flow">
+  <div>
+    <h1>Links and listens</h1>
+    <p>A collection of links to interesting articles, posts, papers, stories, podcasts, or other random internet things.</p>
+  </div>
+</section>
+
+    <!-- TODO: There'll be a search box here & a tags cloud -->
+<section class="threecol">
+  {% assign postslist = collections.link %}
+  <ul>
+    {% for post in postslist %}
+      {% assign tags = post.data.tags %}
+      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};" class="post">
+        <p class="title">
+          <a href="{{ post.data.canonical }}">{{ post.data.title }}</a>
+        </p>
+        <div>{{ post.rawInput | linkContent }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
