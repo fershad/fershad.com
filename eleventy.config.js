@@ -229,6 +229,10 @@ export default function (eleventyConfig) {
     return domain;
   });
 
+  eleventyConfig.addFilter("has", function (array, value) {
+    return array.includes(value);
+  });
+
   eleventyConfig.addFilter("versionHashCSS", async function (value) {
     const cssFiles = await globby("src/_includes/css/*.css");
     // Remove src/_includes from the path
@@ -297,8 +301,7 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("linkContent", function (raw) {
-    const md = markdownit();
-    return md.render(raw);
+    return mdLib.render(raw);
   });
 
   eleventyConfig.addShortcode(

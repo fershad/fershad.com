@@ -12,15 +12,28 @@ eleventyExcludeFromCollections: true
 
     <!-- TODO: There'll be a search box here & a tags cloud -->
 <section class="threecol">
-  {% assign postslist = collections.link %}
+  {% assign postslist = collections.link | reverse %}
   <ul>
     {% for post in postslist %}
       {% assign tags = post.data.tags %}
-      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};" class="post">
-        <p class="title">
-          <a href="{{ post.data.canonical }}">{{ post.data.title }}</a>
-        </p>
-        <div>{{ post.rawInput | linkContent }}</div>
+      {% assign isVideo = tags | has: "video" %}
+      {%assign isAudio = tags | has: "audio" %}
+      <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
+          <article class="post">
+            <p class="title">
+                {% if isVideo %}
+                    <span>
+                        🎬
+                    </span>
+                {%elsif isAudio %}
+                    <span>
+                        🎧
+                    </span>
+                {% endif %}
+                <a href="{{ post.data.canonical }}">{{ post.data.title }}</a>
+            </p>
+            <div>{{ post.rawInput | linkContent }}</div>
+          </article>
       </li>
     {% endfor %}
   </ul>
