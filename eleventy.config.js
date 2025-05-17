@@ -183,7 +183,9 @@ export default function (eleventyConfig) {
       return new Date(
         Math.max(
           ...collection.map((item) => {
-            return new Date(item.data.published) || item.date;
+            return item.data?.published
+              ? new Date(item.data?.published)
+              : item.page.date;
           }),
         ),
       );

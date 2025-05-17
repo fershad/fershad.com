@@ -1,0 +1,37 @@
+---
+permalink: feed-links.xml
+eleventyExcludeFromCollections: true
+metadata:
+  title: Fershad Irani - Links and listens
+  subtitle: A collection of links to interesting articles, posts, papers, stories, podcasts, or other random internet things curated by me.
+  url: https://fershad.com/links
+  feedUrl: https://fershad.com/feed-links.xml
+author:
+  name: Fershad Irani
+  email:
+---
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>{{ metadata.title }}</title>
+    <subtitle>{{ metadata.subtitle }}</subtitle>
+    <link href="{{ metadata.feedUrl }}" rel="self"/>
+    <link href="{{ metadata.url }}"/>
+    <updated>{{ collections.link | getNewestCollectionItemPublishedDate | dateToRfc3339 }}</updated>
+    <id>{{ metadata.url }}</id>
+    <author>
+        <name>{{ author.name }}</name>
+        <email>{{ author.email }}</email>
+    </author>
+    {% for post in collections.link | reverse | limit(10) %}
+        {% if not post.externalLink %}
+            {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+            <entry>
+                <title>{{ post.data.title }}</title>
+                <link href="{{ absolutePostUrl }}"/>
+                <updated>{{ post.page.date | publishedToDate | dateToRfc3339 }}</updated>
+                <id>{{ absolutePostUrl }}</id>
+                <content type="html">{{ post.content | removeDeepLinks | renderTransforms(post.data.page, metadata.url) }}</content>
+            </entry>
+        {% endif %}
+    {% endfor %}
+</feed>
