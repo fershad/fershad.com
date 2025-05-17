@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
       {%assign isAudio = tags | has: "audio" %}
       <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <article class="post">
-            <p class="title">
+            <h2 class="title">
                 {% if isVideo %}
                     <span>
                         🎬
@@ -31,7 +31,7 @@ eleventyExcludeFromCollections: true
                     </span>
                 {% endif %}
                 <a href="{{ post.data.canonical }}">{{ post.data.title }}</a>
-            </p>
+            </h2>
             <div>{{ post.rawInput | linkContent }}</div>
           </article>
       </li>
