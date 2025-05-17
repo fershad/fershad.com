@@ -12,7 +12,9 @@
       href="{{"/css/font.css"  | versionHashCSS }}"
       data-gaw-remove>
     {% if css %}
-      <link rel="stylesheet" href="{{ css | versionHashCSS }}">
+    {%for file in css %}
+      <link rel="stylesheet" href="{{ file | versionHashCSS }}">
+    {% endfor %}
     {% endif %}
     <link
       rel="stylesheet"
@@ -48,7 +50,7 @@
           const faviconEmoji = document.getElementById('favicon-emoji')
           const loopCount = 10
 
-          
+
           const loopFavicon = () => {
       for (let i = 0; i < loopCount; i++) {
         setTimeout(() => {
@@ -119,26 +121,26 @@
         const fontStyles = document.querySelector('link[href^="/css/font.css"]')
         const faviconToggle = document.getElementById('favicon-toggle')
         const faviconScript = document.getElementById('rando-favicon')
-          
+
         if (localStorage.getItem('glitch') === 'true') {
           glitchToggle.checked = false
           document.body.classList.add('deglitch')
           glitchStyles.remove()
         }
-          
+
         if (localStorage.getItem('font') === 'true') {
           fontToggle.checked = false
           fontStyles.remove()
         }
-          
+
         if (localStorage.getItem('favicon') === 'true') {
           faviconToggle.checked = true
         }
-          
-          
+
+
         // Glitch toggle
-        
-          
+
+
         glitchToggle.addEventListener('change', () => {
           if (glitchToggle.checked) {
             document.head.appendChild(glitchStyles)
@@ -150,10 +152,10 @@
             localStorage.setItem('glitch', 'true')
           }
         })
-          
+
         // Font toggle
-        
-          
+
+
         fontToggle.addEventListener('change', () => {
           if (fontToggle.checked) {
             document.head.appendChild(fontStyles)
@@ -163,7 +165,7 @@
             localStorage.setItem('font', 'true')
           }
         })
-          
+
         // Favicon toggle
         faviconToggle.addEventListener('change', () => {
           if (faviconToggle.checked) {
@@ -175,16 +177,16 @@
             loopFavicon()
           }
         })
-          
+
         // Theme toggle
         const themeToggle = document.getElementById('theme-toggle')
-          
+
         // Check local storage for theme settings
         if (localStorage.getItem('theme') === 'dark') {
           document.body.classList.add('dark')
           themeToggle.checked = true
         }
-          
+
         themeToggle.addEventListener('change', (event) => {
           if (document.body.classList.contains('dark')) {
             document.body.classList.remove('dark')
@@ -215,7 +217,7 @@
     defer></script>
 
   <script defer>
-    
+
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
       const gawScript = document.querySelector('script[data-gaw-remove]');
@@ -230,7 +232,7 @@
     });
 
       const gawReject = document.getElementById('gaw-reject');
-      
+
       gawReject.addEventListener('click', (event) => {
         event.preventDefault();
         try {
