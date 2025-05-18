@@ -24,15 +24,15 @@ author:
     </author>
     {% for post in collections.link | reverse | limit(10) %}
         {% if not post.externalLink %}
-            {% set absolutePostUrl %}{{ post.data.canonical }}{% endset %}
+            {% set absolutePostUrl %}{{ post.url }}{% endset %}
             <entry>
                 <title>{{ post.data.title }}</title>
                 <link href="{{ absolutePostUrl }}"/>
                 <updated>{{ post.page.date | publishedToDate | dateToRfc3339 }}</updated>
                 <id>{{ absolutePostUrl }}</id>
-                <content type="html">
+                <content type="html ">
                     {{ post.content | removeDeepLinks | renderTransforms(post.data.page, metadata.url) }}
-                    <p>Read <a href="{{absolutePostUrl}}">{{post.data.title}}</a></p>
+                    <p>Read <a href="{{post.data.canonical}}">{{post.data.title}}</a></p>
                 </content>
 
             </entry>
