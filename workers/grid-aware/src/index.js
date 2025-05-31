@@ -28,6 +28,11 @@ const spammyPaths = [
 // This is the main function that fetches the user's location, fetches the grid data, and determines what page (regular or grid-aware) to return the to the user.
 export default {
 	async fetch(request, env, ctx) {
+		// Check if the request URL contains any of the spammy paths & return a 404 response.
+		if (spammyPaths.some((path) => requestUrl.includes(path))) {
+			return new Response(null, { status: 404 });
+		}
+
 		return auto(request, env, ctx, {
 			debug: 'headers',
 			gawDataApiKey: env.EMAPS_API_KEY,
