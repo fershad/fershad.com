@@ -40,6 +40,17 @@ export default {
 			kvCacheData: true,
 			kvCachePage: true,
 			ignoreRoutes: spammyPaths,
+			htmlChanges: new HTMLRewriter()
+				.on('[data-gaw-remove]', {
+					element(element) {
+						element.remove();
+					},
+				})
+				.on('body', {
+					element(element) {
+						element.setAttribute('class', 'deglitch');
+					},
+				}),
 		});
 	},
 };
