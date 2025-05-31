@@ -29,7 +29,7 @@ const spammyPaths = [
 export default {
 	async fetch(request, env, ctx) {
 		// Check if the request URL contains any of the spammy paths & return a 404 response.
-		if (spammyPaths.some((path) => requestUrl.includes(path))) {
+		if (spammyPaths.some((path) => request.url.includes(path))) {
 			return new Response(null, { status: 404 });
 		}
 
