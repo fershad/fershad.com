@@ -36,21 +36,40 @@ export default {
 		return auto(request, env, ctx, {
 			debug: 'headers',
 			gawDataApiKey: env.EMAPS_API_KEY,
-			locationType: 'latlon',
 			kvCacheData: true,
 			kvCachePage: true,
 			ignoreRoutes: spammyPaths,
-			htmlChanges: new HTMLRewriter()
-				.on('[data-gaw-remove]', {
-					element(element) {
-						element.remove();
-					},
-				})
-				.on('body', {
-					element(element) {
-						element.setAttribute('class', 'deglitch');
-					},
-				}),
+			htmlChanges: {
+				moderate: new HTMLRewriter()
+					.on('body', {
+						element(element) {
+							element.setAttribute('class', 'deglitch');
+							element.setAttribute('data-gaw-level', 'moderate');
+						},
+					})
+					.on('link[href^="/css/glitch.css"]', {
+						element(element) {
+							element.remove();
+						},
+					})
+					.on('#glitch-toggle', {
+						element(element) {
+							element.removeAttribute('checked');
+						},
+					}),
+				high: new HTMLRewriter()
+					.on('body', {
+						element(element) {
+							element.setAttribute('class', 'deglitch');
+							element.setAttribute('data-gaw-level', 'high');
+						},
+					})
+					.on('[data-gaw-remove]', {
+						element(element) {
+							element.remove();
+						},
+					}),
+			},
 		});
 	},
 };

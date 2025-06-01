@@ -220,11 +220,13 @@
 
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
-      const gawScript = document.querySelector('script[data-gaw-remove]');
-      if (!gawScript) {
+      const gawLevel =  document.querySelector('[data-gaw-level]').getAttribute('data-gaw-level')
+      if (gawLevel) {
         try {
-          if (fathom) {
-            fathom.trackEvent('gaw views');
+          if (fathom && gawLevel === "moderate") {
+            fathom.trackEvent('gaw view moderate');
+          } else if (fathom && gawLevel === "high") {
+            fathom.trackEvent('gaw view high');
           }
         } catch (error) {
         }
