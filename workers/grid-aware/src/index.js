@@ -23,6 +23,7 @@ const spammyPaths = [
 	'/wp-json/',
 	'.php',
 	'.php7',
+	'/.git',
 ];
 
 // This is the main function that fetches the user's location, fetches the grid data, and determines what page (regular or grid-aware) to return the to the user.
