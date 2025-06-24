@@ -1090,3 +1090,8 @@ body.deglitch .gaw-banner::after {
   animation: none !important;
   transition: none !important;
 }
+
+
+gaw-info-bar {
+    margin-inline: auto;
+}
