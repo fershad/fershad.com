@@ -38,9 +38,10 @@ export default {
 			debug: 'headers',
 			gawDataApiKey: env.EMAPS_API_KEY,
 			kvCacheData: true,
-			kvCachePage: true,
+			kvCachePage: false,
 			ignoreRoutes: spammyPaths,
 			htmlChanges: {
+				low: new HTMLRewriter(),
 				moderate: new HTMLRewriter()
 					.on('body', {
 						element(element) {
