@@ -20,7 +20,7 @@ Unfortunately for our business, each of these business units is a cost center. T
 
 ## Okay, so why is network energy a sunk cost?
 
-I'll stop with the business analogy here.
+I'll stop with the business analogy here. Let's switch our business units for system segments.
 
 To be honest, the energy use of each system segment - hosting, networks, and user devices - will be sunk costs. Each will use energy, which is just an unavoidable part of host and delivering content on the internet.
 
