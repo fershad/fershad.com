@@ -40,6 +40,10 @@ export default {
 			kvCacheData: true,
 			kvCachePage: false,
 			ignoreRoutes: spammyPaths,
+			defaultView: 'low',
+			infoBar: {
+				target: '#gaw-bar-holder',
+			},
 			htmlChanges: {
 				low: new HTMLRewriter(),
 				moderate: new HTMLRewriter()
@@ -47,11 +51,6 @@ export default {
 						element(element) {
 							element.setAttribute('class', 'deglitch');
 							element.setAttribute('data-gaw-level', 'moderate');
-						},
-					})
-					.on('link[href^="/css/glitch.css"]', {
-						element(element) {
-							element.remove();
 						},
 					})
 					.on('#glitch-toggle', {
