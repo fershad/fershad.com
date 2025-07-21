@@ -13,11 +13,10 @@
 		"@cloudflare/vitest-pool-workers": "^0.5.40",
 		"typescript": "^5.7.2",
 		"vitest": "2.1.8",
-		"wrangler": "^3.99.0"
+		"wrangler": "^4.21.2"
 	},
 	"dependencies": {
 		"@cloudflare/workers-types": "^4.20250531.0",
-		"@greenweb/gaw-plugin-cloudflare-workers": "^0.3.0-alpha.4",
-		"@greenweb/grid-aware-websites": "^0.2.0"
+		"@greenweb/gaw-plugin-cloudflare-workers": "^0.5.2-0"
 	}
 }
