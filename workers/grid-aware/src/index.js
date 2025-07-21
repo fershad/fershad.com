@@ -43,6 +43,7 @@ export default {
 			defaultView: 'low',
 			infoBar: {
 				target: '#gaw-bar-holder',
+				learnMoreLink: 'https://fershad.com/grid-aware-site',
 			},
 			htmlChanges: {
 				low: new HTMLRewriter(),
