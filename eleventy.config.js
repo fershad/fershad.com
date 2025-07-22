@@ -13,6 +13,7 @@ import stringHash from "@sindresorhus/string-hash";
 import { globby } from "globby";
 import fs from "fs";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
+import sanitizeHTML from "sanitize-html";
 
 function do_minifycss(source, output_path) {
   // https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -191,6 +192,64 @@ export default function (eleventyConfig) {
       );
     },
   );
+
+  eleventyConfig.addFilter("webmentionsByUrl", function (webmentions, url) {
+    const allowedTypes = {
+      likes: ["like-of"],
+      reposts: ["repost-of"],
+      comments: ["in-reply-to"],
+      mentions: ["mention-of"],
+    };
+
+    const sanitize = (entry) => {
+      if (entry.content && entry.content.html) {
+        entry.content = sanitizeHTML(entry.content.html, {
+          allowedTags: ["b", "i", "em", "strong", "a"],
+        });
+      }
+      return entry;
+    };
+
+    const pageWebmentions = webmentions
+      .filter((mention) => mention["wm-target"] === "https://fershad.com" + url)
+      .sort((a, b) => new Date(b.published) - new Date(a.published))
+      .map(sanitize);
+
+    const likes = pageWebmentions
+      .filter((mention) => allowedTypes.likes.includes(mention["wm-property"]))
+      .filter((like) => like.author)
+      .map((like) => like.author);
+
+    const reposts = pageWebmentions
+      .filter((mention) =>
+        allowedTypes.reposts.includes(mention["wm-property"]),
+      )
+      .filter((repost) => repost.author)
+      .map((repost) => repost.author);
+
+    const comments = pageWebmentions
+      .filter((mention) =>
+        allowedTypes.comments.includes(mention["wm-property"]),
+      )
+      .filter((comment) => {
+        const { author, published, content } = comment;
+        return author && author.name && published && content;
+      });
+
+    const mentions = pageWebmentions
+      .filter((mention) =>
+        allowedTypes.mentions.includes(mention["wm-property"]),
+      )
+      .filter((mention) => {
+        const { author } = mention;
+        return mention["wm-source"];
+      });
+
+    const mentionCount =
+      likes.length + reposts.length + comments.length + mentions.length;
+    const data = { likes, reposts, comments, mentions, mentionCount };
+    return data;
+  });
 
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // which file extensions to process
