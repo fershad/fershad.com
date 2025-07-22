@@ -1,0 +1,41 @@
+<div class="webmentions" id="webmentions">
+  {% if mentions.comments %}
+  <h3>Comments ({{ mentions.comments | size }})</h3>
+  <div class="comments">
+    {% for item in mentions.comments %}
+      <div class="comment">
+        <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+        <p class="comment-content">{{ item.content }}</p>
+        <p class="comment-date">{{ item.published | date_to_long_string }}</p>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if mentions.likes %}
+  <h3>Likes ({{ mentions.likes | size }})</h3>
+  <div class="likes">
+    {% for item in mentions.likes %}
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if mentions.reposts %}
+  <h3>Reposts ({{ mentions.reposts | size }})</h3>
+  <div class="reposts">
+    {% for item in mentions.reposts %}
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if mentions.mentions %}
+  <h3>Linked in ({{ mentions.mentions | size }}) posts</h3>
+  <div class="mentions">
+    {% for item in mentions.mentions %}
+      <a href="{{ item.url }}"><img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
