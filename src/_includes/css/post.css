@@ -590,11 +590,8 @@ image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
     border-color: var(--glitch-off-color, #67f3da);
 }
 
-.webmentions label {
-    justify-self: flex-end;
-    margin-inline-start: auto;
+.webmentions + div > label {
     font-size: 0.8rem;
-    background-color:;
 }
 
 @media (max-width: 768px) {
