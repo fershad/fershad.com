@@ -76,7 +76,7 @@ eleventyExcludeFromCollections: true
       {% assign tags = post.data.tags %}
       {% assign isNote = tags | find: "note" %}
       <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};" class="
-      {%- if post.data.archived -%}{{"archived " | raw}}{%- endif -%} 
+      {%- if post.data.archived -%}{{"archived " | raw}}{%- endif -%}
       {%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}
         ">
         <div>
@@ -93,6 +93,10 @@ eleventyExcludeFromCollections: true
         </p>
         <small>
           <time class="postlist-date" datetime="{{ post.data.published | date_to_rfc822 }}">{{ post.data.published | date_to_long_string }}</time>
+          {% assign mentions = webmentions.mentions | webmentionsByUrl: post.url %}
+          {% if  mentions.mentionCount > 0 %}
+            {% include 'partials/webmentions-mini.liquid' %}
+          {% endif %}
           {% if post.data.archived %}
             |
             <strong>
