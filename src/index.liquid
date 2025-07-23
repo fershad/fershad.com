@@ -1,8 +1,7 @@
 ---
 layout: layouts/base.liquid
 title: Home
-description: "Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards
-a fossil free internet by 2030."
+description: "Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030."
 css: /css/home.css
 ---
 
@@ -20,7 +19,7 @@ css: /css/home.css
       <div class="glitch-wrapper">
         <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
         <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards                                                                                    
+          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards
             a fossil free internet by 2030.
         </p>
       </div>
@@ -175,7 +174,7 @@ css: /css/home.css
     const rando = document.getElementById('rando');
     rando.textContent = 'Fetching image ...';
     rando.setAttribute('disabled', 'disabled');
-    
+
     fetch('/api/rando')
       .then(response => response.json())
       .then(data => {
@@ -195,7 +194,7 @@ css: /css/home.css
 
     rando.textContent = 'Get random image >';
     rando.removeAttribute('disabled');
-    
+
   });
 
   document.getElementById('refresh-reader').addEventListener('click', function(e){

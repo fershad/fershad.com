@@ -1,0 +1,69 @@
+<div class="webmentions" id="webmentions">
+  {% if mentions.likes.size > 0 %}
+  <div class="likes ">
+  <p>Likes ({{ mentions.likes | size }})</p>
+  <div class="avatars hidden">
+    {% for item in mentions.likes %}
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
+    {% endfor %}
+  </div>
+  </div>
+  {% endif %}
+
+  {% if mentions.reposts.size > 0 %}
+  <div class="reposts">
+  <p>Reposts ({{ mentions.reposts | size }})</p>
+  <div class="avatars hidden">
+    {% for item in mentions.reposts %}
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
+    {% endfor %}
+  </div>
+  </div>
+  {% endif %}
+
+  {% if mentions.mentions.size > 0 %}
+  <div class="mentions">
+  <p>Mentioned in {{ mentions.mentions | size }}
+  {% if mentions.mentions.size > 1 %}
+  posts
+  {% else %}
+  post
+  {% endif %}
+  </p>
+  <div class="avatars hidden">
+    {% for item in mentions.mentions %}
+      <a href="{{ item.url }}">
+          {% if item.author.photo %}
+          <img src="{{ item.author.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
+          {% else %}
+          <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
+          {% endif %}
+      </a>
+    {% endfor %}
+  </div>
+  </div>
+  {% endif %}
+</div>
+  <div>
+  <label data-gaw-remove class="form-control">
+      <input id="showProfiles" type="checkbox">
+      <span>Show profiles</span>
+  </label>
+  </div>
+
+<script data-gaw-remove>
+  document.querySelector('#showProfiles').addEventListener('change', toggleAvatars);
+  document.querySelectorAll('.avatars img').forEach(img => {
+   img.setAttribute('style', '--glitch-img-src: url(' + img.src + ')');
+  });
+
+
+
+
+  function toggleAvatars() {
+    const avatars = document.querySelectorAll('.avatars');
+    avatars.forEach(avatar => {
+      avatar.classList.toggle('hidden');
+    });
+  }
+</script>

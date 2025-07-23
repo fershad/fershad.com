@@ -1,0 +1,27 @@
+<span class="webmentions-mini" id="webmentions">
+  {% if mentions.likes.size > 0 %}
+  <span class="likes ">
+      |
+  <span>{{ mentions.likes | size }} likes</span>
+  </span>
+  {% endif %}
+
+  {% if mentions.reposts.size > 0 %}
+  <span class="reposts">
+      |
+  <span>{{ mentions.reposts | size }} reposts</span>
+  </span>
+  {% endif %}
+
+  {% if mentions.mentions.size > 0 %}
+  <span class="mentions">
+      |
+  <span>{{ mentions.mentions | size }} {% if mentions.mentions.size > 1 %}
+      mentions
+  {% else %}
+  mention
+  {% endif %}
+  </span>
+  </span>
+  {% endif %}
+</span>
