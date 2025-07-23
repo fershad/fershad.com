@@ -515,6 +515,12 @@ image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
     align-items: center;
 }
 
+.webmentions a {
+    text-decoration: none;
+    color: inherit;
+    white-space: initial;
+}
+
 .webmentions > div {
     display: flex;
     gap: 1rem;

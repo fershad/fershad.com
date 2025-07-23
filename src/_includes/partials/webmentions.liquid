@@ -34,7 +34,7 @@
     {% for item in mentions.mentions %}
       <a href="{{ item.url }}">
           {% if item.author.photo %}
-          <img src="{{ item.author.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page">
+          <img src="{{ item.author.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
           {% else %}
           <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
           {% endif %}
@@ -49,7 +49,7 @@
   </label>
 </div>
 
-<script>
+<script data-gaw-remove>
   document.querySelector('#showProfiles').addEventListener('change', toggleAvatars);
   document.querySelectorAll('.avatars img').forEach(img => {
    img.setAttribute('style', '--glitch-img-src: url(' + img.src + ')');
