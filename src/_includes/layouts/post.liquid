@@ -36,6 +36,11 @@ css: /css/post.css
         </p>
       {% endif %}
 
+      {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
+      {% if  mentions.mentionCount > 0 %}
+        {% include 'partials/webmentions.liquid' %}
+      {% endif %}
+
       {% capture tableOfContent %}
         {{ content | toc  }}
       {% endcapture %}
@@ -50,13 +55,20 @@ css: /css/post.css
 
   <section class="twocol flow e-content">
     {{ content }}
-  </section>
 
-  {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
-  {{  mentions | json }}
-  {% if  mentions.mentionCount > 0 %}
-    {% include 'partials/webmentions.liquid' %}
-  {% endif %}
+    {% if mentions.comments.size > 0 %}
+    <h2>Comments {{ mentions.comments | size }}</h2>
+    <div class="comments">
+      {% for item in mentions.comments %}
+        <div class="comment">
+          <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+          <p class="comment-content">{{ item.content }}</p>
+          <p class="comment-date">{{ item.published | date_to_long_string }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
 
   {% unless isPage == true %}
     <section>

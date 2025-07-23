@@ -9,6 +9,7 @@ export default async function () {
     type: "json",
   });
   const webmentions = await res;
+
   return {
     mentions: webmentions.children,
   };

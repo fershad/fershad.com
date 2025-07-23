@@ -1,23 +1,23 @@
 section > * + * {
-  margin-top: 2.15rem;
+    margin-top: 2.15rem;
 }
 
 section > p:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 section:first-of-type::before {
-  inline-size: 80%;
-  block-size: var(--line-thickness);
-  /* inset-inline-start: 10%; */
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: calc(100% + var(--gap) / 2);
+    inline-size: 80%;
+    block-size: var(--line-thickness);
+    /* inset-inline-start: 10%; */
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: calc(100% + var(--gap) / 2);
 }
 
 h1 span {
-  max-width: 100vw;
-  width: 100%;
-  display: block;
+    max-width: 100vw;
+    width: 100%;
+    display: block;
 }
 
 h1::before,
@@ -25,7 +25,7 @@ h1::after {
 }
 
 small + h1 {
-  margin-top: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 section p,
@@ -35,147 +35,147 @@ section ol,
 section ol li,
 section blockquote,
 section pre {
-  line-height: 1.75rem;
-  max-inline-size: 80ch;
+    line-height: 1.75rem;
+    max-inline-size: 80ch;
 }
 
 .table-of-contents {
-  margin-block-start: 2.15rem;
-  padding-block: 1.5rem;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
+    margin-block-start: 2.15rem;
+    padding-block: 1.5rem;
+    border-top: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
 }
 
 .toc ul > li,
 .toc ol > li {
-  margin-block-start: 0.5rem;
+    margin-block-start: 0.5rem;
 }
 
 section h2,
 section h3,
 section h4 {
-  line-height: 1.35;
-  margin-block: 1.25rem;
-  max-inline-size: 40ch;
-  overflow-wrap: anywhere;
+    line-height: 1.35;
+    margin-block: 1.25rem;
+    max-inline-size: 40ch;
+    overflow-wrap: anywhere;
 }
 
 section h2[id],
 section h3[id],
 section h4[id] {
-  margin-left: -1.5ch;
-  position: relative;
-  padding-left: 1.5ch;
+    margin-left: -1.5ch;
+    position: relative;
+    padding-left: 1.5ch;
 }
 
 .heading-wrapper {
-  position: relative;
+    position: relative;
 }
 
 .heading-wrapper:has(h2, h3) {
-  margin-block-start: 4rem;
+    margin-block-start: 4rem;
 }
 
 .heading-wrapper + .heading-wrapper {
-  margin-block-start: 2.15rem;
+    margin-block-start: 2.15rem;
 }
 
 .heading-wrapper .deeplink {
-  position: absolute;
-  inset-inline-start: -1.5ch;
-  top: -0.15ex;
-  font-size: var(--deeplink-size);
-  color: var(--blue-7);
-  text-decoration: none;
-  opacity: 0.2;
-  transition: opacity 0.2s;
+    position: absolute;
+    inset-inline-start: -1.5ch;
+    top: -0.15ex;
+    font-size: var(--deeplink-size);
+    color: var(--blue-7);
+    text-decoration: none;
+    opacity: 0.2;
+    transition: opacity 0.2s;
 }
 
 .heading-wrapper:has(h2[id]) {
-  --deeplink-size: var(--font-size-6);
+    --deeplink-size: var(--font-size-6);
 }
 
 .heading-wrapper:has(h3[id]) {
-  --deeplink-size: var(--font-size-5);
+    --deeplink-size: var(--font-size-5);
 }
 
 .heading-wrapper:has(h4[id]) {
-  --deeplink-size: var(--font-size-4);
+    --deeplink-size: var(--font-size-4);
 }
 
 .heading-wrapper:has(h2[id], h3[id], h4[id]):hover .deeplink {
-  opacity: 1;
-  display: block;
-  transform: skew(20deg);
+    opacity: 1;
+    display: block;
+    transform: skew(20deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  section[class] ul li:before {
-    transition: none;
-  }
+    section[class] ul li:before {
+        transition: none;
+    }
 }
 
 ol {
-  padding-left: 2.75rem;
+    padding-left: 2.75rem;
 }
 
 ul li > ul {
-  margin-top: 1.5rem;
-  --marker-color: var(--blue-7);
+    margin-top: 1.5rem;
+    --marker-color: var(--blue-7);
 }
 
 blockquote {
-  padding: 1.75rem 1.5rem;
-  margin: 1.5rem 0;
-  border-bottom: 1px solid var(--blue-7);
-  border-left: 1.25rem solid var(--blue-4);
-  font-family: var(--font-monospace-slab-serif);
-  transform: skew(-5deg);
-  position: relative;
-  transition: transform 0.2s ease;
+    padding: 1.75rem 1.5rem;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid var(--blue-7);
+    border-left: 1.25rem solid var(--blue-4);
+    font-family: var(--font-monospace-slab-serif);
+    transform: skew(-5deg);
+    position: relative;
+    transition: transform 0.2s ease;
 }
 
 blockquote::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -1.25rem;
-  height: 100%;
-  width: 100%;
-  border-bottom: 1px solid var(--glitch-off-color, #67f3da);
-  border-left: 1.25rem solid var(--glitch-off-color, #67f3da);
-  opacity: 0;
-  animation: text-glitch3 2.5s infinite;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid var(--glitch-off-color, #67f3da);
+    border-left: 1.25rem solid var(--glitch-off-color, #67f3da);
+    opacity: 0;
+    animation: text-glitch3 2.5s infinite;
 }
 
 blockquote::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -1.25rem;
-  height: 100%;
-  width: 100%;
-  border-bottom: 1px solid var(--glitch-off-color, #f16f6f);
-  border-left: 1.25rem solid var(--glitch-off-color, #f16f6f);
-  opacity: 0;
-  animation: text-glitch2 2.5s infinite;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1.25rem;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid var(--glitch-off-color, #f16f6f);
+    border-left: 1.25rem solid var(--glitch-off-color, #f16f6f);
+    opacity: 0;
+    animation: text-glitch2 2.5s infinite;
 }
 
 blockquote:hover::before,
 blockquote:hover::after {
-  animation: none;
+    animation: none;
 }
 
 blockquote:hover {
-  transform: skew(0);
+    transform: skew(0);
 }
 
 b blockquote p {
-  margin-inline: 0;
+    margin-inline: 0;
 }
 
 blockquote p:first-of-type {
-  margin-block-start: 0;
+    margin-block-start: 0;
 }
 
 pre:has(code) code,
@@ -184,89 +184,89 @@ pre:has(code) code::after,
 pre:has(code) code:hover,
 pre:has(code) code:hover::before,
 pre:has(code) code:hover::after {
-  background: none;
-  border: none;
-  animation: none;
+    background: none;
+    border: none;
+    animation: none;
 }
 
 pre:has(code) {
-  max-inline-size: 100%;
+    max-inline-size: 100%;
 }
 
 pre {
-  padding: 1.75rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0.25rem;
-  overflow-x: auto;
-  position: relative;
+    padding: 1.75rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+    position: relative;
 }
 
 code {
-  background-color: var(--inline-code-background, var(--blue-0));
-  color: var(--inline-code-color, var(--background));
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.25rem;
-  position: relative;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+    background-color: var(--inline-code-background, var(--blue-0));
+    color: var(--inline-code-color, var(--background));
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    position: relative;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 .codeblock {
-  position: relative;
+    position: relative;
 }
 
 .codeblock > .lang {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--blue-0);
-  color: var(--stone-12);
-  z-index: 1;
-  animation: text-glitch1 2.5s infinite;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--blue-0);
+    color: var(--stone-12);
+    z-index: 1;
+    animation: text-glitch1 2.5s infinite;
 }
 
 .codeblock > .filename {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0.25rem 0.5rem;
-  background-color: transparent;
-  color: var(--stone-12);
-  z-index: 1;
-  width: 100%;
-  border-bottom: 1px solid var(--blue-0);
-  color: var(--stone-0);
-  padding-inline-start: 1.5rem;
-  animation: text-glitch1 2.5s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
+    color: var(--stone-12);
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid var(--blue-0);
+    color: var(--stone-0);
+    padding-inline-start: 1.5rem;
+    animation: text-glitch1 2.5s infinite;
 }
 
 .codeblock > .lang::before,
 .codeblock > .filename::before {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  color: var(--glitch-off-color, #67f3da);
-  padding: 0.25rem 0.5rem;
-  animation: text-glitch2 2.5s infinite;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    color: var(--glitch-off-color, #67f3da);
+    padding: 0.25rem 0.5rem;
+    animation: text-glitch2 2.5s infinite;
 }
 
 .codeblock > .lang::after,
 .codeblock > .filename::after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  color: var(--glitch-off-color, #f16f6f);
-  padding: 0.25rem 0.5rem;
-  animation: text-glitch3 2.5s infinite;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    color: var(--glitch-off-color, #f16f6f);
+    padding: 0.25rem 0.5rem;
+    animation: text-glitch3 2.5s infinite;
 }
 
 .codeblock:hover > .lang,
@@ -275,253 +275,338 @@ code {
 .codeblock:hover > .filename::before,
 .codeblock:hover > .lang::after,
 .codeblock:hover > .filename::after {
-  animation: none;
+    animation: none;
 }
 
 .callout code {
-  background-color: var(--blue-12);
-  color: var(--stone-0);
+    background-color: var(--blue-12);
+    color: var(--stone-0);
 }
 
 .table-wrapper {
-  max-width: 100vw;
-  overflow: hidden;
+    max-width: 100vw;
+    overflow: hidden;
 }
 
 .table-wrapper:has(tr:hover) {
-  overflow: auto;
+    overflow: auto;
 }
 
 table {
-  max-inline-size: 100%;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1.5rem 0;
+    max-inline-size: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
 }
 
 table th,
 table td {
-  border-top: 1px solid var(--blue-7);
-  padding: 0.75rem 1.5rem;
-  text-align: center;
-  position: relative;
+    border-top: 1px solid var(--blue-7);
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    position: relative;
 }
 
 table th::before,
 table td::before {
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  border-top: 1px solid var(--glitch-off-color, #f16f6f);
-  display: block;
-  animation: text-glitch1 2.5s infinite;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-top: 1px solid var(--glitch-off-color, #f16f6f);
+    display: block;
+    animation: text-glitch1 2.5s infinite;
 }
 
 table th::after,
 table td::after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  border-top: 1px solid var(--glitch-off-color, #67f3da);
-  display: block;
-  animation: text-glitch3 2.5s infinite;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    border-top: 1px solid var(--glitch-off-color, #67f3da);
+    display: block;
+    animation: text-glitch3 2.5s infinite;
 }
 
 table th {
-  background-color: var(--blue-7);
-  color: var(--stone-0);
+    background-color: var(--blue-7);
+    color: var(--stone-0);
 }
 
 table td + td,
 table th + th {
-  border-left: 1px solid var(--blue-7);
+    border-left: 1px solid var(--blue-7);
 }
 
 table td + td::before,
 table th + th::before {
-  border-left: 1px solid var(--glitch-off-color, #f16f6f);
+    border-left: 1px solid var(--glitch-off-color, #f16f6f);
 }
 
 table td + td::after,
 table th + th::after {
-  border-left: 1px solid var(--glitch-off-color, #67f3da);
+    border-left: 1px solid var(--glitch-off-color, #67f3da);
 }
 
 table tr {
-  position: relative;
+    position: relative;
 }
 
 table tr:hover td:first-of-type:before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 1.5rem;
-  block-size: 100%;
-  background-color: var(--blue-7);
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 1.5rem;
+    block-size: 100%;
+    background-color: var(--blue-7);
 }
 
 table tr:hover td {
-  background-color: var(--blue-0);
-  color: var(--stone-11);
+    background-color: var(--blue-0);
+    color: var(--stone-11);
 }
 
 table:has(tr:hover) th::before,
 table:has(tr:hover) td::before,
 table:has(tr:hover) th::after,
 table:has(tr:hover) td::after {
-  border: none;
-  animation: none;
+    border: none;
+    animation: none;
 }
 
 figure {
-  margin: 1.5rem 0;
-  border: 1px solid var(--blue-4);
-  padding: 0.35rem;
-  position: relative;
-  width: fit-content;
-  margin-inline: auto;
+    margin: 1.5rem 0;
+    border: 1px solid var(--blue-4);
+    padding: 0.35rem;
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
 }
 
 figure::before,
 figure::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  border: 1px solid;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    border: 1px solid;
 }
 
 figure::before {
-  border-color: var(--glitch-off-color, #67f3da);
-  animation: text-glitch1 2.5s infinite;
+    border-color: var(--glitch-off-color, #67f3da);
+    animation: text-glitch1 2.5s infinite;
 }
 
 figure::after {
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch2 2.5s infinite;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch2 2.5s infinite;
 }
 
 figure:hover::before,
 figure:hover::after {
-  border: none;
-  animation: none;
+    border: none;
+    animation: none;
 }
 
 figcaption {
-  font-size: 0.875rem;
-  max-inline-size: 100%;
-  text-align: center;
-  padding: 1rem 1.5rem;
-  border-top: 2px solid var(--stone-0);
-  background-color: var(--blue-7);
-  color: var(--stone-0);
-  --override-color: var(--stone-0);
+    font-size: 0.875rem;
+    max-inline-size: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-top: 2px solid var(--stone-0);
+    background-color: var(--blue-7);
+    color: var(--stone-0);
+    --override-color: var(--stone-0);
 }
 
 figcaption[data-gaw-remove] + figcaption {
-  display: none;
+    display: none;
 }
 
 figcaption p {
-  margin: 0;
+    margin: 0;
 }
 
 article a::before {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
 }
 
 article a::after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
 }
 
 article a {
-  position: relative;
-  display: inline;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+    position: relative;
+    display: inline;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
 }
 
 article a:not(.deeplink):hover {
-  animation: link-glitch 2.5s infinite;
+    animation: link-glitch 2.5s infinite;
 }
 
 .gh-edit {
-  background: var(--callout-background);
-  margin-top: -3rem;
-  padding-block: 0.5rem;
-  margin-inline: -2rem;
-  width: calc(100% + 4rem);
-  position: relative;
-  --line-color: var(--blue-2);
-  border-bottom: 2px solid var(--line-color);
+    background: var(--callout-background);
+    margin-top: -3rem;
+    padding-block: 0.5rem;
+    margin-inline: -2rem;
+    width: calc(100% + 4rem);
+    position: relative;
+    --line-color: var(--blue-2);
+    border-bottom: 2px solid var(--line-color);
 }
 
 .gh-edit::before,
 .gh-edit::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .gh-edit::before {
-  border-top: 2px solid;
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch1 3.5s infinite;
+    border-top: 2px solid;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch1 3.5s infinite;
 }
 
 .gh-edit::after {
-  border-bottom: 2px solid;
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch2 2.5s infinite;
-  animation-delay: 0.5s;
+    border-bottom: 2px solid;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch2 2.5s infinite;
+    animation-delay: 0.5s;
 }
 
 image-compare img {
-  width: 100%;
+    width: 100%;
 }
 
 image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
-  border-top: 1.25rem solid var(--blue-7);
+    border-top: 1.25rem solid var(--blue-7);
+}
+
+.webmentions {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+    row-gap: 2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.webmentions > div {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.webmentions p {
+    margin-block-start: 0;
+}
+
+.webmentions .avatars {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.webmentions .avatars.hidden {
+    display: none;
+}
+
+.webmentions .avatars img {
+    width: 3ex;
+    height: 3ex;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+
+.webmentions .avatars a:hover,
+.webmentions .avatars a:focus {
+    z-index: 2;
+}
+
+.webmentions .avatars img::before,
+.webmentions .avatars img::after {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--glitch-img-src) no-repeat;
+    z-index: 1;
+    opacity: 0.5;
+    background-size: 100% 100%;
+    transform: scale(2);
+}
+
+.webmentions .avatars img:hover {
+    transform: scale(2);
+    border: 1px solid;
+}
+
+.webmentions .avatars img:hover::before {
+    animation:
+        text-glitch1 4.5s infinite,
+        list-glitch1 2.5s infinite;
+    border-color: var(--glitch-off-color, #f16f6f);
+}
+
+.webmentions .avatars img:hover::after {
+    animation:
+        text-glitch2 4.5s infinite,
+        list-glitch2 2.5s infinite;
+    border-color: var(--glitch-off-color, #67f3da);
+}
+
+.webmentions label {
+    justify-self: flex-end;
+    margin-inline-start: auto;
+    font-size: 0.8rem;
+    background-color:;
 }
 
 @media (max-width: 768px) {
-  blockquote {
-    transform: skew(-2deg);
-  }
+    blockquote {
+        transform: skew(-2deg);
+    }
 
-  .heading-wrapper a.deeplink {
-    top: -2.15ex;
-    inset-inline-start: 0;
-  }
+    .heading-wrapper a.deeplink {
+        top: -2.15ex;
+        inset-inline-start: 0;
+    }
 
-  .gh-edit {
-    margin-inline: -0.25rem;
-    width: calc(100% + 0.5rem);
-  }
+    .gh-edit {
+        margin-inline: -0.25rem;
+        width: calc(100% + 0.5rem);
+    }
 
-  .table-wrapper {
-    overflow-x: auto;
-  }
+    .table-wrapper {
+        overflow-x: auto;
+    }
 }

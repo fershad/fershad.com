@@ -1,41 +1,67 @@
 <div class="webmentions" id="webmentions">
-  {% if mentions.comments %}
-  <h3>Comments ({{ mentions.comments | size }})</h3>
-  <div class="comments">
-    {% for item in mentions.comments %}
-      <div class="comment">
-        <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
-        <p class="comment-content">{{ item.content }}</p>
-        <p class="comment-date">{{ item.published | date_to_long_string }}</p>
-      </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  {% if mentions.likes %}
-  <h3>Likes ({{ mentions.likes | size }})</h3>
-  <div class="likes">
+  {% if mentions.likes.size > 0 %}
+  <div class="likes ">
+  <p>Likes ({{ mentions.likes | size }})</p>
+  <div class="avatars hidden">
     {% for item in mentions.likes %}
-      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
     {% endfor %}
+  </div>
   </div>
   {% endif %}
 
-  {% if mentions.reposts %}
-  <h3>Reposts ({{ mentions.reposts | size }})</h3>
+  {% if mentions.reposts.size > 0 %}
   <div class="reposts">
+  <p>Reposts ({{ mentions.reposts | size }})</p>
+  <div class="avatars hidden">
     {% for item in mentions.reposts %}
-      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
     {% endfor %}
+  </div>
   </div>
   {% endif %}
 
-  {% if mentions.mentions %}
-  <h3>Linked in ({{ mentions.mentions | size }}) posts</h3>
+  {% if mentions.mentions.size > 0 %}
   <div class="mentions">
+  <p>Mentioned in {{ mentions.mentions | size }}
+  {% if mentions.mentions.size > 1 %}
+  posts
+  {% else %}
+  post
+  {% endif %}
+  </p>
+  <div class="avatars hidden">
     {% for item in mentions.mentions %}
-      <a href="{{ item.url }}"><img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
+      <a href="{{ item.url }}">
+          {% if item.author.photo %}
+          <img src="{{ item.author.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page">
+          {% else %}
+          <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
+          {% endif %}
+      </a>
     {% endfor %}
   </div>
+  </div>
   {% endif %}
+  <label data-gaw-remove class="form-control">
+      <input id="showProfiles" type="checkbox">
+      <span>Show profiles</span>
+  </label>
 </div>
+
+<script>
+  document.querySelector('#showProfiles').addEventListener('change', toggleAvatars);
+  document.querySelectorAll('.avatars img').forEach(img => {
+   img.setAttribute('style', '--glitch-img-src: url(' + img.src + ')');
+  });
+
+
+
+
+  function toggleAvatars() {
+    const avatars = document.querySelectorAll('.avatars');
+    avatars.forEach(avatar => {
+      avatar.classList.toggle('hidden');
+    });
+  }
+</script>
