@@ -4,7 +4,7 @@
   <p>Likes ({{ mentions.likes | size }})</p>
   <div class="avatars hidden">
     {% for item in mentions.likes %}
-      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" onerror="this.onerror=null;this.src='/apple-touch-icon.png'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
     {% endfor %}
   </div>
   </div>
@@ -15,7 +15,7 @@
   <p>Reposts ({{ mentions.reposts | size }})</p>
   <div class="avatars hidden">
     {% for item in mentions.reposts %}
-      <a href="{{ item.url }}"><img src="{{ item.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
+      <a href="{{ item.url }}"><img src="{{ item.photo }}" onerror="this.onerror=null;this.src='/apple-touch-icon.png'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore></a>
     {% endfor %}
   </div>
   </div>
@@ -34,9 +34,9 @@
     {% for item in mentions.mentions %}
       <a href="{{ item.url }}">
           {% if item.author.photo %}
-          <img src="{{ item.author.photo }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
+          <img src="{{ item.author.photo }}" onerror="this.onerror=null;this.src='/apple-touch-icon.png'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
           {% else %}
-          <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
+          <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" onerror="this.onerror=null;this.src='/apple-touch-icon.png'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
           {% endif %}
       </a>
     {% endfor %}
