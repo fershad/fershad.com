@@ -39,7 +39,7 @@ export default {
 			gawDataApiKey: env.EMAPS_API_KEY,
 			kvCacheData: true,
 			kvCachePage: false,
-			ignoreRoutes: spammyPaths,
+			ignoreRoutes: ['/og'],
 			defaultView: 'low',
 			infoBar: {
 				target: '#gaw-bar-holder',
