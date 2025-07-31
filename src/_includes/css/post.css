@@ -58,6 +58,7 @@ section h4 {
     margin-block: 1.25rem;
     max-inline-size: 40ch;
     overflow-wrap: anywhere;
+    font-weight: bold;
 }
 
 section h2[id],
