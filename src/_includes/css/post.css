@@ -64,8 +64,8 @@ section h2[id],
 section h3[id],
 section h4[id] {
     margin-left: -1.5ch;
-    position: relative;
     padding-left: 1.5ch;
+    position: relative;
 }
 
 .heading-wrapper {
@@ -83,12 +83,15 @@ section h4[id] {
 .heading-wrapper .deeplink {
     position: absolute;
     inset-inline-start: -1.5ch;
-    top: -0.15ex;
+    top: -0.5ex;
     font-size: var(--deeplink-size);
     color: var(--blue-7);
     text-decoration: none;
-    opacity: 0.2;
-    transition: opacity 0.2s;
+    /*opacity: 0.2;*/
+    transform: scale(1.2);
+    transition:
+        opacity 0.2s,
+        transform 0.2s;
 }
 
 .heading-wrapper:has(h2[id]) {
@@ -106,7 +109,8 @@ section h4[id] {
 .heading-wrapper:has(h2[id], h3[id], h4[id]):hover .deeplink {
     opacity: 1;
     display: block;
-    transform: skew(20deg);
+    transform: rotate(90deg) scale(1.5);
+    top: -0.25ex;
 }
 
 @media (prefers-reduced-motion: reduce) {

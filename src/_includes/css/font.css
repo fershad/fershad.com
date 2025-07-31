@@ -1,14 +1,15 @@
 @font-face {
-  font-family: "Departure Mono";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/subset-DepartureMono-Regular.woff2") format("woff2"),
-    url("/fonts/subset-DepartureMono-Regular.woff") format("woff");
-  font-display: swap;
+    font-family: "Departure Mono";
+    font-style: normal;
+    font-weight: 400;
+    src:
+        url("/fonts/subset-DepartureMono-Regular.woff2") format("woff2"),
+        url("/fonts/subset-DepartureMono-Regular.woff") format("woff");
+    font-display: swap;
 }
 
 :where(html) {
-  font-family: "Departure Mono", var(--font-monospace-code), monospace;
+    font-family: "Departure Mono", var(--font-monospace-code), monospace;
 }
 
 h1,
@@ -18,5 +19,6 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
+    position: relative;
+    font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
 }

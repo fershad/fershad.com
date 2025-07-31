@@ -42,7 +42,7 @@ const figoptions = {
 const markdownItAnchorOptions = {
   permalink: true,
   permalinkClass: "deeplink",
-  permalinkSymbol: "#",
+  permalinkSymbol: "→",
   level: [2, 3, 4],
   slugify: function (s) {
     return slugify(s);
