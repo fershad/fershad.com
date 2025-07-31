@@ -52,7 +52,7 @@ eleventyExcludeFromCollections: true
       }
 
       h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
         line-height: 1.15;
         position: relative;
       }
@@ -98,8 +98,8 @@ eleventyExcludeFromCollections: true
     </style>
 
     <div class="wrapper">
-      <div class="flow">
-          <h1></h1>
+        <div class="flow glitch-wrapper">
+          <h1 data-glitch=""></h1>
       </div>
 
       <footer>
@@ -121,7 +121,7 @@ eleventyExcludeFromCollections: true
         // Set the title
         document.querySelector('h1').textContent = decodedTitle;
         // Set the h1[data-glitch] attribute to the title
-        // document.querySelector('h1').setAttribute('data-glitch', decodedTitle);
+        document.querySelector('h1').setAttribute('data-glitch', decodedTitle);
     </script>
 </body>
 </html>
