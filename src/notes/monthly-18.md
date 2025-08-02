@@ -10,7 +10,6 @@ categories:
 ---
 
 June was a hella busy month with most of my time spent away from home.
-Í
 
 ## June 2025
 
