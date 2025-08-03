@@ -326,14 +326,16 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPairedShortcode(
     "codeToHtml",
-    async function (code, lang = "text", filename) {
+    async function (code, lang = "md", filename) {
       code = code.replace(/\r?\n$/, "");
 
       try {
         const html = await codeToHtml(code, {
           lang,
-          theme: "nord",
+          theme: "plastic",
         });
+
+        console.log({ lang, filename, html });
 
         if (filename && lang) {
           return `<div class="codeblock">
