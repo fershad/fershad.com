@@ -335,8 +335,6 @@ export default function (eleventyConfig) {
           theme: "plastic",
         });
 
-        console.log({ lang, filename, html });
-
         if (filename && lang) {
           return `<div class="codeblock">
 				${filename ? `<div class="filename" data-glitch="${filename}">${filename}</div>` : ""}

@@ -122,6 +122,8 @@ For this reason, energy use should be the metric to use whenever possible for th
 
 There's a lot of words above this, so if you're after a TL;DR then I hope this table helps.
 
+{% capture tableContent %}
+
 | Segment  | Sensitivity                                                    | Optimisation strategy                                           | Tracking metric                                                        |
 | -------- | -------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Backend  | Location sensitive (fixed location or limited ability to move) | Time shifting                                                   | Carbon emissions                                                       |
@@ -129,6 +131,10 @@ There's a lot of words above this, so if you're after a TL;DR then I hope this t
 | Backend  | N/A                                                            | Time shifting, location shifting, efficiency (code or platform) | Time/location shifting: Carbon emissions<br><br>Efficiency: Energy use |
 | Backend  | N/A                                                            | Change hosting provider                                         | Carbon emissions, PUE, WUE, other                                      |
 | Frontend | Time & location sensitive                                      | Efficiency (code, platform, or framework)                       | Energy use                                                             |
+
+{% endcapture %}
+
+{{ tableContent | markdownTable }}
 
 ## Conclusion
 
