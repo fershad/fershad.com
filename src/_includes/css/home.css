@@ -1,184 +1,187 @@
 .wrapper#homepage {
-  grid-template-columns: 1fr 1fr 1fr;
-  --flow-gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    --flow-gap: 3rem;
 }
 
 #intro img {
-  max-width: 15rem;
-  height: auto;
-  width: 100%;
-  aspect-ratio: 1;
-  margin: auto;
-  position: relative;
+    max-width: 15rem;
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: auto;
+    position: relative;
+    object-fit: cover;
 }
 
 #intro picture {
-  position: relative;
-  width: fit-content;
-  max-width: 15rem;
+    position: relative;
+    width: fit-content;
+    max-width: 15rem;
 }
 
 #film picture {
-  position: relative;
-  width: fit-content;
+    position: relative;
+    width: fit-content;
 }
 
 #intro picture::before,
 #intro picture::after,
 #film picture::before,
 #film picture::after {
-  content: "";
-  display: none;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--glitch-img-src) no-repeat;
-  z-index: 1;
-  opacity: 0.5;
-  background-size: 100% 100%;
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--glitch-img-src) no-repeat;
+    z-index: 1;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
 }
 
 #intro:has(.glitch-wrapper:hover) picture::before,
 #intro:hover picture::before,
 #film picture:hover::before {
-  animation: text-glitch1 4.5s infinite;
+    animation: text-glitch1 4.5s infinite;
 }
 
 #intro:has(.glitch-wrapper:hover) picture::after,
 #intro:hover picture::after,
 #film picture:hover::after {
-  animation: text-glitch2 4.5s infinite;
+    animation: text-glitch2 4.5s infinite;
 }
 
 #intro:hover .outline-box:before,
 #intro:hover .outline-box:after {
-  animation: none;
-  display: none;
+    animation: none;
+    display: none;
 }
 
 #intro {
-  gap: 1.5rem;
-  display: grid;
-  grid-template-columns: 15rem 1fr;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  grid-rows: 1;
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    grid-rows: 1;
 }
 
 #intro::after,
 #current::after {
-  inline-size: 80%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 10%;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: calc(100% + var(--gap) / 2);
+    inline-size: 80%;
+    block-size: var(--line-thickness);
+    inset-inline-start: 10%;
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: calc(100% + var(--gap) / 2);
 }
 
 #intro::before {
-  inline-size: var(--line-thickness);
-  block-size: 80%;
-  inset-block-start: 10%;
-  inset-inline-start: calc(var(--line-offset) * -1);
-  left: calc(100%);
+    inline-size: var(--line-thickness);
+    block-size: 80%;
+    inset-block-start: 10%;
+    inset-inline-start: calc(var(--line-offset) * -1);
+    left: calc(100%);
 }
 
 #current::after {
 }
 
 #other {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 #projects,
 #writing,
 #reading {
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-  gap: 1.5rem;
-  padding: 0;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: 1.5rem;
+    padding: 0;
 }
 
 #projects > ul > li,
 #writing > ul > li,
 #reading > ul > li {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 #projects > div,
 #writing > div,
 #reading > div {
-  padding: 1.5rem;
+    padding: 1.5rem;
 }
 
 .last-updated {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 100%;
 }
 
 .lead-box {
-  padding: 0 3rem 0 0;
+    padding: 0 3rem 0 0;
 }
 
 #film {
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: 1.5rem;
 }
 
 #film .img-holder {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
 .img-holder .img-desc,
 #words > * {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 #words {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
 #projects::after,
 #words::after {
-  inline-size: 80%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 10%;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: calc(100% + var(--gap) / 2);
+    inline-size: 80%;
+    block-size: var(--line-thickness);
+    inset-inline-start: 10%;
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: calc(100% + var(--gap) / 2);
 }
 
 #words > * {
-  padding: 1.5rem;
-  justify-content: space-between;
+    padding: 1.5rem;
+    justify-content: space-between;
 }
 
 #words div:has(small) + .banner {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 @media (max-width: 768px) {
-  #intro,
-  #projects,
-  #writing,
-  #reading,
-  #film,
-  #film .img-holder {
-    grid-template-columns: 1fr;
-  }
+    #intro,
+    #projects,
+    #writing,
+    #reading,
+    #film,
+    #film .img-holder {
+        grid-template-columns: 1fr;
+    }
 
-  #intro img {
-    max-width: 100%;
-  }
+    #intro img {
+        max-width: 100%;
+    }
 }
