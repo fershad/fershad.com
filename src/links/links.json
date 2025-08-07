@@ -2,5 +2,6 @@
   "layout": "layouts/link.liquid",
   "hasTOC": false,
   "ghEdit": true,
-  "tags": ["link"]
+  "tags": ["link"],
+  "date": "git Created"
 }
