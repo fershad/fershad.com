@@ -388,6 +388,14 @@ export default function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("sortLinksByPageDate", function (array) {
+    return array.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB - dateA;
+    });
+  });
+
   eleventyConfig.addFilter("filterOnlyTag", function (array, tag, exclude) {
     return array.filter((item) => {
       if (exclude) {

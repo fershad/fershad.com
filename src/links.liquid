@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 
     <!-- TODO: There'll be a search box here & a tags cloud -->
 <section class="threecol">
-  {% assign postslist = collections.link | reverse %}
+  {% assign postslist = collections.link | sortLinksByPageDate %}
   <ul>
     {% for post in postslist %}
       {% assign tags = post.data.tags %}
@@ -38,7 +38,7 @@ eleventyExcludeFromCollections: true
                 <a href="{{ post.data.canonical }}">{{ post.data.title }}</a>
             </h2>
             <small>
-              <time class="postlist-date" datetime="{{ post.date | date_to_rfc822 }}">{{ post.page.date | date_to_long_string }}</time>
+              <time class="postlist-date" datetime="{{ post.date | date_to_rfc822 }}">{{ post.date | date_to_long_string }}</time>
             </small>
             <div>{{ post.rawInput | linkContent }}</div>
           </article>
