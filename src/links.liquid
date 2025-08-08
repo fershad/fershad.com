@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 
     <!-- TODO: There'll be a search box here & a tags cloud -->
 <section class="threecol">
-  {% assign postslist = collections.link | reverse %}
+  {% assign postslist = collections.link | sortLinksByFilename | reverse %}
   <ul>
     {% for post in postslist %}
       {% assign tags = post.data.tags %}

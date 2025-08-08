@@ -396,6 +396,14 @@ export default function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("sortLinksByFilename", function (array) {
+    return array.sort((a, b) => {
+      const filenameA = parseInt(a.fileSlug) || 0;
+      const filenameB = parseInt(b.fileSlug) || 0;
+      return filenameA - filenameB;
+    });
+  });
+
   eleventyConfig.addFilter("filterOnlyTag", function (array, tag, exclude) {
     return array.filter((item) => {
       if (exclude) {
