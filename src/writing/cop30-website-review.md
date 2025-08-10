@@ -10,7 +10,7 @@ COP30 ([Conference of the Parties](https://unfccc.int/process/bodies/supreme-bod
 
 For this review, I'm going to focus mainly on the desktop version of the COP30 English language homepage ([https://cop30.br/en](https://cop30.br/en)), looking at it through a web performance and sustainability lens.
 
-![[/![A screenshot of the COP30 English homepage showing the heading "COP30 Brasil Amazonia Belem 2025" with various news articles shown with images below.](../../public/img/blog/cop30_homepage.png 'A screenshot of the COP30 English homepage')]]
+![A screenshot of the COP30 English homepage showing the heading "COP30 Brasil Amazonia Belem 2025" with various news articles shown with images below.](../../public/img/blog/cop30_homepage.png 'A screenshot of the COP30 English homepage')
 
 ## Real world performance
 
