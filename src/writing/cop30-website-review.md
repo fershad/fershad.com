@@ -94,7 +94,7 @@ I honestly feel that by now this kind of thing should be table stakes when asses
 
 ## Finally, fonts
 
-The site loads around 530 KB of font files, out of which 380 KB is for the [Google Material Symbols Rounded font family](https://fonts.google.com/icons?icon.size=24&icon.color=%231f1f1f&icon.style=Rounded). That font family, as far as I can find on the homepage, is used to generate just six different icons. I've shown the icons in the table below by importing them from Google Fonts using the optimised code I'll mention in the next paragraph.
+The site loads around 530 KB of font files, out of which 380 KB is for the [Google Material Symbols Rounded font family](https://fonts.google.com/icons?icon.size=24&icon.color=%231f1f1f&icon.style=Rounded). That font family, as far as I can find on the homepage, is used to generate just seven different icons. I've shown the icons in the table below by importing them from Google Fonts using the optimised code I'll mention in the next paragraph.
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward,close,cookie,keyboard_arrow_down,language,manage_search,newsmode,search&display=block" />
 
@@ -114,7 +114,7 @@ The site loads around 530 KB of font files, out of which 380 KB is for the [Goog
 </table>
 </div>
 
-The COP30 website loads in an entire font family for just these six icons. It is absolutely possible to subset the font instead. In this way _just the required content_ is downloaded. Doing so takes the size of the downloaded font file from 380 KB down to 0.5 KB. Here's the one line code change required to do that:
+The COP30 website loads in an entire font family for just these seven icons. It is absolutely possible to subset the font instead. In this way _just the required content_ is downloaded. Doing so takes the size of the downloaded font file from 380 KB down to 0.5 KB. Here's the one line code change required to do that:
 
 {% codeToHtml "diff", "client.css" %}
 - @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0&display=block)
