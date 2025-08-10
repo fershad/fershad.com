@@ -183,7 +183,7 @@ textarea:not([rows]) {
   max-inline-size: var(--size-header-2);
 }
 :where(h3) {
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-4);
   --deeplink-size: var(--size-header-5);
 }
 :where(h4) {
