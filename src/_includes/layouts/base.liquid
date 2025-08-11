@@ -219,7 +219,7 @@
     data-honor-dnt="true"
     defer></script>
 
-  <script defer>
+  <script type="module">
 
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
@@ -236,20 +236,11 @@
       }
     });
 
-      const gawReject = document.getElementById('gaw-reject');
-
-      gawReject.addEventListener('click', (event) => {
-        event.preventDefault();
-        try {
-          if (fathom) {
-              fathom.trackEvent('gaw reject');
-          }
-        } catch (error) {
-      } finally {
-    // Save the user's preference as a cookie for 24 hours
-    document.cookie = 'gaw-ignore=true;max-age=86400;path=/;';
-    window.location.reload();
-      }
-      });
+    const infoBar = document.querySelector('gaw-info-bar');
+	const shadowRoot = infoBar.shadowRoot
+	const toggle = shadowRoot.querySelector('input[type="checkbox"]')
+	toggle.addEventListener("change", () => {
+	    toggle.checked ? cabin?.event("GAW opt-in") : cabin?.event("GAW opt-out")
+	})
   </script>
 </html>
