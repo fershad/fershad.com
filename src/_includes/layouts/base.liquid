@@ -240,7 +240,7 @@
 	const shadowRoot = infoBar.shadowRoot
 	const toggle = shadowRoot.querySelector('input[type="checkbox"]')
 	toggle.addEventListener("change", () => {
-	    toggle.checked ? cabin?.event("GAW opt-in") : cabin?.event("GAW opt-out")
+	    toggle.checked ? fathom.trackEvent("GAW opt-in") : fathom.trackEvent("GAW opt-out")
 	})
   </script>
 </html>
