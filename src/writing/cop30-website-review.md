@@ -114,7 +114,7 @@ The site loads around 530 KB of font files, out of which 380 KB is for the [Goog
 </table>
 </div>
 
-The COP30 website loads in an entire font family for just these seven icons. It is absolutely possible to subset the font instead. In this way _just the required content_ is downloaded. Doing so takes the size of the downloaded font file from 380 KB down to 0.5 KB. Here's the one line code change required to do that:
+The COP30 website loads in an entire font family for just these seven icons. It is absolutely possible to subset the font instead. In this way _just the required content_ is downloaded. Doing so takes the size of the downloaded font file from 380 KB down to 2.6 KB. Here's the one line code change required to do that:
 
 {% codeToHtml "diff", "client.css" %}
 - @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20,300,0,0&display=block)
