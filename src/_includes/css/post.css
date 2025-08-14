@@ -556,12 +556,16 @@ image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
 }
 
 .webmentions .avatars a:hover,
-.webmentions .avatars a:focus {
+.webmentions .avatars a:focus,
+.comment:hover img,
+.comment:focus {
     z-index: 2;
 }
 
 .webmentions .avatars img::before,
-.webmentions .avatars img::after {
+.webmentions .avatars img::after,
+.comment-author > img::before,
+.comment-author > img:after {
     content: "";
     display: none;
     height: 100%;
@@ -581,14 +585,21 @@ image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
     border: 1px solid;
 }
 
-.webmentions .avatars img:hover::before {
+.comment:hover img {
+    transform: scale(1.2);
+    border: 1px solid;
+}
+
+.webmentions .avatars img:hover::before,
+.comment:hover img:before {
     animation:
         text-glitch1 4.5s infinite,
         list-glitch1 2.5s infinite;
     border-color: var(--glitch-off-color, #f16f6f);
 }
 
-.webmentions .avatars img:hover::after {
+.webmentions .avatars img:hover::after,
+.comment:hover img:after {
     animation:
         text-glitch2 4.5s infinite,
         list-glitch2 2.5s infinite;
@@ -597,6 +608,17 @@ image-compare:has(+ figcaption:not([data-gaw-remove])) > [slot="image-2"] {
 
 .webmentions + div > label {
     font-size: 0.8rem;
+}
+
+.comment {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.comment blockquote {
+    margin-block-start: 0;
 }
 
 @media (max-width: 768px) {
