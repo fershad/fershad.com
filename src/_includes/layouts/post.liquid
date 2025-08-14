@@ -57,16 +57,26 @@ css: /css/post.css
     {{ content }}
 
     {% if mentions.comments.size > 0 %}
-    <h2>Comments {{ mentions.comments | size }}</h2>
+    <h2>Comments</h2>
     <div class="comments">
       {% for item in mentions.comments %}
         <div class="comment">
-          <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page"></a>
-          <p class="comment-content">{{ item.content }}</p>
-          <p class="comment-date">{{ item.published | date_to_long_string }}</p>
+          <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page" onerror="this.onerror=null;this.src='/img/dot.svg'" eleventy:ignore></a>
+          <div class="comment-content">
+          <blockquote class="">
+              <p>{{ item.content }}</p>
+              <cite><a href="{{ item.url }}" class="comment-author">{{ item.author.name }} - {{ item.published | date_to_long_string }}</a></cite>
+          <p class="comment-date"></p>
+          </blockquote>
+          </div>
         </div>
       {% endfor %}
     </div>
+    <script>
+    document.querySelectorAll('.comment img').forEach(img => {
+     img.setAttribute('style', '--glitch-img-src: url(' + img.src + ')');
+    });
+    </script>
     {% endif %}
   </section>
 
