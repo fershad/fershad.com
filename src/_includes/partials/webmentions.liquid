@@ -33,11 +33,7 @@
   <div class="avatars hidden">
     {% for item in mentions.mentions %}
       <a href="{{ item.url }}">
-          {% if item.author.photo %}
-          <img src="{{ item.author.photo }}" onerror="this.onerror=null;this.src='/img/dot.svg'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
-          {% else %}
-          <img src="https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}" onerror="this.onerror=null;this.src='/img/dot.svg'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
-          {% endif %}
+          <img src="{{ item.author.photo }}" onerror="this.onerror=null;this.src='https://v1.indieweb-avatar.11ty.dev/{{ item.url | url_encode }}'" class="mention-image" alt="photo of the author of one of the webmentions for this page" eleventy:ignore>
       </a>
     {% endfor %}
   </div>
