@@ -62,7 +62,7 @@ While building the web component to be used on *Branch* was the main priority th
 
 While on *Branch* we've put the status bar at the very top of the site, we can't be certain that everyone using it would want to do the same. Using [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries), a newish feature on the web platform, we've been able to build the web component so that it resizes based on its parent element on the web page. This means that if someone wants to put the web component into a narrow sidebar menu, they absolutely can!
 
-In fact, I use the web component in the footer of this site. To demonstrate this flexibility, I've also put the web component into the middle of this blog post which is a narrower container. For folks viewing this post on a desktop or laptop, the demo below shows this in action. Those of you on mobile, try rotating your device.
+In fact, I use the web component in the footer of this site. To demonstrate this flexibility, I've also put the web component into the middle of this blog post which is a narrower container.
 
 Oh hey, and these web components are interactive too 😉. Click around. *Note: I've set fixed location and grid intensity for the demo in this post. The one in the footer should show your actual location and grid intensity.*
 

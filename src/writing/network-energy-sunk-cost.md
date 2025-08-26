@@ -1,8 +1,26 @@
----
+# Notes from Romain:
+
+# - What's the key takeaway from the whole article? That single sentence.
+
+# - What are the things developers should optimise for instead?
+
+# - Probably worth focusing on a target audience (make it clear)
+
+# - Highlight that while it might not have a huge sustainability impact, there are other reasons to do it.
+
+# - Maybe too many analogies?
+
+#
+
+# Notes from Chris:
+
+# - Maybe the airline analogy doesn't make that much sense afterall.
+
 title: Is network energy use a sunk cost when trying to improve web sustainability?
+
 # published: YYYY-MM-DD
-summary: Thoughts about how we as a web sustainability community think about network energy use, and where we should focus our efforts instead.
----
+
+## summary: Thoughts about how we as a web sustainability community think about network energy use, and where we should focus our efforts instead.
 
 Yes it is, in my opinion. That's it. That's the blog post.
 
