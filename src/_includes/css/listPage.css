@@ -85,6 +85,7 @@ ul.boxes li:has(.summary.active):hover {
     margin: 0;
     grid-column: 1/2;
     grid-row: 1;
+    font-variation-settings: "wght" 700;
 }
 
 li.note {

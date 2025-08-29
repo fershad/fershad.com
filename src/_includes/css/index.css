@@ -312,6 +312,19 @@ textarea:not([rows]) {
   max-inline-size: var(--size-content-1);
 }
 
+@font-face {
+    font-family: "Maple Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/MapleMonoVF.woff2") format("woff2");
+    font-display: optional;
+}
+
+:where(html) {
+    font-family: "Maple Mono", var(--font-monospace-code), monospace;
+    font-variation-settings: "wght" 400;
+}
+
 /* NOTE: General stuff */
 
 html {
@@ -391,10 +404,6 @@ body:not(.dark) {
   color-scheme: light !important;
 }
 
-:where(html) {
-  font-family: var(--font-monospace-code), monospace;
-}
-
 .heading-underline {
   position: relative;
   text-align: center;
@@ -443,7 +452,8 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: var(--font-monospace-slab-serif), monospace;
+  font-family: "Maple Mono", var(--font-monospace-code), monospace;
+  font-variation-settings: "wght" 600;
 }
 
 .heading {
@@ -693,6 +703,8 @@ a {
   position: relative;
   text-decoration: underline;
   color: var(--override-color, var(--link-color));
+  font-variation-settings: "wght" 700;
+  font-weight: 700;
 }
 
 a::after {

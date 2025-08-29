@@ -5,7 +5,7 @@
     src:
         url("/fonts/subset-DepartureMono-Regular.woff2") format("woff2"),
         url("/fonts/subset-DepartureMono-Regular.woff") format("woff");
-    font-display: swap;
+    font-display: optional;
 }
 
 :where(html) {
