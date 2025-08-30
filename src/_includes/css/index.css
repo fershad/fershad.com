@@ -4,14 +4,14 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Prevent font size inflation */
 html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -25,19 +25,19 @@ figure,
 blockquote,
 dl,
 dd {
-  margin-block-end: 0;
+    margin-block-end: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-  list-style: none;
+    list-style: none;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  line-height: 1.5;
+    min-height: 100vh;
+    line-height: 1.5;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -48,7 +48,7 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+    line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
@@ -56,20 +56,20 @@ h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+    text-wrap: balance;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
+    text-decoration-skip-ink: auto;
+    color: currentColor;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -77,136 +77,152 @@ input,
 button,
 textarea,
 select {
-  font-family: inherit;
-  font-size: inherit;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
-  min-height: 10em;
+    min-height: 10em;
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
-  scroll-margin-block: 5ex;
+    scroll-margin-block: 5ex;
 }
 
 /* Open Props */
 
 :where(html) {
-  --font-system-ui: system-ui, sans-serif;
-  --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
-  --font-monospace-code: Dank Mono, Operator Mono, Inconsolata, Fira Mono,
-    ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro,
-    Cascadia Code, Menlo, Consolas, DejaVu Sans Mono, monospace;
-  --font-sans: var(--font-system-ui);
-  --font-serif: ui-serif, serif;
-  --font-mono: var(--font-monospace-code);
-  --font-weight-1: 100;
-  --font-weight-2: 200;
-  --font-weight-3: 300;
-  --font-weight-4: 400;
-  --font-weight-5: 500;
-  --font-weight-6: 600;
-  --font-weight-7: 700;
-  --font-weight-8: 800;
-  --font-weight-9: 900;
-  --font-lineheight-1: 1.25;
-  --font-size-00: 0.5rem;
-  --font-size-0: 0.75rem;
-  --font-size-1: 1rem;
-  --font-size-2: 1.1rem;
-  --font-size-3: 1.25rem;
-  --font-size-4: 1.5rem;
-  --font-size-5: 2rem;
-  --font-size-6: 2.5rem;
-  --font-size-7: 3rem;
-  --font-size-8: 3.5rem;
-  --font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
-  --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
-  --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
-  --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
+    --font-system-ui: system-ui, sans-serif;
+    --font-monospace-slab-serif: Nimbus Mono PS, Courier New, monospace;
+    --font-monospace-code:
+        Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono,
+        Monaco, Droid Sans Mono, Source Code Pro, Cascadia Code, Menlo,
+        Consolas, DejaVu Sans Mono, monospace;
+    --font-sans: var(--font-system-ui);
+    --font-serif: ui-serif, serif;
+    --font-mono: var(--font-monospace-code);
+    --font-weight-1: 100;
+    --font-weight-2: 200;
+    --font-weight-3: 300;
+    --font-weight-4: 400;
+    --font-weight-5: 500;
+    --font-weight-6: 600;
+    --font-weight-7: 700;
+    --font-weight-8: 800;
+    --font-weight-9: 900;
+    --font-lineheight-1: 1.25;
+    --font-size-00: 0.5rem;
+    --font-size-0: 0.75rem;
+    --font-size-1: 1rem;
+    --font-size-2: 1.1rem;
+    --font-size-3: 1.25rem;
+    --font-size-4: 1.5rem;
+    --font-size-5: 2rem;
+    --font-size-6: 2.5rem;
+    --font-size-7: 3rem;
+    --font-size-8: 3.5rem;
+    --font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
+    --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+    --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+    --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
 
-  --size-xxs: 240px;
-  --size-xs: 360px;
-  --size-sm: 480px;
-  --size-md: 768px;
-  --size-lg: 1024px;
-  --size-xl: 1440px;
-  --size-xxl: 1920px;
+    --size-xxs: 240px;
+    --size-xs: 360px;
+    --size-sm: 480px;
+    --size-md: 768px;
+    --size-lg: 1024px;
+    --size-xl: 1440px;
+    --size-xxl: 1920px;
 
-  --size-content-1: 20ch;
-  --size-content-2: 45ch;
-  --size-content-3: 60ch;
-  --size-header-1: 20ch;
-  --size-header-2: 25ch;
-  --size-header-3: 35ch;
+    --size-content-1: 20ch;
+    --size-content-2: 45ch;
+    --size-content-3: 60ch;
+    --size-header-1: 20ch;
+    --size-header-2: 25ch;
+    --size-header-3: 35ch;
 
-  --blue-0: #e7f5ff;
-  --blue-1: #d0ebff;
-  --blue-2: #a5d8ff;
-  --blue-3: #74c0fc;
-  --blue-4: #4dabf7;
-  --blue-5: #339af0;
-  --blue-6: #228be6;
-  --blue-7: #1c7ed6;
-  --blue-8: #1971c2;
-  --blue-9: #1864ab;
-  --blue-10: #145591;
-  --blue-11: #114678;
-  --blue-12: #0d375e;
+    --blue-0: #e7f5ff;
+    --blue-1: #d0ebff;
+    --blue-2: #a5d8ff;
+    --blue-3: #74c0fc;
+    --blue-4: #4dabf7;
+    --blue-5: #339af0;
+    --blue-6: #228be6;
+    --blue-7: #1c7ed6;
+    --blue-8: #1971c2;
+    --blue-9: #1864ab;
+    --blue-10: #145591;
+    --blue-11: #114678;
+    --blue-12: #0d375e;
 
-  --stone-0: #f8fafb;
-  --stone-1: #f2f4f6;
-  --stone-2: #ebedef;
-  --stone-10: #3a3a37;
-  --stone-11: #252521;
-  --stone-12: #121210;
+    --stone-0: #f8fafb;
+    --stone-1: #f2f4f6;
+    --stone-2: #ebedef;
+    --stone-10: #3a3a37;
+    --stone-11: #252521;
+    --stone-12: #121210;
 
-  --text: var(--stone-1);
-  --background: var(--stone-11);
+    --red-6: #fa5252;
+    --pink-6: #e64980;
+    --purple-6: #be4bdb;
+    --violet-6: #7950f2;
+    --indigo-6: #4c6ef5;
+    --cyan-6: #15aabf;
+    --teal-6: #12b886;
+    --green-6: #40c057;
+    --lime-6: #9bbb36;
+    --yellow-6: #fab005;
+    --orange-6: #fd7e14;
+    --choco-6: #d46e25;
+    --camo-6: #999621;
+    --jungle-6: #9bbb36;
+
+    --text: var(--stone-1);
+    --background: var(--stone-11);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  text-wrap: balance;
-  font-weight: var(--font-weight-1);
-  line-height: var(--font-lineheight-1);
-  margin-block-start: 0;
+    text-wrap: balance;
+    font-weight: var(--font-weight-1);
+    line-height: var(--font-lineheight-1);
+    margin-block-start: 0;
 }
 
 :where(h1) {
-  font-size: var(--font-size-6);
-  max-inline-size: var(--size-header-1);
+    font-size: var(--font-size-6);
+    max-inline-size: var(--size-header-1);
 }
 :where(h2) {
-  font-size: var(--font-size-5);
-  max-inline-size: var(--size-header-2);
+    font-size: var(--font-size-5);
+    max-inline-size: var(--size-header-2);
 }
 :where(h3) {
-  font-size: var(--font-size-4);
-  --deeplink-size: var(--size-header-5);
+    font-size: var(--font-size-4);
+    --deeplink-size: var(--size-header-5);
 }
 :where(h4) {
-  font-size: var(--font-size-3);
-  --deeplink-size: var(--size-header-4);
+    font-size: var(--font-size-3);
+    --deeplink-size: var(--size-header-4);
 }
 :where(h5) {
-  font-size: var(--font-size-2);
-  --deeplink-size: var(--size-header-3);
+    font-size: var(--font-size-2);
+    --deeplink-size: var(--size-header-3);
 }
 :where(h3, h4, h5, h6, dt) {
-  max-inline-size: var(--size-header-3);
+    max-inline-size: var(--size-header-3);
 }
 :where(p, ul, ol, dl, h6) {
-  font-size: var(--font-size-2);
+    font-size: var(--font-size-2);
 }
 :where(a, u, ins, abbr) {
-  text-underline-offset: 1px;
+    text-underline-offset: 1px;
 }
 @supports (-moz-appearance: none) {
-  :where(a, u, ins, abbr) {
-    text-underline-offset: 2px;
-  }
+    :where(a, u, ins, abbr) {
+        text-underline-offset: 2px;
+    }
 }
 :where(
     a[href],
@@ -220,13 +236,13 @@ textarea:not([rows]) {
         [type=""],
         [type="tel"],
         [type="url"]
-      ),
+    ),
     label[for],
     select,
     summary,
     [tabindex]:not([tabindex*="-"], pre)
-  ) {
-  cursor: pointer;
+) {
+    cursor: pointer;
 }
 :where(
     a[href],
@@ -238,78 +254,78 @@ textarea:not([rows]) {
     summary,
     textarea,
     [tabindex]:not([tabindex*="-"])
-  ) {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+) {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 :where(a):where([href]) {
-  text-decoration-color: var(--indigo-2);
+    text-decoration-color: var(--indigo-2);
 }
 :where(a):where([href]):where(:visited) {
-  text-decoration-color: var(--purple-2);
+    text-decoration-color: var(--purple-2);
 }
 :where(a):where(:not(:hover)) {
-  text-decoration: inherit;
+    text-decoration: inherit;
 }
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
-  display: block;
+    display: block;
 }
 :where(img, svg, video) {
-  block-size: auto;
-  max-inline-size: 100%;
+    block-size: auto;
+    max-inline-size: 100%;
 }
 
 :where(code, kbd, samp, pre) {
-  font-family: var(--font-monospace-code), monospace;
+    font-family: var(--font-monospace-code), monospace;
 }
 :where(:not(pre) > code, kbd) {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 :where(pre) {
-  direction: ltr;
-  max-inline-size: max-content;
-  min-inline-size: 0;
-  white-space: pre;
-  writing-mode: lr;
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr;
 }
 :where(:not(pre) > code) {
-  background: var(--surface-2);
-  border-radius: var(--radius-2);
-  padding: var(--size-1) var(--size-2);
-  writing-mode: lr;
+    background: var(--surface-2);
+    border-radius: var(--radius-2);
+    padding: var(--size-1) var(--size-2);
+    writing-mode: lr;
 }
 :where(kbd, var) {
-  border-color: var(--surface-4);
-  border-radius: var(--radius-2);
-  border-width: var(--border-size-1);
-  padding: var(--size-1) var(--size-2);
+    border-color: var(--surface-4);
+    border-radius: var(--radius-2);
+    border-width: var(--border-size-1);
+    padding: var(--size-1) var(--size-2);
 }
 :where(mark) {
-  border-radius: var(--radius-2);
-  padding-inline: var(--size-1);
+    border-radius: var(--radius-2);
+    padding-inline: var(--size-1);
 }
 :where(ol, ul) {
-  padding-inline-start: var(--size-8);
+    padding-inline-start: var(--size-8);
 }
 :where(li) {
-  padding-inline-start: var(--size-2);
+    padding-inline-start: var(--size-2);
 }
 :where(li, dd, figcaption) {
-  max-inline-size: var(--size-content-2);
+    max-inline-size: var(--size-content-2);
 }
 :where(p) {
-  text-wrap: pretty;
-  max-inline-size: var(--size-content-3);
+    text-wrap: pretty;
+    max-inline-size: var(--size-content-3);
 }
 :where(dt, summary) {
-  font-weight: var(--font-weight-7);
+    font-weight: var(--font-weight-7);
 }
 :where(dt:not(:first-of-type)) {
-  margin-block-start: var(--size-5);
+    margin-block-start: var(--size-5);
 }
 :where(small) {
-  font-size: max(0.5em, var(--font-size-0));
-  max-inline-size: var(--size-content-1);
+    font-size: max(0.5em, var(--font-size-0));
+    max-inline-size: var(--size-content-1);
 }
 
 @font-face {
@@ -326,123 +342,136 @@ textarea:not([rows]) {
 }
 
 /* NOTE: General stuff */
+@view-transition {
+    navigation: auto;
+}
+
+header {
+    view-transition-name: header;
+}
+main:not(:has(article)) {
+    view-transition-name: main;
+}
+footer {
+    view-transition-name: footer;
+}
 
 html {
-  background: var(--background);
-  color: var(--text);
+    background: var(--background);
+    color: var(--text);
 }
 
 body {
-  margin: 0;
-  color-scheme: light dark;
+    margin: 0;
+    color-scheme: light dark;
 }
 
 body.deglitch {
-  --glitch-off-color: var(--blue-4);
+    --glitch-off-color: var(--blue-4);
 }
 
 .skip-link {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  font-size: 1.125rem;
-  font-weight: bold;
-  white-space: nowrap;
-  padding: 8px 20px;
-  text-align: center;
-  text-decoration: none;
-  background-image: none;
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    font-size: 1.125rem;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-image: none;
 }
 
 .skip-link:focus {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  width: auto;
-  height: auto;
-  display: inline-block;
-  z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    width: auto;
+    height: auto;
+    display: inline-block;
+    z-index: 99;
 }
 
 main {
-  --gap: 4rem;
-  --line-offset: calc(var(--gap) / 2);
-  --line-thickness: 2px;
-  --line-color: var(--blue-2);
-  max-width: var(--size-lg);
-  padding: 1rem;
-  margin: 0 auto;
+    --gap: 4rem;
+    --line-offset: calc(var(--gap) / 2);
+    --line-thickness: 2px;
+    --line-color: var(--blue-2);
+    max-width: var(--size-lg);
+    padding: 1rem;
+    margin: 0 auto;
 }
 
 .wrapper > * {
-  position: relative;
-  padding: 1.5rem;
+    position: relative;
+    padding: 1.5rem;
 }
 
 :root {
-  color-scheme: light dark;
+    color-scheme: light dark;
 }
 body {
-  color: light-dark(var(--background), var(--text));
-  background-color: light-dark(var(--text), var(--background));
-  --header-background: light-dark(var(--stone-0), var(--stone-10));
-  --callout-background: light-dark(var(--stone-2), var(--stone-11));
-  --glitch-lightest-opacity: light-dark(0.95, 0.85);
-  --inline-code-background: light-dark(var(--blue-12), var(--blue-0));
-  --inline-code-color: light-dark(var(--stone-0), var(--stone-12));
+    color: light-dark(var(--background), var(--text));
+    background-color: light-dark(var(--text), var(--background));
+    --header-background: light-dark(var(--stone-0), var(--stone-10));
+    --callout-background: light-dark(var(--stone-2), var(--stone-11));
+    --glitch-lightest-opacity: light-dark(0.95, 0.85);
+    --inline-code-background: light-dark(var(--blue-12), var(--blue-0));
+    --inline-code-color: light-dark(var(--stone-0), var(--stone-12));
 }
 
 body.dark {
-  color-scheme: dark !important;
+    color-scheme: dark !important;
 }
 
 body:not(.dark) {
-  color-scheme: light !important;
+    color-scheme: light !important;
 }
 
 .heading-underline {
-  position: relative;
-  text-align: center;
-  margin-block-end: 2.5rem;
+    position: relative;
+    text-align: center;
+    margin-block-end: 2.5rem;
 }
 
 * + .heading-underline {
-  margin-block-start: 2.5rem;
+    margin-block-start: 2.5rem;
 }
 
 .heading-underline::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 1px solid var(--line-color);
-  margin: 1rem 0;
-  inline-size: 40%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 30%;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid var(--line-color);
+    margin: 1rem 0;
+    inline-size: 40%;
+    block-size: var(--line-thickness);
+    inset-inline-start: 30%;
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: 100%;
 }
 
 .underline {
-  position: relative;
-  margin-block-end: 2.5rem;
+    position: relative;
+    margin-block-end: 2.5rem;
 }
 
 .underline::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 2px solid var(--line-color);
-  margin: 1rem 0;
-  inline-size: 70%;
-  block-size: var(--line-thickness);
-  inset-inline-start: 0;
-  inset-block-start: calc(var(--line-offset) * -1);
-  top: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    border-bottom: 2px solid var(--line-color);
+    margin: 1rem 0;
+    inline-size: 70%;
+    block-size: var(--line-thickness);
+    inset-inline-start: 0;
+    inset-block-start: calc(var(--line-offset) * -1);
+    top: 100%;
 }
 
 h1,
@@ -452,312 +481,312 @@ h4,
 h5,
 h6,
 .heading {
-  font-family: "Maple Mono", var(--font-monospace-code), monospace;
-  font-variation-settings: "wght" 600;
+    font-family: "Maple Mono", var(--font-monospace-code), monospace;
+    font-variation-settings: "wght" 600;
 }
 
 .heading {
-  font-weight: var(--font-weight-7);
+    font-weight: var(--font-weight-7);
 }
 
 .banner {
-  background: var(--blue-12);
-  color: var(--stone-0);
-  padding: 1.5rem;
-  width: 100%;
-  grid-column: -1/1;
-  --override-color: var(--stone-0);
+    background: var(--blue-12);
+    color: var(--stone-0);
+    padding: 1.5rem;
+    width: 100%;
+    grid-column: -1/1;
+    --override-color: var(--stone-0);
 }
 
 .center-align {
-  text-align: center;
-  margin-inline: auto;
-  width: fit-content;
-  justify-content: center;
+    text-align: center;
+    margin-inline: auto;
+    width: fit-content;
+    justify-content: center;
 }
 
 .glitch-wrapper.center-align > [data-glitch]::before,
 .glitch-wrapper.center-align > [data-glitch]::after {
-  text-align: center;
-  margin-inline: auto;
-  width: 100%;
+    text-align: center;
+    margin-inline: auto;
+    width: 100%;
 }
 
 small .button {
-  padding: 0.25rem;
+    padding: 0.25rem;
 }
 
 .button {
-  padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .banner.outline,
 .button.outline {
-  position: relative;
-  /* --banner-line-color: var(--blue-12); */
-  background: transparent;
-  --banner-line-color: var(--blue-4);
-  --banner-text-color: currentColor;
-  border: 2px solid var(--banner-line-color, var(--blue-12));
-  color: var(--banner-text-color, var(--blue-12));
-  /* animation: flicker-in 1.35s 1; */
+    position: relative;
+    /* --banner-line-color: var(--blue-12); */
+    background: transparent;
+    --banner-line-color: var(--blue-4);
+    --banner-text-color: currentColor;
+    border: 2px solid var(--banner-line-color, var(--blue-12));
+    color: var(--banner-text-color, var(--blue-12));
+    /* animation: flicker-in 1.35s 1; */
 }
 
 .banner.outline::before,
 .banner.outline::after,
 .button.outline::before,
 .button.outline::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
 .banner.outline:hover::before,
 .button.outline:hover::before {
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: text-glitch1 1.5s infinite;
-  border: 1px solid;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: text-glitch1 1.5s infinite;
+    border: 1px solid;
 }
 
 .banner.outline:hover::after,
 .button.button:hover::after {
-  border-color: var(--glitch-off-color, #67f3da);
-  animation: text-glitch2 1.5s infinite;
-  animation-delay: 0.5s;
-  border: 1px solid;
+    border-color: var(--glitch-off-color, #67f3da);
+    animation: text-glitch2 1.5s infinite;
+    animation-delay: 0.5s;
+    border: 1px solid;
 }
 
 h2 + small,
 h3 + small,
 h4 + small {
-  display: block;
-  width: 100%;
-  margin-block-start: 1.25rem;
-  max-width: 100%;
+    display: block;
+    width: 100%;
+    margin-block-start: 1.25rem;
+    max-width: 100%;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 ol,
 ol li {
-  list-style: decimal;
-  padding: 0;
+    list-style: decimal;
+    padding: 0;
 }
 
 :not(nav) > ul li:not(:last-of-type) {
-  margin-block-end: 2rem;
+    margin-block-end: 2rem;
 }
 
 ul:not([class]) li {
-  position: relative;
-  padding-left: 2.25rem;
+    position: relative;
+    padding-left: 2.25rem;
 }
 
 ul:not([class]) li::before,
 ul:not([class]) li::after {
-  content: "";
-  position: absolute;
-  left: 1ch;
-  top: 1ex;
-  height: 1ex;
-  width: 1ex;
-  border: 2px solid var(--marker-color, var(--blue-4));
-  transition: all 0.2s;
+    content: "";
+    position: absolute;
+    left: 1ch;
+    top: 1ex;
+    height: 1ex;
+    width: 1ex;
+    border: 2px solid var(--marker-color, var(--blue-4));
+    transition: all 0.2s;
 }
 
 ul:not([class]) li:hover::before,
 ul:not([class]) li:hover::after {
-  /* animation: none; */
-  animation-direction: alternate-reverse;
-  animation-duration: 0.75s;
-  height: 100%;
-  top: 0;
-  /* --marker-color: var(--blue-4); */
+    /* animation: none; */
+    animation-direction: alternate-reverse;
+    animation-duration: 0.75s;
+    height: 100%;
+    top: 0;
+    /* --marker-color: var(--blue-4); */
 }
 
 ul:not([class]) li::before {
-  /* transition: all 0.2s; */
-  --marker-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch1 5.5s infinite;
-  animation-delay: var(--local-delay, 0);
-  animation-direction: var(--local-direction, alternate-reverse);
+    /* transition: all 0.2s; */
+    --marker-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch1 5.5s infinite;
+    animation-delay: var(--local-delay, 0);
+    animation-direction: var(--local-direction, alternate-reverse);
 }
 
 ul:not([class]) li::after {
-  --marker-color: var(--glitch-off-color, #67f3da);
-  animation: list-glitch2 5.5s infinite;
-  animation-delay: var(--local-delay, 0);
-  animation-direction: var(--local-direction, alternate-reverse);
+    --marker-color: var(--glitch-off-color, #67f3da);
+    animation: list-glitch2 5.5s infinite;
+    animation-delay: var(--local-delay, 0);
+    animation-direction: var(--local-direction, alternate-reverse);
 }
 
 header,
 footer {
-  --line-color: var(--blue-2);
-  width: 100%;
-  padding: 3rem 2rem;
-  background: var(--header-background);
-  position: relative;
-  overflow: hidden;
+    --line-color: var(--blue-2);
+    width: 100%;
+    padding: 3rem 2rem;
+    background: var(--header-background);
+    position: relative;
+    overflow: hidden;
 }
 
 header {
-  border-bottom: 2px solid var(--line-color);
-  display: flex;
-  justify-content: space-between;
+    border-bottom: 2px solid var(--line-color);
+    display: flex;
+    justify-content: space-between;
 }
 
 header::before,
 header::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-bottom: 2px solid;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 header::before {
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch1 3.5s infinite;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch1 3.5s infinite;
 }
 
 header::after {
-  border-color: var(--glitch-off-color, #67f3da);
-  animation: list-glitch2 2.5s infinite;
-  animation-delay: 0.5s;
+    border-color: var(--glitch-off-color, #67f3da);
+    animation: list-glitch2 2.5s infinite;
+    animation-delay: 0.5s;
 }
 
 footer::before,
 footer::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-top: 2px solid;
-  top: 0;
-  left: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid;
+    top: 0;
+    left: 0;
 }
 
 footer::before {
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch1 3.5s infinite;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch1 3.5s infinite;
 }
 
 footer::after {
-  border-color: var(--glitch-off-color, #67f3da);
-  animation: list-glitch2 2.5s infinite;
-  animation-delay: 0.5s;
+    border-color: var(--glitch-off-color, #67f3da);
+    animation: list-glitch2 2.5s infinite;
+    animation-delay: 0.5s;
 }
 
 header > div {
-  width: var(--size-lg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-inline: auto;
+    width: var(--size-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-inline: auto;
 }
 
 footer > nav {
-  max-width: var(--size-xl);
-  margin-inline: auto;
+    max-width: var(--size-xl);
+    margin-inline: auto;
 }
 
 footer {
-  border-top: 2px solid var(--line-color);
-  justify-content: center;
+    border-top: 2px solid var(--line-color);
+    justify-content: center;
 }
 
 footer nav ul li {
-  /* margin-block-start: 2rem; */
+    /* margin-block-start: 2rem; */
 }
 
 header nav ul,
 footer nav ul {
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 header nav ul li,
 footer nav ul li {
-  margin-block-end: 0;
+    margin-block-end: 0;
 }
 
 footer nav ul {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
 a {
-  position: relative;
-  text-decoration: underline;
-  color: var(--override-color, var(--link-color));
-  font-variation-settings: "wght" 700;
-  font-weight: 700;
+    position: relative;
+    text-decoration: underline;
+    color: var(--override-color, var(--link-color));
+    font-variation-settings: "wght" 700;
+    font-weight: 700;
 }
 
 a::after {
-  content: attr(data-glitch);
-  text-transform: capitalize;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+    content: attr(data-glitch);
+    text-transform: capitalize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
 a::before {
-  content: attr(data-glitch);
-  text-transform: capitalize;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
+    content: attr(data-glitch);
+    text-transform: capitalize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
 }
 
 a:hover::before {
-  animation: text-glitch3 3.5s infinite;
-  color: var(--glitch-off-color, #f16f6f);
+    animation: text-glitch3 3.5s infinite;
+    color: var(--glitch-off-color, #f16f6f);
 }
 
 a:hover::after {
-  animation: text-glitch2 3.5s infinite;
-  color: var(--glitch-off-color, #67f3da);
+    animation: text-glitch2 3.5s infinite;
+    color: var(--glitch-off-color, #67f3da);
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .visually-hidden:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
 
-  // https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/#div-comment-267
-  white-space: nowrap;
-  width: 1px;
+    /* https://www.24a11y.com/2018/accessible-svg-icons-with-inline-sprites/#div-comment-267 */
+    white-space: nowrap;
+    width: 1px;
 }
 
 .flow > * + * {
-  margin-block-start: var(--flow-gap, 2rem);
+    margin-block-start: var(--flow-gap, 2rem);
 }
 
 *::before,
 *::after {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 /* Glitch effect from */
@@ -767,11 +796,11 @@ a:hover {
 article h2,
 article h3,
 article h4 {
-  position: relative;
+    position: relative;
 }
 
 .glitch-wrapper h1 {
-  --custom-glitch-opacity: 0.15;
+    --custom-glitch-opacity: 0.15;
 }
 
 article h2::before,
@@ -782,7 +811,7 @@ article h3::after,
 article h4::after,
 .glitch-wrapper small::before,
 .glitch-wrapper small::after {
-  margin-left: 1.35ch;
+    margin-left: 1.35ch;
 }
 
 .glitch-wrapper h1::before,
@@ -797,12 +826,12 @@ article h3::after,
 article h4::after,
 .glitch-wrapper small::before,
 .glitch-wrapper small::after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  /* animation: glitch3 2.5s infinite; */
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* animation: glitch3 2.5s infinite; */
 }
 
 .glitch-wrapper:hover > h1,
@@ -811,7 +840,7 @@ article h2:hover,
 article h3:hover,
 article h4:hover,
 .glitch-wrapper:hover > small {
-  animation: text-glitch1 3.5s infinite alternate;
+    animation: text-glitch1 3.5s infinite alternate;
 }
 
 .glitch-wrapper:hover > h1::before,
@@ -820,8 +849,8 @@ article h2:hover::before,
 article h3:hover::before,
 article h4:hover::before,
 .glitch-wrapper:hover > small::before {
-  animation: text-glitch2 3.5s infinite alternate;
-  color: var(--glitch-off-color, #67f3da);
+    animation: text-glitch2 3.5s infinite alternate;
+    color: var(--glitch-off-color, #67f3da);
 }
 
 .glitch-wrapper:hover > h1::after,
@@ -830,242 +859,242 @@ article h2:hover::after,
 article h3:hover::after,
 article h4:hover::after,
 .glitch-wrapper:hover > small::after {
-  color: var(--glitch-off-color, #f16f6f);
-  animation: text-glitch3 3.5s infinite alternate;
+    color: var(--glitch-off-color, #f16f6f);
+    animation: text-glitch3 3.5s infinite alternate;
 }
 
 .callout:hover::before,
 .callout:hover::after,
 .callout:hover .title::before,
 .callout:hover .title::after {
-  animation: none;
-  display: none;
+    animation: none;
+    display: none;
 }
 
 .callout::before {
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: text-glitch1 1.5s infinite;
-  border: 1px solid;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: text-glitch1 1.5s infinite;
+    border: 1px solid;
 }
 
 .callout::after {
-  border-color: var(--glitch-off-color, #67f3da);
-  animation: text-glitch2 1.5s infinite;
-  animation-delay: 0.5s;
-  border: 1px solid;
+    border-color: var(--glitch-off-color, #67f3da);
+    animation: text-glitch2 1.5s infinite;
+    animation-delay: 0.5s;
+    border: 1px solid;
 }
 
 .callout p {
-  max-inline-size: 100%;
+    max-inline-size: 100%;
 }
 
 .callout .title {
-  margin: 0;
-  width: fit-content;
-  background-color: var(--blue-8);
-  color: var(--stone-0);
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
-  margin-left: -1.5rem;
-  font-size: 1.5rem;
-  position: relative;
+    margin: 0;
+    width: fit-content;
+    background-color: var(--blue-8);
+    color: var(--stone-0);
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    margin-left: -1.5rem;
+    font-size: 1.5rem;
+    position: relative;
 }
 
 [data-gaw-remove] + .gaw-banner {
-  display: none;
+    display: none;
 }
 
 .gaw-banner > small {
-  max-width: var(--size-lg);
+    max-width: var(--size-lg);
 }
 
 .gaw-banner {
-  background: var(--callout-background);
-  margin-top: 0;
-  padding-block: 0.5rem;
-  width: 100%;
-  position: relative;
-  --line-color: var(--blue-2);
-  border-bottom: 2px solid var(--line-color);
+    background: var(--callout-background);
+    margin-top: 0;
+    padding-block: 0.5rem;
+    width: 100%;
+    position: relative;
+    --line-color: var(--blue-2);
+    border-bottom: 2px solid var(--line-color);
 }
 
 .gaw-banner::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .gaw-banner::after {
-  border-bottom: 2px solid;
-  border-color: var(--glitch-off-color, #f16f6f);
-  animation: list-glitch2 2.5s infinite;
-  animation-delay: 0.5s;
+    border-bottom: 2px solid;
+    border-color: var(--glitch-off-color, #f16f6f);
+    animation: list-glitch2 2.5s infinite;
+    animation-delay: 0.5s;
 }
 
 :root {
-  --form-control-color: var(--blue-4);
+    --form-control-color: var(--blue-4);
 }
 
 .form-control {
-  line-height: 1.1;
-  display: grid;
-  grid-template-columns: 1em auto;
-  gap: 0.5em;
-  align-items: center;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    align-items: center;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  appearance: none;
-  /* For iOS < 15 to remove gradient background */
-  /* Not removed via appearance */
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid var(--blue-7);
-  /* border-radius: 50%; */
-  transform: translateY(-0.075em);
-  display: grid;
-  place-content: center;
-  position: relative;
-  animation: list-glitch1 2.5s infinite;
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    /* Not removed via appearance */
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--blue-7);
+    /* border-radius: 50%; */
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    position: relative;
+    animation: list-glitch1 2.5s infinite;
 }
 
 input[type="radio"]::after,
 input[type="checkbox"]::after {
-  content: "";
-  width: calc(100% + 0.3em);
-  height: calc(100% + 0.3em);
-  top: -0.15em;
-  position: absolute;
-  /* border-radius: 50%; */
-  /* transform: scale(0); */
-  transition: 120ms height ease-in-out;
-  animation: list-glitch2 2.5s infinite;
-  border: 0.15em solid var(--glitch-off-color, #f16f6f);
-  left: -0.15em;
+    content: "";
+    width: calc(100% + 0.3em);
+    height: calc(100% + 0.3em);
+    top: -0.15em;
+    position: absolute;
+    /* border-radius: 50%; */
+    /* transform: scale(0); */
+    transition: 120ms height ease-in-out;
+    animation: list-glitch2 2.5s infinite;
+    border: 0.15em solid var(--glitch-off-color, #f16f6f);
+    left: -0.15em;
 }
 
 input[type="radio"]::before,
 input[type="checkbox"]::before {
-  content: "";
-  width: 0.65em;
-  height: 0em;
-  top: 0;
-  position: absolute;
-  /* border-radius: 50%; */
-  /* transform: scale(0); */
-  transition: 120ms height ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-  animation: text-glitch2 2.5s infinite;
+    content: "";
+    width: 0.65em;
+    height: 0em;
+    top: 0;
+    position: absolute;
+    /* border-radius: 50%; */
+    /* transform: scale(0); */
+    transition: 120ms height ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    animation: text-glitch2 2.5s infinite;
 }
 
 input[type="radio"]:checked,
 input[type="checkbox"]:checked {
-  animation: none;
-  background-color: #fff;
+    animation: none;
+    background-color: #fff;
 }
 
 input[type="radio"]:checked::before,
 input[type="checkbox"]:checked::before {
-  /* transform: scale(1); */
-  height: 100%;
-  animation: none;
+    /* transform: scale(1); */
+    height: 100%;
+    animation: none;
 }
 
 input[type="radio"]:checked::after,
 input[type="checkbox"]:checked::after {
-  /* transform: scale(1); */
-  /* height: 100%; */
-  display: none;
-  animation: none;
+    /* transform: scale(1); */
+    /* height: 100%; */
+    display: none;
+    animation: none;
 }
 
 #filters,
 .controls > small:first-of-type,
 .controls {
-  display: flex;
-  flex-direction: row;
-  /* margin: 0; */
-  list-style: none;
-  gap: 1.5rem;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    /* margin: 0; */
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .controls > small:first-of-type {
-  max-width: var(--size-lg);
-  margin-inline: auto;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+    max-width: var(--size-lg);
+    margin-inline: auto;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 .controls:has(small) {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  padding-inline: 0.75rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-inline: 0.75rem;
 }
 
 .controls #filters,
 .controls > * {
-  margin: 0;
+    margin: 0;
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
 
-  .onecol,
-  .twocol,
-  .threecol {
-    grid-column: 1;
-  }
+    .onecol,
+    .twocol,
+    .threecol {
+        grid-column: 1;
+    }
 
-  footer {
-    padding-inline: 0.25rem;
-  }
+    footer {
+        padding-inline: 0.25rem;
+    }
 
-  footer nav ul {
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 100vw;
-    justify-content: flex-start;
-  }
+    footer nav ul {
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100vw;
+        justify-content: flex-start;
+    }
 
-  main {
-    padding: 0.5rem;
-  }
+    main {
+        padding: 0.5rem;
+    }
 
-  header nav ul li:first-of-type::before,
-  header nav ul li:first-of-type::after {
-    left: 0;
-  }
+    header nav ul li:first-of-type::before,
+    header nav ul li:first-of-type::after {
+        left: 0;
+    }
 
-  header nav ul li:first-of-type {
-    padding-inline-start: calc(2.25rem - 1ch);
-  }
+    header nav ul li:first-of-type {
+        padding-inline-start: calc(2.25rem - 1ch);
+    }
 
-  .wrapper > * {
-    padding: 0.75rem;
-    max-inline-size: 100%;
-  }
+    .wrapper > * {
+        padding: 0.75rem;
+        max-inline-size: 100%;
+    }
 
-  .gaw-banner {
-    padding-inline-end: 0.75rem;
-  }
+    .gaw-banner {
+        padding-inline-end: 0.75rem;
+    }
 
-  header {
-    padding-block-end: 2rem;
-  }
+    header {
+        padding-block-end: 2rem;
+    }
 }
 
 body.deglitch .banner.outline::before,
@@ -1098,11 +1127,10 @@ body.deglitch .gh-edit::before,
 body.deglitch .gh-edit::after,
 body.deglitch .gaw-banner::before,
 body.deglitch .gaw-banner::after {
-  display: none;
-  animation: none !important;
-  transition: none !important;
+    display: none;
+    animation: none !important;
+    transition: none !important;
 }
-
 
 gaw-info-bar {
     margin-inline: auto;
