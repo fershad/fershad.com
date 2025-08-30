@@ -316,7 +316,7 @@ textarea:not([rows]) {
     font-family: "Maple Mono";
     font-style: normal;
     font-weight: 400;
-    src: url("/fonts/MapleMonoVF.woff2") format("woff2");
+    src: url("/fonts/MapleMonoVF-subset.woff2") format("woff2");
     font-display: optional;
 }
 

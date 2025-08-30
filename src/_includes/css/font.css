@@ -22,3 +22,7 @@ h6,
     position: relative;
     font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
 }
+
+blockquote {
+    font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
+}

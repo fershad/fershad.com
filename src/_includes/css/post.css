@@ -134,7 +134,7 @@ blockquote {
     margin: 1.5rem 0;
     border-bottom: 1px solid var(--blue-7);
     border-left: 1.25rem solid var(--blue-4);
-    font-family: var(--font-monospace-slab-serif);
+    font-family: "Departure Mono" var(--font-monospace-slab-serif);
     transform: skew(-5deg);
     position: relative;
     transition: transform 0.2s ease;
