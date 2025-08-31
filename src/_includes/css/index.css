@@ -1053,6 +1053,7 @@ input[type="checkbox"]:checked::after {
     list-style: none;
     gap: 1.5rem;
     align-items: center;
+    /*flex-wrap: wrap;*/
 }
 
 .controls > small:first-of-type {
@@ -1121,6 +1122,10 @@ input[type="checkbox"]:checked::after {
 
     header {
         padding-block-end: 2rem;
+    }
+
+    label[for="favicon-toggle"] {
+        display: none;
     }
 }
 
