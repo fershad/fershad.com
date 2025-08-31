@@ -333,7 +333,7 @@ textarea:not([rows]) {
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/MapleMonoVF-subset.woff2") format("woff2");
-    font-display: optional;
+    font-display: swap;
 }
 
 :where(html) {
