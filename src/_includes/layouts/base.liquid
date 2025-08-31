@@ -241,7 +241,10 @@
         <a href="#" id="gaw-reject">regular website</a>.</small>
     </div>
     <a class="skip-link banner" href="#main-content">Skip to content</a>
-    <main id="main-content">{{ content }}</main>
+    <main id="main-content">
+        <div id="gaw-bar-holder" style="max-width: var(--size-xl); margin-inline: auto;"></div>
+        {{ content }}
+    </main>
     {% include 'partials/footer.liquid' %}
   </body>
 
