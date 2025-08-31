@@ -71,6 +71,8 @@
         loopFavicon()
       }
     </script>
+
+     <script type="module" data-gaw-remove src="/js/rainbow.js?v1" id="rainbow-links"></script>
   </head>
 
 
@@ -112,6 +114,15 @@
             value="themeSwitch" />
           <span>Dark theme</span>
         </label>
+        <label for="rainbow-toggle" class="form-control">
+          <input
+            type="checkbox"
+            name="rainbow-toggle"
+            id="rainbow-toggle"
+            value="rainbowSwitch"
+            checked />
+          <span>Rainbow links</span>
+        </label>
       </small>
     </div>
 
@@ -120,10 +131,12 @@
         // Check local storage for glitch and font settings
         const glitchToggle = document.getElementById('glitch-toggle')
         const fontToggle = document.getElementById('font-toggle')
+        const rainbowToggle = document.getElementById('rainbow-toggle')
         const glitchStyles = document.querySelector('link[href^="/css/glitch.css"]')
         const fontStyles = document.querySelector('link[href^="/css/font.css"]')
         const faviconToggle = document.getElementById('favicon-toggle')
         const faviconScript = document.getElementById('rando-favicon')
+        const rainbowScript = document.getElementById('rainbow-links')
 
         if (localStorage.getItem('glitch') === 'true' || glitchToggle.getAttribute('checked') !== 'checked') {
           glitchToggle.checked = false
@@ -140,6 +153,25 @@
           faviconToggle.checked = true
         }
 
+        if (localStorage.getItem('rainbow') === 'true') {
+          rainbowToggle.checked = true
+        }
+
+        if (rainbowToggle.checked) {
+          document.body.classList.add('rainbow')
+          document.body.appendChild(rainbowScript)
+        }
+
+        // Rainbow toggle
+        rainbowToggle.addEventListener('change', () => {
+            if (rainbowToggle.checked) {
+                document.body.classList.add('rainbow')
+                document.body.appendChild(rainbowScript)
+            } else {
+                document.body.classList.remove('rainbow')
+                rainbowScript.remove()
+            }
+        })
 
         // Glitch toggle
 
@@ -220,6 +252,7 @@
     defer></script>
 
   <script type="module">
+
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
       const gawLevel =  document.querySelector('[data-gaw-level]').getAttribute('data-gaw-level')

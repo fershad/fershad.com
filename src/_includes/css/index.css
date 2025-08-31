@@ -164,20 +164,43 @@ textarea:not([rows]) {
     --stone-11: #252521;
     --stone-12: #121210;
 
-    --red-6: #fa5252;
-    --pink-6: #e64980;
-    --purple-6: #be4bdb;
-    --violet-6: #7950f2;
-    --indigo-6: #4c6ef5;
-    --cyan-6: #15aabf;
-    --teal-6: #12b886;
-    --green-6: #40c057;
-    --lime-6: #9bbb36;
-    --yellow-6: #fab005;
-    --orange-6: #fd7e14;
-    --choco-6: #d46e25;
-    --camo-6: #999621;
-    --jungle-6: #9bbb36;
+    --grey-2: rgb(233, 236, 239);
+    --stone-2: rgb(235, 237, 239);
+    --red-2: rgb(255, 201, 201);
+    --pink-2: rgb(252, 194, 215);
+    --purple-2: rgb(238, 190, 250);
+    --violet-2: rgb(208, 191, 255);
+    --indigo-2: rgb(186, 200, 255);
+    --cyan-2: rgb(153, 233, 242);
+    --teal-2: rgb(150, 242, 215);
+    --green-2: rgb(178, 242, 187);
+    --lime-2: rgb(216, 245, 162);
+    --yellow-2: rgb(255, 216, 168);
+    --orange-2: rgb(247, 202, 158);
+    --choco-2: rgb(224, 202, 183);
+    --brown-2: rgb(213, 207, 189);
+    --sand-2: rgb(213, 207, 189);
+    --camo-2: rgb(210, 223, 78);
+    --jungle-2: rgb(208, 232, 132);
+
+    --grey-10: rgb(22, 25, 29);
+    --stone-10: rgb(58, 58, 55);
+    --red-10: rgb(176, 37, 37);
+    --pink-10: rgb(140, 25, 65);
+    --purple-10: rgb(112, 38, 130);
+    --violet-10: rgb(82, 53, 171);
+    --indigo-10: rgb(47, 68, 173);
+    --cyan-10: rgb(9, 92, 107);
+    --teal-10: rgb(6, 102, 73);
+    --green-10: rgb(35, 112, 50);
+    --lime-10: rgb(76, 122, 11);
+    --yellow-10: rgb(179, 92, 0);
+    --orange-10: rgb(191, 64, 13);
+    --choco-10: rgb(112, 58, 19);
+    --brown-10: rgb(94, 58, 33);
+    --sand-10: rgb(56, 53, 45);
+    --camo-10: rgb(93, 84, 17);
+    --jungle-10: rgb(101, 128, 6);
 
     --text: var(--stone-1);
     --background: var(--stone-11);
@@ -359,6 +382,10 @@ footer {
 html {
     background: var(--background);
     color: var(--text);
+}
+
+body:not(.rainbow) a:not([class]) {
+    color: currentColor !important;
 }
 
 body {
