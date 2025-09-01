@@ -215,7 +215,7 @@ textarea:not([rows]) {
 
 :where(h1) {
     font-size: var(--font-size-6);
-    max-inline-size: var(--size-header-1);
+    max-inline-size: var(--size-md);
 }
 :where(h2) {
     font-size: var(--font-size-5);
