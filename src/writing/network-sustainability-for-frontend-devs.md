@@ -4,7 +4,7 @@ title: Thinking about network sustainability for frontend developers
 summary: Sure data transfer does not equal network energy use. Yes, but there is still a way for frontend developers to influence network energy consumption by reducing data transfer.
 ---
 
-*This post started out in a different form three months ago. Between then and now, I've written a draft, got some feedback, engaged with some folks on this topic, and sharpened my thinking.*
+*This post started out in a different form three months ago. Between then and now, I've written a draft, got some feedback, engaged with some folks on this topic, and sharpened my thinking. Thank you [Chris](https://www.linkedin.com/in/mrchrisadams/) and [Romain](https://www.linkedin.com/in/romain-jacob-eth/).*
 
 One of the first suggestions that most folks get when asking how to make their website more sustainable is *"reduce the amount of data transferred"*. Hopefully it's not the only advice they'll get, but even today it is still prevalent. That is perhaps because it presents an approachable solution to something that might initially feel daunting.
 
@@ -68,7 +68,3 @@ To reiterate, neither of these things will reduce the "carbon footprint" of your
 At the level of an individual website, data transfer has no meaningful relationship to energy consumption of the network infrastructure used to serve it. Practically that is true, the impact of an individual website is close enough to zero to be zero. But in another way, the amount of data we transfer can have an influence on network energy consumption. Not in the immediate term, but over a longer period of time, the decisions we make today as developers can have a significant impact on the energy profile of the networks that transport our content.
 
 So sure data transfer does not equal network energy use. Yes, but ...
-
-{% callout %}
-Thank you to Chris Adams and Romain Jacob for reviewing this post and sharing their feedback.
-{% endcallout %}
