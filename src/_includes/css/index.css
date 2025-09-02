@@ -369,14 +369,15 @@ textarea:not([rows]) {
     navigation: auto;
 }
 
-header {
+/*header {
     view-transition-name: header;
-}
-main:not(:has(article)) {
-    view-transition-name: main;
 }
 footer {
     view-transition-name: footer;
+}*/
+
+main:not(:has(article)) {
+    view-transition-name: main;
 }
 
 html {
