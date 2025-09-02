@@ -36,7 +36,7 @@ So where does that leave us? If we want our websites to be sustainable across th
 
 My answer? Reduce data transfer.
 
-Though in doing so, bear in mind that reducing the amount of data your website transfers isn't going to have any impact on the energy used by the network. It's not an "instant sustainability win" that you can claim, per-se.
+While data transfer might be a poor proxy for network energy use, it is still a valuable metric to use. For fixed networks, reducing the amount of data your website transfers isn't going to have any impact on the energy used by the network. It's not an "instant sustainability win" that you can claim, but rather sends a singal that can have longer term results. Meanwhile for mobile networks, where the marginal cost per additional bit of data transferred is higher, reducing data transfer can have *some* impact on network energy use. That's important to note, as more and more of internet consumption takes place on mobile devices.
 
 ### It takes all of us
 
@@ -52,7 +52,7 @@ The median page weight of a mobile page has [risen by 1.8 megabytes in the past 
 
 Over the same period, our lives as a whole have become incredibly data-hungry. Streaming services, mobile apps, social media, the rise of video, AI chatbots in everything, the list goes on. We send and receive a lot of data every day, which signals to network operators more infrastructure should be provisioned to allow all that data to be transferred.
 
-A website by itself, though, wouldn't even register as a blip on the radar in terms of network traffic. A network of websites, *might* show up as something. The entire web ecosystem though, yeah network operators would probably notice that.
+My blog by itself wouldn't even register as a blip on the radar in terms of network traffic. A network of websites, *might* show up as something. The entire web ecosystem though, yeah network operators would probably notice that. That is especially true for sites serving video content, which is taking up an increasing share of internet traffic. More on this in a tick.
 
 As a collective, we need to disincentivise network operators from deploying extra capacity. Because as we saw from the chart earlier, turning on a new network device uses a lot more energy than letting an existing one sit idle on the network. That's before we even consider the embodied environmental costs that come with the production of new devices.
 
@@ -61,7 +61,19 @@ So how do we, as web developers, send this signal to the network operators? In t
 1. We reduce the weight of our web pages whenever possible.
 2. We set sensible data usage defaults in the sites, apps, and services we build.
 
-To reiterate, neither of these things will reduce the "carbon footprint" of your website. What they can do is signal to network operators that we don't need to continually grow capacity, that we can make do with what we have. Sending that signal, though, takes a collective action from the web community.
+#### Reducing page weight
+
+There's plenty of documentation and guidance on this for web developers, yet we still see page weights going in the opposite direction. I feel a large part of this is down to two factors - frameworks and video. My recent [look at the COP30 website](/writing/cop30-website-review/) turned up the use of a framework that bloats the website for no real valuable reason, coupled with limited image and font optimisation. Meanwhile for developers working with video, there's probably some difficult discussions to be had with clients and designers. That's not to say remove video completely, but rather explore what techniques can be adopted to reduce the amount of video content that is downloaded without a user's consent. Those aren't easy conversations, as Nic Chan shared in her recent [blog post about Grid-aware Websites](https://nicchan.me/blog/exploring-grid-aware-websites/), but they're important ones to have.
+
+> I once had a client that sold sustainably made household items, and they wanted their website to reflect their commitment to sustainability. I suggested the usual high-impact things like reducing the size of media and using a static site generator. They didn’t mind the statically-generated approach as it helped them save on hosting costs, but they didn’t want to give up their use of background video, a decision that forced every user to download an additional 6MB of video.
+>
+> <cite>Nic Chan</cite>
+
+#### Sensible defaults
+
+This probably applies more to larger websites, and again those serving video content probably can have the largest impact here. Take the example of YouTube, a video platform that is seeing an ever increasing number of podcasts publishing there as well. Podcasts are primarily audio medium, so it might make sense for YouTube to provide an "audio only" version, with the option for viewers to switch to a video feed if there's something they really want to see (*thanks Chris for this idea btw*). Likewise other steps, like having "play the next video automatically" set to *off* by default, or setting "autoplay" to *off* by default in social media apps/platforms can all have a significant impact at scale.
+
+To reiterate, neither of these things will reduce the network "carbon footprint" of an individual website (okay, perhaps YouTube or Netflix are a different case). What they can do is signal to network operators that we don't need to continually grow capacity, that we can make do with what we have. Sending that signal, though, takes a collective action from the web community.
 
 ## Final thoughts
 
