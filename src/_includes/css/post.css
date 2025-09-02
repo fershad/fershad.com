@@ -39,7 +39,7 @@ section ol,
 section ol li,
 section blockquote,
 section pre {
-    line-height: 1.75rem;
+    line-height: 1.95rem;
     max-inline-size: 80ch;
 }
 
@@ -88,7 +88,7 @@ section h4[id] {
 .heading-wrapper .deeplink {
     position: absolute;
     inset-inline-start: -1.5ch;
-    top: -0.5ex;
+    top: -0.65ex;
     font-size: var(--deeplink-size);
     color: var(--blue-7);
     text-decoration: none;
