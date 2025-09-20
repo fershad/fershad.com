@@ -29,6 +29,11 @@ const spammyPaths = [
 // This is the main function that fetches the user's location, fetches the grid data, and determines what page (regular or grid-aware) to return the to the user.
 export default {
 	async fetch(request, env, ctx) {
+		// EMAPS MULTI ZONES
+		// Australia, Brazil, Canada, Denmark, Spain, Faroe Islands, France, Great Britain, India, Italy, Japan, Norway, Philippines, Portugal, Russia, Sweden, USA
+		const eMapsMultiZones = ['AU', 'BR', 'CA', 'DK', 'ES', 'FO', 'FR', 'GB', 'IN', 'IT', 'JP', 'NO', 'PH', 'PT', 'RU', 'SE', 'US'];
+		const country = request.cf.country;
+
 		// Check if the request URL contains any of the spammy paths & return a 404 response.
 		if (spammyPaths.some((path) => request.url.includes(path))) {
 			return new Response(null, { status: 404 });
@@ -37,6 +42,7 @@ export default {
 		return auto(request, env, ctx, {
 			debug: 'headers',
 			gawDataApiKey: env.EMAPS_API_KEY,
+			locationType: eMapsMultiZones.includes(country) ? 'latlon' : 'country',
 			kvCacheData: true,
 			kvCachePage: false,
 			ignoreRoutes: ['/og'],
