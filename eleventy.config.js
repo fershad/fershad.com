@@ -433,8 +433,8 @@ export default function (eleventyConfig) {
 
   // A filter that takes in a markdown table and returns a HTML table with a wrapper div
   eleventyConfig.addFilter("markdownTable", function (value) {
-    const md = markdownit();
-    const html = md.render(value);
+    // const md = markdownit();
+    const html = mdLib.render(value);
     return `<div class="table-wrapper">${html}</div>`;
   });
 

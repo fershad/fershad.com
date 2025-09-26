@@ -128,7 +128,7 @@ There's a lot of words above this, so if you're after a TL;DR then I hope this t
 | -------- | -------------------------------------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | Backend  | Location sensitive (fixed location or limited ability to move) | Time shifting                                                   | Carbon emissions                                                       |
 | Backend  | Time sensitive (fixed time or limited ability to change)       | Location shifting                                               | Carbon emissions                                                       |
-| Backend  | N/A                                                            | Time shifting, location shifting, efficiency (code or platform) | Time/location shifting: Carbon emissions<br><br>Efficiency: Energy use |
+| Backend  | N/A                                                            | Time shifting, location shifting, efficiency (code or platform) | *Time/location shifting:* Carbon emissions<br/><br />*Efficiency:* Energy use |
 | Backend  | N/A                                                            | Change hosting provider                                         | Carbon emissions, PUE, WUE, other                                      |
 | Frontend | Time & location sensitive                                      | Efficiency (code, platform, or framework)                       | Energy use                                                             |
 
