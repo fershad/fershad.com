@@ -12,7 +12,7 @@ TPAC is something I've heard about a lot through my time as a web developer as a
 
 ## TPAC 2025
 
-[TPAC 2025](https://www.w3.org/2025/11/TPAC/) was held in Kobe, Japan from Novmber 10 - 14. It's a short hop from Taiwan. Conveniently, lined up with the weekend of the Japan Touch Nationals in Tokyo, which I was able to referee at before making my way down to Kobe.
+[TPAC 2025](https://www.w3.org/2025/11/TPAC/) was held in Kobe, Japan from November 10 - 14. It's a short hop from Taiwan. Conveniently, lined up with the weekend of the Japan Touch Nationals in Tokyo, which I was able to referee at before making my way down to Kobe.
 
 {% callout "Also read"%}
 You should also read these posts from [Tess](https://tess.oconnor.cx/2025/11/TPAC), [Hidde](https://hidde.blog/tpac-2025/), and [Kazuhito](https://kidachi.kazuhi.to/blog/archives/043194.html) reflecting on TPAC 2025.
