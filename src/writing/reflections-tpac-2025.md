@@ -32,6 +32,6 @@ Below is an unordered list of highlights from the week:
 - Conversations on the metro to the conference venue with [Jake Archibald](https://jakearchibald.com) and [Adam Argyle](https://nerdy.dev). These are two folks who's work I've followed (and has helped me out) for as long as I've been in web development, and it was great to jsut have a casual chat and say thanks.
 - Getting a much better understanding of what it takes to get features into the browser. Thanks to [Barry Pollard](https://www.tunetheweb.com) for taking the time to explain that process to me.
 - Being able to speak with folks from all the major browsers about the kinds of web sustainability features we might be able to build, and again getting ideas from them as to the best way to move things forwards.
-- Catching up with my mate Christian, who's been living near Kobe for the past 7 years. We ~worked~ drank together in Taiwan, and it was great to reacquaint in Japan.
+- Catching up with my mate Christian, who's been living near Kobe for the past 7 years. We ~~worked~~ drank together in Taiwan, and it was great to reacquaint in Japan.
 
 It was a fulfilling week, but an absolutely exhausting one too. I'm an introvert bro, and my battery was well and truly drained after it all (probably why it's taken so long to get this post out). That said, I'd do it all again if the opportunity presents itself~ ✌️
