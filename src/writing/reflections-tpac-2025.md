@@ -1,6 +1,7 @@
 ---
 title: Reflections on TPAC 2025
 published: 2025-11-23
+summary: A look back at my first TPAC. TL;DR A 10 out of 10 experience.
 ---
 
 Earlier this month, I had the pleasure of attending the W3C's annual TPAC meeting. 
