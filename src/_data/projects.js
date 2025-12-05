@@ -5,6 +5,7 @@ export default [
     slug: "grid-aware-websites-component",
     title: "Grid-aware websites web component",
     url: "https://github.com/thegreenwebfoundation/gaw-web-component",
+    activeYears: [2025],
     media: `./public/img/grid-aware-websites.jpg`,
     media_alt: "",
     shortContent:
@@ -25,6 +26,7 @@ export default [
   {
     slug: "grid-aware-websites",
     title: "Grid-aware websites",
+    activeYears: [2025, 2024],
     url: "https://github.com/thegreenwebfoundation/grid-aware-websites",
     media: `./public/img/grid-aware-websites.jpg`,
     media_alt: "",
@@ -50,6 +52,7 @@ export default [
   {
     slug: "green-web-tracker",
     title: "Green Web Tracker",
+    activeYears: [2025],
     url: "https://tracker.greenweb.org",
     media_alt: "",
     shortContent:
@@ -74,6 +77,7 @@ export default [
   {
     slug: "co2.js",
     title: "CO2.js",
+    activeYears: [2025, 2024, 2023, 2022],
     url: "https://github.com/thegreenwebfoundation/co2.js",
     media: `./public/img/co2-js.png`,
     media_alt: "",
@@ -98,6 +102,7 @@ export default [
   },
   {
     title: "CO2 estimates in Firefox Profiler",
+    activeYears: [2023, 2022],
     media: `./public/img/firefox-profiler.jpg`,
     media_alt: "",
     content: "Presenting CO2 estimates in the Firefox DevTools Profiler.",
@@ -111,6 +116,7 @@ export default [
   {
     title: "Carbon-aware website",
     media: `./public/img/carbon-aware-site.jpg`,
+    activeYears: [2023, 2024],
     archived: true,
     media_alt: "",
     content:
@@ -133,6 +139,7 @@ export default [
   {
     title: "Eleventy Plugin: Green Links",
     media: `./public/img/eleventy-plugin-green-links.png`,
+    activeYears: [2023],
     media_alt: "",
     content:
       "An Eleventy plugin which checks if links on a website are hosted on verified green hosting providers from The Green Web Foundation's Green Web dataset.",
@@ -153,6 +160,7 @@ export default [
   },
   {
     title: "ReqCheck",
+    activeYears: [2022],
     media: `./public/img/reqcheck.png`,
     media_alt: "",
     content:
@@ -171,6 +179,7 @@ export default [
   {
     title: "Are my third parties green?",
     slug: "are-my-third-parties-green",
+    activeYears: [2025, 2024, 2023, 2022],
     media: `./public/img/amtpg.jpg`,
     shortContent:
       "A tool to show if the third-party resources on a website are hosted on green infrastructure.",
@@ -195,6 +204,7 @@ export default [
   {
     title: "Flowty",
     media: `./public/img/flowty.jpg`,
+    activeYears: [2022],
     archived: true,
     media_alt: "",
     content:

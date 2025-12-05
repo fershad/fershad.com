@@ -2,7 +2,9 @@
 layout: layouts/base.liquid
 title: Home
 description: "Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030."
-css: /css/home.css
+css:
+- /css/home.css
+- /css/listPage.css
 ---
 
 <div class="wrapper flow" id="homepage">
@@ -16,145 +18,147 @@ css: /css/home.css
       eleventy:formats="avif,webp,jpg"
       sizes="100w" />
     <div class="flow">
-      <div class="glitch-wrapper">
-        <h1 data-glitch="Hey, I'm Fershad">Hey, I'm Fershad</h1>
-        <p class="no-glitch subtag">
-          Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards
+      <div>
+        <h1>Hey, I'm Fershad</h1>
+        <p>
+          A digital sustainability consultant based in 🇹🇼 Taipei, Taiwan. I work with the Green Web Foundation towards
             a fossil free internet by 2030.
         </p>
       </div>
-      <div class="banner outline">
-        <small class="no-glitch">
-          <span class="heading">Status:</span>
-          {{ currently.status }}
-          {% if currently.key == "vacation" %}
-            Peace ✌️.
-          {% else %}
-            {{ currently.blurb }}
-          {% endif %}
-        </small>
-      </div>
     </div>
   </section>
 
-  <section id="projects" class="threecol">
-    <div class="lead-box flow">
-      <div>
-        <h2>Projects</h2>
-        <p>A few of the best projects I've worked on.</p>
-      </div>
-      <div>
-        <a href="/projects" data-glitch="More Projects >">
-          More projects >
-        </a>
-      </div>
-    </div>
-    <ul>
-      {% for project in currently.projects %}
-        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
-          <p>
-            <a href="{{ project.url }}">{{ project.title }}</a>
-            - {{ project.shortContent }}</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
+  <section id="yearly-content">
+  {% assign currentYear = years.currentYear %}
+  {% assign currentYearPosts = collections.post | sortByPublishedDate | filterOnlyTag: "post", "note"| currentYearWriting: currentYear %}
+  {% assign currentYearNotes = collections.post | sortByPublishedDate | filterOnlyTag: "note"| currentYearWriting: currentYear %}
+  {% assign currentYearProjects = projects | currentYearProjects: currentYear %}
+  {% assign currentYearTalks = talks | currentYearTalks: currentYear %}
+  {% assign currentYearImages = film | currentYearImages: currentYear %}
 
-  <section id="writing" class="threecol">
-    {% assign postslist = collections.post | sortByPublishedDate | slice: 0, 5 %}
-    <div class="lead-box flow">
-      <div>
-        <h2>Writing</h2>
-        <p>Notes and ideas mostly related to digital sustainability, occasionally other topics.</p>
-      </div>
-      {% if postslist.size > 0 %}
-        <div>
-          <a href="/writing" data-glitch="More Writing > ">More writing ></a>
-        </div>
-      {% endif %}
-    </div>
-    <ul>
-      {% for post in postslist %}
-        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-          <div>
-            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-          </div>
-        </li>
-      {% else %}
-        <li>
-          <p>There are no posts.</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-  <section id="reading" class="threecol">
-    <div class="lead-box flow">
-      <div>
-        <h2>Reading</h2>
-        <p>Here's a list of articles I've recently read.</p>
-      </div>
-      <div data-gaw-remove>
-        <small class="last-updated">
-          <span id="update-time">Last updated: <br/>{{ readwise.updated | date_to_rfc822 }}</span>
-          <div>
-            <button
-              class="button outline"
-              id="refresh-reader"
-              aria-live="assertive">Refresh</button>
-          </div>
-        </small>
-      </div>
-      <div>
-        <a href="/reading" data-glitch="More Reading >">More reading ></a>
-      </div>
-    </div>
-    <ul aria-live="polite">
-      {% for article in readwise.reader %}
-        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
-          <a href="{{ article.source_url }}">{{ article.title }}</a>
-          <div>
-            <small>{{ article.site_name }}</small>
-          </div>
-        </li>
-      {% else %}
-        <li>
-          <p>There are no articles.</p>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
+  {% assign sectionId = 'posts' %}
+  {% assign sectionTitle = 'Posts' %}
+  {% assign sectionIntro = 'Ideas, thoughts, and opinions mostly related to digital sustainability and occassionally other topics.' %}
+  {% assign sectionExtra = '' %}
 
-  <section id="film" class="threecol">
-    <div class="lead-box flow">
-      <span>
-        <h2>Film</h2>
-        <small>I do a bit of film photography while I'm out and about.</small>
-      </span>
-      <div>
-        <a
-          href="https://film.fershad.com/random"
-          id="rando"
-          data-glitch="Get Random Image >">Get random image ></a>
-      </div>
-      <div>
-        <a data-glitch="See more @ film.fershad.com" href="https://film.fershad.com">See more @ film.fershad.com</a>
-      </div>
-    </div>
-    <div class="img-holder">
-      <img
-        src="{{ film.imageUrl }}"
-        alt="{{ film.altText }}"
-        aria-live="polite" />
-      <div class="img-desc" aria-live="polite">
-        <span>
-          <h3 class="heading-underlined">{{ film.title }}</h3>
-          <small>{{ film.collection }} | {{ film.shortDate | date: "%Y-%m" }}</small>
-        </span>
-        <p>{{ film.description | url_decode }}</p>
+                {% capture sectionExtra %}
+                <div>
+                {% assign monthlyCount = currentYearPosts | groupWritingByMonth %}
+                <div>
+                {% for month in monthlyCount %}
+                <small><a href="#post-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
+                {% endfor %}
+                </div>
+                <small>Total posts: {{ currentYearPosts | size }}</small>
+                </div>
+                {% endcapture %}
+                {% capture sectionContent %}
+      <ul>
+        {% assign postslist = currentYearPosts %}
+        {% include 'partials/writingList.liquid' %}
+      </ul>
+      {% endcapture %}
+      {% include 'partials/yearlySection.liquid' %}
 
-      </div>
-    </div>
+
+{% include 'partials/filmstrip.liquid', filmSection: 1 %}
+
+                {% assign sectionId = 'notes' %}
+                {% assign sectionTitle = 'Notes' %}
+                {% assign sectionIntro = 'Short(ish) thoughts and reflections on a variety of topics.' %}
+                {% assign sectionExtra = '' %}
+                {% capture sectionExtra %}
+                <div>
+                    {% assign monthlyCount = currentYearNotes | groupWritingByMonth %}
+                    <div>
+                    {% for month in monthlyCount %}
+                      <small><a href="#note-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
+                    {% endfor %}
+                    </div>
+                <small>Total notes: {{ currentYearNotes | size }}</small>
+                </div>
+                {% endcapture %}
+              {% capture sectionContent %}
+      <ul>
+          {% assign postslist = currentYearNotes %}
+        {% include 'partials/writingList.liquid' %}
+      </ul>
+      {% endcapture %}
+
+      {% include 'partials/yearlySection.liquid' %}
+
+      {% include 'partials/filmstrip.liquid', filmSection: 2 %}
+
+      {% assign sectionId = "projects" %}
+      {% assign sectionTitle = "Active projects" %}
+      {% assign sectionIntro = "Projects that I've worked on at one time or another through the year." %}
+      {% assign sectionExtra = '' %}
+      {% capture sectionContent %}
+              <ul class="no-marker">
+                {% for project in currentYearProjects %}
+                  <li
+                    class="project {% if project.archived %}archived{% endif %}"
+                    {% if project.slug %}
+                    id="{{project.slug}}"
+                    {% endif %}>
+                    {% if project.archived %}
+                      <div class="title">
+                        <h2 class="title">{{ project.title }}</h2>
+                        <small>
+                          <strong>Archived</strong>
+                        </small>
+                      </div>
+                    {% else %}
+                      <h2 class="title">{{ project.title }}</h2>
+                    {% endif %}
+                    <p class="summary">{{ project.shortContent }}</p>
+                    <div class="links">
+                      {% for link in project.links %}
+                        <a href="{{ link.url }}" data-glitch="{{ link.text }} >">{{ link.text }} ></a>
+                      {% endfor %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+        {% endcapture %}
+        {% include 'partials/yearlySection.liquid' %}
+
+        {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+
+        {% if currentYearTalks.size > 0 %}
+        {% assign sectionId = "talks" %}
+        {% assign sectionTitle = "Talks" %}
+        {% assign sectionIntro = "Presentations and talks mostly on the topic of digital sustainability." %}
+        {% assign sectionExtra = '' %}
+        {% capture sectionContent %}
+        <ul class="no-marker">
+          {% for item in currentYearTalks %}
+            <li class="talk">
+              <div class="title">
+                <h3 class="title">{{ item.title }}</h3>
+                <small>{{ item.date | date_to_string }} @ {{ item.event }}</small>
+              </div>
+              <p class="summary"></p>
+              <div class="links">
+                {% if item.slides %}
+                  <a href="{{ item.slides }}" data-glitch="View slides >">View slides ></a>
+                {% endif %}
+                {% if item.video %}
+                  <a href="{{ item.video }}" data-glitch="Watch online >">Watch online ></a>
+                {% endif %}
+                {% if item.episode %}
+                  <a href="{{ item.episode }}" data-glitch="Listen online >">Listen online ></a>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        {% endcapture %}
+        {% include 'partials/yearlySection.liquid' %}
+        {% endif %}
+
+
+
   </section>
 </div>
 

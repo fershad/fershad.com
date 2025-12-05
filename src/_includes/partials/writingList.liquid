@@ -1,0 +1,37 @@
+{% for post in postslist %}
+{% assign thisPostMonth = post.data.published | date: "%B" %}
+{% assign previousPostMonth = post.previous.data.published | date: "%B" %}
+
+  {% assign tags = post.data.tags %}
+  {% assign isNote = tags | find: "note" %}
+  <li id={%- if thisPostMonth != previousPostMonth %}"{%- if isNote == "note" -%}note-{%- else -%}post-{%- endif -%}{{thisPostMonth}}"{% endif %}
+  {%- if post.data.archived -%}{{"archived " | raw}}{%- endif -%}
+  {%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}
+    ">
+    <div>
+      <small class="post-type">
+        <time class="postlist-date" datetime="{{ post.data.published | date_to_rfc822 }}">{{ post.data.published | date_to_long_string }}</time>
+      </small>
+    </div>
+    <p class="title">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </p>
+    <small>
+      {% if post.data.archived %}
+        |
+        <strong>
+          Archived
+        </strong>
+      {% endif %}
+    </small>
+    {% unless post.data.archived %}
+      {% if post.data.summary %}
+        <p>{{ post.data.summary }}</p>
+      {% endif %}
+    {% else %}
+      <p>
+        This post is archived.
+        {{ post.data.archiveNote }}</p>
+    {% endunless %}
+  </li>
+{% endfor %}

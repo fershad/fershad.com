@@ -462,6 +462,62 @@ export default function (eleventyConfig) {
     return arr.slice(0, limit);
   });
 
+  eleventyConfig.addFilter("currentYearWriting", function (array, currentYear) {
+    // Filter any items that don't have a data.published value
+    array = array.filter((item) => {
+      return "published" in item.data;
+    });
+
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((post) => {
+      const publishedDate = new Date(post.data.published);
+      return publishedDate.getFullYear() === currentYear;
+    });
+  });
+
+  eleventyConfig.addFilter("groupWritingByMonth", function (array) {
+    const grouped = array.reduce((acc, post) => {
+      const publishedDate = new Date(post.data.published);
+      const month = publishedDate.toLocaleString("default", { month: "long" });
+      if (!acc[month]) {
+        acc[month] = [];
+      }
+      acc[month].push(post);
+      return acc;
+    }, {});
+    return grouped;
+  });
+
+  eleventyConfig.addFilter(
+    "currentYearProjects",
+    function (array, currentYear) {
+      return array.filter((project) => {
+        return project.activeYears.includes(currentYear);
+      });
+    },
+  );
+
+  eleventyConfig.addFilter("currentYearTalks", function (array, currentYear) {
+    // Filter any items that don't have a data.published value
+    array = array.filter((item) => {
+      return "date" in item;
+    });
+
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((talk) => {
+      const talkDate = new Date(talk.date);
+      return talkDate.getFullYear() === currentYear;
+    });
+  });
+
+  eleventyConfig.addFilter("currentYearImages", function (array, currentYear) {
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((image) => {
+      const imageDate = new Date(image.shortDate);
+      return imageDate.getFullYear() === currentYear;
+    });
+  });
+
   eleventyConfig.setLibrary("md", mdLib);
 
   return {

@@ -19,165 +19,80 @@
     max-width: 15rem;
 }
 
-#film picture {
-    position: relative;
-    width: fit-content;
-}
-
-#intro picture::before,
-#intro picture::after,
-#film picture::before,
-#film picture::after {
-    content: "";
-    display: none;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: var(--glitch-img-src) no-repeat;
-    z-index: 1;
-    opacity: 0.5;
-    background-size: cover;
-    background-position: center;
-    object-fit: cover;
-}
-
-#intro:has(.glitch-wrapper:hover) picture::before,
-#intro:hover picture::before,
-#film picture:hover::before {
-    animation: text-glitch1 4.5s infinite;
-}
-
-#intro:has(.glitch-wrapper:hover) picture::after,
-#intro:hover picture::after,
-#film picture:hover::after {
-    animation: text-glitch2 4.5s infinite;
-}
-
-#intro:hover .outline-box:before,
-#intro:hover .outline-box:after {
-    animation: none;
-    display: none;
-}
-
 #intro {
     gap: 1.5rem;
     display: grid;
     grid-template-columns: 15rem 1fr;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     grid-rows: 1;
 }
 
-#intro::after,
-#current::after {
-    inline-size: 80%;
-    block-size: var(--line-thickness);
-    inset-inline-start: 10%;
-    inset-block-start: calc(var(--line-offset) * -1);
-    top: calc(100% + var(--gap) / 2);
-}
-
-#intro::before {
-    inline-size: var(--line-thickness);
-    block-size: 80%;
-    inset-block-start: 10%;
-    inset-inline-start: calc(var(--line-offset) * -1);
-    left: calc(100%);
-}
-
-#current::after {
-}
-
-#other {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#projects,
-#writing,
-#reading {
+.splitview {
     display: grid;
     grid-template-columns: 20rem 1fr;
     gap: 1.5rem;
     padding: 0;
+    position: relative;
 }
 
-#projects > ul > li,
-#writing > ul > li,
-#reading > ul > li {
-    max-width: 100%;
+@keyframes sticky-highlight {
+    to {
+        font-weight: bolder;
+    }
 }
 
-#projects > div,
-#writing > div,
-#reading > div {
-    padding: 1.5rem;
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
-.last-updated {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-width: 100%;
+.splitview > .lead-box {
+    position: sticky;
+    top: 2rem;
+    bottom: 2rem;
+    align-self: start;
+    padding-block: 3rem;
+    padding-inline-end: 3rem;
 }
 
-.lead-box {
-    padding: 0 3rem 0 0;
-}
-
-#film {
+.filmstrip {
     display: grid;
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: repeat(8, minmax(15rem, 1fr));
     gap: 1.5rem;
+    padding: 0;
+    position: relative;
+    grid-template-rows: 1fr;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
 }
 
-#film .img-holder {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+.filmstrip > .image-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    scroll-snap-align: center;
 }
 
-.img-holder .img-desc,
-#words > * {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#words {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-#projects::after,
-#words::after {
-    inline-size: 80%;
-    block-size: var(--line-thickness);
-    inset-inline-start: 10%;
-    inset-block-start: calc(var(--line-offset) * -1);
-    top: calc(100% + var(--gap) / 2);
-}
-
-#words > * {
-    padding: 1.5rem;
-    justify-content: space-between;
-}
-
-#words div:has(small) + .banner {
-    margin-top: 1.5rem;
+.filmstrip > .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
 }
 
 @media (max-width: 768px) {
     #intro,
-    #projects,
-    #writing,
-    #reading,
-    #film,
-    #film .img-holder {
+    .splitview {
         grid-template-columns: 1fr;
     }
 

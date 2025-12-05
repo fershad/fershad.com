@@ -394,10 +394,6 @@ body {
     color-scheme: light dark;
 }
 
-body.deglitch {
-    --glitch-off-color: var(--blue-4);
-}
-
 .skip-link {
     position: absolute;
     top: auto;
@@ -446,9 +442,9 @@ main {
 body {
     color: light-dark(var(--background), var(--text));
     background-color: light-dark(var(--text), var(--background));
+    --sticky-background: light-dark(var(--text), var(--background));
     --header-background: light-dark(var(--stone-0), var(--stone-10));
     --callout-background: light-dark(var(--stone-2), var(--stone-11));
-    --glitch-lightest-opacity: light-dark(0.95, 0.85);
     --inline-code-background: light-dark(var(--blue-12), var(--blue-0));
     --inline-code-color: light-dark(var(--stone-0), var(--stone-12));
 }
@@ -533,13 +529,6 @@ h6,
     justify-content: center;
 }
 
-.glitch-wrapper.center-align > [data-glitch]::before,
-.glitch-wrapper.center-align > [data-glitch]::after {
-    text-align: center;
-    margin-inline: auto;
-    width: 100%;
-}
-
 small .button {
     padding: 0.25rem;
 }
@@ -558,33 +547,6 @@ small .button {
     border: 2px solid var(--banner-line-color, var(--blue-12));
     color: var(--banner-text-color, var(--blue-12));
     /* animation: flicker-in 1.35s 1; */
-}
-
-.banner.outline::before,
-.banner.outline::after,
-.button.outline::before,
-.button.outline::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.banner.outline:hover::before,
-.button.outline:hover::before {
-    border-color: var(--glitch-off-color, #f16f6f);
-    animation: text-glitch1 1.5s infinite;
-    border: 1px solid;
-}
-
-.banner.outline:hover::after,
-.button.button:hover::after {
-    border-color: var(--glitch-off-color, #67f3da);
-    animation: text-glitch2 1.5s infinite;
-    animation-delay: 0.5s;
-    border: 1px solid;
 }
 
 h2 + small,
@@ -616,8 +578,7 @@ ul:not([class]) li {
     padding-left: 2.25rem;
 }
 
-ul:not([class]) li::before,
-ul:not([class]) li::after {
+ul:not([class]) li::before {
     content: "";
     position: absolute;
     left: 1ch;
@@ -626,31 +587,6 @@ ul:not([class]) li::after {
     width: 1ex;
     border: 2px solid var(--marker-color, var(--blue-4));
     transition: all 0.2s;
-}
-
-ul:not([class]) li:hover::before,
-ul:not([class]) li:hover::after {
-    /* animation: none; */
-    animation-direction: alternate-reverse;
-    animation-duration: 0.75s;
-    height: 100%;
-    top: 0;
-    /* --marker-color: var(--blue-4); */
-}
-
-ul:not([class]) li::before {
-    /* transition: all 0.2s; */
-    --marker-color: var(--glitch-off-color, #f16f6f);
-    animation: list-glitch1 5.5s infinite;
-    animation-delay: var(--local-delay, 0);
-    animation-direction: var(--local-direction, alternate-reverse);
-}
-
-ul:not([class]) li::after {
-    --marker-color: var(--glitch-off-color, #67f3da);
-    animation: list-glitch2 5.5s infinite;
-    animation-delay: var(--local-delay, 0);
-    animation-direction: var(--local-direction, alternate-reverse);
 }
 
 header,
@@ -667,51 +603,6 @@ header {
     border-bottom: 2px solid var(--line-color);
     display: flex;
     justify-content: space-between;
-}
-
-header::before,
-header::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-bottom: 2px solid;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-header::before {
-    border-color: var(--glitch-off-color, #f16f6f);
-    animation: list-glitch1 3.5s infinite;
-}
-
-header::after {
-    border-color: var(--glitch-off-color, #67f3da);
-    animation: list-glitch2 2.5s infinite;
-    animation-delay: 0.5s;
-}
-
-footer::before,
-footer::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid;
-    top: 0;
-    left: 0;
-}
-
-footer::before {
-    border-color: var(--glitch-off-color, #f16f6f);
-    animation: list-glitch1 3.5s infinite;
-}
-
-footer::after {
-    border-color: var(--glitch-off-color, #67f3da);
-    animation: list-glitch2 2.5s infinite;
-    animation-delay: 0.5s;
 }
 
 header > div {
@@ -731,10 +622,6 @@ footer > nav {
 footer {
     border-top: 2px solid var(--line-color);
     justify-content: center;
-}
-
-footer nav ul li {
-    /* margin-block-start: 2rem; */
 }
 
 header nav ul,
@@ -764,34 +651,6 @@ a {
     font-weight: 700;
 }
 
-a::after {
-    content: attr(data-glitch);
-    text-transform: capitalize;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-a::before {
-    content: attr(data-glitch);
-    text-transform: capitalize;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-a:hover::before {
-    animation: text-glitch3 3.5s infinite;
-    color: var(--glitch-off-color, #f16f6f);
-}
-
-a:hover::after {
-    animation: text-glitch2 3.5s infinite;
-    color: var(--glitch-off-color, #67f3da);
-}
-
 a:hover {
     text-decoration: none;
 }
@@ -815,101 +674,6 @@ a:hover {
 *::before,
 *::after {
     pointer-events: none;
-}
-
-/* Glitch effect from */
-.glitch-wrapper h1,
-.glitch-wrapper p,
-.glitch-wrapper small,
-article h2,
-article h3,
-article h4 {
-    position: relative;
-}
-
-.glitch-wrapper h1 {
-    --custom-glitch-opacity: 0.15;
-}
-
-article h2::before,
-article h3::before,
-article h4::before,
-article h2::after,
-article h3::after,
-article h4::after,
-.glitch-wrapper small::before,
-.glitch-wrapper small::after {
-    margin-left: 1.35ch;
-}
-
-.glitch-wrapper h1::before,
-.glitch-wrapper p:not(.no-glitch)::before,
-article h2::before,
-article h3::before,
-article h4::before,
-.glitch-wrapper h1::after,
-.glitch-wrapper p:not(.no-glitch)::after,
-article h2::after,
-article h3::after,
-article h4::after,
-.glitch-wrapper small::before,
-.glitch-wrapper small::after {
-    content: attr(data-glitch);
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    /* animation: glitch3 2.5s infinite; */
-}
-
-.glitch-wrapper:hover > h1,
-.glitch-wrapper:hover > p:not(.no-glitch),
-article h2:hover,
-article h3:hover,
-article h4:hover,
-.glitch-wrapper:hover > small {
-    animation: text-glitch1 3.5s infinite alternate;
-}
-
-.glitch-wrapper:hover > h1::before,
-.glitch-wrapper:hover > p:not(.no-glitch)::before,
-article h2:hover::before,
-article h3:hover::before,
-article h4:hover::before,
-.glitch-wrapper:hover > small::before {
-    animation: text-glitch2 3.5s infinite alternate;
-    color: var(--glitch-off-color, #67f3da);
-}
-
-.glitch-wrapper:hover > h1::after,
-.glitch-wrapper:hover > p:not(.no-glitch)::after,
-article h2:hover::after,
-article h3:hover::after,
-article h4:hover::after,
-.glitch-wrapper:hover > small::after {
-    color: var(--glitch-off-color, #f16f6f);
-    animation: text-glitch3 3.5s infinite alternate;
-}
-
-.callout:hover::before,
-.callout:hover::after,
-.callout:hover .title::before,
-.callout:hover .title::after {
-    animation: none;
-    display: none;
-}
-
-.callout::before {
-    border-color: var(--glitch-off-color, #f16f6f);
-    animation: text-glitch1 1.5s infinite;
-    border: 1px solid;
-}
-
-.callout::after {
-    border-color: var(--glitch-off-color, #67f3da);
-    animation: text-glitch2 1.5s infinite;
-    animation-delay: 0.5s;
-    border: 1px solid;
 }
 
 .callout p {
@@ -945,23 +709,6 @@ article h4:hover::after,
     border-bottom: 2px solid var(--line-color);
 }
 
-.gaw-banner::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-.gaw-banner::after {
-    border-bottom: 2px solid;
-    border-color: var(--glitch-off-color, #f16f6f);
-    animation: list-glitch2 2.5s infinite;
-    animation-delay: 0.5s;
-}
-
 :root {
     --form-control-color: var(--blue-4);
 }
@@ -995,54 +742,10 @@ input[type="checkbox"] {
     animation: list-glitch1 2.5s infinite;
 }
 
-input[type="radio"]::after,
-input[type="checkbox"]::after {
-    content: "";
-    width: calc(100% + 0.3em);
-    height: calc(100% + 0.3em);
-    top: -0.15em;
-    position: absolute;
-    /* border-radius: 50%; */
-    /* transform: scale(0); */
-    transition: 120ms height ease-in-out;
-    animation: list-glitch2 2.5s infinite;
-    border: 0.15em solid var(--glitch-off-color, #f16f6f);
-    left: -0.15em;
-}
-
-input[type="radio"]::before,
-input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0em;
-    top: 0;
-    position: absolute;
-    /* border-radius: 50%; */
-    /* transform: scale(0); */
-    transition: 120ms height ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-    animation: text-glitch2 2.5s infinite;
-}
-
 input[type="radio"]:checked,
 input[type="checkbox"]:checked {
     animation: none;
     background-color: #fff;
-}
-
-input[type="radio"]:checked::before,
-input[type="checkbox"]:checked::before {
-    /* transform: scale(1); */
-    height: 100%;
-    animation: none;
-}
-
-input[type="radio"]:checked::after,
-input[type="checkbox"]:checked::after {
-    /* transform: scale(1); */
-    /* height: 100%; */
-    display: none;
-    animation: none;
 }
 
 #filters,
@@ -1128,41 +831,6 @@ input[type="checkbox"]:checked::after {
     label[for="favicon-toggle"] {
         display: none;
     }
-}
-
-body.deglitch .banner.outline::before,
-body.deglitch .button.outline::before,
-body.deglitch .banner.outline::after,
-body.deglitch .button.outline::after,
-body.deglitch header::before,
-body.deglitch header::after,
-body.deglitch footer::before,
-body.deglitch footer::after,
-body.deglitch a::before,
-body.deglitch a::after,
-body.deglitch article h2::before,
-body.deglitch article h3::before,
-body.deglitch article h4::before,
-body.deglitch article h2::after,
-body.deglitch article h3::after,
-body.deglitch article h4::after,
-body.deglitch picture::before,
-body.deglitch picture::after,
-body.deglitch figure::before,
-body.deglitch figure::after,
-body.deglitch blockquote::before,
-body.deglitch blockquote::after,
-body.deglitch td::before,
-body.deglitch td::after,
-body.deglitch th::before,
-body.deglitch th::after,
-body.deglitch .gh-edit::before,
-body.deglitch .gh-edit::after,
-body.deglitch .gaw-banner::before,
-body.deglitch .gaw-banner::after {
-    display: none;
-    animation: none !important;
-    transition: none !important;
 }
 
 gaw-info-bar {
