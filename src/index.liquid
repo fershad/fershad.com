@@ -28,13 +28,33 @@ css:
     </div>
   </section>
 
-  <section id="yearly-content">
   {% assign currentYear = years.currentYear %}
   {% assign currentYearPosts = collections.post | sortByPublishedDate | filterOnlyTag: "post", "note"| currentYearWriting: currentYear %}
   {% assign currentYearNotes = collections.post | sortByPublishedDate | filterOnlyTag: "note"| currentYearWriting: currentYear %}
   {% assign currentYearProjects = projects | currentYearProjects: currentYear %}
   {% assign currentYearTalks = talks | currentYearTalks: currentYear %}
   {% assign currentYearImages = film | currentYearImages: currentYear %}
+
+  <nav>
+      <span>On this page are </span>
+      <ul>
+          {% if currentYearPosts.size > 0 %}
+              <li><a href="#posts">Posts</a></li>
+          {% endif %}
+          {% if currentYearNotes.size > 0 %}
+              <li><a href="#notes">Notes</a></li>
+          {% endif %}
+          {% if currentYearProjects.size > 0 %}
+              <li><a href="#projects">Projects</a></li>
+          {% endif %}
+          {% if currentYearTalks.size > 0 %}
+              <li><a href="#talks">Talks</a></li>
+          {% endif %}
+      </ul>
+      <span> for the year {{  currentYear }}.</span>
+  </nav>
+  <section id="yearly-content" class="flow">
+
 
   {% assign sectionId = 'posts' %}
   {% assign sectionTitle = 'Posts' %}
@@ -161,73 +181,3 @@ css:
 
   </section>
 </div>
-
-
-<script data-gaw-remove>
-
-  const decodeHTML = function (html) {
-  	const txt = document.createElement('textarea');
-  	txt.innerHTML = html;
-  	return txt.value;
-  };
-
-  document.getElementById('rando').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const rando = document.getElementById('rando');
-    rando.textContent = 'Fetching image ...';
-    rando.setAttribute('disabled', 'disabled');
-
-    fetch('/api/rando')
-      .then(response => response.json())
-      .then(data => {
-        document.querySelector('.img-holder img').src = data.imageUrl;
-        document.querySelector('.img-desc h3').textContent = decodeHTML(data.title);
-        document.querySelector('.img-desc small').textContent = data.collection + ' | ' + data.shortDate;
-        document.querySelector('.img-desc p').textContent = decodeHTML(data.description);
-        const sources = document.querySelectorAll('.img-holder > picture > source');
-        if (sources) {
-          sources.forEach(source => source.remove());
-        }
-
-  let filmImg = document.querySelector('#film img');
-  let filmPicture = document.querySelector('#film picture');
-  filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
-      });
-
-    rando.textContent = 'Get random image >';
-    rando.removeAttribute('disabled');
-
-  });
-
-  document.getElementById('refresh-reader').addEventListener('click', function(e){
-    e.preventDefault();
-    document.querySelector('#refresh-reader').textContent = 'Refreshing list...';
-    fetch('/api/readwise/shortlist')
-      .then(response => response.json())
-      .then(data => {
-        document.querySelector('#refresh-reader').textContent = 'Refresh complete';
-        document.querySelector('#reading ul').innerHTML = '';
-        data.reader.forEach(article => {
-          const li = document.createElement('li');
-          li.innerHTML = `
-            <a href="${article.source_url}">${article.title}</a>
-            <div>
-              <small>${article.site_name}</small>
-            </div>
-          `;
-          document.querySelector('#reading ul').appendChild(li);
-        });
-        document.querySelector('#reading #update-time').textContent = 'Last updated: ' + data.updated;
-        document.querySelector('#refresh-reader').remove();
-      });
-  })
-
-  const introImg = document.querySelector('#intro img');
-  const picture = document.querySelector('#intro picture');
-  picture.setAttribute('style', '--glitch-img-src: url(' + introImg.src + ')');
-
-  let filmImg = document.querySelector('#film img');
-  let filmPicture = document.querySelector('#film picture');
-  filmPicture.setAttribute('style', '--glitch-img-src: url(' + filmImg.src + ')');
-</script>

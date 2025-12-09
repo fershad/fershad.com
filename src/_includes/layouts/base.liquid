@@ -73,76 +73,22 @@
 
 
   <body>
-    <!--<div class="gaw-banner center-align controls" data-gaw-remove>
-      <small class="">
-        <label for="glitch-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="glitch-toggle"
-            id="glitch-toggle"
-            value="glitchSwitch"
-            checked />
-          <span>Glitch</span>
-        </label>
-        <label for="font-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="font-toggle"
-            id="font-toggle"
-            value="fontSwitch"
-            checked />
-          <span>Pixelate</span>
-        </label>
-        <label for="favicon-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="favicon-toggle"
-            id="favicon-toggle"
-            value="faviconSwitch" />
-          <span>Static icon</span>
-        </label>
-        <label for="theme-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="theme-toggle"
-            id="theme-toggle"
-            value="themeSwitch" />
-          <span>Dark theme</span>
-        </label>
-        <label for="rainbow-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="rainbow-toggle"
-            id="rainbow-toggle"
-            value="rainbowSwitch"
-            checked />
-          <span>Rainbow links</span>
-        </label>
-      </small>
-    </div>-->
+    {% include 'partials/header.liquid' %}
 
     <!-- Blocking JS to prevent content flashing -->
     <script data-gaw-remove>
         // Check local storage for glitch and font settings
-        const glitchToggle = document.getElementById('glitch-toggle')
-        const fontToggle = document.getElementById('font-toggle')
+        // const fontToggle = document.getElementById('font-toggle')
         const rainbowToggle = document.getElementById('rainbow-toggle')
-        const glitchStyles = document.querySelector('link[href^="/css/glitch.css"]')
-        const fontStyles = document.querySelector('link[href^="/css/font.css"]')
+        // const fontStyles = document.querySelector('link[href^="/css/font.css"]')
         const faviconToggle = document.getElementById('favicon-toggle')
         const faviconScript = document.getElementById('rando-favicon')
         const rainbowScript = document.getElementById('rainbow-links')
 
-        if (localStorage.getItem('glitch') === 'true' || glitchToggle.getAttribute('checked') !== 'checked') {
-          glitchToggle.checked = false
-          document.body.classList.add('deglitch')
-          glitchStyles.remove()
-        }
-
-        if (localStorage.getItem('font') === 'true') {
-          fontToggle.checked = false
-          fontStyles.remove()
-        }
+        // if (localStorage.getItem('font') === 'true') {
+        //   fontToggle.checked = false
+        //   fontStyles.remove()
+        // }
 
         if (localStorage.getItem('favicon') === 'true') {
           faviconToggle.checked = true
@@ -168,33 +114,18 @@
             }
         })
 
-        // Glitch toggle
-
-
-        glitchToggle.addEventListener('change', () => {
-          if (glitchToggle.checked) {
-            document.head.appendChild(glitchStyles)
-            document.body.classList.remove('deglitch')
-            localStorage.setItem('glitch', 'false')
-          } else {
-            glitchStyles.remove()
-            document.body.classList.add('deglitch')
-            localStorage.setItem('glitch', 'true')
-          }
-        })
-
         // Font toggle
 
 
-        fontToggle.addEventListener('change', () => {
-          if (fontToggle.checked) {
-            document.head.appendChild(fontStyles)
-            localStorage.setItem('font', 'false')
-          } else {
-            fontStyles.remove()
-            localStorage.setItem('font', 'true')
-          }
-        })
+        // fontToggle.addEventListener('change', () => {
+        //   if (fontToggle.checked) {
+        //     document.head.appendChild(fontStyles)
+        //     localStorage.setItem('font', 'false')
+        //   } else {
+        //     fontStyles.remove()
+        //     localStorage.setItem('font', 'true')
+        //   }
+        // })
 
         // Favicon toggle
         faviconToggle.addEventListener('change', () => {
@@ -249,7 +180,7 @@
     defer></script>
 
   <script type="module">
-
+ try {
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
       const gawLevel =  document.querySelector('[data-gaw-level]').getAttribute('data-gaw-level')
@@ -271,5 +202,8 @@
 	toggle.addEventListener("change", () => {
 	    toggle.checked ? fathom.trackEvent("GAW opt-in") : fathom.trackEvent("GAW opt-out")
 	})
+ } catch (e) {
+    console.log(e)
+ }
   </script>
 </html>

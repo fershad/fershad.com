@@ -1,26 +1,44 @@
 <header>
-  {% comment %} {% unless title == "Home" %} {% endcomment %}
   <div>
     <div class="glitch-wrapper">
-      <p data-glitch="Fershad Irani">Fershad Irani</p>
+      <p>Fershad Irani</p>
       <small>Digital Sustainability Consultant</small>
     </div>
-    {% comment %} {% endunless %} {% endcomment %}
-    <nav>
-      <ul>
-        <li style="--local-delay: 171.584125ms">
-          <a href="/">Home</a>
-        </li>
-        <li style="--local-delay: 343.16825ms; --local-direction: normal">
-          <a href="/writing">Writing</a>
-        </li>
-        <li style="--local-delay: 424.16825ms; --local-direction: normal">
-          <a href="/links">Links</a>
-        </li>
-        <li style="--local-delay: 514.752375ms">
-          <a href="/projects">Projects</a>
-        </li>
-      </ul>
-    </nav>
+    <small class="toggles">
+      <label for="font-toggle" class="form-control">
+        <input
+          type="checkbox"
+          name="font-toggle"
+          id="font-toggle"
+          value="fontSwitch"
+          checked />
+        <span>Pixelate</span>
+      </label>
+      <label for="favicon-toggle" class="form-control">
+        <input
+          type="checkbox"
+          name="favicon-toggle"
+          id="favicon-toggle"
+          value="faviconSwitch" />
+        <span>Static icon</span>
+      </label>
+      <label for="theme-toggle" class="form-control">
+        <input
+          type="checkbox"
+          name="theme-toggle"
+          id="theme-toggle"
+          value="themeSwitch" />
+        <span>Dark theme</span>
+      </label>
+      <label for="rainbow-toggle" class="form-control">
+        <input
+          type="checkbox"
+          name="rainbow-toggle"
+          id="rainbow-toggle"
+          value="rainbowSwitch"
+          checked />
+        <span>Rainbow links</span>
+      </label>
+    </small>
   </div>
 </header>

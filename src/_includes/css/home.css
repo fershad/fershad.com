@@ -73,6 +73,49 @@
     grid-template-rows: 1fr;
     overflow: scroll;
     scroll-snap-type: x mandatory;
+    padding-inline: 1rem;
+    padding-block: 0.6rem 0.8rem;
+}
+
+aside:has(.filmstrip) {
+    position: relative;
+    /*max-width: 100vw;*/
+    /*max-width: 100vw;*/
+    width: 100vw;
+    margin-left: calc((-100vw + 100%) / 2);
+    margin-right: calc((-100vw + 100%) / 2);
+    z-index: 3;
+    background: light-dark(var(--text), var(--background));
+    padding-block: 1.75rem;
+}
+
+aside:has(.filmstrip) h3 {
+    max-width: 100%;
+}
+
+aside:has(.filmstrip):before,
+aside:has(.filmstrip):after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 8rem;
+    border-radius: 20px;
+    background: linear-gradient(
+        180deg,
+        transparent 0,
+        light-dark(var(--text), var(--background)) 100%
+    );
+}
+
+aside:has(.filmstrip):before {
+    top: -8rem;
+}
+
+aside:has(.filmstrip):after {
+    bottom: -8rem;
+    transform: rotate(180deg);
 }
 
 .filmstrip > .image-content {

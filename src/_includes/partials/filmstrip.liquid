@@ -1,6 +1,11 @@
 {% assign offset = filmSection | minus: 1 | times: 8 %}
 
-<section class="filmstrip">
+<aside class="flow">
+    <div class="center-align">
+    <h3>Film from {{ currentYear }}</h3>
+    </div>
+    <div class="filmstrip">
+    <!--<div class="image-content"></div>-->
 {% for image in currentYearImages offset: offset limit: 8 %}
     <div class="image-content">
     <a href="{{ image.url }}" target="_blank" title="View {{ image.title }} at film.fershad.com">
@@ -11,4 +16,6 @@
     </div>
     </div>
 {% endfor %}
-</section>
+<!--<div class="image-content"></div>-->
+</div>
+</aside>
