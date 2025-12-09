@@ -426,7 +426,7 @@ main {
     --line-offset: calc(var(--gap) / 2);
     --line-thickness: 2px;
     --line-color: var(--blue-2);
-    max-width: var(--size-lg);
+    max-width: var(--size-xl);
     padding: 1rem;
     margin: 0 auto;
 }
@@ -641,6 +641,9 @@ nav {
     z-index: 2;
     background: light-dark(var(--text), var(--background));
     text-align: center;
+    --line-color: var(--blue-2);
+    border-bottom: 2px solid var(--line-color);
+    /*border-top: 2px solid var(--line-color);*/
 }
 
 nav + section {

@@ -69,7 +69,7 @@ css:
                 <small><a href="#post-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
                 {% endfor %}
                 </div>
-                <small>Total posts: {{ currentYearPosts | size }}</small>
+                <!--<small>Total posts: {{ currentYearPosts | size }}</small>-->
                 </div>
                 {% endcapture %}
                 {% capture sectionContent %}
@@ -95,7 +95,7 @@ css:
                       <small><a href="#note-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
                     {% endfor %}
                     </div>
-                <small>Total notes: {{ currentYearNotes | size }}</small>
+                <!--<small>Total notes: {{ currentYearNotes | size }}</small>-->
                 </div>
                 {% endcapture %}
               {% capture sectionContent %}

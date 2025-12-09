@@ -32,9 +32,20 @@
 .splitview {
     display: grid;
     grid-template-columns: 20rem 1fr;
-    gap: 1.5rem;
+    gap: 5rem;
     padding: 0;
     position: relative;
+}
+
+.splitview > .lead-box:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1rem;
+    height: 50%;
+    width: 2px;
+    background-color: var(--blue-2);
 }
 
 @keyframes sticky-highlight {
@@ -62,6 +73,10 @@
     align-self: start;
     padding-block: 3rem;
     padding-inline-end: 3rem;
+}
+
+.lead-box + ul {
+    padding-block: 1.5rem;
 }
 
 .filmstrip {
@@ -100,7 +115,7 @@ aside:has(.filmstrip):after {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 8rem;
+    height: 6rem;
     border-radius: 20px;
     background: linear-gradient(
         180deg,
@@ -110,11 +125,11 @@ aside:has(.filmstrip):after {
 }
 
 aside:has(.filmstrip):before {
-    top: -8rem;
+    top: -6rem;
 }
 
 aside:has(.filmstrip):after {
-    bottom: -8rem;
+    bottom: -6rem;
     transform: rotate(180deg);
 }
 
@@ -131,6 +146,18 @@ aside:has(.filmstrip):after {
     height: 100%;
     object-fit: cover;
     aspect-ratio: 1;
+}
+
+#yearly-content {
+    --flow-gap: 7rem;
+}
+
+#yearly-content > section {
+    scroll-margin-block-start: 2.75rem;
+}
+
+#yearly-content > * > * {
+    --flow-gap: 3rem;
 }
 
 @media (max-width: 768px) {

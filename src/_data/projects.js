@@ -192,7 +192,7 @@ export default [
         url: "https://fershad.com/writing/building-are-my-third-parties-green/",
       },
       {
-        text: "Building the Directory",
+        text: "Directory",
         url: "https://fershad.com/writing/adding-a-directory-and-api-to-are-my-third-parties-green/",
       },
       {
