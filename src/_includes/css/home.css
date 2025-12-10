@@ -81,7 +81,7 @@
 
 .filmstrip {
     display: grid;
-    grid-template-columns: repeat(8, minmax(15rem, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0;
     position: relative;
@@ -90,6 +90,11 @@
     scroll-snap-type: x mandatory;
     padding-inline: 1rem;
     padding-block: 0.6rem 0.8rem;
+    transition: grid-template-columns 2s ease-out;
+}
+
+.filmstrip:has(img:hover) {
+    grid-template-columns: repeat(8, minmax(15rem, 1fr));
 }
 
 aside:has(.filmstrip) {
