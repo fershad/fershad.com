@@ -81,21 +81,43 @@
 
 .filmstrip {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(8, minmax(15rem, 1fr));
     gap: 1.5rem;
     padding: 0;
     position: relative;
     grid-template-rows: 1fr;
-    overflow: scroll;
+    overflow: auto;
     scroll-snap-type: x mandatory;
     padding-inline: 1rem;
     padding-block: 0.6rem 0.8rem;
-    transition: grid-template-columns 2s ease-out;
+    /*transition: all 2s ease-out;
+    justify-items: center;*/
 }
 
-.filmstrip:has(img:hover) {
-    grid-template-columns: repeat(8, minmax(15rem, 1fr));
+/*.filmstrip .image-content:nth-child(odd) {
+    grid-row: 1;
+    grid-column: 4;
 }
+
+.filmstrip .image-content:nth-child(even) {
+    grid-row: 1;
+    grid-column: 5;
+}
+
+.filmstrip:has(.image-content:hover) {
+    grid-template-columns: repeat(8, minmax(15rem, 1fr));
+    justify-content: flex-start;
+}
+
+.filmstrip:has(.image-content:hover) .image-content:nth-child(odd) {
+    grid-row: initial;
+    grid-column: initial;
+}
+
+.filmstrip:has(.image-content:hover) .image-content:nth-child(even) {
+    grid-row: initial;
+    grid-column: initial;
+}*/
 
 aside:has(.filmstrip) {
     position: relative;
@@ -119,7 +141,7 @@ aside:has(.filmstrip):after {
     display: block;
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 6rem;
     border-radius: 20px;
     background: linear-gradient(

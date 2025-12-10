@@ -381,8 +381,9 @@ main:not(:has(article)) {
 }
 
 html {
-    background: var(--background);
-    color: var(--text);
+    color: light-dark(var(--background), var(--text));
+    background-color: light-dark(var(--text), var(--background));
+    color-scheme: light dark;
 }
 
 body:not(.rainbow) a:not([class]) {
