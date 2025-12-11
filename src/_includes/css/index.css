@@ -393,6 +393,7 @@ body:not(.rainbow) a:not([class]) {
 body {
     margin: 0;
     color-scheme: light dark;
+    overflow-x: hidden;
 }
 
 .skip-link {

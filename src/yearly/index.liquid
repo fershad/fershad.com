@@ -3,8 +3,30 @@ pagination:
   data: years.blogYears
   size: 1
   alias: currentYear
-permalink: /{{ currentYear }}/index.html
-title: "{{ currentYear }}"
+permalink: "{% unless currentYear == years.currentYear %}/{{ currentYear }}/index.html{% else %}/index.html{% endunless %}"
+eleventyComputed:
+  title: "{% unless currentYear == years.currentYear %}{{ currentYear }}{% else %}Home{% endunless %}"
+  description: "{% unless currentYear == years.currentYear %}An archive of writing and other items from {{ currentYear }}{% else %}Hey, I'm Fershad. I am a digital sustainability consultant working with the Green Web Foundation towards a fossil free internet by 2030.{% endunless %}"
 ---
 
 {% assign currentYear = currentYear %}
+
+<section id="intro" class="twocol">
+  <img
+    src="../../public/img/profile_2.jpg"
+    alt="Black and white image of a man in a bucket hat and large glasses, his head slightly tilted up with a skeptical look on his face. He appears casual, with sunglasses hanging on the shirt around his neck."
+    loading="eager"
+    decoding="async"
+    eleventy:widths="240,480,320,640"
+    eleventy:formats="avif,webp,jpg"
+    sizes="100w" />
+  <div class="flow">
+    <div>
+      <h1>Hey, I'm Fershad</h1>
+      <p>
+        A digital sustainability consultant based in 🇹🇼 Taipei, Taiwan. I work with the Green Web Foundation towards
+          a fossil free internet by 2030.
+      </p>
+    </div>
+  </div>
+</section>

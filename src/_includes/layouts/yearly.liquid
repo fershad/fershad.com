@@ -5,6 +5,21 @@ css:
 - /css/listPage.css
 ---
 
+<script type="speculationrules">
+{
+  "prefetch": [
+    {
+      "urls": [
+        "/",
+        {% for year in years.blogYears %}
+          "/{{ year }}/",
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
+
 <div class="wrapper flow" id="homepage">
 
     {{  content }}
