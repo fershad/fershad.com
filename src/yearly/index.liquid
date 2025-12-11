@@ -1,0 +1,10 @@
+---
+pagination:
+  data: years.blogYears
+  size: 1
+  alias: currentYear
+permalink: /{{ currentYear }}/index.html
+title: "{{ currentYear }}"
+---
+
+{% assign currentYear = currentYear %}
