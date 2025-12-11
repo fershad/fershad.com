@@ -68,7 +68,7 @@
 
 .splitview > .lead-box {
     position: sticky;
-    top: 2rem;
+    top: 6.5rem;
     bottom: 2rem;
     align-self: start;
     padding-block: 3rem;
@@ -92,6 +92,18 @@
     padding-block: 0.6rem 0.8rem;
     /*transition: all 2s ease-out;
     justify-items: center;*/
+}
+
+.current-year {
+    font-size: var(--font-size-4);
+}
+
+nav > nav {
+    padding-block-start: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1ch;
 }
 
 /*.filmstrip .image-content:nth-child(odd) {

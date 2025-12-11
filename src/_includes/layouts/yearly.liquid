@@ -9,12 +9,7 @@ css:
 {
   "prefetch": [
     {
-      "urls": [
-        "/",
-        {% for year in years.blogYears %}
-          "/{{ year }}/",
-        {% endfor %}
-      ]
+      "urls": [ "/",{%- for year in years.blogYears -%}{%- unless year == currentYear -%}"/{{ year }}/",{%- endunless -%}{%- endfor -%}]
     }
   ]
 }
@@ -24,14 +19,29 @@ css:
 
     {{  content }}
 
-  {% assign blogYears = years.blogYears %}
+  {% assign blogYears = years.blogYears | reverse %}
   {% assign currentYearPosts = collections.post | sortByPublishedDate | filterOnlyTag: "post", "note"| currentYearWriting: currentYear %}
   {% assign currentYearNotes = collections.post | sortByPublishedDate | filterOnlyTag: "note"| currentYearWriting: currentYear %}
   {% assign currentYearProjects = projects | currentYearProjects: currentYear %}
   {% assign currentYearTalks = talks | currentYearTalks: currentYear %}
   {% assign currentYearImages = film | currentYearImages: currentYear %}
 
-  <nav>
+  <nav role="navigation">
+      <nav role="navigation" aria-label="Yearly Navigation">
+          {% for year in blogYears %}
+            {% if year == currentYear %}
+              <span class="current-year">{{ year }}</span>
+            {% else %}
+             {% if year == years.currentYear %}
+                <a href="/">{{ year }}</a>
+              {% else %}
+                <a href="/{{ year }}/">{{ year }}</a>
+              {% endif %}
+            {% endif %}
+            {% if forloop.last %}{% else %} | {% endif %}
+          {% endfor %}
+      </nav>
+      <nav role="navigation" aria-label="Page Navigation">
       <span>On this page are </span>
       <ul>
           {% if currentYearPosts.size > 0 %}
@@ -48,6 +58,7 @@ css:
           {% endif %}
       </ul>
       <span> for the year {{  currentYear }}.</span>
+      </nav>
   </nav>
   <section id="yearly-content" class="flow">
 
