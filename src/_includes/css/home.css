@@ -48,24 +48,6 @@
     background-color: var(--blue-2);
 }
 
-@keyframes sticky-highlight {
-    to {
-        font-weight: bolder;
-    }
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-
-    to {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-}
-
 .splitview > .lead-box {
     position: sticky;
     top: 6.5rem;
@@ -90,12 +72,16 @@
     scroll-snap-type: x mandatory;
     padding-inline: 1rem;
     padding-block: 0.6rem 0.8rem;
-    /*transition: all 2s ease-out;
-    justify-items: center;*/
-}
+    /* Create View Timeline */
+    view-timeline-name: --revealing-image;
+    view-timeline-axis: block;
 
-.current-year {
-    font-size: var(--font-size-4);
+    /* Attach animation, linked to the  View Timeline */
+    animation: linear reveal both;
+    animation-timeline: --revealing-image;
+
+    /* Tweak range when effect should run*/
+    animation-range: entry 10% cover 30%;
 }
 
 nav > nav {
@@ -141,6 +127,17 @@ aside:has(.filmstrip) {
     z-index: 3;
     background: light-dark(var(--text), var(--background));
     padding-block: 1.75rem;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(0% 50% 0% 50%);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
 }
 
 aside:has(.filmstrip) h3 {

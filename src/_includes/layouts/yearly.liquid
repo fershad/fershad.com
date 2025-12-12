@@ -27,7 +27,7 @@ css:
   {% assign currentYearImages = film | currentYearImages: currentYear %}
 
   <nav role="navigation">
-      <nav role="navigation" aria-label="Yearly Navigation">
+      <nav class="year-nav" role="navigation" aria-label="Yearly Navigation">
           {% for year in blogYears %}
             {% if year == currentYear %}
               <span class="current-year">{{ year }}</span>
@@ -60,6 +60,7 @@ css:
       <span> for the year {{  currentYear }}.</span>
       </nav>
   </nav>
+
   <section id="yearly-content" class="flow">
 
 
