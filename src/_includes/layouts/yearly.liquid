@@ -27,37 +27,34 @@ css:
   {% assign currentYearImages = film | currentYearImages: currentYear %}
 
   <nav role="navigation">
-      <nav class="year-nav" role="navigation" aria-label="Yearly Navigation">
+      <details id="year-nav" class="year-nav" role="navigation" aria-label="Yearly Navigation">
+              <summary>Year: <span class="current-year">{{ currentYear }}</span></summary>
+            <ul>
           {% for year in blogYears %}
-            {% if year == currentYear %}
-              <span class="current-year">{{ year }}</span>
-            {% else %}
-             {% if year == years.currentYear %}
-                <a href="/">{{ year }}</a>
-              {% else %}
-                <a href="/{{ year }}/">{{ year }}</a>
-              {% endif %}
-            {% endif %}
-            {% if forloop.last %}{% else %} | {% endif %}
+            {% unless year == currentYear %}
+              <li>
+                  <a href="/{{ year }}/">{{ year }}</a>
+              </li>
+            {% if forloop.last %}{% else %}<span class="seppa"> | </span>{% endif %}
+            {% endunless %}
           {% endfor %}
-      </nav>
-      <nav role="navigation" aria-label="Page Navigation">
-      <span>On this page are </span>
-      <ul>
-          {% if currentYearPosts.size > 0 %}
-              <li><a href="#posts">Posts</a></li>
-          {% endif %}
-          {% if currentYearNotes.size > 0 %}
-              <li><a href="#notes">Notes</a></li>
-          {% endif %}
-          {% if currentYearProjects.size > 0 %}
-              <li><a href="#projects">Projects</a></li>
-          {% endif %}
-          {% if currentYearTalks.size > 0 %}
-              <li><a href="#talks">Talks</a></li>
-          {% endif %}
-      </ul>
-      <span> for the year {{  currentYear }}.</span>
+            </ul>
+      </details>
+      <nav class="page-nav" aria-label="Page Navigation">
+          <ul>
+              {% if currentYearPosts.size > 0 %}
+                  <li><a href="#posts">{{ currentYearPosts.size }} Posts</a></li>
+              {% endif %}
+              {% if currentYearNotes.size > 0 %}
+                  <li><a href="#notes">{{ currentYearNotes.size }} Notes</a></li>
+              {% endif %}
+              {% if currentYearProjects.size > 0 %}
+                  <li><a href="#projects">{{ currentYearProjects.size }} Projects</a></li>
+              {% endif %}
+              {% if currentYearTalks.size > 0 %}
+                  <li><a href="#talks">{{ currentYearTalks.size }} Talks</a></li>
+              {% endif %}
+          </ul>
       </nav>
   </nav>
 
@@ -189,3 +186,19 @@ css:
 
   </section>
 </div>
+
+<script>
+const yearNav = document.getElementById('year-nav');
+
+function isYearNavOpen() {
+    return yearNav.getAttribute('open') == '';
+}
+
+document.addEventListener('click', function(event) {
+    if (isYearNavOpen()) {
+        if (!yearNav.contains(event.target)) {
+            yearNav.removeAttribute('open');
+        }
+    }
+});
+</script>

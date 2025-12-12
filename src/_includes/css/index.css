@@ -615,6 +615,7 @@ header > div {
     align-items: center;
     flex-wrap: wrap;
     margin-inline: auto;
+    gap: 1.75rem;
 }
 
 footer > nav {
@@ -867,10 +868,9 @@ gaw-info-bar {
 }
 
 .toggles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
     column-gap: 1rem;
     row-gap: 1.25rem;
     max-width: 100%;
+    flex-wrap: wrap;
 }

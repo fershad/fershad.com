@@ -84,38 +84,61 @@
     animation-range: entry 10% cover 30%;
 }
 
-nav > nav {
-    padding-block-start: 0.75rem;
+nav > .year-nav {
+    background: light-dark(var(--text), var(--background));
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
+    z-index: 10;
+}
+
+.year-nav ul li {
+    margin-block: 0 !important;
+}
+
+.year-nav .seppa {
+    margin: 0;
+}
+
+.year-nav summary {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1ch;
+    justify-content: center;
+    flex-direction: row;
+    /*border: 2px solid var(--line-color);*/
+    width: min-content;
+    margin: 0 auto;
 }
 
-/*.filmstrip .image-content:nth-child(odd) {
-    grid-row: 1;
-    grid-column: 4;
+.year-nav[open] summary {
+    border: none;
 }
 
-.filmstrip .image-content:nth-child(even) {
-    grid-row: 1;
-    grid-column: 5;
+nav > .page-nav {
+    padding-block-start: 0.75rem;
+    margin-block-start: 3rem;
+    display: block;
 }
 
-.filmstrip:has(.image-content:hover) {
-    grid-template-columns: repeat(8, minmax(15rem, 1fr));
-    justify-content: flex-start;
+nav > .page-nav ul,
+nav > .page-nav li {
+    display: inline-block;
 }
 
-.filmstrip:has(.image-content:hover) .image-content:nth-child(odd) {
-    grid-row: initial;
-    grid-column: initial;
+nav > nav:last-of-type {
+    padding-block-end: 0.75rem;
 }
 
-.filmstrip:has(.image-content:hover) .image-content:nth-child(even) {
-    grid-row: initial;
-    grid-column: initial;
-}*/
+.current-year {
+    font-size: var(--font-size-4);
+    border-bottom: 2px solid var(--line-color);
+}
+
+.year-nav[open] .current-year {
+    border-bottom: 2px solid transparent;
+}
 
 aside:has(.filmstrip) {
     position: relative;
@@ -197,6 +220,10 @@ aside:has(.filmstrip):after {
     --flow-gap: 3rem;
 }
 
+.splitview ul li {
+    scroll-margin-block: 9rem;
+}
+
 @media (max-width: 768px) {
     #intro,
     .splitview {
@@ -206,4 +233,51 @@ aside:has(.filmstrip):after {
     #intro img {
         max-width: 100%;
     }
+
+    .splitview > .lead-box {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        padding-block-end: 0;
+        align-self: center;
+    }
+
+    .splitview ul li {
+        scroll-margin-block: 10rem;
+    }
+
+    .year-nav ul {
+        flex-direction: column;
+    }
+
+    .year-nav .seppa {
+        display: none;
+    }
+
+    main:has(.year-nav[open]) > * > *:not(nav:not([class]), .year-nav) {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .year-nav[open] {
+        border: 2px solid var(--line-color);
+        max-width: fit-content;
+        opacity: 1 !important;
+    }
+
+    .year-nav[open] + .page-nav {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .year-nav {
+        padding: 0.25rem 0.5rem;
+        border: 2px solid transparent;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*.year-nav:not([open]) summary {
+        padding: 0.25rem 0.5rem;
+    }*/
 }

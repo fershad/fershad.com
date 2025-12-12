@@ -520,6 +520,10 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", mdLib);
 
+  eleventyConfig.setServerOptions({
+    showAllHosts: true,
+  });
+
   return {
     dir: {
       input: "src",
