@@ -33,10 +33,18 @@ css:
           {% for year in blogYears %}
             {% unless year == currentYear %}
               <li>
-                  <a href="/{{ year }}/">{{ year }}</a>
+                  {% if year == years.currentYear %}
+                    <a href="/">{{ year }}</a>
+                  {% else %}
+                    <a href="/{{ year }}/">{{ year }}</a>
+                  {% endif %}
               </li>
-            {% if forloop.last %}{% else %}<span class="seppa"> | </span>{% endif %}
+              {% else %}
+              <li>
+                  {{ year }}
+              </li>
             {% endunless %}
+            {% if forloop.last %}{% else %}<span class="seppa"> | </span>{% endif %}
           {% endfor %}
             </ul>
       </details>
@@ -60,7 +68,7 @@ css:
 
   <section id="yearly-content" class="flow">
 
-
+{% if currentYearPosts.size > 0 %}
   {% assign sectionId = 'posts' %}
   {% assign sectionTitle = 'Posts' %}
   {% assign sectionIntro = 'Ideas, thoughts, and opinions mostly related to digital sustainability and occassionally other topics.' %}
@@ -84,10 +92,15 @@ css:
       </ul>
       {% endcapture %}
       {% include 'partials/yearlySection.liquid' %}
+      {% if currentYearImages.size > 0 %}
+          {% assign completeRow = currentYearImages.size | minus: 8 %}
+          {% if completeRow > 8 %}
+              {% include 'partials/filmstrip.liquid', filmSection: 1 %}
+          {% endif %}
+      {% endif %}
+      {% endif %}
 
-
-{% include 'partials/filmstrip.liquid', filmSection: 1 %}
-
+{% if currentYearNotes.size > 0 %}
                 {% assign sectionId = 'notes' %}
                 {% assign sectionTitle = 'Notes' %}
                 {% assign sectionIntro = 'Short(ish) thoughts and reflections on a variety of topics.' %}
@@ -112,8 +125,17 @@ css:
 
       {% include 'partials/yearlySection.liquid' %}
 
-      {% include 'partials/filmstrip.liquid', filmSection: 2 %}
+      {% if currentYearImages.size > 0 %}
+      {% assign completeRow = currentYearImages.size | minus: 16 %}
+      {% if completeRow > 8 %}
+              {% include 'partials/filmstrip.liquid', filmSection: 2 %}
+          {% endif %}
+      {% endif %}
+{% endif %}
 
+
+
+      {% if currentYearProjects.size > 0 %}
       {% assign sectionId = "projects" %}
       {% assign sectionTitle = "Active projects" %}
       {% assign sectionIntro = "Projects that I've worked on at one time or another through the year." %}
@@ -147,8 +169,13 @@ css:
               </ul>
         {% endcapture %}
         {% include 'partials/yearlySection.liquid' %}
-
-        {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+        {% if currentYearImages.size > 0 %}
+        {% assign completeRow = currentYearImages.size | minus: 24 %}
+        {% if completeRow > 8 %}
+                {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+            {% endif %}
+        {% endif %}
+{% endif %}
 
         {% if currentYearTalks.size > 0 %}
         {% assign sectionId = "talks" %}
@@ -180,9 +207,15 @@ css:
         </ul>
         {% endcapture %}
         {% include 'partials/yearlySection.liquid' %}
+
+        {% if currentYearImages.size > 0 %}
+        {% assign completeRow = currentYearImages.size | minus: 32 %}
+        {% if completeRow > 8 %}
+                {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+            {% endif %}
         {% endif %}
 
-
+        {% endif %}
 
   </section>
 </div>

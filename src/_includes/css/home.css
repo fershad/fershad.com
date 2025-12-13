@@ -29,38 +29,6 @@
     grid-rows: 1;
 }
 
-.splitview {
-    display: grid;
-    grid-template-columns: 20rem 1fr;
-    gap: 5rem;
-    padding: 0;
-    position: relative;
-}
-
-.splitview > .lead-box:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -1rem;
-    height: 50%;
-    width: 2px;
-    background-color: var(--blue-2);
-}
-
-.splitview > .lead-box {
-    position: sticky;
-    top: 6.5rem;
-    bottom: 2rem;
-    align-self: start;
-    padding-block: 3rem;
-    padding-inline-end: 3rem;
-}
-
-.lead-box + ul {
-    padding-block: 1.5rem;
-}
-
 .filmstrip {
     display: grid;
     grid-template-columns: repeat(8, minmax(15rem, 1fr));
@@ -87,10 +55,10 @@
 nav > .year-nav {
     background: light-dark(var(--text), var(--background));
     position: absolute;
-    max-width: 100%;
-    width: 100%;
     margin-inline: auto;
     z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .year-nav ul li {
@@ -114,6 +82,10 @@ nav > .year-nav {
 
 .year-nav[open] summary {
     border: none;
+}
+
+.year-nav[open] + .page-nav {
+    opacity: 0;
 }
 
 nav > .page-nav {
@@ -213,7 +185,7 @@ aside:has(.filmstrip):after {
 }
 
 #yearly-content > section {
-    scroll-margin-block-start: 2.75rem;
+    scroll-margin-block-start: 7.75rem;
 }
 
 #yearly-content > * > * {
@@ -225,25 +197,12 @@ aside:has(.filmstrip):after {
 }
 
 @media (max-width: 768px) {
-    #intro,
-    .splitview {
+    #intro {
         grid-template-columns: 1fr;
     }
 
     #intro img {
         max-width: 100%;
-    }
-
-    .splitview > .lead-box {
-        position: relative;
-        top: 0;
-        bottom: 0;
-        padding-block-end: 0;
-        align-self: center;
-    }
-
-    .splitview ul li {
-        scroll-margin-block: 10rem;
     }
 
     .year-nav ul {

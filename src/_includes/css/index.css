@@ -874,3 +874,57 @@ gaw-info-bar {
     max-width: 100%;
     flex-wrap: wrap;
 }
+
+.splitview {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    gap: 5rem;
+    padding: 0;
+    position: relative;
+}
+
+.splitview > .lead-box:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1rem;
+    height: 50%;
+    width: 2px;
+    background-color: var(--blue-2);
+}
+
+.splitview > .lead-box {
+    position: sticky;
+    top: 7.5rem;
+    bottom: 2rem;
+    align-self: start;
+    padding-block: 3rem;
+    padding-inline-end: 3rem;
+}
+
+.lead-box + ul {
+    padding-block: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .splitview {
+        grid-template-columns: 1fr;
+    }
+
+    .splitview > .lead-box {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        padding-block-end: 0;
+        align-self: center;
+    }
+
+    .splitview > .lead-box:after {
+        display: none;
+    }
+
+    .splitview ul li {
+        scroll-margin-block: 10rem;
+    }
+}
