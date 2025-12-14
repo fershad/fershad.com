@@ -37,36 +37,45 @@ css: /css/post.css
 <div class="pagetitle flow">
     {% if title %}
         {% unless isPage == true %}
+        <div class="info">
               <nav aria-label="Breadcrumb" class="breadcrumb">
                 <ol>
                   <li><small><a href="{{ yearPath }}">{{ date | date: '%Y' }}</a></small></li>
                   <li><small><a href="{{ yearPath }}#{{ type }}">{{type | capitalize }}</a></small></li>
-                  <li><small><a href="{{ yearPath }}#{{ type }}-{{ month }}">{{ date | date: '%B %d' }}</a></small></li>
+                  <li><small><a href="{{ yearPath }}#{{ type }}-{{ month }}">{{ date | date: '%B' }}</a></small></li>
                 </ol>
               </nav>
+              {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
+              {% if  mentions.mentionCount > 0 %}
+                {% include 'partials/webmentions.liquid' %}
+              {% endif %}
+        </div>
         {% endunless %}
         <h1>
           <span class="p-name">{{ title }}</span>
         </h1>
-        {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
-        {% if  mentions.mentionCount > 0 %}
-          {% include 'partials/webmentions.liquid' %}
-        {% endif %}
-</div>
-        <div class="lead-box flow">
-            <div class="flow">
-                {% capture tableOfContent %}
-                  {{ content | toc  }}
-                {% endcapture %}
-                {% if tableOfContent %}
-                  <details class="table-of-contents" open>
-                    <summary>Contents</summary>
+
+        <nav role="navigation" class="toc">
+            <details id="table-of-contents" class="table-of-contents" role="navigation" aria-label="Yearly Navigation">
+                    <summary>Content</summary>
                     {{ content | toc }}
-                  </details>
-                {% endif %}
+            </details>
+        </nav>
+
+        <!--<div class="flow">
+            {% capture tableOfContent %}
+              {{ content | toc  }}
+            {% endcapture %}
+            {% if tableOfContent %}
+              <details class="table-of-contents">
+                <summary>Contents</summary>
+                {{ content | toc }}
+              </details>
             {% endif %}
-        </div>
-    </div>
+        {% endif %}
+    </div>-->
+</div>
+
 
 
   <section class="flow e-content post-body">
@@ -80,3 +89,19 @@ css: /css/post.css
     {% endunless %}
   </section>
 </article>
+
+<script>
+const toc = document.querySelector('.table-of-contents');
+
+function isTocOpen() {
+    return toc.getAttribute('open') == '';
+}
+
+document.addEventListener('click', function(event) {
+    if (isTocOpen()) {
+        if (!toc.contains(event.target)) {
+            toc.removeAttribute('open');
+        }
+    }
+});
+</script>

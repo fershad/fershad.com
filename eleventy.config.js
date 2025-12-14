@@ -277,7 +277,10 @@ export default function (eleventyConfig) {
     },
   });
 
-  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ["h2", "h3"],
+    flat: true,
+  });
 
   eleventyConfig.addFilter("removeDeepLinks", function (source) {
     return source.replace(/<a class="deeplink" href="#.*?">(.*?)<\/a>/g, "");

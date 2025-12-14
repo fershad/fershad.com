@@ -1,20 +1,11 @@
 <div class="webmentions" id="webmentions">
   {% if mentions.likes.size > 0 %}
-  <div class="likes ">
-  <small>{{ mentions.likes | size }} Likes</small>
-  </div>
+  <small>{{ mentions.likes | size }} Likes{% if mentions.reposts.size > 0 or mentions.mentions.size > 0 %}, {% endif %}
   {% endif %}
-
   {% if mentions.reposts.size > 0 %}
-  <div class="reposts">
-  <small>{{ mentions.reposts | size }} Reposts</small>
-  </div>
+  {{ mentions.reposts | size }} Reposts{% if mentions.mentions.size > 0 %}, {% endif %}
   {% endif %}
-
   {% if mentions.mentions.size > 0 %}
-  <div class="mentions">
-  <small>{{ mentions.mentions | size }} Mentions
-  </small>
-  </div>
-  {% endif %}
+  {{ mentions.mentions | size }} Mentions
+      {% endif %} since {{ date | date: "%b %d, %Y" }}</small>
 </div>

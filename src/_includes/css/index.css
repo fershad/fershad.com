@@ -433,6 +433,10 @@ main {
     margin: 0 auto;
 }
 
+main:has(article) {
+    max-width: var(--size-lg);
+}
+
 .wrapper > * {
     position: relative;
     padding: 1.5rem;
