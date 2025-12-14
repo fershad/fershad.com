@@ -79,7 +79,7 @@ css:
                 {% assign monthlyCount = currentYearPosts | groupWritingByMonth %}
                 <div>
                 {% for month in monthlyCount %}
-                <small><a href="#post-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
+                <small><a href="#posts-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
                 {% endfor %}
                 </div>
                 <!--<small>Total posts: {{ currentYearPosts | size }}</small>-->
@@ -110,7 +110,7 @@ css:
                     {% assign monthlyCount = currentYearNotes | groupWritingByMonth %}
                     <div>
                     {% for month in monthlyCount %}
-                      <small><a href="#note-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
+                      <small><a href="#notes-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
                     {% endfor %}
                     </div>
                 <!--<small>Total notes: {{ currentYearNotes | size }}</small>-->

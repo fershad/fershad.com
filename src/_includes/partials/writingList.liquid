@@ -4,7 +4,7 @@
 
   {% assign tags = post.data.tags %}
   {% assign isNote = tags | find: "note" %}
-  <li id={%- if thisPostMonth != previousPostMonth %}"{%- if isNote == "note" -%}note-{%- else -%}post-{%- endif -%}{{thisPostMonth}}"{% endif %}
+  <li id={%- if thisPostMonth != previousPostMonth %}"{%- if isNote == "note" -%}notes-{%- else -%}posts-{%- endif -%}{{thisPostMonth}}"{% endif %}
       {%- if post.data.archived -%}{{"class=archived" | raw}}{%- endif -%}>
     <div>
       <small class="post-type">
