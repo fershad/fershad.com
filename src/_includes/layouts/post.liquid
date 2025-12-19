@@ -80,6 +80,7 @@ css: /css/post.css
 
 <script>
 const toc = document.querySelector('.table-of-contents');
+const tocLinks = toc.querySelectorAll('a');
 
 function isTocOpen() {
     return toc.getAttribute('open') == '';
@@ -92,4 +93,11 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
+tocLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        toc.removeAttribute('open');
+    });
+});
+
 </script>
