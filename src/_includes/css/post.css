@@ -102,7 +102,7 @@ section h3,
 section h4 {
     line-height: 1.35;
     margin-block: 1.25rem;
-    max-inline-size: 40ch;
+    max-inline-size: 60ch;
     overflow-wrap: anywhere;
     font-weight: bold;
 }
@@ -113,10 +113,12 @@ section h4[id] {
     margin-left: -1.5ch;
     padding-left: 1.5ch;
     position: relative;
+    display: inline-block;
 }
 
 .heading-wrapper {
     position: relative;
+    display: block;
 }
 
 .heading-wrapper:has(h2, h3) {
@@ -128,17 +130,12 @@ section h4[id] {
 }
 
 .heading-wrapper .deeplink {
-    position: absolute;
-    inset-inline-start: -1.5ch;
-    top: -0.65ex;
+    /*top: -0.65ex;*/
     font-size: var(--deeplink-size);
     color: var(--blue-7);
     text-decoration: none;
+    padding-inline-end: 0.5ch;
     /*opacity: 0.2;*/
-    transform: scale(1.2);
-    transition:
-        opacity 0.2s,
-        transform 0.2s;
 }
 
 .heading-wrapper:has(h2[id]) {
@@ -154,10 +151,12 @@ section h4[id] {
 }
 
 .heading-wrapper:has(h2[id], h3[id], h4[id]):hover .deeplink {
-    opacity: 1;
+    /*opacity: 1;
     display: block;
     transform: rotate(90deg) scale(1.5);
-    top: -0.25ex;
+    top: -0.25ex;*/
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -727,8 +726,15 @@ nav > .table-of-contents {
     border: none;
 }
 
+.post-body {
+    transition:
+        opacity 1.5s,
+        filter 1.5s;
+}
+
 .splitview:has(.table-of-contents[open]) .post-body {
     opacity: 0.5;
+    filter: blur(3px);
     pointer-events: none;
 }
 
@@ -753,11 +759,6 @@ nav > .table-of-contents {
 @media (max-width: 768px) {
     blockquote {
         transform: skew(-2deg);
-    }
-
-    .heading-wrapper a.deeplink {
-        top: -2.15ex;
-        inset-inline-start: 0;
     }
 
     .gh-edit {

@@ -42,7 +42,7 @@ const figoptions = {
 const markdownItAnchorOptions = {
   permalink: true,
   permalinkClass: "deeplink",
-  permalinkSymbol: "→",
+  permalinkSymbol: "↳",
   level: [2, 3, 4],
   slugify: function (s) {
     return slugify(s);
@@ -105,7 +105,7 @@ const markdownItAnchorOptions = {
     // insert the wrapper opening before the heading
     state.tokens.splice(idx, 0, headingWrapperTokenOpen);
     // insert the anchor link tokens after the wrapper opening and the 3 tokens of the heading
-    state.tokens.splice(idx + 3 + 1, 0, ...anchorTokens);
+    state.tokens.splice(idx + 1 + 1, 0, ...anchorTokens);
     // insert the wrapper closing after all these
     state.tokens.splice(
       idx + 3 + 1 + anchorTokens.length,
