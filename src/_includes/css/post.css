@@ -728,8 +728,8 @@ nav > .table-of-contents {
 
 .post-body {
     transition:
-        opacity 1.5s,
-        filter 1.5s;
+        opacity 0.75s,
+        filter 0.95s;
 }
 
 .splitview:has(.table-of-contents[open]) .post-body {

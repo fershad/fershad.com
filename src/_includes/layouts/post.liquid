@@ -58,22 +58,10 @@ css: /css/post.css
         <nav role="navigation" class="toc">
             <details id="table-of-contents" class="table-of-contents" role="navigation" aria-label="Yearly Navigation">
                     <summary>Content</summary>
-                    {{ content | toc }}
+                    {{ content  | removeDeepLinks | toc }}
             </details>
         </nav>
-
-        <!--<div class="flow">
-            {% capture tableOfContent %}
-              {{ content | toc  }}
-            {% endcapture %}
-            {% if tableOfContent %}
-              <details class="table-of-contents">
-                <summary>Contents</summary>
-                {{ content | toc }}
-              </details>
-            {% endif %}
         {% endif %}
-    </div>-->
 </div>
 
 

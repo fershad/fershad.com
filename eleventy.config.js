@@ -105,10 +105,10 @@ const markdownItAnchorOptions = {
     // insert the wrapper opening before the heading
     state.tokens.splice(idx, 0, headingWrapperTokenOpen);
     // insert the anchor link tokens after the wrapper opening and the 3 tokens of the heading
-    state.tokens.splice(idx + 1 + 1, 0, ...anchorTokens);
+    state.tokens.splice(idx + 2, 0, ...anchorTokens);
     // insert the wrapper closing after all these
     state.tokens.splice(
-      idx + 3 + 1 + anchorTokens.length,
+      idx + 2 + 1 + anchorTokens.length,
       0,
       headingWrapperTokenClose,
     );
