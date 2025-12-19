@@ -761,6 +761,10 @@ nav > .table-of-contents {
         transform: skew(-2deg);
     }
 
+    .post-body {
+        max-width: calc(100vw - 1rem);
+    }
+
     .gh-edit {
         margin-inline: -0.25rem;
         width: calc(100% + 0.5rem);
