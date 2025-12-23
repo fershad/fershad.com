@@ -28,7 +28,11 @@ css:
 
   <nav role="navigation">
       <details id="year-nav" class="year-nav" role="navigation" aria-label="Yearly Navigation">
-              <summary>Year: <span class="current-year">{{ currentYear }}</span></summary>
+              <summary>
+                  <span>
+                  <small>20</small><span class="current-year">{{ "now" | date: "%y" }}</span>
+                  </span>
+              </summary>
             <ul>
           {% for year in blogYears %}
             {% unless year == currentYear %}
@@ -71,22 +75,12 @@ css:
 {% if currentYearPosts.size > 0 %}
   {% assign sectionId = 'posts' %}
   {% assign sectionTitle = 'Posts' %}
-  {% assign sectionIntro = 'Ideas, thoughts, and opinions mostly related to digital sustainability and occassionally other topics.' %}
+  {% assign sectionIntro = 'Longer content mostly about digital sustainability.' %}
   {% assign sectionExtra = '' %}
 
-                {% capture sectionExtra %}
-                <div>
-                {% assign monthlyCount = currentYearPosts | groupWritingByMonth %}
-                <div>
-                {% for month in monthlyCount %}
-                <small><a href="#posts-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
-                {% endfor %}
-                </div>
-                <!--<small>Total posts: {{ currentYearPosts | size }}</small>-->
-                </div>
-                {% endcapture %}
+
                 {% capture sectionContent %}
-      <ul>
+      <ul class="flow">
         {% assign postslist = currentYearPosts %}
         {% include 'partials/writingList.liquid' %}
       </ul>
@@ -105,19 +99,9 @@ css:
                 {% assign sectionTitle = 'Notes' %}
                 {% assign sectionIntro = 'Short(ish) thoughts and reflections on a variety of topics.' %}
                 {% assign sectionExtra = '' %}
-                {% capture sectionExtra %}
-                <div>
-                    {% assign monthlyCount = currentYearNotes | groupWritingByMonth %}
-                    <div>
-                    {% for month in monthlyCount %}
-                      <small><a href="#notes-{{ month | first }}">{{ month | first }}</a> ({{ month | last | size }})</small>
-                    {% endfor %}
-                    </div>
-                <!--<small>Total notes: {{ currentYearNotes | size }}</small>-->
-                </div>
-                {% endcapture %}
+
               {% capture sectionContent %}
-      <ul>
+      <ul class="flow">
           {% assign postslist = currentYearNotes %}
         {% include 'partials/writingList.liquid' %}
       </ul>
@@ -141,7 +125,7 @@ css:
       {% assign sectionIntro = "Projects that I've worked on at one time or another through the year." %}
       {% assign sectionExtra = '' %}
       {% capture sectionContent %}
-              <ul class="no-marker">
+              <ul class="no-marker flow">
                 {% for project in currentYearProjects %}
                   <li
                     class="project {% if project.archived %}archived{% endif %}"
@@ -183,7 +167,7 @@ css:
         {% assign sectionIntro = "Presentations and talks mostly on the topic of digital sustainability." %}
         {% assign sectionExtra = '' %}
         {% capture sectionContent %}
-        <ul class="no-marker">
+        <ul class="no-marker flow">
           {% for item in currentYearTalks %}
             <li class="talk">
               <div class="title">

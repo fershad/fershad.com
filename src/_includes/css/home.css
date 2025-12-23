@@ -69,15 +69,23 @@ nav > .year-nav {
     margin: 0;
 }
 
-.year-nav summary {
+summary {
+    display: inline;
+}
+
+.year-nav span:not([class]) {
     display: flex;
     align-items: center;
-    gap: 1ch;
     justify-content: center;
-    flex-direction: row;
-    /*border: 2px solid var(--line-color);*/
+    flex-direction: column;
     width: min-content;
     margin: 0 auto;
+    border: 6px solid yellowgreen;
+    border-radius: 6px;
+    padding-inline: 0.5rem;
+    aspect-ratio: 1;
+    width: 8ch;
+    height: auto;
 }
 
 .year-nav[open] summary {
@@ -105,7 +113,7 @@ nav > nav:last-of-type {
 
 .current-year {
     font-size: var(--font-size-4);
-    border-bottom: 2px solid var(--line-color);
+    font-weight: 900;
 }
 
 .year-nav[open] .current-year {
@@ -181,7 +189,7 @@ aside:has(.filmstrip):after {
 }
 
 #yearly-content {
-    --flow-gap: 7rem;
+    --flow-gap: 5rem;
 }
 
 #yearly-content > section {
