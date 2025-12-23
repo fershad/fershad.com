@@ -202,7 +202,7 @@ textarea:not([rows]) {
     --camo-10: rgb(93, 84, 17);
     --jungle-10: rgb(101, 128, 6);
 
-    --text: var(--stone-1);
+    --text: var(--stone-0);
     --background: var(--stone-11);
 }
 
@@ -351,30 +351,30 @@ textarea:not([rows]) {
     max-inline-size: var(--size-content-1);
 }
 
-@font-face {
+/*@font-face {
     font-family: "Maple Mono";
     font-style: normal;
     font-weight: 400;
     src: url("/fonts/MapleMonoVF-subset.woff2") format("woff2");
     font-display: swap;
-}
+}*/
 
 :where(html) {
-    font-family: "Maple Mono", var(--font-monospace-code), monospace;
-    font-variation-settings: "wght" 400;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+:root {
+    interpolate-size: allow-keywords;
 }
 
 /* NOTE: General stuff */
 @view-transition {
     navigation: auto;
 }
-
-/*header {
-    view-transition-name: header;
-}
-footer {
-    view-transition-name: footer;
-}*/
 
 main:not(:has(article)) {
     view-transition-name: main;
@@ -463,47 +463,6 @@ body:not(.dark) {
     color-scheme: light !important;
 }
 
-.heading-underline {
-    position: relative;
-    text-align: center;
-    margin-block-end: 2.5rem;
-}
-
-* + .heading-underline {
-    margin-block-start: 2.5rem;
-}
-
-.heading-underline::before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-bottom: 1px solid var(--line-color);
-    margin: 1rem 0;
-    inline-size: 40%;
-    block-size: var(--line-thickness);
-    inset-inline-start: 30%;
-    inset-block-start: calc(var(--line-offset) * -1);
-    top: 100%;
-}
-
-.underline {
-    position: relative;
-    margin-block-end: 2.5rem;
-}
-
-.underline::before {
-    content: "";
-    display: block;
-    position: absolute;
-    border-bottom: 2px solid var(--line-color);
-    margin: 1rem 0;
-    inline-size: 70%;
-    block-size: var(--line-thickness);
-    inset-inline-start: 0;
-    inset-block-start: calc(var(--line-offset) * -1);
-    top: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -511,7 +470,7 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: "Maple Mono", var(--font-monospace-code), monospace;
+    font-family: "Noto Sans", var(--font-monospace-code), monospace;
     font-variation-settings: "wght" 600;
 }
 
@@ -535,35 +494,6 @@ h6,
     justify-content: center;
 }
 
-small .button {
-    padding: 0.25rem;
-}
-
-.button {
-    padding: 0.5rem 1rem;
-}
-
-.banner.outline,
-.button.outline {
-    position: relative;
-    /* --banner-line-color: var(--blue-12); */
-    background: transparent;
-    --banner-line-color: var(--blue-4);
-    --banner-text-color: currentColor;
-    border: 2px solid var(--banner-line-color, var(--blue-12));
-    color: var(--banner-text-color, var(--blue-12));
-    /* animation: flicker-in 1.35s 1; */
-}
-
-h2 + small,
-h3 + small,
-h4 + small {
-    display: block;
-    width: 100%;
-    margin-block-start: 1.25rem;
-    max-width: 100%;
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -574,70 +504,6 @@ ol,
 ol li {
     list-style: decimal;
     padding: 0;
-}
-
-:not(nav > nav, .toc, .breadcrumb) > ul li:not(:last-of-type) {
-    margin-block-end: 2rem;
-}
-
-/*ul:not([class]) li {
-    position: relative;
-    padding-left: 2.25rem;
-}*/
-
-/*ul:not([class]) li::before {
-    content: "";
-    position: absolute;
-    left: 1ch;
-    top: 1ex;
-    height: 1ex;
-    width: 1ex;
-    border: 2px solid var(--marker-color, var(--blue-4));
-    transition: all 0.2s;
-}*/
-
-header,
-footer {
-    --line-color: var(--blue-2);
-    width: 100%;
-    padding: 3rem 2rem;
-    background: var(--header-background);
-    position: relative;
-    overflow: hidden;
-}
-
-header {
-    border-bottom: 2px solid var(--line-color);
-    display: flex;
-    justify-content: space-between;
-}
-
-header > div {
-    width: var(--size-lg);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-inline: auto;
-    gap: 1.75rem;
-}
-
-footer > nav {
-    max-width: var(--size-xl);
-    margin-inline: auto;
-}
-
-footer {
-    border-top: 2px solid var(--line-color);
-    justify-content: center;
-}
-
-nav ul,
-footer nav ul {
-    display: flex;
-    gap: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 nav:not(nav > nav, .toc, .breadcrumb) {
@@ -651,30 +517,6 @@ nav:not(nav > nav, .toc, .breadcrumb) {
     --line-color: var(--blue-2);
     border-bottom: 2px solid var(--line-color);
     /*border-top: 2px solid var(--line-color);*/
-}
-
-nav > nav {
-    padding-block-start: 0.75rem;
-}
-
-nav + section {
-    margin-block-start: 0 !important;
-}
-
-nav ul {
-    display: inline-flex;
-    flex-wrap: nowrap;
-}
-
-nav ul li,
-footer nav ul li {
-    margin-block-end: 0;
-}
-
-footer nav ul {
-    justify-content: center;
-    align-items: center;
-    margin: 0;
 }
 
 a {
@@ -705,11 +547,6 @@ a:hover {
     margin-block-start: var(--flow-gap, 2rem);
 }
 
-*::before,
-*::after {
-    pointer-events: none;
-}
-
 .callout p {
     max-inline-size: 100%;
 }
@@ -723,24 +560,6 @@ a:hover {
     margin-left: -1.5rem;
     font-size: 1.5rem;
     position: relative;
-}
-
-[data-gaw-remove] + .gaw-banner {
-    display: none;
-}
-
-.gaw-banner > small {
-    max-width: var(--size-lg);
-}
-
-.gaw-banner {
-    background: var(--callout-background);
-    margin-top: 0;
-    padding-block: 0.5rem;
-    width: 100%;
-    position: relative;
-    --line-color: var(--blue-2);
-    border-bottom: 2px solid var(--line-color);
 }
 
 :root {
@@ -825,28 +644,8 @@ input[type="checkbox"]:checked {
         grid-column: 1;
     }
 
-    footer {
-        padding-inline: 0.25rem;
-    }
-
-    footer nav ul {
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 100vw;
-        justify-content: flex-start;
-    }
-
     main {
         padding: 0.5rem;
-    }
-
-    nav ul li:first-of-type::before,
-    header nav ul li:first-of-type::after {
-        left: 0;
-    }
-
-    header nav ul li:first-of-type {
-        padding-inline-start: calc(2.25rem - 1ch);
     }
 
     .wrapper > * {
@@ -854,21 +653,9 @@ input[type="checkbox"]:checked {
         max-inline-size: 100%;
     }
 
-    .gaw-banner {
-        padding-inline-end: 0.75rem;
-    }
-
-    header {
-        padding-block-end: 2rem;
-    }
-
     label[for="favicon-toggle"] {
         display: none;
     }
-}
-
-gaw-info-bar {
-    margin-inline: auto;
 }
 
 .toggles {

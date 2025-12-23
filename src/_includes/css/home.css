@@ -235,8 +235,4 @@ aside:has(.filmstrip):after {
         left: 50%;
         transform: translateX(-50%);
     }
-
-    /*.year-nav:not([open]) summary {
-        padding: 0.25rem 0.5rem;
-    }*/
 }
