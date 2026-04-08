@@ -1,0 +1,221 @@
+---
+layout: layouts/base.liquid
+css:
+- /css/home.css
+- /css/listPage.css
+---
+
+<script type="speculationrules">
+{
+  "prefetch": [
+    {
+      "urls": [ "/",{%- for year in years.blogYears -%}{%- unless year == currentYear -%}"/{{ year }}/",{%- endunless -%}{%- endfor -%}]
+    }
+  ]
+}
+</script>
+
+<div class="wrapper flow" id="homepage">
+
+    {{  content }}
+
+  {% assign blogYears = years.blogYears | reverse %}
+  {% assign currentYearPosts = collections.post | sortByPublishedDate | filterOnlyTag: "post", "note"| currentYearWriting: currentYear %}
+  {% assign currentYearNotes = collections.post | sortByPublishedDate | filterOnlyTag: "note"| currentYearWriting: currentYear %}
+  {% assign currentYearProjects = projects | currentYearProjects: currentYear %}
+  {% assign currentYearTalks = talks | currentYearTalks: currentYear %}
+  {% assign currentYearImages = film | currentYearImages: currentYear %}
+
+  <nav role="navigation">
+      <details id="year-nav" class="year-nav" role="navigation" aria-label="Yearly Navigation">
+              <summary>
+                  <span>
+                  <small>20</small><span class="current-year">{{ "now" | date: "%y" }}</span>
+                  </span>
+              </summary>
+            <ul>
+          {% for year in blogYears %}
+            {% unless year == currentYear %}
+              <li>
+                  {% if year == years.currentYear %}
+                    <a href="/">{{ year }}</a>
+                  {% else %}
+                    <a href="/{{ year }}/">{{ year }}</a>
+                  {% endif %}
+              </li>
+              {% else %}
+              <li>
+                  {{ year }}
+              </li>
+            {% endunless %}
+            {% if forloop.last %}{% else %}<span class="seppa"> | </span>{% endif %}
+          {% endfor %}
+            </ul>
+      </details>
+      <nav class="page-nav" aria-label="Page Navigation">
+          <ul>
+              {% if currentYearPosts.size > 0 %}
+                  <li><a href="#posts">{{ currentYearPosts.size }} Posts</a></li>
+              {% endif %}
+              {% if currentYearNotes.size > 0 %}
+                  <li><a href="#notes">{{ currentYearNotes.size }} Notes</a></li>
+              {% endif %}
+              {% if currentYearProjects.size > 0 %}
+                  <li><a href="#projects">{{ currentYearProjects.size }} Projects</a></li>
+              {% endif %}
+              {% if currentYearTalks.size > 0 %}
+                  <li><a href="#talks">{{ currentYearTalks.size }} Talks</a></li>
+              {% endif %}
+          </ul>
+      </nav>
+  </nav>
+
+  <section id="yearly-content" class="flow">
+
+{% if currentYearPosts.size > 0 %}
+  {% assign sectionId = 'posts' %}
+  {% assign sectionTitle = 'Posts' %}
+  {% assign sectionIntro = 'Longer content mostly about digital sustainability.' %}
+  {% assign sectionExtra = '' %}
+
+
+                {% capture sectionContent %}
+      <ul class="flow">
+        {% assign postslist = currentYearPosts %}
+        {% include 'partials/writingList.liquid' %}
+      </ul>
+      {% endcapture %}
+      {% include 'partials/yearlySection.liquid' %}
+      {% if currentYearImages.size > 0 %}
+          {% assign completeRow = currentYearImages.size | minus: 8 %}
+          {% if completeRow > 8 %}
+              {% include 'partials/filmstrip.liquid', filmSection: 1 %}
+          {% endif %}
+      {% endif %}
+      {% endif %}
+
+{% if currentYearNotes.size > 0 %}
+                {% assign sectionId = 'notes' %}
+                {% assign sectionTitle = 'Notes' %}
+                {% assign sectionIntro = 'Short(ish) thoughts and reflections on a variety of topics.' %}
+                {% assign sectionExtra = '' %}
+
+              {% capture sectionContent %}
+      <ul class="flow">
+          {% assign postslist = currentYearNotes %}
+        {% include 'partials/writingList.liquid' %}
+      </ul>
+      {% endcapture %}
+
+      {% include 'partials/yearlySection.liquid' %}
+
+      {% if currentYearImages.size > 0 %}
+      {% assign completeRow = currentYearImages.size | minus: 16 %}
+      {% if completeRow > 8 %}
+              {% include 'partials/filmstrip.liquid', filmSection: 2 %}
+          {% endif %}
+      {% endif %}
+{% endif %}
+
+
+
+      {% if currentYearProjects.size > 0 %}
+      {% assign sectionId = "projects" %}
+      {% assign sectionTitle = "Active projects" %}
+      {% assign sectionIntro = "Projects that I've worked on at one time or another through the year." %}
+      {% assign sectionExtra = '' %}
+      {% capture sectionContent %}
+              <ul class="no-marker flow">
+                {% for project in currentYearProjects %}
+                  <li
+                    class="project {% if project.archived %}archived{% endif %}"
+                    {% if project.slug %}
+                    id="{{project.slug}}"
+                    {% endif %}>
+                    {% if project.archived %}
+                      <div class="title">
+                        <h2 class="title">{{ project.title }}</h2>
+                        <small>
+                          <strong>Archived</strong>
+                        </small>
+                      </div>
+                    {% else %}
+                      <h2 class="title">{{ project.title }}</h2>
+                    {% endif %}
+                    <p class="summary">{{ project.shortContent }}</p>
+                    <div class="links">
+                      {% for link in project.links %}
+                        <a href="{{ link.url }}" data-glitch="{{ link.text }} >">{{ link.text }} ></a>
+                      {% endfor %}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+        {% endcapture %}
+        {% include 'partials/yearlySection.liquid' %}
+        {% if currentYearImages.size > 0 %}
+        {% assign completeRow = currentYearImages.size | minus: 24 %}
+        {% if completeRow > 8 %}
+                {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+            {% endif %}
+        {% endif %}
+{% endif %}
+
+        {% if currentYearTalks.size > 0 %}
+        {% assign sectionId = "talks" %}
+        {% assign sectionTitle = "Talks" %}
+        {% assign sectionIntro = "Presentations and talks mostly on the topic of digital sustainability." %}
+        {% assign sectionExtra = '' %}
+        {% capture sectionContent %}
+        <ul class="no-marker flow">
+          {% for item in currentYearTalks %}
+            <li class="talk">
+              <div class="title">
+                <h3 class="title">{{ item.title }}</h3>
+                <small>{{ item.date | date_to_string }} @ {{ item.event }}</small>
+              </div>
+              <p class="summary"></p>
+              <div class="links">
+                {% if item.slides %}
+                  <a href="{{ item.slides }}" data-glitch="View slides >">View slides ></a>
+                {% endif %}
+                {% if item.video %}
+                  <a href="{{ item.video }}" data-glitch="Watch online >">Watch online ></a>
+                {% endif %}
+                {% if item.episode %}
+                  <a href="{{ item.episode }}" data-glitch="Listen online >">Listen online ></a>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+        {% endcapture %}
+        {% include 'partials/yearlySection.liquid' %}
+
+        {% if currentYearImages.size > 0 %}
+        {% assign completeRow = currentYearImages.size | minus: 32 %}
+        {% if completeRow > 8 %}
+                {% include 'partials/filmstrip.liquid', filmSection: 3 %}
+            {% endif %}
+        {% endif %}
+
+        {% endif %}
+
+  </section>
+</div>
+
+<script>
+const yearNav = document.getElementById('year-nav');
+
+function isYearNavOpen() {
+    return yearNav.getAttribute('open') == '';
+}
+
+document.addEventListener('click', function(event) {
+    if (isYearNavOpen()) {
+        if (!yearNav.contains(event.target)) {
+            yearNav.removeAttribute('open');
+        }
+    }
+});
+</script>

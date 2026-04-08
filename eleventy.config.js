@@ -42,7 +42,7 @@ const figoptions = {
 const markdownItAnchorOptions = {
   permalink: true,
   permalinkClass: "deeplink",
-  permalinkSymbol: "→",
+  permalinkSymbol: "↳",
   level: [2, 3, 4],
   slugify: function (s) {
     return slugify(s);
@@ -105,10 +105,10 @@ const markdownItAnchorOptions = {
     // insert the wrapper opening before the heading
     state.tokens.splice(idx, 0, headingWrapperTokenOpen);
     // insert the anchor link tokens after the wrapper opening and the 3 tokens of the heading
-    state.tokens.splice(idx + 3 + 1, 0, ...anchorTokens);
+    state.tokens.splice(idx + 2, 0, ...anchorTokens);
     // insert the wrapper closing after all these
     state.tokens.splice(
-      idx + 3 + 1 + anchorTokens.length,
+      idx + 2 + 1 + anchorTokens.length,
       0,
       headingWrapperTokenClose,
     );
@@ -277,7 +277,10 @@ export default function (eleventyConfig) {
     },
   });
 
-  eleventyConfig.addPlugin(pluginTOC);
+  eleventyConfig.addPlugin(pluginTOC, {
+    tags: ["h2", "h3"],
+    flat: true,
+  });
 
   eleventyConfig.addFilter("removeDeepLinks", function (source) {
     return source.replace(/<a class="deeplink" href="#.*?">(.*?)<\/a>/g, "");
@@ -462,7 +465,67 @@ export default function (eleventyConfig) {
     return arr.slice(0, limit);
   });
 
+  eleventyConfig.addFilter("currentYearWriting", function (array, currentYear) {
+    // Filter any items that don't have a data.published value
+    array = array.filter((item) => {
+      return "published" in item.data;
+    });
+
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((post) => {
+      const publishedDate = new Date(post.data.published);
+      return publishedDate.getFullYear() === currentYear;
+    });
+  });
+
+  eleventyConfig.addFilter("groupWritingByMonth", function (array) {
+    const grouped = array.reduce((acc, post) => {
+      const publishedDate = new Date(post.data.published);
+      const month = publishedDate.toLocaleString("default", { month: "long" });
+      if (!acc[month]) {
+        acc[month] = [];
+      }
+      acc[month].push(post);
+      return acc;
+    }, {});
+    return grouped;
+  });
+
+  eleventyConfig.addFilter(
+    "currentYearProjects",
+    function (array, currentYear) {
+      return array.filter((project) => {
+        return project.activeYears.includes(currentYear);
+      });
+    },
+  );
+
+  eleventyConfig.addFilter("currentYearTalks", function (array, currentYear) {
+    // Filter any items that don't have a data.published value
+    array = array.filter((item) => {
+      return "date" in item;
+    });
+
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((talk) => {
+      const talkDate = new Date(talk.date);
+      return talkDate.getFullYear() === currentYear;
+    });
+  });
+
+  eleventyConfig.addFilter("currentYearImages", function (array, currentYear) {
+    // The data.published value is a string in the format "YYYY/MM/DD"
+    return array.filter((image) => {
+      const imageDate = new Date(image.shortDate);
+      return imageDate.getFullYear() === currentYear;
+    });
+  });
+
   eleventyConfig.setLibrary("md", mdLib);
+
+  eleventyConfig.setServerOptions({
+    showAllHosts: true,
+  });
 
   return {
     dir: {

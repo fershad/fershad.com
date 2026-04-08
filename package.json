@@ -1,9 +1,9 @@
 {
   "name": "fershad.com",
-  "version": "7.0.0",
+  "version": "8.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve --incremental",
     "build": "eleventy"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "type": "module",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-dev-server": "^2.0.8",
     "@11ty/eleventy-img": "^5.0.0",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "@shikijs/transformers": "^1.24.0",

@@ -19,10 +19,6 @@
       <link href="https://github.com/fershad" rel="me">
       <link rel="webmention" href="https://webmention.io/fershad.com/webmention" />
       <link rel="pingback" href="https://webmention.io/fershad.com/xmlrpc">
-    <link
-      rel="stylesheet"
-      href="{{"/css/glitch.css"  | versionHashCSS }}"
-      data-gaw-remove>
 
     <link
       rel="apple-touch-icon"
@@ -72,82 +68,31 @@
       }
     </script>
 
-     <script type="module" data-gaw-remove src="/js/rainbow.js?v1" id="rainbow-links"></script>
+     <script type="module" src="/js/rainbow.js?v1" id="rainbow-links"></script>
+
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
 
 
-  <body>
+  <body class="rainbow-no">
+    {% comment %}
     {% include 'partials/header.liquid' %}
-    <div class="gaw-banner center-align controls" data-gaw-remove>
-      <small class="">
-        <label for="glitch-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="glitch-toggle"
-            id="glitch-toggle"
-            value="glitchSwitch"
-            checked />
-          <span>Glitch</span>
-        </label>
-        <label for="font-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="font-toggle"
-            id="font-toggle"
-            value="fontSwitch"
-            checked />
-          <span>Pixelate</span>
-        </label>
-        <label for="favicon-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="favicon-toggle"
-            id="favicon-toggle"
-            value="faviconSwitch" />
-          <span>Static icon</span>
-        </label>
-        <label for="theme-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="theme-toggle"
-            id="theme-toggle"
-            value="themeSwitch" />
-          <span>Dark theme</span>
-        </label>
-        <label for="rainbow-toggle" class="form-control">
-          <input
-            type="checkbox"
-            name="rainbow-toggle"
-            id="rainbow-toggle"
-            value="rainbowSwitch"
-            checked />
-          <span>Rainbow links</span>
-        </label>
-      </small>
-    </div>
+    {% endcomment %}
 
     <!-- Blocking JS to prevent content flashing -->
-    <script data-gaw-remove>
+    <script>
         // Check local storage for glitch and font settings
-        const glitchToggle = document.getElementById('glitch-toggle')
-        const fontToggle = document.getElementById('font-toggle')
+        // const fontToggle = document.getElementById('font-toggle')
         const rainbowToggle = document.getElementById('rainbow-toggle')
-        const glitchStyles = document.querySelector('link[href^="/css/glitch.css"]')
-        const fontStyles = document.querySelector('link[href^="/css/font.css"]')
+        // const fontStyles = document.querySelector('link[href^="/css/font.css"]')
         const faviconToggle = document.getElementById('favicon-toggle')
         const faviconScript = document.getElementById('rando-favicon')
         const rainbowScript = document.getElementById('rainbow-links')
 
-        if (localStorage.getItem('glitch') === 'true' || glitchToggle.getAttribute('checked') !== 'checked') {
-          glitchToggle.checked = false
-          document.body.classList.add('deglitch')
-          glitchStyles.remove()
-        }
-
-        if (localStorage.getItem('font') === 'true') {
-          fontToggle.checked = false
-          fontStyles.remove()
-        }
+        // if (localStorage.getItem('font') === 'true') {
+        //   fontToggle.checked = false
+        //   fontStyles.remove()
+        // }
 
         if (localStorage.getItem('favicon') === 'true') {
           faviconToggle.checked = true
@@ -173,33 +118,18 @@
             }
         })
 
-        // Glitch toggle
-
-
-        glitchToggle.addEventListener('change', () => {
-          if (glitchToggle.checked) {
-            document.head.appendChild(glitchStyles)
-            document.body.classList.remove('deglitch')
-            localStorage.setItem('glitch', 'false')
-          } else {
-            glitchStyles.remove()
-            document.body.classList.add('deglitch')
-            localStorage.setItem('glitch', 'true')
-          }
-        })
-
         // Font toggle
 
 
-        fontToggle.addEventListener('change', () => {
-          if (fontToggle.checked) {
-            document.head.appendChild(fontStyles)
-            localStorage.setItem('font', 'false')
-          } else {
-            fontStyles.remove()
-            localStorage.setItem('font', 'true')
-          }
-        })
+        // fontToggle.addEventListener('change', () => {
+        //   if (fontToggle.checked) {
+        //     document.head.appendChild(fontStyles)
+        //     localStorage.setItem('font', 'false')
+        //   } else {
+        //     fontStyles.remove()
+        //     localStorage.setItem('font', 'true')
+        //   }
+        // })
 
         // Favicon toggle
         faviconToggle.addEventListener('change', () => {
@@ -234,17 +164,13 @@
           }
         })
     </script>
-
-    <div class="gaw-banner center-align">
-      <small>This website is grid-aware, some functionality has changed based on your local energy grid.
-        <a href="/grid-aware-site">Find out more</a>.
-    </div>
     <a class="skip-link banner" href="#main-content">Skip to content</a>
     <main id="main-content">
-        <div id="gaw-bar-holder" style="max-width: var(--size-xl); margin-inline: auto;"></div>
         {{ content }}
     </main>
+    {% comment %}
     {% include 'partials/footer.liquid' %}
+    {% endcomment %}
   </body>
 
   <script
@@ -254,7 +180,7 @@
     defer></script>
 
   <script type="module">
-
+ try {
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
       const gawLevel =  document.querySelector('[data-gaw-level]').getAttribute('data-gaw-level')
@@ -276,5 +202,8 @@
 	toggle.addEventListener("change", () => {
 	    toggle.checked ? fathom.trackEvent("GAW opt-in") : fathom.trackEvent("GAW opt-out")
 	})
+ } catch (e) {
+    console.log(e)
+ }
   </script>
 </html>

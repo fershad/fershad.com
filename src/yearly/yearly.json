@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/yearly.liquid",
+  "hasTOC": false,
+  "ghEdit": false,
+  "addAllPagesToCollections": true
+}

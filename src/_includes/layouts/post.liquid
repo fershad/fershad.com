@@ -3,7 +3,22 @@ layout: layouts/base.liquid
 css: /css/post.css
 ---
 
+
 {% assign date = published %}
+{% assign year = date | date: '%Y' %}
+{% assign currentYear = "now" | date: '%Y' %}
+{% assign month = date | date: '%B' %}
+{% assign day = date | date: '%d' %}
+{% capture yearPath %}
+{% if year == currentYear %}
+/
+{% else %}
+/{{ year }}/
+{% endif %}
+{% endcapture %}
+{% assign isNote = tags | find: "note" %}
+{% capture type %}{% if isNote == 'note' %}notes{% else %}posts{% endif %}{% endcapture %}
+
 
 {% unless isPage %}
 {% unless date %}
@@ -18,74 +33,71 @@ css: /css/post.css
 {% endunless %}
 {% endunless %}
 
-<article class="wrapper h-entry">
-  {% if title %}
-    <section class="twocol glitch-wrapper">
-      {% unless isPage == true %}
-        {% assign isNote = tags | find: "note" %}
-        <small data-glitch="{%- if isNote == "note" -%}note{%- else -%}post{%- endif -%}">
-          {%- if isNote == "note" -%}Note{%- else -%}Post{%- endif -%}
-        </small>
-      {% endunless %}
-      <h1 data-glitch="{{ title }}">
-        <span class="p-name">{{ title }}</span>
-      </h1>
-      {% if date %}
-        <p data-glitch="Published {{ date | date_to_long_string }}">Published:
-          <time class="postlist-date dt-published" datetime="{{ date | date_to_rfc822 }}">{{ date | date_to_long_string }}</time>
-        </p>
-      {% endif %}
+<article class="splitview h-entry">
+<div class="pagetitle flow">
+    {% if title %}
+        {% unless isPage == true %}
+        <div class="info">
+              <nav aria-label="Breadcrumb" class="breadcrumb">
+                <ol>
+                  <li><small><a href="{{ yearPath }}">{{ date | date: '%Y' }}</a></small></li>
+                  <li><small><a href="{{ yearPath }}#{{ type }}">{{type | capitalize }}</a></small></li>
+                  <li><small><a href="{{ yearPath }}#{{ type }}-{{ month }}">{{ date | date: '%B' }}</a></small></li>
+                </ol>
+              </nav>
+              {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
+              {% if  mentions.mentionCount > 0 %}
+                {% include 'partials/webmentions.liquid' %}
+              {% endif %}
+        </div>
+        {% endunless %}
+        <h1>
+          <span class="p-name">{{ title }}</span>
+        </h1>
 
-      {% assign mentions = webmentions.mentions | webmentionsByUrl: page.url %}
-      {% if  mentions.mentionCount > 0 %}
-        {% include 'partials/webmentions.liquid' %}
-      {% endif %}
+        <nav role="navigation" class="toc">
+            <details id="table-of-contents" class="table-of-contents" role="navigation" aria-label="Yearly Navigation">
+                    <summary>Content</summary>
+                    {{ content  | removeDeepLinks | toc }}
+            </details>
+        </nav>
+        {% endif %}
+</div>
 
-      {% capture tableOfContent %}
-        {{ content | toc  }}
-      {% endcapture %}
-      {% if tableOfContent %}
-        <details class="table-of-contents">
-          <summary>Table of Contents</summary>
-          {{ content | toc }}
-        </details>
-      {% endif %}
-    </section>
-  {% endif %}
 
-  <section class="twocol flow e-content">
+
+  <section class="flow e-content post-body">
     {{ content }}
 
-    {% if mentions.comments.size > 0 %}
-    <h2>Comments</h2>
-    <div class="comments">
-      {% for item in mentions.comments %}
-        <div class="comment">
-          <a href="{{ item.author.url }}" class="comment-author"><img src="{{ item.author.photo}}" class="mention-image" alt="photo of the author of one of the webmentions for this page" onerror="this.onerror=null;this.src='/img/dot.svg'" eleventy:ignore></a>
-          <div class="comment-content">
-          <blockquote class="">
-              <p>{{ item.content }}</p>
-              <cite><a href="{{ item.url }}" class="comment-author">{{ item.author.name }} - {{ item.published | date_to_long_string }}</a></cite>
-          <p class="comment-date"></p>
-          </blockquote>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    <script>
-    document.querySelectorAll('.comment img').forEach(img => {
-     img.setAttribute('style', '--glitch-img-src: url(' + img.src + ')');
-    });
-    </script>
-    {% endif %}
+    {% unless isPage == true %}
+        <aside class="banner outline callout">
+          <p class="title">RSS</p>
+          <p>Get more content like this by RSS. <a href="/feed.xml">Subscribe to the RSS feed</a></p>
+        </aside>
+    {% endunless %}
   </section>
-
-  {% unless isPage == true %}
-    <section>
-      <aside class="banner outline callout">
-        <p class="title">RSS</p>
-        <p>Get more content like this by RSS. <a href="/feed.xml">Subscribe to the RSS feed</a></p>
-      </aside>
-    </section>
-  {% endunless %}
 </article>
+
+<script>
+const toc = document.querySelector('.table-of-contents');
+const tocLinks = toc.querySelectorAll('a');
+
+function isTocOpen() {
+    return toc.getAttribute('open') == '';
+}
+
+document.addEventListener('click', function(event) {
+    if (isTocOpen()) {
+        if (!toc.contains(event.target)) {
+            toc.removeAttribute('open');
+        }
+    }
+});
+
+tocLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        toc.removeAttribute('open');
+    });
+});
+
+</script>

@@ -8,21 +8,6 @@
     font-display: swap;
 }
 
-:where(html) {
+/*:where(.year-nav, .table-of-contents, .info) {
     font-family: "Departure Mono", var(--font-monospace-code), monospace;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading {
-    position: relative;
-    font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
-}
-
-blockquote {
-    font-family: "Departure Mono", var(--font-monospace-slab-serif), monospace;
-}
+}*/

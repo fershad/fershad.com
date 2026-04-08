@@ -1,0 +1,33 @@
+<!--<section id="{{ sectionId }}">
+    <div class="splitview">
+        <div class="lead-box flow">
+            <div class="flow">
+                <h2>{{ sectionTitle }}</h2>
+                <p>{{ sectionIntro }}</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>-->
+
+<details id="{{ sectionId }}" open>
+    <summary>
+        <div class="lead-box">
+            <div class="jr-box">
+                <small>20</small><span class="current-year">{{ currentYear | slice: 2,3}}</span>
+            </div>
+            <div class="section-info">
+                <h2>{{ sectionTitle }}</h2>
+                <p>{{ sectionIntro }}</p>
+            </div>
+        </div>
+    </summary>
+    <div class="lead-box">
+        <span class="jr-banner"></span>
+        <div class="jr-content">
+            {{ sectionExtra }}
+            {{ sectionContent }}
+        </div>
+    </div>
+</details>
