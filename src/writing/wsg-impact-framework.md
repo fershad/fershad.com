@@ -1,5 +1,5 @@
 ---
-title: An impact framework for web sustainability guidelines
+title: An impact framework for the Web Sustainability Guidelines
 published: 2026-07-12
 summary: Telling the story of how I helped develop an impact ratings framework to make the Web Sustainability Guidelines more approachable.
 ---
