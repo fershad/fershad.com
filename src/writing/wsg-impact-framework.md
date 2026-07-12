@@ -18,8 +18,8 @@ Thankfully, with the PR published, we interest group swung into action. Over the
 
 It should be acknowledged that there are still large gaps in our ability to assess and quantify sustainability impacts of digital activities. So there is a degree of "expert opinion" and subjectivity in these impact ratings. You probably will find some that you disagree with - that's fine. If you do, then give the rationale a read. If you still disagree, then there are a few things you can do:
 
-- Get involved with the W3C and the Web Sustainability Interest group
-- Raise an issue on GitHub with constructive feedback, suggestions, and proposed changes
+- Get involved with the W3C and the [Web Sustainability Interest group](https://github.com/w3c/sustainableweb-ig#participate)
+- Raise an [issue on GitHub](https://github.com/w3c/sustainableweb-wsg/issues) with constructive feedback, suggestions, and proposed changes
 - Share the impact ratings with others who might have domain knowledge and who can contribute through the two ways mentioned above
 
 While opinions about individual impact ratings may differ, one thing I'm really proud of about this artefact is that it, in my opinion, has achieved what it sets out to - to make the WSGs as little bit more approachable by having a way to prioritise them based onimpact categories, timeline, or overall impact score. I've also heard on the grapevine that some other Interest Groups in the W3C have seen the document and wish they had something similar for what they're doing. I'm glad the Sustainable Web Interest Group was able to get this published, and hope folks find it useful!
