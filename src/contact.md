@@ -3,7 +3,7 @@ title: Contact
 layout: layouts/post.liquid
 description: I'd love to hear your web sustainability related questions. Contact me.
 isPage: true
-ghEdit: true
+ghEdit: false
 ---
 
 ## Contact me
