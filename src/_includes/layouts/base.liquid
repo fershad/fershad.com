@@ -254,6 +254,15 @@
     defer></script>
 
   <script type="module">
+    // Check if the EU site is being accessed
+    const isEUSite = window.location.hostname.endsWith('.eu') || window.location.hostname.startsWith('.eu');
+    if (isEUSite) {
+      try {
+        if (fathom) {
+          fathom.trackEvent('eu site');
+        }
+      } catch (error) {
+      }
 
     // Send an event to analytics tracking how many grid-aware view there are
     window.addEventListener('load', (event) => {
