@@ -6,14 +6,6 @@ isPage: true
 ghEdit: true
 ---
 
-{% callout "Have a project idea?" %}
-I work with the [Green Web Foundation](https://thegreenwebfoundation.org), and currently do not take on individual freelance projects.
-
-If you've got a project that you want to work on, [contact us at the Green Web Foundation](https://www.thegreenwebfoundation.org/services/). That way, you'll have access to not only me but to the wealth of knowledge that [Michelle, Hannah, Katrin, Lima, and Chris](https://www.thegreenwebfoundation.org/about#team) bring to the table!
-
-[Contact Green Web Foundation](https://www.thegreenwebfoundation.org/services/)
-{% endcallout %}
-
 ## Contact me
 
 Hey! I'd love to hear from you.
