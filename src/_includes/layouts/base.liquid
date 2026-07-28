@@ -281,10 +281,14 @@
     });
 
     const infoBar = document.querySelector('gaw-info-bar');
-	const shadowRoot = infoBar.shadowRoot
-	const toggle = shadowRoot.querySelector('input[type="checkbox"]')
-	toggle.addEventListener("change", () => {
-	    toggle.checked ? fathom.trackEvent("GAW opt-in") : fathom.trackEvent("GAW opt-out")
-	})
+    if (infoBar) {
+      const shadowRoot = infoBar.shadowRoot
+      const toggle = shadowRoot.querySelector('input[type="checkbox"]')
+      if (toggle) {
+        toggle.addEventListener("change", () => {
+          toggle.checked ? fathom.trackEvent("GAW opt-in") : fathom.trackEvent("GAW opt-out")
+        })
+      }
+    }
   </script>
 </html>
