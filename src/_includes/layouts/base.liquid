@@ -299,6 +299,15 @@
           }
         }
 
+        const gitHubLink = document.querySelector('.gh-edit a[href*="github.com"]');
+
+        if (gitHubLink) {
+          const href = gitHubLink.getAttribute('href');
+          const updatedHref = href.replace('github.com', 'codeberg.org');
+          gitHubLink.setAttribute('href', updatedHref);
+          gitHubLink.textContent = 'Update to Codeberg';
+        }
+
         try {
           if (fathom) {
             fathom.trackEvent('eu site');
