@@ -274,11 +274,13 @@
         const from = /fershad\.com/g;
         const to = "fershad.me";
         const elements = document.querySelectorAll("meta, link, a, img");
-        console.log(elements);
         for (const el of elements) {
           const tag = el.tagName.toLowerCase();
           // Skip <link rel="canonical">
           if (tag === "link" && el.relList && el.relList.contains("canonical")) {
+            continue;
+          }
+          if (tag === "a" && el.dataset && el.dataset.unchanged) {
             continue;
           }
           let attr = null;
@@ -293,7 +295,6 @@
           if (!attr) continue;
           const current = el.getAttribute(attr);
           if (typeof current === "string" && current.includes("fershad.com")) {
-            console.log("replacing", current);
             el.setAttribute(attr, current.replace(from, to));
           }
         }
@@ -303,32 +304,6 @@
             fathom.trackEvent('eu site');
           }
         } catch (error) {
-        } finally {
-          const from = /fershad\.com/g;
-          const to = "fershad.me";
-
-            const elements = document.querySelectorAll("meta, link, a, img");
-
-            for (const el of elements) {
-              const tag = el.tagName.toLowerCase();
-
-              // Skip <link rel="canonical">
-              if (tag === "link" && el.relList && el.relList.contains("canonical")) {
-                continue;
-              }
-
-              let attr = null;
-              if (tag === "meta") attr = "content";
-              else if (tag === "img") attr = "src";
-              else if (tag === "link" || tag === "a") attr = "href";
-
-              if (!attr) continue;
-
-              const current = el.getAttribute(attr);
-              if (typeof current === "string" && current.includes("fershad.com")) {
-                el.setAttribute(attr, current.replace(from, to));
-              }
-            }
         }
       }
     });
