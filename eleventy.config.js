@@ -14,6 +14,7 @@ import { globby } from "globby";
 import fs from "fs";
 import sitemap from "@quasibit/eleventy-plugin-sitemap";
 import sanitizeHTML from "sanitize-html";
+import generateOgImages from "./lib/generate-og.js";
 
 function do_minifycss(source, output_path) {
   // https://starbeamrainbowlabs.com/blog/article.php?article=posts/506-eleventy-minification.html
@@ -152,6 +153,8 @@ const dev = process.env.ELEVENTY_RUN_MODE === "serve" ? true : false;
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: "/" });
   eleventyConfig.watchIgnores.add("public/img/.DS_Store");
+
+  eleventyConfig.addPlugin(generateOgImages);
 
   // Layouts
   eleventyConfig.addLayoutAlias("base", "layouts/base.liquid");
