@@ -449,7 +449,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addShortcode("editLink", function (page) {
     const repoLink = "https://github.com/fershad/fershad.com";
-    return `See something that needs fixing? <a data-unchanged href="${repoLink}/edit/main/${page.inputPath.replace("./", "")}">Edit on GitHub.</a>`;
+    return `See something that needs fixing? <a data-unchanged="true" href="${repoLink}/edit/main/${page.inputPath.replace("./", "")}">Edit on GitHub.</a>`;
   });
 
   eleventyConfig.addFilter("publishedToDate", function (value) {

@@ -299,13 +299,15 @@
           }
         }
 
-        const gitHubLink = document.querySelector('.gh-edit a[href*="github.com"]');
+        const gitHubLink = document.querySelectorAll('a[href*="github.com/fershad/fershad.com"]');
 
         if (gitHubLink) {
-          const href = gitHubLink.getAttribute('href');
-          const updatedHref = href.replace('github.com', 'codeberg.org');
-          gitHubLink.setAttribute('href', updatedHref);
-          gitHubLink.textContent = 'Update to Codeberg';
+          gitHubLink.forEach((el) => {
+            const href = el.getAttribute('href');
+            const updatedHref = href.replace('github.com', 'codeberg.org');
+            el.setAttribute('href', updatedHref);
+            el.textContent = 'Update to Codeberg';
+          });
         }
 
         try {
