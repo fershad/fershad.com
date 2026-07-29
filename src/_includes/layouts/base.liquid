@@ -271,6 +271,31 @@
       // Check if the EU site is being accessed
       const isEUSite = window.location.hostname.endsWith('.eu') || window.location.hostname.startsWith('eu.');
       if (isEUSite) {
+        const from = /fershad\.com/g;
+        const to = "fershad.me";
+        const elements = document.querySelectorAll("meta, link, a, img");
+        for (const el of elements) {
+          const tag = el.tagName.toLowerCase();
+          // Skip <link rel="canonical">
+          if (tag === "link" && el.relList && el.relList.contains("canonical")) {
+            continue;
+          }
+          let attr = null;
+          if (tag === "meta") {
+            attr = "content";
+          } else if (tag === "img") {
+            attr = "src";
+          } else if (tag === "link" || tag === "a") {
+            attr = "href";
+          }
+
+          if (!attr) continue;
+          const current = el.getAttribute(attr);
+          if (typeof current === "string" && current.includes("fershad.com")) {
+            el.setAttribute(attr, current.replace(from, to));
+          }
+        }
+
         try {
           if (fathom) {
             fathom.trackEvent('eu site');
