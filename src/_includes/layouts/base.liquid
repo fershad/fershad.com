@@ -235,10 +235,24 @@
         })
     </script>
 
-    <div class="gaw-banner center-align">
-      <small>This website is grid-aware, some functionality has changed based on your local energy grid.
-        <a href="/grid-aware-site">Find out more</a>.
+    <div id="eu-banner" class="gaw-banner center-align">
+      <small>There's an <a id="eu-url" href="https://fershad.me{{ page.url }}">EU hosted version</a> of this website if that's your kinda thing.</small> <small><a id="dismiss-eu" href="#">Dismiss</a></small>
     </div>
+
+    <script>
+      const euBanner = document.getElementById('eu-banner')
+      const dismissEU = document.getElementById('dismiss-eu')
+      const euSite = window.location.hostname.endsWith('.me') || window.location.hostname.startsWith('eu.');
+
+      if (localStorage.getItem('euBannerDismissed') || euSite) {
+        euBanner.style.display = 'none'
+      }
+
+      dismissEU.addEventListener('click', (event) => {
+        euBanner.style.display = 'none'
+        localStorage.setItem('euBannerDismissed', 'true', { ttl: 604800 * 21 })
+      })
+    </script>
     <a class="skip-link banner" href="#main-content">Skip to content</a>
     <main id="main-content">
         <div id="gaw-bar-holder" style="max-width: var(--size-xl); margin-inline: auto;"></div>

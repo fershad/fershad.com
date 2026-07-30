@@ -927,12 +927,9 @@ article h4:hover::after,
     position: relative;
 }
 
-[data-gaw-remove] + .gaw-banner {
-    display: none;
-}
-
 .gaw-banner > small {
     max-width: var(--size-lg);
+    font-weight: 700;
 }
 
 .gaw-banner {
@@ -943,6 +940,10 @@ article h4:hover::after,
     position: relative;
     --line-color: var(--blue-2);
     border-bottom: 2px solid var(--line-color);
+}
+
+.gaw-banner small {
+    background: var(--callout-background);
 }
 
 .gaw-banner::after {
