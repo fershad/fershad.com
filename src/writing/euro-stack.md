@@ -32,6 +32,8 @@ If you don't want to read the rest of this post, the changes I've played with ar
 
 For now, I'm running the EU-stack (`fershad.me`) domain as a mirror of my personal site. `fershad.com` will remain the canonical domain for all my content. I'll see how this goes, and maybe someday in the future I'll migrate the `.com` domain over to an EU-stack on its own.
 
+You can head over to [https://fershad.me/writing/euro-stack/](https://fershad.me/writing/euro-stack/) to continue reading this over there if you want.
+
 {% callout 'Your kinda stack?' %}
 If these idea of a tech stack removed from US tech companies resonates with you, then [get in touch](/contact). It's something I'd like to explore a bit more beyond the small use case of this personal website.
 {% endcallout %}
