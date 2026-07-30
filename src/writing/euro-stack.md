@@ -1,6 +1,6 @@
 ---
 title: Trying out an EU-based stack for this website
-# published: 2026-07-30
+published: 2026-07-30
 summary: As a bit of a side quest for work, I've been digging into the idea of a tech stack that's divorced from US big tech companies, with content and data being hosted on European-based infrastructure. 
 ---
 
