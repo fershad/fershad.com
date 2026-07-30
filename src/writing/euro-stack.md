@@ -22,6 +22,7 @@ Before I go on, I should mention that I'll be name dropping a lot of companies i
 
 If you don't want to read the rest of this post, the changes I've played with are captured in the table below. The `fershad.com` domain is my original personal website, while the `fershad.me` domain runs on an EU-stack.
 
+{% capture tableContent %}
 |  | `fershad.com` | `fershad.me` |
 |----------|----------|----------|
 | Website Hosting | Cloudflare | statichost |
@@ -29,6 +30,9 @@ If you don't want to read the rest of this post, the changes I've played with ar
 | Version Control  | GitHub | Codeberg |
 | Edge Functions  | Cloudflare | None |
 | Analytics | Fathom (EU isolation) | Fathom (EU isolation) |
+{% endcapture %}
+
+{{ tableContent | markdownTable }}
 
 For now, I'm running the EU-stack (`fershad.me`) domain as a mirror of my personal site. `fershad.com` will remain the canonical domain for all my content. I'll see how this goes, and maybe someday in the future I'll migrate the `.com` domain over to an EU-stack on its own.
 
