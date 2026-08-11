@@ -1,0 +1,69 @@
+---
+layout: layouts/list.liquid
+title: Services
+description:
+---
+<section class="twocol">
+  <h1>Digital sustainability support services</h1>
+  <p>
+      From understanding sustainabile web design to critically assessing the sustainability of your tech stack; introducing digital carbon emissions to estimating the carbon footprint of your digital infrastructure. Allow me to support your technology and sustainability teams as they navigate balancing your organisation's business goals with developing long-term, sustainable digital strategies.
+  </p>
+</section>
+
+<section class="twocol">
+  <h2>Services</h2>
+  <p>Trusted support for technology and sustainability teams as they work on their digital sustainability strategies.</p>
+  <ul class="no-marker">
+    {% for service in services %}
+      <li
+        class="project"
+        {% if service.slug %}
+        id="{{service.slug}}"
+        {% endif %}>
+        {% if service.greenweb %}
+          <div class="title">
+            <h3 class="title">{{ service.title }}</h3>
+            <small>
+              <strong>Delivered through Green Web Foundation</strong>
+            </small>
+          </div>
+        {% else %}
+          <h3 class="title">{{ service.title }}</h3>
+        {% endif %}
+        <div class="summary flow">
+            <p>{{ service.content }}</p>
+            <p><a class="button" href="mailto:itsfish@fershad.com?subject={{ service.emailSubject }}" data-glitch="{{ service.ctaText }} >">{{ service.ctaText }}</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="twocol" id="workshops">
+  <h2>Workshops</h2>
+  <p>Engaging, educational workshops for small teams aimed at delivering digital sustainability knowledge and skills that can be put into action today.</p>
+  <ul class="no-marker">
+    {% for workshop in workshops %}
+      <li
+        class="project"
+        {% if workshop.slug %}
+        id="{{workshop.slug}}"
+        {% endif %}>
+        {% if workshop.greenweb %}
+          <div class="title">
+            <h3 class="title">{{ workshop.title }}</h3>
+            <small>
+              <strong>Delivered through Green Web Foundation</strong>
+            </small>
+          </div>
+        {% else %}
+          <h3 class="title">{{ workshop.title }}</h3>
+        {% endif %}
+        <div class="summary flow">
+            <p>{{ workshop.content }}</p>
+            <p><a class="button" href="mailto:itsfish@fershad.com?subject={{ workshop.emailSubject }}" data-glitch="{{ workshop.ctaText }} >">{{ workshop.ctaText }}</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -98,6 +98,7 @@
 
 #projects,
 #writing,
+#services,
 #reading {
     display: grid;
     grid-template-columns: 20rem 1fr;
@@ -107,12 +108,14 @@
 
 #projects > ul > li,
 #writing > ul > li,
+#services > ul > li,
 #reading > ul > li {
     max-width: 100%;
 }
 
 #projects > div,
 #writing > div,
+#services > div,
 #reading > div {
     padding: 1.5rem;
 }

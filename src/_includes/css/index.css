@@ -546,6 +546,15 @@ small .button {
 
 .button {
     padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--banner-line-color, var(--blue-12));
+    transition: border-color 0.15s linear;
+}
+
+.button:hover {
+    border-color: transparent;
 }
 
 .banner.outline,

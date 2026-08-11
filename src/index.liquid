@@ -37,6 +37,29 @@ css: /css/home.css
     </div>
   </section>
 
+  <section id="services" class="threecol">
+    <div class="lead-box flow">
+      <div>
+        <h2>Services</h2>
+        <p>Supporting your technology and sustainability teams.</p>
+      </div>
+      <div>
+        <a href="/services" data-glitch="More services >">
+          More services >
+        </a>
+      </div>
+    </div>
+    <ul>
+      {% for service in services %}
+        <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
+          <p>
+            <a href="/services">{{ service.title }}</a>
+            - {{ service.shortContent }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
   <section id="projects" class="threecol">
     <div class="lead-box flow">
       <div>
