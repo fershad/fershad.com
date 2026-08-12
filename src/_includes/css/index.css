@@ -1102,7 +1102,8 @@ input[type="checkbox"]:checked::after {
         padding-inline: 0.25rem;
     }
 
-    footer nav ul {
+    footer nav ul,
+    header nav ul {
         flex-wrap: wrap;
         width: 100%;
         max-width: 100vw;
@@ -1111,15 +1112,6 @@ input[type="checkbox"]:checked::after {
 
     main {
         padding: 0.5rem;
-    }
-
-    header nav ul li:first-of-type::before,
-    header nav ul li:first-of-type::after {
-        left: 0;
-    }
-
-    header nav ul li:first-of-type {
-        padding-inline-start: calc(2.25rem - 1ch);
     }
 
     .wrapper > * {
