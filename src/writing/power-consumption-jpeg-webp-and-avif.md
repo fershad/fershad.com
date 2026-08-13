@@ -34,6 +34,10 @@ As an aside, the image I used for testing is shown below. It’s a banger of a s
 
 ![A streak of stars and gas stretch diagonally across a shot of the night sky.](../../public/img/blog/a64ce007cd46a86e45b88d609b1ca7d94159bd01-3072x4080.png "The Milky Way galaxy, as seen from near Cradle Mountain in Tasmania.")
 
+{% callout 'Measure your own website or app' %}
+Want to start measuring the energy consumption of your own website or app? I can help guide your tech team through the process with hands on workshops, bespoke consultancy, and ongoing support. [Get in touch](/services) to start a conversation.
+{% endcallout %}
+
 ### How tests were run
 
 All tests were run on my local machine using a version of Firefox Nightly browser. Details of the platform are below:
@@ -174,3 +178,7 @@ To be honest, I wasn’t expecting WebP to be the most energy efficient format w
 So, should you switch your site to use WebP based on _these_ results? For sites that only have a handful of image, I’d say nah your time is definitely better spent elsewhere. From a website performance perspective, though, if you’re using JPEG then by all means look for ways to move to one of the newer formats like WebP or AVIF. It might help boost some of those performance metrics which Google cares about.
 
 For sites with a lot of images (news websites, galleries etc.) a switch to WebP might be a something worth looking into with a bit more research. It’d be interesting to see if/how these results change when there are multiple images on the page, and maybe a bit of CSS to resize them. That’s an unscientific test for me to run on another day though.
+
+{% callout 'Measure your own website or app' %}
+Want to start measuring the energy consumption of your own website or app? I can help guide your tech team through the process with hands on workshops, bespoke consultancy, and ongoing support. [Get in touch](/services) to start a conversation.
+{% endcallout %}

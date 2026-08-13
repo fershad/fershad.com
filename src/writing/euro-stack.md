@@ -38,10 +38,6 @@ For now, I'm running the EU-stack (`fershad.me`) domain as a mirror of my person
 
 You can head over to [https://fershad.me/writing/euro-stack/](https://fershad.me/writing/euro-stack/) to continue reading this over there if you want.
 
-{% callout 'Your kinda stack?' %}
-If these idea of a tech stack removed from US tech companies resonates with you, then [get in touch](/contact). It's something I'd like to explore a bit more beyond the small use case of this personal website.
-{% endcallout %}
-
 ## The Euro-stack I settled on
 
 When looking for possible European alternatives for the handful of services I use for this website, I found the appropriately named [https://european-alternatives.eu](https://european-alternatives.eu) catalogue extremely handy. The website presents European platforms and services across a range of categories, as well as presenting them grouped based on the non-EU alternatives they can be used to replace. For my needs, I was looking for:
@@ -128,5 +124,5 @@ I must say, I was pretty impressed at how easy it was to setup an EU-stack for m
 For now, I'll run my two sites in parallel and see how things play out. At least I know that I could switch to an EU-hosted stack in the future should that need arise.
 
 {% callout 'Your kinda stack?' %}
-If these idea of a tech stack removed from US tech companies resonates with you, then [get in touch](/contact). It's something I'd like to explore a bit more beyond the small use case of this personal website.
+Need a hand assessing the sustainability and sovereignty of your tech stack, but not sure where to start? I can help your tech team work out where you are now and how to get to where you want to be. [Get in touch](/services) to start a conversation.
 {% endcallout %}

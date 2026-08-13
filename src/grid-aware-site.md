@@ -52,9 +52,13 @@ When the grid-aware flag is set on this website, the following changes are made 
 
 There is also a banner shown at the top of the page, which allows visitors to learn more about the grid-aware changes they're seeing (this page). It also allows them to opt-out and view the regular site. That is controlled by a cookie that expires after one day.
 
-{% callout About analytics %}
-You might have noticed that disabling analytics is missing from the list above. I use Fathom Analytics on this website, and have decided to keep it on when other grid-aware changes are applied. Why? Because, grid-aware websites is a new idea we're working on at the Green Web Foundation, and I'd like to be able to see how many people are getting that experience, and how many are also opting-out.
+{% callout 'Add grid-awareness to your digital products' %}
+Want to make your website, app, or digital service grid-aware? Let me help your tech team, developers, and designers work out what that looks like and how to implement it. [Get in touch](/services) to start a conversation.
 {% endcallout %}
+
+#### About analytics
+
+You might have noticed that disabling analytics is missing from the list above. I use Fathom Analytics on this website, and have decided to keep it on when other grid-aware changes are applied. Why? Because, grid-aware websites is a new idea we're working on at the Green Web Foundation, and I'd like to be able to see how many people are getting that experience, and how many are also opting-out.
 
 ## Open source
 

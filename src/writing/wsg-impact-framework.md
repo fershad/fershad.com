@@ -23,3 +23,7 @@ It should be acknowledged that there are still large gaps in our ability to asse
 - Share the impact ratings with others who might have domain knowledge and who can contribute through the two ways mentioned above
 
 While opinions about individual impact ratings may differ, one thing I'm really proud of about this artefact is that it, in my opinion, has achieved what it sets out to - to make the WSGs as little bit more approachable by having a way to prioritise them based on impact categories, timeline, or overall impact score. I've also heard on the grapevine that some other Interest Groups in the W3C have seen the document and wish they had something similar for what they're doing. I'm glad the Sustainable Web Interest Group was able to get this published, and hope folks find it useful!
+
+{% callout 'Need help understanding WSG?'%}
+Want to better understand the Web Sustainability Guidelines and how your organisation can start applying them to your digital projects? I can help deliver workshops and training for your teams, or guide them through assessing and applying the WSG to their projects. [Get in touch](/services) and start a conversation.
+{% endcallout %}

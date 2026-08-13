@@ -136,6 +136,10 @@ One place I've used this is for the grid-aware information banner that's shown o
 
 You can see this CSS code [in this file](https://github.com/fershad/fershad.com/blob/6dd90558fb400d5e0d38cdd2cec400eaf8ad8d83/src/_includes/css/index.css#L861-L877), and the corresponding HTML [in this file](https://github.com/fershad/fershad.com/blob/main/src/_includes/layouts/base.liquid).
 
+{% callout 'Add grid-awareness to your digital products' %}
+Want to make your website, app, or digital service grid-aware? Let me help your tech team, developers, and designers work out what that looks like and how to implement it. [Get in touch](/services) to start a conversation.
+{% endcallout %}
+
 ### A visual walkthrough
 
 That's a lot of written out if statements and steps. If you need a visual hand to guide you along, you can reference the flowchart below as well, or in the [Mermaid Live viewer](https://mermaid.live/edit#pako:eNp1VNtS2zAQ_RWNnh0mvkBiP5QhpMVMSx8KbaeJeRD2JtFgW64ukDTk37u-EaOZxC8Z7dlzds-utKepyIBGdJWL13TDpCYPs6Qk-Bsvf8MTqdgaiIS_BpR-HI0-XbXBq_19xYpi14cuD905QQx5S-gfUAklb-TKXSY0GAcIVJUoFST00YJ-Fy3SQ-QX0OmmJz1CvQY72yf0VhGuCSPxw923prjLhHbaM4twYR33Jc1c5ImZInoDxCiQRFQaspEwmogVWUuejdgrk1CCUgN61yZa2IFOeOZ3AqmRyKKJQiKOzWPBSkE2kCDpBtLnoYp_SsW3VbzWjrqLzjCyEpKwksA2zU2GQhXTmwG3d4rbs7ivcRQ3oFt3UmFKLXc4jR71WUohE9rktwzXTWiOFV0zbCkjGdOMsBfGc_aUD4Y0t5Tm9X78MKVlO8nFmqcnJD_w9K3M6_X5qdDRYwF9ftzltIO6QeA9e4G2Ri3I118WMMY-5gJUz_UCsp5fvR2FyPiKN9bixYAtx91_by62i4qb7kAbWX7MfF_t2PIjrtu4q6G7_u5Z9yZuh3W77Lw-QXzbNuT2E1ocKxGSr3nJ8iE3dWgBsmA8w8dgX6ckFDerwFiEf0swWrI8oU4bytkOr0sbg_w5oUl5QApmtLjflSmNtDTgUFOhxzDnbC1ZQaMVyxWeVqyk0Z5uaeQG52eBP5lOzr1xEE7Di4lDdzTyg7Mw8AJ3EgYTLxwH7sGh_4RAhvHZ9Nz1J_h542kYhhe-QyHjWsi79h1rnjOHSmHWm6Hgokmvqzr8B64Sfjg).
@@ -238,3 +242,7 @@ Update - Jan 17, 2025 - I've really been thinking about how to change the approa
 For the Grid-aware Websites project, there's sooooo much we've got planned for 2025. I'll keep working on the code libraries, plugins, examples, and documentation. We hope to demonstrate this stuff being used on both CDN edge runtimes,  as well as server rendered websites like those delivered by many modern JavaScript frameworks and content management systems (CMSs). The code libraries I've used in this post are ready to be used today, but be aware that they're very pre-alpha so expect changes.
 
 Additionally, we'll soon be kicking off a big bit of work for the project centered around creating a UI/UX catalogue to showcase low-impact, sustainable, web design ideas and patterns. We aim for this to be a thorough resource where any individual or team that's implementing grid awareness on their own site can reference for design inspiration and guidance. I can't wait for this to come together and see what ideas we get from the community. I may even be lured into another website redesign to implement some myself.
+
+{% callout 'Add grid-awareness to your digital products' %}
+Want to make your website, app, or digital service grid-aware? Let me help your tech team, developers, and designers work out what that looks like and how to implement it. [Get in touch](/services) to start a conversation.
+{% endcallout %}

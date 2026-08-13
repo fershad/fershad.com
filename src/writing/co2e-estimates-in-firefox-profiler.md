@@ -83,6 +83,10 @@ Since the profiler is capturing system level power consumption, you could feasib
 
 With all the other above, you’d want to capture a clean baseline of your system’s power usage before capturing a profile for whatever you’re testing.
 
+{% callout 'Measure your own website or app' %}
+Want to start measuring the energy consumption of your own website or app? I can help guide your tech team through the process with hands on workshops, bespoke consultancy, and ongoing support. [Get in touch](/services) to start a conversation.
+{% endcallout %}
+
 ## Closing thoughts
 
 This is super cool stuff, and exposes a lot of potential avenues for research and auditing. The impact of device usage is significant as a whole, even if the impact of individual devices is measured in milligrams. One only needs to look at [Mozilla’s own greenhouse gas emissions findings](https://blog.mozilla.org/en/mozilla/release-mozillas-greenhouse-gas-emissions-baseline/).
