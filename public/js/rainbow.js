@@ -19,7 +19,9 @@ const colors = [
   "camo",
   "jungle",
 ];
-const links = document.querySelectorAll("main a:not([class])");
+const links = document.querySelectorAll(
+  "header nav a, footer nav a, main a:not([class]), main a.button",
+);
 
 links.forEach((l) => {
   const random = Math.floor(Math.random() * colors.length);
