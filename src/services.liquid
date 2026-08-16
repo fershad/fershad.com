@@ -42,6 +42,8 @@ description: Upgrade your technology and sustainability teams with specialised t
 </section>
 
 <section class="twocol" id="workshops">
+    <h2>Workshops</h2>
+    <p>Engaging, educational workshops for small teams aimed at delivering digital sustainability knowledge and skills that can be put into action today.</p>
   <ul class="no-marker">
     {% for workshop in workshops %}
       <li
@@ -51,13 +53,13 @@ description: Upgrade your technology and sustainability teams with specialised t
         {% endif %}>
         {% if workshop.greenweb %}
           <div class="title">
-            <h2 class="title">{{ workshop.title }}</h2>
+            <h3 class="title">{{ workshop.title }}</h3>
             <small>
               <strong>Delivered through Green Web Foundation</strong>
             </small>
           </div>
         {% else %}
-          <h2 class="title">{{ workshop.title }}</h2>
+          <h3 class="title">{{ workshop.title }}</h3>
         {% endif %}
         <div class="summary flow">
             <p>{{ workshop.content }}</p>
