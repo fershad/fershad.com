@@ -287,8 +287,19 @@ If your organisation would like this kind of discovery and analysis carried out 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
+<style>
+@media (prefers-color-scheme: dark) {
+    canvas {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
 
+body.dark canvas {
+    filter: invert(1) hue-rotate(180deg);
+}
+</style>
+
+<script>
 const regionsChart = document.getElementById("regions-chart");
 const threeProviders = document.getElementById("three-providers");
 const fershadCom = document.getElementById("fershad-com");
@@ -313,7 +324,7 @@ new Chart(regionsChart, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(0, 0, 0, 0)"],
-        borderColor: ["rgb(0,0,0,0.5)"],
+        borderColor: ["rgb(176, 37, 37)"],
         order: 2
       },
       {
@@ -325,7 +336,7 @@ new Chart(regionsChart, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(128, 252, 77, 0)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 2
       },
       {
@@ -336,8 +347,8 @@ new Chart(regionsChart, {
           yAxisKey: "fig"
         },
         borderWidth: 2,
-        backgroundColor: ["rgba(128, 252, 77, 1)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        backgroundColor: ["rgb(77 171 247)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 3
       },
     ]
@@ -394,7 +405,7 @@ new Chart(fershadCom, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(0, 0, 0, 0)"],
-        borderColor: ["rgb(0,0,0,0.5)"],
+        borderColor: ["rgb(176, 37, 37)"],
         order: 2
       },
       {
@@ -406,7 +417,7 @@ new Chart(fershadCom, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(128, 252, 77, 0)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 2
       },
       {
@@ -417,19 +428,19 @@ new Chart(fershadCom, {
           yAxisKey: "fig"
         },
         borderWidth: 2,
-        backgroundColor: ["rgba(128, 252, 77, 1)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        backgroundColor: ["rgb(77 171 247)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 3
       },
       {
         type: "line",
+        label: "National grid",
         data: [68, 68, 68, 68],
-        label: "Overall score",
         parsing: {
           yAxisKey: "loc"
         },
-        borderColor: ["rgb(30,144,255)"],
-        backgroundColor: ["rgb(30,144,255)"],
+        borderColor: ["rgb(241 111 111)"],
+        backgroundColor: ["rgb(241 111 111)"],
         tension: 0.1,
 		pointStyle: false,
         order: 1
@@ -487,7 +498,7 @@ new Chart(threeProviders, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(0, 0, 0, 0)"],
-        borderColor: ["rgb(0,0,0,0.5)"],
+        borderColor: ["rgb(176, 37, 37)"],
         order: 2
       },
       {
@@ -499,7 +510,7 @@ new Chart(threeProviders, {
         },
         borderWidth: 2,
         backgroundColor: ["rgba(128, 252, 77, 0)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 2
       },
       {
@@ -510,8 +521,8 @@ new Chart(threeProviders, {
           yAxisKey: "fig"
         },
         borderWidth: 2,
-        backgroundColor: ["rgba(128, 252, 77, 1)"],
-        borderColor: ["rgb(128, 252, 77)"],
+        backgroundColor: ["rgb(77 171 247)"],
+        borderColor: ["rgb(77 171 247)"],
         order: 3
       },
       {
@@ -521,8 +532,8 @@ new Chart(threeProviders, {
         parsing: {
           yAxisKey: "loc"
         },
-        borderColor: ["rgb(30,144,255)"],
-        backgroundColor: ["rgb(30,144,255)"],
+        borderColor: ["rgb(241 111 111)"],
+        backgroundColor: ["rgb(241 111 111)"],
         tension: 0.1,
 		pointStyle: false,
         order: 1
