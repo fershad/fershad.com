@@ -53,7 +53,7 @@ css: /css/home.css
       {% for service in services %}
         <li style="--local-delay: {% random %}ms; --local-direction: {% direction %};">
           <p>
-            <a href="/services">{{ service.title }}</a>
+            <a href="/services">{{ service.shortTitle }}</a>
             - {{ service.shortContent }}</p>
         </li>
       {% endfor %}

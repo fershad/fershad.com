@@ -1,3 +1,19 @@
+---
+type: page
+meta:
+  language: en-AU
+eleventyComputed:
+  meta:
+    site:
+      name: "{{ title }}"
+      description: "{{ description }}"
+      url: "{{ site.baseURL }}{{ page.url }}"
+    title: "{{ title }}"
+    description: "{{ description }}"
+    image:
+      src: "{{ site.baseURL }}{{ page.url }}og.png"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 

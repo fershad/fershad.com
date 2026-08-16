@@ -1,18 +1,20 @@
 ---
 layout: layouts/list.liquid
-title: Services
-description:
+title: Sustainability training, advisory, and consulting
+description: Upgrade your technology and sustainability teams with specialised training, advisory, and bespoke support provided by Fershad Irani.
 ---
 <section class="twocol">
   <h1>Digital sustainability support services</h1>
   <p>
       From understanding sustainabile web design to critically assessing the sustainability of your tech stack; introducing digital carbon emissions to estimating the carbon footprint of your digital infrastructure. Allow me to support your technology and sustainability teams as they navigate balancing your organisation's business goals with developing long-term, sustainable digital strategies.
   </p>
+  <ul>
+    <li><a href="#services">Services</a>: Trusted support for technology and sustainability teams as they work on their digital sustainability strategies.</li>
+    <li><a href="#workshops">Workshops</a>: Engaging, educational workshops for small teams aimed at delivering digital sustainability knowledge and skills that can be put into action today.</li>
+  </ul>
 </section>
 
-<section class="twocol">
-  <h2>Services</h2>
-  <p>Trusted support for technology and sustainability teams as they work on their digital sustainability strategies.</p>
+<section class="twocol" id="services">
   <ul class="no-marker">
     {% for service in services %}
       <li
@@ -22,13 +24,13 @@ description:
         {% endif %}>
         {% if service.greenweb %}
           <div class="title">
-            <h3 class="title">{{ service.title }}</h3>
+            <h2 class="title">{{ service.title }}</h2>
             <small>
               <strong>Delivered through Green Web Foundation</strong>
             </small>
           </div>
         {% else %}
-          <h3 class="title">{{ service.title }}</h3>
+          <h2 class="title">{{ service.title }}</h2>
         {% endif %}
         <div class="summary flow">
             <p>{{ service.content }}</p>
@@ -40,8 +42,6 @@ description:
 </section>
 
 <section class="twocol" id="workshops">
-  <h2>Workshops</h2>
-  <p>Engaging, educational workshops for small teams aimed at delivering digital sustainability knowledge and skills that can be put into action today.</p>
   <ul class="no-marker">
     {% for workshop in workshops %}
       <li
@@ -51,13 +51,13 @@ description:
         {% endif %}>
         {% if workshop.greenweb %}
           <div class="title">
-            <h3 class="title">{{ workshop.title }}</h3>
+            <h2 class="title">{{ workshop.title }}</h2>
             <small>
               <strong>Delivered through Green Web Foundation</strong>
             </small>
           </div>
         {% else %}
-          <h3 class="title">{{ workshop.title }}</h3>
+          <h2 class="title">{{ workshop.title }}</h2>
         {% endif %}
         <div class="summary flow">
             <p>{{ workshop.content }}</p>

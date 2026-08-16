@@ -1,6 +1,13 @@
 ---
 layout: layouts/base.liquid
 css: /css/post.css
+type: post
+eleventyComputed:
+  meta:
+    author:
+      name: "Fershad Irani"
+    published: "{{ date }}"
+    modified: "{% if updateDate %}{{ updateDate }}{% endif %}"
 ---
 
 {% assign date = published %}
