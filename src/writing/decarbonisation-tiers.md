@@ -1,7 +1,6 @@
 ---
 title: A repeatable way for showing how hosting providers are making progress decarbonising the energy they use
 published: 2026-08-17
-# permalink: /writing//index.html
 summary: An idea about categorising the energy used by hosting infrastructure which shows progress, is repeatable, and incentivises meaningful decarbonisation.
 ---
 *Possibly the longest blog post title evvvveeeer\!*
@@ -442,7 +441,7 @@ new Chart(fershadCom, {
       },
       {
         type: "line",
-        label: "National grid",
+        label: "Overall score",
         data: [68, 68, 68, 68],
         parsing: {
           yAxisKey: "loc"
