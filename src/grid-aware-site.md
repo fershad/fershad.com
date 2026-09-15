@@ -41,7 +41,7 @@ If at any point along in that process there is no data available, something goes
 When the grid-aware flag is set on this website, the following changes are made inside the Cloudflare Worker before the page is returned to the user:
 
 - Glitch animations are removed.
-- The [https://departuremono.com/](Depature Mono webfont) is replaced with [System Font alternatives](https://modernfontstacks.com/).
+- The [Depature Mono webfont](https://departuremono.com/) is replaced with [System Font alternatives](https://modernfontstacks.com/).
 - **_Most_ JavaScript is removed**. That includes:
     - Filters and controls on the [/writing](/writing) and [/reading](/reading) pages.
     - Site controls to "deglitch", "depixelate", and switch themes.
