@@ -48,9 +48,11 @@ eleventyComputed:
         {% include 'partials/webmentions.liquid' %}
       {% endif %}
 
+      {% unless hideTOC %}
       {% capture tableOfContent %}
         {{ content | toc  }}
       {% endcapture %}
+      {% endunless %}
       {% if tableOfContent %}
         <details class="table-of-contents">
           <summary>Table of Contents</summary>

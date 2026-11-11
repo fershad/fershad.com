@@ -4,9 +4,8 @@ layout: layouts/post.liquid
 description: I'd love to hear your web sustainability related questions. Contact me.
 isPage: true
 ghEdit: false
+hideTOC: true
 ---
-
-## Contact me
 
 Hey! I'd love to hear from you.
 
