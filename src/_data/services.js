@@ -3,11 +3,11 @@ import { baseURL } from "./site.js";
 export default [
   {
     slug: "training",
-    title: "Digital Sustainability & WSG Training",
+    title: "Tech Sustainability & WSG Training",
     shortTitle: "Training",
     shortContent: "Tailored training sessions for leadership and teams.",
     content:
-      "Training for leadership, sustainability, and technology teams. I can deliver tailored training sessions for topics ranging from an introduction to digital sustainability, to explaining the Web Sustainability Guidelines (WSG), to exploring the sustainability reporting landscape.",
+      "Training for leadership, sustainability, and technology teams. I can deliver tailored training sessions for topics ranging from an introduction to tech sustainability, to explaining the Web Sustainability Guidelines (WSG), to exploring the sustainability reporting landscape.",
     ctaText: "Organise a session",
     emailSubject: "Training Inquiry",
   },
@@ -15,7 +15,7 @@ export default [
     slug: "advisory",
     title: "Strategic Sustainability & Tech Advisory",
     shortTitle: "Advisory",
-    shortContent: "Trusted digital sustainability guidance.",
+    shortContent: "Trusted sustainable technology guidance.",
     content:
       "Trusted guidance to help you understand your digital sustainability profile, identify gaps, and develop actionable plans to get your organisation to its sustainability goals. Useful for organisations that are just getting started, working on sustainability reports, or who want to responsibly select the digital suppliers they use.",
     ctaText: "Arrange an assessment",
